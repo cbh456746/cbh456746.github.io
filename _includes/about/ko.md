@@ -1,11 +1,4 @@
----
-layout: page
-title: "소개"
-description: "최병호의 개발과 연구 이야기"
-header-img: "img/bg-me-2024.jpg"
-header-mask: 0.3
-multilingual: false
----
+
 
 ## 안녕하세요, 최병호입니다!
 
