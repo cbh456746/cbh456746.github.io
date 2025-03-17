@@ -14,9 +14,7 @@ future: true
 # SNS settings
 RSS: false
 github_username: cbh456746
-twitter_username: 
-#facebook_username:  huxpro
-#linkedin_username:  firstname-lastname-idxxxx
+#thread_username: BH.arxiv 
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
