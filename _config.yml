@@ -14,7 +14,7 @@ future: true
 # SNS settings
 RSS: false
 github_username: cbh456746
-#thread_username: BH.arxiv 
+thread_username: bh.arxiv.isn
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
