@@ -1,26 +1,25 @@
----
 layout: default
 ---
 
-<!-- Image to hack wechat -->
+<!-- WeChat 해킹용 이미지 -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
-<!-- Post Header -->
+<!-- 게시물 헤더 -->
 {% include intro-header.html type='post' %}
 
-<!-- Post Content -->
+<!-- 게시물 내용 -->
 <article>
     <div class="container">
         <div class="row">
 
-    <!-- Post Container -->
+    <!-- 게시물 컨테이너 -->
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <!-- Multi-Lingual -->
+                <!-- 다국어 지원 -->
                 {% if page.multilingual %}
                     {% include multilingual-sel.html %}
                 {% endif %}
@@ -32,7 +31,7 @@ layout: default
                     {% if page.previous.url %}
                     <li class="previous">
                         <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
-                        Previous<br>
+                        이전<br>
                         <span>{{page.previous.title}}</span>
                         </a>
                     </li>
@@ -40,7 +39,7 @@ layout: default
                     {% if page.next.url %}
                     <li class="next">
                         <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
-                        Next<br>
+                        다음<br>
                         <span>{{page.next.title}}</span>
                         </a>
                     </li>
@@ -49,21 +48,21 @@ layout: default
                 <hr style="visibility: hidden;">
 
                 {% if site.disqus_username %}
-                <!-- disqus 评论框 start -->
+                <!-- Disqus 댓글 상자 시작 -->
                 <div class="comment">
                     <div id="disqus_thread" class="disqus-thread"></div>
                 </div>
-                <!-- disqus 评论框 end -->
+                <!-- Disqus 댓글 상자 끝 -->
                 {% endif %}
 
                 {% if site.netease_comment %}
-                <!-- 网易云跟帖 评论框 start -->
+                <!-- 네이버 클라우드 댓글 상자 시작 -->
                 <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-                <!-- 网易云跟帖 评论框 end -->
+                <!-- 네이버 클라우드 댓글 상자 끝 -->
                 {% endif %}
             </div>  
 
-    <!-- Side Catalog Container -->
+    <!-- 사이드 목차 컨테이너 -->
         {% unless page.no-catalog %}
             <div class="
                 col-lg-2 col-lg-offset-0
@@ -73,36 +72,36 @@ layout: default
                 <div class="side-catalog">
                     <hr class="hidden-sm hidden-xs">
                     <h5>
-                        <a class="catalog-toggle" href="#">CATALOG</a>
+                        <a class="catalog-toggle" href="#">목차</a>
                     </h5>
                     <ul class="catalog-body"></ul>
                 </div>
             </div>
         {% endunless %}
 
-    <!-- Sidebar Container -->
+    <!-- 사이드바 컨테이너 -->
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 sidebar-container">
 
-                <!-- Featured Tags -->
+                <!-- 추천 태그 -->
                 {% include featured-tags.html bottom=true %}
 
-                <!-- Friends Blog -->
+                <!-- 친구 블로그 -->
                 {% include friends.html %}
             </div>
         </div>
     </div>
 </article>
 
-<!-- add support for mathjax by voleking-->
+<!-- MathJax 지원 추가 by voleking -->
 {% if page.mathjax %}
   {% include mathjax_support.html %}
 {% endif %}
 
 {% if site.netease_comment %}
-<!-- 网易云跟帖JS代码 start -->
+<!-- 네이버 클라우드 댓글 JS 코드 시작 -->
 <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
 <script>
   var cloudTieConfig = {
@@ -114,12 +113,12 @@ layout: default
   var yunManualLoad = true;
   Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
 </script>
-<!-- 网易云跟帖JS代码 end -->
+<!-- 네이버 클라우드 댓글 JS 코드 끝 -->
 {% endif %}
 
 
 {% if site.disqus_username %}
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<!-- Disqus 공통 JS 코드 시작 (한 웹페이지에 한 번만 삽입하면 됨) -->
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "{{site.disqus_username}}";
@@ -127,17 +126,17 @@ layout: default
     var disqus_url = "{{site.url}}{{page.url}}";
 
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var dsq = document.createElement('script'); dsq.type='text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<!-- disqus 公共JS代码 end -->
+<!-- Disqus 공통 JS 코드 끝 -->
 {% endif %}
 
 
 {% if site.anchorjs %}
-<!-- async load function -->
+<!-- 비동기 로드 함수 -->
 <script>
     function async(u, c) {
       var d = document, t = 'script',
@@ -148,7 +147,7 @@ layout: default
       s.parentNode.insertBefore(o, s);
     }
 </script>
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<!-- anchor-js, 문서: http://bryanbraun.github.io/anchorjs/ -->
 <script>
     async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
         anchors.options = {
@@ -160,7 +159,7 @@ layout: default
     })
 </script>
 <style>
-    /* place left on bigger screen */
+    /* 큰 화면에서 왼쪽에 배치 */
     @media all and (min-width: 800px) {
         .anchorjs-link{
             position: absolute;
