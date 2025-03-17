@@ -2,7 +2,7 @@
 title: cbh456746  
 SEOTitle: hanasaka
 header-img: img/home-bg.jpg
-email: test@gmail.com
+email: cbh456746@gmail.com
 description: "description text"
 keyword: "keyword text"
 url: "https://cbh456746.github.io" # your host, for absolute URL
@@ -57,7 +57,7 @@ kramdown:
       start_line: 1
 
 # Disqus settings
-disqus_username: hux
+disqus_username: BH CHOI
 
 # Netease settings
 netease_comment: false
