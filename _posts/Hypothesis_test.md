@@ -1,0 +1,14 @@
+---
+layout:     post
+title:      "가설검정의 기초"
+subtitle:   "가설검정에 대한 기초 통계이론을 공부한 요약입니다."
+date:       2023-03-18 12:00:00
+author:     "cbh456746"
+header-img: "img/post-bg-2015.jpg"
+catalog: true
+tags:
+    - Statistics
+---
+
+# 정의
+$X_1, \cdots, X_n$ be a random variable with pdf $f(x:\theta), \theta \in \Omega$.
