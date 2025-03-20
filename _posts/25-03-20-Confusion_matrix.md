@@ -78,8 +78,6 @@ $$\frac{TP}{TP + FN} = \frac{15}{15 + 5} = \frac{15}{20} = 0.75 (75\%)$$
 4. **F1 Score**:  
 $$2 \cdot \frac{Precision \cdot Recall}{Precision + Recall} = 2 \cdot \frac{0.6 \cdot 0.75}{0.6 + 0.75} = 2 \cdot \frac{0.45}{1.35} = 0.667 (약 66.7\%)$$
 
----
-
 ## 4. 연습 문제
 다음 혼동 행렬을 보고 각 지표를 계산하세요:
 
