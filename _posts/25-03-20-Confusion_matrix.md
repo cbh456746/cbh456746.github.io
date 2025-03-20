@@ -41,23 +41,17 @@ tags:
 ### 2) Precision (정밀도)
 - **정의**: 긍정으로 예측한 것 중 실제로 긍정인 비율
 - **공식**:  
-  $$
-  Precision = \frac{TP}{TP + FP}
-  $$
+  $$Precision = \frac{TP}{TP + FP}$$
 
 ### 3) Recall (재현율)
 - **정의**: 실제 긍정 중 모델이 긍정으로 맞춘 비율
 - **공식**:  
-  $$
-  Recall = \frac{TP}{TP + FN}
-  $$
+  $$Recall = \frac{TP}{TP + FN}$$
 
 ### 4) F1 Score (F1 스코어)
 - **정의**: 정밀도와 재현율의 조화 평균으로, 두 지표의 균형을 평가
 - **공식**:  
-  $$
-  F1 = 2 \times \frac{Precision \cdot Recall}{Precision + Recall}
-  $$
+  $$F1 = 2 \times \frac{Precision \cdot Recall}{Precision + Recall}$$
 
 ---
 
@@ -72,24 +66,16 @@ tags:
 
 ### 계산
 1. **Accuracy**:  
-   $$
-   \frac{TP + TN}{TP + TN + FP + FN} = \frac{15 + 70}{15 + 70 + 10 + 5} = \frac{85}{100} = 0.85 (85\%)
-   $$
+   $$\frac{TP + TN}{TP + TN + FP + FN} = \frac{15 + 70}{15 + 70 + 10 + 5} = \frac{85}{100} = 0.85 (85\%)$$
 
 2. **Precision**:  
-   $$
-   \frac{TP}{TP + FP} = \frac{15}{15 + 10} = \frac{15}{25} = 0.6 (60\%)
-   $$
+   $$\frac{TP}{TP + FP} = \frac{15}{15 + 10} = \frac{15}{25} = 0.6 (60\%)$$
 
 3. **Recall**:  
-   $$
-   \frac{TP}{TP + FN} = \frac{15}{15 + 5} = \frac{15}{20} = 0.75 (75\%)
-   $$
+   $$\frac{TP}{TP + FN} = \frac{15}{15 + 5} = \frac{15}{20} = 0.75 (75\%)$$
 
 4. **F1 Score**:  
-   $$
-   2 \cdot \frac{Precision \cdot Recall}{Precision + Recall} = 2 \cdot \frac{0.6 \cdot 0.75}{0.6 + 0.75} = 2 \cdot \frac{0.45}{1.35} = 0.667 (약 66.7\%)
-   $$
+   $$2 \cdot \frac{Precision \cdot Recall}{Precision + Recall} = 2 \cdot \frac{0.6 \cdot 0.75}{0.6 + 0.75} = 2 \cdot \frac{0.45}{1.35} = 0.667 (약 66.7\%)$$
 
 ---
 
