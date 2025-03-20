@@ -42,12 +42,14 @@ $$Accuracy = \frac{TP + TN}{TP + TN + FP + FN}$$
 ### 2) Precision (정밀도)
 - **정의**: 긍정으로 예측한 것 중 실제로 긍정인 비율
 - **공식**:  
-$$Precision = \frac{TP}{TP + FP}$$
+$$
+Precision = \frac{TP}{TP + FP}
+$$
 
 ### 3) Recall (재현율)
 - **정의**: 실제 긍정 중 모델이 긍정으로 맞춘 비율
 - **공식**:  
-$$Recall = \frac{TP}{TP + FN}$$
+$Recall = \frac{TP}{TP + FN}$
 
 ### 4) F1 Score (F1 스코어)
 - **정의**: 정밀도와 재현율의 조화 평균으로, 두 지표의 균형을 평가
