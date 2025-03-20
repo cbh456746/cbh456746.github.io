@@ -5,6 +5,7 @@ subtitle:   "Summary for concept of confusion matrix in case of binary classific
 date:       2025-03-20 12:00:00
 author:     "BH CHOI"
 header-img: "img/post-bg-2015.jpg"
+mathjax: true
 catalog: true
 tags:
     - Data Science
