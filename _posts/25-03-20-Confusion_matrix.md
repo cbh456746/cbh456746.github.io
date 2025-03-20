@@ -64,16 +64,16 @@ tags:
 
 ### 계산
 1. **Accuracy**:  
-$\frac{TP + TN}{TP + TN + FP + FN} = \frac{15 + 70}{15 + 70 + 10 + 5} = \frac{85}{100} = 0.85 (85\%)$
+$\frac{TP + TN}{TP + TN + FP + FN} = \frac{15 + 70}{15 + 70 + 10 + 5} = \frac{85}{100} = 0.85$
 
 2. **Precision**:  
-$\frac{TP}{TP + FP} = \frac{15}{15 + 10} = \frac{15}{25} = 0.6 (60\%)$
+$\frac{TP}{TP + FP} = \frac{15}{15 + 10} = \frac{15}{25} = 0.6$
 
 3. **Recall**:
-$\frac{TP}{TP + FN} = \frac{15}{15 + 5} = \frac{15}{20} = 0.75 (75\%)$
+$\frac{TP}{TP + FN} = \frac{15}{15 + 5} = \frac{15}{20} = 0.75$
 
 5. **F1 Score**:  
-$2 \cdot \frac{Precision \cdot Recall}{Precision + Recall} = 2 \cdot \frac{0.6 \cdot 0.75}{0.6 + 0.75} = 2 \cdot \frac{0.45}{1.35} = 0.667 (약 66.7\%)$
+$2 \cdot \frac{Precision \cdot Recall}{Precision + Recall} = 2 \cdot \frac{0.6 \cdot 0.75}{0.6 + 0.75} = 2 \cdot \frac{0.45}{1.35} = 0.667$
 
 ## 4. 연습 문제
 다음 혼동 행렬을 보고 각 지표를 계산하세요:
