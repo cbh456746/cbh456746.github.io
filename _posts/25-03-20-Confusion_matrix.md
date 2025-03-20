@@ -36,9 +36,7 @@ tags:
 ### 1) Accuracy (정확도)
 - **정의**: 모델이 올바르게 예측한 비율
 - **공식**:  
-  $$
-  Accuracy = \frac{TP + TN}{TP + TN + FP + FN}
-  $$
+  $$Accuracy = \frac{TP + TN}{TP + TN + FP + FN}$$
 
 ### 2) Precision (정밀도)
 - **정의**: 긍정으로 예측한 것 중 실제로 긍정인 비율
