@@ -1,3 +1,15 @@
+---
+layout:     post
+title:      "Confusion Matrix"
+subtitle:   "Summary for concept of confusion matrix in case of binary classification"
+date:       2025-03-20 12:00:00
+author:     "BH CHOI"
+header-img: "img/post-bg-2015.jpg"
+catalog: true
+tags:
+    - Data Science
+---
+
 # 혼동 행렬 (Confusion Matrix)
 
 - **정의**: 분류 모델의 성능을 평가하기 위한 도구로, 실제 값과 모델의 예측 값을 비교하여 표로 나타냅니다.
