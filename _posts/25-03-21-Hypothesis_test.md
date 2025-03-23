@@ -6,8 +6,9 @@ date:       2023-03-18 12:00:00
 author:     "cbh456746"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
+mathjax:true
 tags:
-    - Statistics
+    - Data Science
 ---
 
 # 정의
