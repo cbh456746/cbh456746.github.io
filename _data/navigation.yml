@@ -1,0 +1,14 @@
+- label: Home
+  url: /
+- label: Resume
+  url: /resume/
+- label: Projects
+  url: /projects/
+- label: Research
+  url: /research/
+- label: Notes
+  url: /notes/
+- label: Play
+  url: /play/
+- label: Archive
+  url: /archive/

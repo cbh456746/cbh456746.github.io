@@ -1,87 +1,30 @@
 ---
-title: Archive
 layout: default
-description: "「내가 뭘 했지? 도대체 시간을 뭘로 바꾼 거야?」"
-header-img: "img/bg-little-universe.jpg"
+title: Archive
+description: 태그를 선택하면 해당 글 제목만 바로 볼 수 있습니다.
+permalink: /archive/
 ---
-
-<!--
-Credits: this page shamelessly borrowed a lot from:
-https://github.com/kitian616/jekyll-TeXt-theme
--->
-<!-- Page Header -->
-{% include intro-header.html type='page' short=true %}
-
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			<!-- Tags (as filter) -->
-			<div id='tag_cloud' class="tags tags-sup js-tags">
-				<a class="tag-button--all" data-encode="">
-					Show All
-					<sup>{{site.posts.size}}</sup>
-				</a>
-
-				{% capture tags %}
-				{% for tag in site.tags %}
-				<a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -4, 4 }}"
-					data-encode="{{ tag[0] | strip | url_encode }}" class="tag-button" title="{{ tag[0] }}"
-					rel="{{ tag[1].size }}">
-					{{ tag[0] }}
-					<sup>{{tag[1].size}}</sup>
-				</a>__SEPERATOR__
-				{% endfor %}
-				{% endcapture %}
-				{{ tags | split:'__SEPERATOR__' | sort }}
-			</div>
-
-			<!-- Article List -->
-			<div class="mini-post-list js-result d-none">
-				{%- assign _sorted_list = site.posts -%}
-				{%- assign _sorted_list = _sorted_list | sort: 'date' -%}
-				{%- assign _sorted_list = _sorted_list | reverse -%}
-
-
-				{%- for _article in _sorted_list -%}
-				{%- assign _tags = '' -%}
-				{%- for _tag in _article.tags -%}
-				{%- assign _tag_encode = _tag | strip | url_encode -%}
-				{%- if forloop.last -%}
-				{%- assign _tags = _tags | append: _tag_encode -%}
-				{%- else -%}
-				{%- assign _tags = _tags | append: _tag_encode | append: ',' -%}
-				{%- endif -%}
-				{%- endfor -%}
-
-				{% comment %} group by year {% endcomment %}
-				{%- assign _currentdate = _article.date | date: '%Y' -%}
-				{%- if _currentdate != _date -%}
-				{%- unless forloop.first -%}</section>{%- endunless -%}
-				<section>
-					<span class="fa listing-seperator">
-						<span class="tag-text">{{ _currentdate }}</span>
-					</span>
-					{%- assign _date = _currentdate -%}
-					{%- endif -%}
-
-					<div class="post-preview item" data-tags="{{ _tags }}">
-						<a href="{{ _article.url | prepend: site.baseurl }}">
-							<h2 class="post-title">
-								{{ _article.title }}
-							</h2>
-							{% if _article.subtitle %}
-							<h3 class="post-subtitle">
-								{{ _article.subtitle }}
-							</h3>
-							{% endif %}
-						</a>
-						<hr>
-					</div>
-					{%- if forloop.last -%}
-				</section>{%- endif -%}
-				{% endfor %}
-			</div>
-		</div>
-	</div>
-</div>
+{% assign documents = site.posts | concat: site.projects | concat: site.research | concat: site.notes | sort: 'date' | reverse %}
+<section class="archive-shell">
+  <aside class="tag-index" aria-label="Tag index">
+    <p class="eyebrow">Index</p><h2>Browse by tag</h2>
+    <div class="tag-index__buttons" role="list">
+      {% for tag in site.data.tag-index %}
+      {% if tag.key == 'all' %}<button class="tag-filter is-active" type="button" data-tag="all">{{ tag.label }} <span>{{ documents.size }}</span></button>
+      {% else %}{% assign count = 0 %}{% for item in documents %}{% if item.tags contains tag.key %}{% assign count = count | plus: 1 %}{% endif %}{% endfor %}<button class="tag-filter" type="button" data-tag="{{ tag.key }}">{{ tag.label }} <span>{{ count }}</span></button>{% endif %}
+      {% endfor %}
+    </div>
+  </aside>
+  <div class="archive-content">
+    <header class="page-heading"><p class="eyebrow">Archive</p><h1>All writing, one index.</h1><p>{{ page.description }}</p></header>
+    <label class="archive-search"><span class="sr-only">Search posts</span><input id="archive-search" type="search" placeholder="제목 또는 태그 검색" autocomplete="off"></label>
+    <p id="archive-status" class="archive-status" aria-live="polite">전체 {{ documents.size }}개</p>
+    <ol class="archive-list" id="archive-list">
+      {% for item in documents %}
+      <li class="archive-item" data-tags="{{ item.tags | join: '|' | escape }}" data-search="{{ item.title | append: ' ' | append: item.subtitle | append: ' ' | append: item.tags | join: ' ' | downcase | escape }}">
+        <a href="{{ item.url | relative_url }}"><span class="archive-item__date">{{ item.date | date: '%Y.%m.%d' }}</span><strong>{{ item.title }}</strong><span class="archive-item__kind">{% if item.collection %}{{ item.collection | capitalize }}{% else %}Play{% endif %}</span></a>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>

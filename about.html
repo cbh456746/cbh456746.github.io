@@ -1,48 +1,9 @@
 ---
 layout: page
-title: "About"
-description: "「그는 그저 하루하루를 헛되이 보내지 않고 싶을 뿐이야.」"
-header-img: "img/bg-me-2022.jpg"
-header-mask: 0.3
-multilingual: true
+title: About
+description: The profile page has moved to Resume.
+permalink: /about/
 ---
 
-{% include multilingual-sel.html %}
-
-<!-- 한국어 버전 -->
-<div class="zh post-container">
-    {% capture about_ko %}{% include about/ko.md %}{% endcapture %}
-    {{ about_ko | markdownify }}
-</div>
-
-<!-- 영어 버전 -->
-<div class="en post-container">
-    {% capture about_en %}{% include about/en.md %}{% endcapture %}
-    {{ about_en | markdownify }}
-</div>
-
-
-{% if site.disqus_username %}
-<!-- disqus 댓글 창 시작 -->
-<div class="comment">
-    <div id="disqus_thread" class="disqus-thread">
-
-    </div>
-</div>
-<!-- disqus 댓글 창 끝 -->
-
-<!-- disqus 공통 JS 코드 시작 (웹페이지에 한 번만 삽입) -->
-<script type="text/javascript">
-    /* * * 설정 변수 * * */
-    var disqus_shortname = "{{site.disqus_username}}";
-    var disqus_identifier = "{{site.disqus_username}}/{{page.url}}";
-    var disqus_url = "{{site.url}}{{page.url}}";
-
-    (function () {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus 공통 JS 코드 끝 -->
-{% endif %}
+<p>이 페이지는 <a href="{{ '/resume/' | relative_url }}">Resume</a>으로 정리되었습니다.</p>
+<p><a class="button-link" href="{{ '/resume/' | relative_url }}">Resume 열기</a></p>

@@ -1,0 +1,20 @@
+- label: All
+  key: all
+- label: Projects
+  key: Projects
+- label: Research
+  key: Research
+- label: Notes
+  key: Notes
+- label: Play
+  key: Play
+- label: Game
+  key: Game
+- label: Data Science
+  key: Data-Science
+- label: Statistics
+  key: Statistics
+- label: Machine Learning
+  key: Machine-Learning
+- label: Big Data Analyst
+  key: Big-Data-Analyst

@@ -1,0 +1,9 @@
+<p class="content-meta">
+  <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time>
+  <span>{{ include.kind }}</span>
+</p>
+{% if page.tags and page.tags.size > 0 %}
+<ul class="tag-list" aria-label="Tags">
+  {% for tag in page.tags %}<li><a href="{{ '/archive/' | relative_url }}?tag={{ tag | url_encode }}">{{ tag }}</a></li>{% endfor %}
+</ul>
+{% endif %}

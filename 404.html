@@ -1,16 +1,8 @@
 ---
-layout: default
-title: 404
-hide-in-nav: true
-description: "너는 지식이 없는 황야에 도착했다 :("
-header-img: "img/404-bg.jpg"
+layout: page
+title: Page not found
 permalink: /404.html
 ---
 
-
-<!-- Page Header -->
-{% include intro-header.html type="page" short='true' %}
-
-<script>
-	document.body.classList.add('page-fullscreen');
-</script>
+<p>찾으려는 페이지가 없거나 주소가 변경되었습니다.</p>
+<p><a class="button-link" href="{{ '/' | relative_url }}">홈으로 돌아가기</a> <a class="button-link button-link--quiet" href="{{ '/archive/' | relative_url }}">아카이브 보기</a></p>

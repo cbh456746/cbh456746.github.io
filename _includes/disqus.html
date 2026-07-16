@@ -1,0 +1,7 @@
+{% if site.disqus_username and page.comments != false %}
+<section class="comments" aria-label="Comments"><div id="disqus_thread"></div></section>
+<script>
+  var disqus_config = function () { this.page.url = '{{ page.url | absolute_url }}'; this.page.identifier = '{{ page.url }}'; };
+  (function () { var s = document.createElement('script'); s.async = true; s.src = 'https://{{ site.disqus_username }}.disqus.com/embed.js'; document.head.appendChild(s); }());
+</script>
+{% endif %}
