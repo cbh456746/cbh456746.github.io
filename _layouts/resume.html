@@ -1,0 +1,15 @@
+---
+layout: default
+---
+{% assign profile = site.data.profile %}
+<section class="resume-shell">
+  <header class="resume-header">
+    <p class="eyebrow">Resume</p><h1>{{ profile.name }}</h1><p class="lede">{{ profile.headline }}</p>
+    <p class="resume-contact">{{ profile.location }} · <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>{% if profile.github %} · <a href="https://github.com/{{ profile.github }}">GitHub</a>{% endif %}</p>
+  </header>
+  <section><h2>Profile</h2><p>{{ profile.summary }}</p></section>
+  {% if profile.current_focus.size > 0 %}<section><h2>Current focus</h2><ul>{% for item in profile.current_focus %}<li>{{ item }}</li>{% endfor %}</ul></section>{% endif %}
+  {% if profile.skills.size > 0 %}<section><h2>Skills</h2><ul class="skill-list">{% for item in profile.skills %}<li>{{ item }}</li>{% endfor %}</ul></section>{% endif %}
+  {% if profile.experience.size > 0 %}<section><h2>Experience</h2>{% for item in profile.experience %}<article class="resume-item"><h3>{{ item.role }}</h3><p>{{ item.organization }} · {{ item.period }}</p><p>{{ item.description }}</p></article>{% endfor %}</section>{% endif %}
+  {% if profile.education.size > 0 %}<section><h2>Education</h2>{% for item in profile.education %}<article class="resume-item"><h3>{{ item.program }}</h3><p>{{ item.school }} · {{ item.period }}</p></article>{% endfor %}</section>{% endif %}
+</section>

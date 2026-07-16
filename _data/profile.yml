@@ -1,0 +1,27 @@
+# Resume page content. Edit this file only; empty optional fields are hidden automatically.
+name: Hong Gildong
+headline: Data-minded problem solver
+location: Seoul, Republic of Korea
+email: dummyemail@gmail.com
+github: cbh456746
+website: https://cbh456746.github.io/
+summary: >-
+  I turn questions into small, testable systems and explain the results in clear language.
+current_focus:
+  - Data analysis and visualization
+  - Python automation
+  - Building a durable personal knowledge archive
+skills:
+  - Python
+  - Data analysis
+  - Web scraping
+  - Statistics
+experience:
+  - role: Personal projects
+    organization: Independent
+    period: 2023–present
+    description: Build small data collection, analysis, and visualization projects.
+education:
+  - program: Add your education here
+    school: Example University
+    period: 20XX–20XX

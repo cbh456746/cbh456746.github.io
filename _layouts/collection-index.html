@@ -1,0 +1,8 @@
+---
+layout: default
+---
+{% assign items = site[page.collection_key] | sort: 'date' | reverse %}
+<section class="listing-shell">
+  <header class="page-heading"><p class="eyebrow">{{ page.eyebrow }}</p><h1>{{ page.title }}</h1><p>{{ page.description }}</p></header>
+  {% if items.size > 0 %}<div class="content-cards">{% for item in items %}<article class="content-card"><p class="eyebrow">{{ page.eyebrow }} · {{ item.date | date: '%Y.%m.%d' }}</p><h2><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>{% if item.subtitle %}<p>{{ item.subtitle }}</p>{% endif %}<ul class="tag-list">{% for tag in item.tags %}<li>{{ tag }}</li>{% endfor %}</ul></article>{% endfor %}</div>{% else %}<p class="empty-state">아직 게시된 {{ page.title }} 항목이 없습니다.</p>{% endif %}
+</section>

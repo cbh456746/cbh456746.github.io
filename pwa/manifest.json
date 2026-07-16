@@ -1,7 +1,7 @@
 {
-  "name": "Hux Blog",
-  "short_name": "Hux Blog",
-  "description": "About an engineer & designer who loves web.",
+  "name": "Hanasaka",
+  "short_name": "Hanasaka",
+  "description": "프로젝트, 연구, 학습 노트, 그리고 Play를 기록하는 개인 아카이브",
   "icons": [{
     "src": "icons/128.png",
     "sizes": "128x128",

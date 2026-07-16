@@ -1,0 +1,8 @@
+---
+layout: default
+---
+{% assign items = site.posts | where_exp: 'item', "item.tags contains 'Play'" | sort: 'date' | reverse %}
+<section class="listing-shell">
+  <header class="page-heading"><p class="eyebrow">Play</p><h1>{{ page.title }}</h1><p>{{ page.description }}</p></header>
+  <div class="content-cards">{% for item in items %}<article class="content-card"><p class="eyebrow">Play · {{ item.date | date: '%Y.%m.%d' }}</p><h2><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>{% if item.subtitle %}<p>{{ item.subtitle }}</p>{% endif %}<ul class="tag-list">{% for tag in item.tags %}<li>{{ tag }}</li>{% endfor %}</ul></article>{% endfor %}</div>
+</section>

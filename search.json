@@ -1,14 +1,16 @@
 ---
 layout: null
 ---
+{% assign documents = site.posts | concat: site.projects | concat: site.research | concat: site.notes | sort: 'date' | reverse %}
 [
-  {% for post in site.posts %}
-    {
-      "title"    : "{{ post.title | escape }}",
-      "subtitle" : "{{ post.subtitle | escape }}",
-      "tags"     : "{{ post.tags | join: ', ' }}",
-      "url"      : "{{ site.baseurl }}{{ post.url }}",
-      "date"     : "{{ post.date }}"
-    } {% unless forloop.last %},{% endunless %}
-  {% endfor %}
+{% for item in documents %}
+  {
+    "title": {{ item.title | jsonify }},
+    "subtitle": {{ item.subtitle | default: '' | jsonify }},
+    "url": {{ item.url | relative_url | jsonify }},
+    "date": {{ item.date | date: '%Y-%m-%d' | jsonify }},
+    "tags": {{ item.tags | jsonify }},
+    "kind": {{ item.collection | default: 'play' | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
 ]

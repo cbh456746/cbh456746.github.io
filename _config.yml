@@ -1,15 +1,16 @@
 # Site settings
-title: 花坂
-SEOTitle: Hanasaka
+title: BH CHOI
+SEOTitle: BH CHOI — Projects, Research, Notes & Play
+lang: ko
 header-img: img/home-bg.jpg
 email: cbh456746@gmail.com
-description: "description text"
-keyword: "keyword text"
-url: "https://cbh456746.github.io" # your host, for absolute URL
+description: "프로젝트, 연구, 학습 노트, 그리고 Play를 기록하는 개인 아카이브"
+keyword: "projects, research, notes, play, data science, machine learning"
+url: "https://cbh456746.github.io"
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
-future: true
+future: false
 
 # SNS settings
 RSS: false
@@ -29,6 +30,18 @@ exclude:
     "package.json",
     "README.md",
     "README.zh.md",
+    "docs",
+    "scripts",
+    "templates",
+    "package-lock.json",
+    "TASKS.md",
+    "DECISIONS.md",
+    "ARCHITECTURE.md",
+    "CONTENT_GUIDE.md",
+    "CONTRIBUTING.md",
+    "STYLE_GUIDE.md",
+    "MAINTENANCE_RUNBOOK.md",
+    "AGENTS.md",
   ]
 anchorjs: true # if you want to customize anchor. check out line:181 of `post.html`
 # If you have timezone issue (e.g. #68) in China, uncomment to use this:
@@ -39,6 +52,37 @@ anchorjs: true # if you want to customize anchor. check out line:181 of `post.ht
 # make sure you have this gem installed
 # `$ gem install jekyll-paginate`
 plugins: [jekyll-paginate]
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+  research:
+    output: true
+    permalink: /research/:name/
+  notes:
+    output: true
+    permalink: /notes/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      show_in_archive: true
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: research
+      show_in_archive: true
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: note
+      show_in_archive: true
 
 # Markdown settings
 # replace redcarpet to kramdown,
@@ -72,8 +116,7 @@ ga_domain: huangxuan.me
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
-sidebar-about-description: "Free-spirited soul BH CHOI"
-                            "Love Math & Data Science"
+sidebar-about-description: "Free-spirited soul BH CHOI. Love Math & Data Science."
 sidebar-avatar: img/blog-profile-test.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
@@ -82,7 +125,8 @@ featured-condition-size: 1 # A tag will be featured if the size of it is more th
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
-service-worker: true
+service-worker: false
+retire-service-worker: true
 
 # MathJax rendering for layout:page (e.g. post preview)
 page-mathjax: true
