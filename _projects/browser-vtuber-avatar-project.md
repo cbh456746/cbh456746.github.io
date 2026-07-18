@@ -2,7 +2,7 @@
 layout:     post
 title: "브라우저 아바타를 VTube Studio 기반 방송 아바타로 개량하기"
 subtitle: "25방향 이미지 아바타에 iPhone 얼굴 추적과 연결 복구 기능을 적용한 과정"
-date: 2026-07-19 01:00:00
+date: 2026-07-19 01:00:00 +0900
 author:     "cbh456746"
 mermaid: true
 catalog: true
