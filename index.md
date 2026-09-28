@@ -24,3 +24,7 @@ or a video link/embed. Keep personal contact details on /resume/ instead.
 - [Research](/research/): 읽고 탐구한 주제
 - [Notes](/notes/): 학습 및 실무 메모
 - [Play](/play/): 형식에 얽매이지 않는 기록
+
+## 새로 시작한 작업
+
+- [뚜껑형 PNGTuber 프로젝트 시작](/play/repo-style-pngtuber-kickoff/): 제작 목표와 다음 단계
