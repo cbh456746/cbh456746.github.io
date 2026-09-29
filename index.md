@@ -27,4 +27,4 @@ or a video link/embed. Keep personal contact details on /resume/ instead.
 
 ## 새로 시작한 작업
 
-- [뚜껑형 PNGTuber 프로젝트 시작](/play/repo-style-pngtuber-kickoff/): 제작 목표와 다음 단계
+- [뚜껑형 PNGTuber: 에셋부터 OBS 오버레이까지](/play/repo-style-pngtuber-kickoff/): 두 캐릭터의 좌우 개폐, 마이크 반응과 로컬 사용 안내
