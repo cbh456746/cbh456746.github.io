@@ -1,32 +1,31 @@
 ---
 layout: soul
 title: Home
-description: A free-form personal space.
+description: BH CHOI의 프로젝트, 탐구, 학습과 취향을 담는 개인 기록 공간.
+home_design: garden
 ---
 
-<!--
-This is the only file you need to edit for the home page.
-Add ordinary Markdown text, an image with ![description](/assets/images/file.jpg),
-or a video link/embed. Keep personal contact details on /resume/ instead.
--->
+<section class="home-hero" aria-labelledby="home-title">
+  <img class="home-hero__image" src="{{ '/assets/images/home-garden.webp' | relative_url }}" alt="푸른 나무 사이로 먼 건물의 지붕이 보이는 고요한 풍경" width="1920" height="902" fetchpriority="high" decoding="async">
+  <div class="home-hero__copy">
+    <p class="home-kicker">A personal space by BH CHOI</p>
+    <h1 id="home-title">A little room<br>to wander.</h1>
+    <p class="home-intro">만들고, 생각하고, 좋아하는 것들.<br>그 사이를 거닐며 남기는 작은 기록.</p>
+    <a class="home-text-link" href="{{ '/archive/' | relative_url }}">기록 둘러보기 <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
 
-<p class="eyebrow">A free-form personal page</p>
+<div class="home-sections" aria-label="기록의 네 가지 갈래">
+  <a href="{{ '/projects/' | relative_url }}"><span class="home-section__number" aria-hidden="true">01</span><span class="home-section__title">Projects <span aria-hidden="true">↗</span></span><span class="home-section__description">아이디어를 실제 작업으로</span></a>
+  <a href="{{ '/research/' | relative_url }}"><span class="home-section__number" aria-hidden="true">02</span><span class="home-section__title">Research <span aria-hidden="true">↗</span></span><span class="home-section__description">질문을 따라 깊이 읽기</span></a>
+  <a href="{{ '/notes/' | relative_url }}"><span class="home-section__number" aria-hidden="true">03</span><span class="home-section__title">Notes <span aria-hidden="true">↗</span></span><span class="home-section__description">배우며 남기는 생각의 조각</span></a>
+  <a href="{{ '/play/' | relative_url }}"><span class="home-section__number" aria-hidden="true">04</span><span class="home-section__title">Play <span aria-hidden="true">↗</span></span><span class="home-section__description">좋아하는 것을 자유롭게</span></a>
+</div>
 
-# A place for what matters today.
-
-사진, 짧은 글, 영상, 링크를 자유롭게 놓아두는 첫 화면입니다. 이 문서는 `index.md`만 편집하면 바꿀 수 있습니다.
-
-> Work in progress, notes in motion, and a little room to play.
-
-## Recently organized
-
-- [Projects](/projects/): 만들고 검증한 작업
-- [Research](/research/): 읽고 탐구한 주제
-- [Notes](/notes/): 학습 및 실무 메모
-- [Play](/play/): 형식에 얽매이지 않는 기록
-
-## 새로 시작한 작업
-
-- [뚜껑형 PNGTuber: 에셋부터 OBS 오버레이까지](/play/repo-style-pngtuber-kickoff/): 두 캐릭터의 좌우 개폐, 마이크 반응과 로컬 사용 안내
-
-- [브라우저 아바타 방송 예제](/projects/browser-vtuber-avatar-project/): 머리 방향·눈·입 변화 영상과 VTube Studio 연결 절차
+<section class="home-current" aria-labelledby="home-current-title">
+  <div class="home-current__heading"><p class="home-kicker">Currently exploring</p><h2 id="home-current-title">지금 만들어가는 것들</h2><p>캐릭터와 방송 사이,<br>작은 실험을 이어갑니다.</p></div>
+  <div class="home-current__list">
+    <a class="home-project" href="{{ '/play/repo-style-pngtuber-kickoff/' | relative_url }}"><span class="home-project__tag">Play · PNGTuber</span><h3>목소리에 반응하는 작은 로봇 <span aria-hidden="true">↗</span></h3><p>뚜껑형 캐릭터 에셋부터 마이크 반응, 좌우 개폐와 OBS 오버레이까지.</p></a>
+    <a class="home-project" href="{{ '/projects/browser-vtuber-avatar-project/' | relative_url }}"><span class="home-project__tag">Projects · Avatar</span><h3>화면 속 캐릭터에 움직임을 <span aria-hidden="true">↗</span></h3><p>브라우저 아바타의 표정·방향 변화 예제와 VTube Studio 방송 구성 안내.</p></a>
+  </div>
+</section>

@@ -82,4 +82,10 @@ The owner approved the public name BH CHOI, University of Seoul department of ma
 
 The supplied short video is published as a muted, metadata-free example in the existing browser/VTube Studio project. It illustrates visible avatar state changes; it does not independently validate the entire tracking, authentication, or reconnect chain.
 
-Past commits contain removed personal information. A reviewed sanitized history may be prepared locally, but remote history replacement requires explicit approval because it changes existing commit IDs and D-012 prohibits force pushes.
+Past commits contained removed personal information. Preparing sanitized history was authorized here; D-015 records the owner's later explicit approval of remote replacement.
+
+### D-015 — Apply the approved privacy rewrite and photograph-based Home
+
+On 2026-10-01 the owner explicitly approved the reviewed history replacement after the effect on commit IDs, signatures, local clones, and residual external copies was explained. This is a specific exception to D-012; it does not authorize unrelated force pushes. Replace main with `force-with-lease` against the reviewed previous head, preserve the current file tree and commit dates, and retain account attribution through the owner's GitHub no-reply address. Private recovery material must remain outside the public repository.
+
+The owner also authorized using and cropping the supplied landscape photograph for Home. Publish a metadata-free web export, keep the original untouched, and use responsive layout to balance the sky, trees, and typography. Home copy and project links remain editable in `index.md`; scoped visual rules live in `css/site.css`.
