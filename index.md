@@ -28,3 +28,5 @@ or a video link/embed. Keep personal contact details on /resume/ instead.
 ## 새로 시작한 작업
 
 - [뚜껑형 PNGTuber: 에셋부터 OBS 오버레이까지](/play/repo-style-pngtuber-kickoff/): 두 캐릭터의 좌우 개폐, 마이크 반응과 로컬 사용 안내
+
+- [브라우저 아바타 방송 예제](/projects/browser-vtuber-avatar-project/): 머리 방향·눈·입 변화 영상과 VTube Studio 연결 절차

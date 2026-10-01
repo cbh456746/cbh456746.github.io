@@ -24,5 +24,16 @@ for (const area of areas) {
 for (const file of ['_config.yml', '_data/profile.yml', '_data/navigation.yml', '_data/tag-index.yml']) {
   if (!fs.existsSync(path.join(root, file))) errors.push(`missing required file: ${file}`);
 }
+// Public profile is limited to the fields approved by the owner.
+const profileFile = path.join(root, '_data/profile.yml');
+if (fs.existsSync(profileFile)) {
+  const profile = read(profileFile);
+  const keys = [...profile.matchAll(/^([a-z_]+):/gm)].map(match => match[1]);
+  const allowed = ['name', 'headline', 'summary', 'interests', 'education'];
+  for (const key of keys) if (!allowed.includes(key)) errors.push(`profile contains unapproved field: ${key}`);
+  if (!/^name: BH CHOI$/m.test(profile)) errors.push('public profile name must be BH CHOI');
+}
+const configFile = path.join(root, '_config.yml');
+if (fs.existsSync(configFile) && /^email:\s*\S+/m.test(read(configFile))) errors.push('public contact email is not approved');
 if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
 console.log('Content validation passed.');

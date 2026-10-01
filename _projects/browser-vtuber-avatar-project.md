@@ -3,15 +3,53 @@ layout:     post
 title: "브라우저 아바타를 VTube Studio 기반 방송 아바타로 개량하기"
 subtitle: "25방향 이미지 아바타에 iPhone 얼굴 추적과 연결 복구 기능을 적용한 과정"
 date: 2026-07-19 01:00:00 +0900
-author:     "cbh456746"
+author:     "BH CHOI"
 mermaid: true
 catalog: true
 tags:
   - Projects
+  - Play
   - React
   - VTube-Studio
 ---
 
+
+## 방송 아바타 예제 영상
+
+**2026년 10월 1일 추가:** 제공된 약 7초 분량의 영상에서 캐릭터의 좌우 머리 방향, 눈 깜빡임, 입 모양 변화를 볼 수 있다. 아래 영상은 아바타가 방송 장면 위에 표시되는 모습을 보여 주는 **결과 화면 예제**다.
+
+<video controls playsinline muted preload="metadata" poster="{{ '/assets/videos/browser-vtuber-avatar/poster.jpg' | relative_url }}" style="width:100%;max-width:720px;height:auto;">
+  <source src="{{ '/assets/videos/browser-vtuber-avatar/example.mp4' | relative_url }}" type="video/mp4">
+  브라우저가 영상 재생을 지원하지 않으면 아래 다운로드 링크를 이용하세요.
+</video>
+
+[예제 영상 열기 또는 내려받기]({{ '/assets/videos/browser-vtuber-avatar/example.mp4' | relative_url }})
+
+공개본에서는 원음과 원본 메타데이터를 제거하고 검은 여백과 화면 아래쪽 일부를 잘라 아바타 동작에 집중했다. 영상에 보이는 게임 배경은 방송 장면의 예시이며, 캐릭터 에셋 패키지나 게임 자료의 재배포 허가를 제공하는 것은 아니다.
+
+| 이 영상에서 관찰할 수 있는 것 | 별도 확인이 필요한 것 |
+| --- | --- |
+| 머리 방향에 따른 이미지 전환 | 실제 입력 장치가 iPhone인지, 추적값과 프레임이 정확히 일치하는지 |
+| 눈 뜸·감음과 입 모양의 변화 | 25방향·150프레임 전체의 정렬과 전환 품질 |
+| 방송 장면 위의 아바타 표시 | 투명 배경 설정, 지연 시간, 장시간 안정성 |
+| 짧은 구간의 움직임 | 토큰 재인증과 연결 중단 후 복구 |
+
+영상만으로 입력 장치, 실제 음성 동기화 또는 연결 복구까지 검증했다고 판단하지 않는다. 아래 구성 설명은 프로젝트 설계를 설명하며, 새 예제 영상의 검증 범위와 구분한다.
+
+### 같은 방식으로 방송 화면을 구성하려면
+
+1. **PC VTube Studio와 추적 입력을 준비한다.** iPhone 얼굴 추적을 사용할 경우 같은 로컬 네트워크에서 PC에 연결하고, VTube Studio에서 얼굴 추적값이 변하는지 먼저 확인한다.
+2. **PC의 Public API를 켠다.** 기본 WebSocket 주소는 `ws://localhost:8001`이다. 방송 페이지가 처음 연결할 때 VTube Studio에 표시되는 플러그인 승인 창을 확인한다. API 토큰은 개인 PC에만 저장하며 GitHub에 올리지 않는다.
+3. **로컬 방송 페이지를 연다.** 현재 글은 프로젝트 소개와 영상 예제를 제공한다. 이 블로그 페이지 자체가 얼굴 추적 실행 프로그램은 아니므로, 실제 아바타 앱의 로컬 방송 화면 주소를 사용한다.
+4. **방송 모드의 입력을 확인한다.** `FaceAngleX/Y`로 머리 방향을, `EyeOpenLeft/Right`로 눈을, `MouthOpen`으로 입을 제어한다. 자동 깜빡임과 마이크 입 모양을 동시에 적용하지 않도록 모드별 입력을 구분한다.
+5. **OBS 또는 PRISM의 브라우저 소스를 추가한다.** 실제 앱의 로컬 주소와 출력 해상도를 입력하고 투명 배경을 확인한다. 목소리는 방송 프로그램의 마이크 소스로 따로 추가한다.
+6. **방송 전에 녹화로 확인한다.** 좌우·상하 시선, 눈 감기, 입 벌리기, 추적 중단, VTube Studio 재시작을 차례로 확인하고 비공개 정보가 화면에 없는지 검수한다.
+
+VTube Studio의 [공식 Public API 문서](https://github.com/DenchiSoft/VTubeStudio#readme)에서 인증과 입력 파라미터를 확인할 수 있다. 얼굴의 입 움직임 대신 음성 반응을 사용할 때는 [공식 Lipsync 안내](https://github.com/DenchiSoft/VTubeStudio/wiki/Lipsync)를 참고한다. 얼굴 추적의 `MouthOpen`과 음량 입력의 `VoiceVolume`은 서로 다른 값이다.
+
+### 뚜껑형 PNGTuber와의 관계
+
+[뚜껑형 PNGTuber 프로젝트](/projects/repo-style-pngtuber/)는 마이크 음량과 자동 깜빡임으로 12상태를 전환한다. 이 예제는 얼굴 추적을 이용하는 브라우저 아바타 프로젝트의 결과 화면이다. 공통으로 방송 프로그램의 브라우저 소스에 표시할 수 있지만 입력과 에셋 구성이 다르다. 기존 PNGTuber가 이 영상의 캐릭터나 Live2D 모델로 자동 변환됐다는 뜻은 아니다.
 
 ## 문제
 
@@ -86,7 +124,7 @@ flowchart LR
 
 로컬 루트 경로와 GitHub Pages의 저장소 하위 경로를 각각 가정한 빌드가 모두 통과했다. npm 의존성 감사에서는 확인 시점에 알려진 취약점이 발견되지 않았다.
 
-<!-- 실제 공개 화면 또는 방송 테스트 이미지를 받으면 여기에 추가 -->
+예제 영상과 그 검증 범위는 글 상단에 공개했다. 장시간 방송·연결 복구 시험은 별도 결과 기록이 필요하다.
 
 ## 한계와 다음 단계
 

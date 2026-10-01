@@ -42,7 +42,7 @@ No existing post, page, or URL is renamed, moved, deleted, or redirected until i
 
 ### D-009 — Use editable dummy data for the first Resume implementation
 
-**Decision:** The first Resume page will use clearly marked dummy values, such as `Hong Gildong` and `contact-removed`. The values will live in one documented data source so they can be replaced without editing layouts.
+**Decision:** The first Resume page will use clearly marked dummy values, such as an example name and example email. The values will live in one documented data source so they can be replaced without editing layouts.
 
 **Why:** Resume content is intentionally deferred, but page structure and maintenance ergonomics can still be implemented safely.
 
@@ -75,3 +75,11 @@ No existing post, page, or URL is renamed, moved, deleted, or redirected until i
 | ID | Decision required | Why it blocks later work |
 |---|---|---|
 | O-004 | Keep, replace, or remove AdSense, Disqus, and analytics. | Each affects privacy, performance, layout, and required documentation. |
+
+### D-014 — Restrict public profile and publish a reviewed video example
+
+The owner approved the public name BH CHOI, University of Seoul department of mathematics (B.S.C), and the interests 하츠네미쿠, 게임, 수학 on 2026-10-01. Replace prior biographies and dummy Resume data with these fields. Remove inherited unused account identifiers and the unused custom-domain file. Keep project and academic content and copyright attribution.
+
+The supplied short video is published as a muted, metadata-free example in the existing browser/VTube Studio project. It illustrates visible avatar state changes; it does not independently validate the entire tracking, authentication, or reconnect chain.
+
+Past commits contain removed personal information. A reviewed sanitized history may be prepared locally, but remote history replacement requires explicit approval because it changes existing commit IDs and D-012 prohibits force pushes.

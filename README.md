@@ -5,7 +5,7 @@ This is a Jekyll-based GitHub Pages site. It is organized so that routine update
 ## Start here
 
 - Change the home page: `index.md`
-- Change the Resume dummy data: `_data/profile.yml`
+- Change the approved public profile: `_data/profile.yml`
 - Add an item: copy one file in `templates/` into the matching folder.
 - Review the full beginner workflow: `MAINTENANCE_RUNBOOK.md`
 - See writing rules: `CONTENT_GUIDE.md`

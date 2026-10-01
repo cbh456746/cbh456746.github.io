@@ -3,7 +3,7 @@ layout:     post
 title:      "가설검정의 기초"
 subtitle:   "가설검정에 대한 기초 통계이론을 공부한 요약입니다."
 date:       2023-03-18 12:00:00
-author:     "cbh456746"
+author:     "BH CHOI"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 mathjax: true
