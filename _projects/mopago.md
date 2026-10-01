@@ -19,4 +19,4 @@ demo_url: "https://cbh456746.github.io/mopago/"
 
 추천 모델은 작은 조각이 단계별로 완만하게 줄어드는 가정 하나를 사용한다. 정확한 공식 출현 확률은 확인되지 않았으며, 모의 평가 점수는 실제 게임의 점수를 보장하지 않는다. 확률 규칙·학습 방법·평가 결과는 저장소 README에 공개했다.
 
-**[웹에서 사용하기](https://cbh456746.github.io/mopago/)** · [소스와 사용 안내](https://github.com/cbh456746/mopago) · [짧은 소개](/play/mopago/)
+**[웹에서 사용하기](https://cbh456746.github.io/mopago/)** · [소스와 사용 안내](https://github.com/cbh456746/mopago)

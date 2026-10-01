@@ -8,6 +8,7 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 |---|---|---|---|
 | M-01 | complete | Reduce Resume to the owner's requested public fields. | Resume contains only BH CHOI and Education: B.S.C - Mathematics in its profile content; the introduction and Interests section are removed. |
 | M-02 | complete | Fix the RSS XML error opened from the footer link. | The XML declaration is first in the generated feed, the feed parses as RSS, and the deployment workflow validates generated XML before publication. |
+| M-03 | complete | Keep Mopago as a single Projects entry. | Remove the duplicate post and its cross-link; Play no longer lists the post, RSS contains one Mopago item, and the former post URL redirects to the project. |
 
 ## Phase 0 — Baseline and change control
 

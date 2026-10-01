@@ -95,3 +95,7 @@ The owner also authorized using and cropping the supplied landscape photograph f
 On 2026-10-01 the owner restricted Resume profile content to BH CHOI and Education: B.S.C - Mathematics. This supersedes D-014 for Resume: omit the introduction, university name, and Interests section from that page and its profile data.
 
 Keep the existing RSS subscription link and correct the feed's leading whitespace error. The deployment workflow must parse the generated feed as XML before publishing it.
+
+### D-017 — Keep Mopago in Projects without a duplicate post
+
+The owner requested a single project entry for Mopago because it has its own repository and deployed application. Keep `_projects/mopago.md` as the canonical introduction and remove the duplicate post. Preserve previously shared links with a redirect from `/play/mopago/` to `/projects/mopago/`; the redirect is not a post and does not create a second feed item.
