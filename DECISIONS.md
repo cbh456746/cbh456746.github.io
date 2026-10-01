@@ -89,3 +89,9 @@ Past commits contained removed personal information. Preparing sanitized history
 On 2026-10-01 the owner explicitly approved the reviewed history replacement after the effect on commit IDs, signatures, local clones, and residual external copies was explained. This is a specific exception to D-012; it does not authorize unrelated force pushes. Replace main with `force-with-lease` against the reviewed previous head, preserve the current file tree and commit dates, and retain account attribution through the owner's GitHub no-reply address. Private recovery material must remain outside the public repository.
 
 The owner also authorized using and cropping the supplied landscape photograph for Home. Publish a metadata-free web export, keep the original untouched, and use responsive layout to balance the sky, trees, and typography. Home copy and project links remain editable in `index.md`; scoped visual rules live in `css/site.css`.
+
+### D-016 — Minimize Resume content and validate RSS before deployment
+
+On 2026-10-01 the owner restricted Resume profile content to BH CHOI and Education: B.S.C - Mathematics. This supersedes D-014 for Resume: omit the introduction, university name, and Interests section from that page and its profile data.
+
+Keep the existing RSS subscription link and correct the feed's leading whitespace error. The deployment workflow must parse the generated feed as XML before publishing it.

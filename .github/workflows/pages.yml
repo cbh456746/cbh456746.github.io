@@ -29,6 +29,14 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      - name: Validate generated RSS XML
+        run: |
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          root = ET.parse('_site/feed.xml').getroot()
+          assert root.tag == 'rss' and root.find('channel') is not None, 'Expected RSS channel'
+          print('Generated RSS XML is valid')
+          PY
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site

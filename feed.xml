@@ -1,8 +1,8 @@
 ---
 layout: null
 ---
-{% assign documents = site.posts | concat: site.projects | concat: site.research | concat: site.notes | sort: 'date' | reverse %}
 <?xml version="1.0" encoding="UTF-8"?>
+{% assign documents = site.posts | concat: site.projects | concat: site.research | concat: site.notes | sort: 'date' | reverse %}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
   <title>{{ site.title | xml_escape }}</title><description>{{ site.description | xml_escape }}</description>
   <link>{{ '/' | absolute_url }}</link><atom:link href="{{ '/feed.xml' | absolute_url }}" rel="self" type="application/rss+xml" />

@@ -2,6 +2,13 @@
 
 Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
+## Maintenance — 2026-10-01
+
+| ID | Status | Task | Acceptance criteria |
+|---|---|---|---|
+| M-01 | complete | Reduce Resume to the owner's requested public fields. | Resume contains only BH CHOI and Education: B.S.C - Mathematics in its profile content; the introduction and Interests section are removed. |
+| M-02 | complete | Fix the RSS XML error opened from the footer link. | The XML declaration is first in the generated feed, the feed parses as RSS, and the deployment workflow validates generated XML before publication. |
+
 ## Phase 0 — Baseline and change control
 
 | ID | Status | Task | Acceptance criteria |
