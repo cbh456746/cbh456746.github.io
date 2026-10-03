@@ -4,6 +4,8 @@ This directory is the source of truth for the staged modernization of this perso
 
 ## Reading order
 
+For ongoing maintenance, begin with [AGENT_HANDOFF.md](AGENT_HANDOFF.md), the latest accepted decisions, and current source. The documents below retain the original modernization stages; statements about dummy profiles or an unconnected repository are historical and must not be restored as the current state.
+
 1. [PRODUCT_REQUIREMENTS.md](PRODUCT_REQUIREMENTS.md) — product goals and non-negotiable user-experience requirements.
 2. [BASELINE_AUDIT.md](BASELINE_AUDIT.md) — inherited theme, content, deployment, and maintenance risks.
 3. [CONTENT_MIGRATION_REGISTER.md](CONTENT_MIGRATION_REGISTER.md) — inventory and proposed destination for every known Markdown document.
@@ -20,4 +22,4 @@ This directory is the source of truth for the staged modernization of this perso
 
 ## Document status
 
-Phase 0 is documentation-only. No existing page, post, asset, deployment setting, or URL has been changed as part of this phase.
+The original Phase 0 was documentation-only. Subsequent implementation and publication are recorded in the later decisions and [current handoff](AGENT_HANDOFF.md). Recheck live source and deployment before continuing work.
