@@ -2,6 +2,12 @@
 
 Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
+## Maintenance — 2026-10-03
+
+| ID | Status | Task | Acceptance criteria |
+|---|---|---|---|
+| M-04 | complete | Provide the whole-blog operations handoff in the blog repository. | `docs/BLOG_OPERATIONS_HANDOFF.md` covers authoring, discovery, layout, media, privacy, RSS, GitHub publication, deployment, cleanup, and recovery; AGENTS, README, and the documentation index link to it. Individual project development is outside its scope. |
+
 ## Maintenance — 2026-10-01
 
 | ID | Status | Task | Acceptance criteria |

@@ -99,3 +99,9 @@ Keep the existing RSS subscription link and correct the feed's leading whitespac
 ### D-017 — Keep Mopago in Projects without a duplicate post
 
 The owner requested a single project entry for Mopago because it has its own repository and deployed application. Keep `_projects/mopago.md` as the canonical introduction and remove the duplicate post. Preserve previously shared links with a redirect from `/play/mopago/` to `/projects/mopago/`; the redirect is not a post and does not create a second feed item.
+
+### D-018 — Maintain the whole-blog operations handoff in this repository
+
+The owner requested a handoff for overall blog operation, rather than an individual project's development. Keep the canonical guide at `docs/BLOG_OPERATIONS_HANDOFF.md` in this blog repository. It covers authoring, content discovery, layout, media, privacy, GitHub publication, deployment, cleanup, and recovery. Link it from AGENTS, README, and the documentation index; keep project-specific implementation instructions in the corresponding project repositories.
+
+RSS removal, hiding, and summary-only changes remain paused after the owner's stop request. Document the current behavior without treating this handoff as permission to change it. Earlier modernization plans are historical where superseded by current source and later decisions.

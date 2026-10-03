@@ -4,7 +4,7 @@ This is a Jekyll-based GitHub Pages site. It is organized so that routine update
 
 ## Start here
 
-- Another agent continuing the work: [current handoff and detailed cross-repository guide](docs/AGENT_HANDOFF.md).
+- Another agent continuing the work: [full blog operations handoff](docs/BLOG_OPERATIONS_HANDOFF.md).
 
 - Change the home page text and links: `index.md`
 - Change the approved public profile: `_data/profile.yml`

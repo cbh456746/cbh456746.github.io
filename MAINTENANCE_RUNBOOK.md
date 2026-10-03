@@ -1,5 +1,7 @@
 # Maintenance runbook (GitHub Desktop)
 
+For current whole-blog operation, begin with [the full blog operations handoff](docs/BLOG_OPERATIONS_HANDOFF.md). The initial clone and delivery steps below are for first setup only. Routine work applies reviewed changes to the existing clone; never copy a private production workspace or its `.git` folder into the public repository.
+
 ## One-time setup
 
 1. Install and sign in to GitHub Desktop.
