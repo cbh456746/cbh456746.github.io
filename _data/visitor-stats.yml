@@ -1,5 +1,5 @@
 # Public site code only; never put an API token here.
-enabled: false
-site_code: ""
+enabled: true
+site_code: "cbh456746"
 # First Korean calendar date on which collection is enabled (YYYY-MM-DD).
-started_on: ""
+started_on: "2026-10-06"
