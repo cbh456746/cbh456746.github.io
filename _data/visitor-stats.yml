@@ -1,0 +1,5 @@
+# Public site code only; never put an API token here.
+enabled: false
+site_code: ""
+# First Korean calendar date on which collection is enabled (YYYY-MM-DD).
+started_on: ""

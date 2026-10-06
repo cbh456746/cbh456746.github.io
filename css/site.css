@@ -73,3 +73,27 @@
   .home-current__list { border-top:1px solid var(--line); padding-top:1.5rem; }
   .home-project h3 { font-size:1.15rem; }
 }
+
+/* Home visit statistics: match the garden page, without a chart dependency. */
+.home-project__status { display:inline-block; margin-top:.65rem; color:#65775f; font-size:.7rem; }
+.home-visitors { display:grid; grid-template-columns:1fr 2fr; gap:4rem; margin-top:4.5rem; padding-top:2.5rem; border-top:1px solid var(--line); }
+.home-visitors__heading h2 { font-size:1.6rem; font-weight:500; margin:0 0 .7rem; }
+.home-garden .home-visitors__heading p:last-child { font-size:.85rem; color:var(--muted); }
+.home-visitors__body { min-width:0; }
+.home-visitors__summary { display:flex; align-items:baseline; gap:2rem; }
+.home-visitors__label { display:block; font-size:.74rem; color:var(--muted); }
+.home-visitors__number { display:block; font-family:Georgia,serif; font-size:3.8rem; line-height:1.25; font-weight:400; font-variant-numeric:tabular-nums; }
+.home-visitors__yesterday strong { display:block; font-family:Georgia,serif; font-size:1.8rem; line-height:1.5; font-weight:400; font-variant-numeric:tabular-nums; }
+.home-visitors__zone { margin-left:auto; font-size:.68rem; color:var(--muted); }
+.visitor-chart { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:.65rem; list-style:none; margin:1.5rem 0 1rem; padding:0; }
+.home-garden .visitor-chart li { display:grid; gap:.35rem; text-align:center; min-width:0; font-size:.7rem; }
+.visitor-chart__value { font-size:.69rem; color:#50694a; font-variant-numeric:tabular-nums; }
+.visitor-chart__track { height:74px; display:flex; align-items:flex-end; justify-content:center; border-bottom:1px solid var(--line); }
+.visitor-chart__bar { display:block; width:64%; max-width:36px; background:#93a08a; min-height:1px; border-radius:2px 2px 0 0; }
+.visitor-chart__bar.is-today { background:#50694a; }
+.visitor-chart__bar.is-missing { height:18px; background:transparent; border:1px dashed #c1c9bb; border-bottom:0; }
+.visitor-chart time { font-size:.65rem; color:var(--muted); }
+.home-garden .home-visitors__state { font-size:.77rem; color:var(--muted); margin:0 0 .5rem; }
+.home-garden .home-visitors__note { font-size:.69rem; line-height:1.8; color:var(--muted); margin:0; }
+@media (max-width:960px) { .home-visitors { gap:2rem; } }
+@media (max-width:720px) { .home-visitors { grid-template-columns:1fr; gap:1.3rem; margin-top:3rem; padding-top:2rem; } .home-visitors__heading h2 { font-size:1.5rem; } .home-visitors__summary { gap:1.3rem; } .home-visitors__number { font-size:3.2rem; } .visitor-chart { gap:.4rem; } }

@@ -24,7 +24,10 @@ home_design: garden
 <section class="home-current" aria-labelledby="home-current-title">
   <div class="home-current__heading"><p class="home-kicker">Currently exploring</p><h2 id="home-current-title">지금 만들어가는 것들</h2></div>
   <div class="home-current__list">
-    <a class="home-project" href="{{ '/play/repo-style-pngtuber-kickoff/' | relative_url }}"><span class="home-project__tag">Play · PNGTuber</span><h3>목소리에 반응하는 작은 로봇 <span aria-hidden="true">↗</span></h3><p>뚜껑형 캐릭터 에셋부터 마이크 반응, 좌우 개폐와 OBS 오버레이까지.</p></a>
-    <a class="home-project" href="{{ '/projects/browser-vtuber-avatar-project/' | relative_url }}"><span class="home-project__tag">Projects · Avatar</span><h3>화면 속 캐릭터에 움직임을 <span aria-hidden="true">↗</span></h3><p>브라우저 아바타의 표정·방향 변화 예제와 VTube Studio 방송 구성 안내.</p></a>
+    <a class="home-project" href="{{ '/projects/mesh-avatar-studio/' | relative_url }}"><span class="home-project__tag">Projects · Mesh Avatar Studio</span><h3>한 장의 그림을 움직이는 아바타로 <span aria-hidden="true">↗</span></h3><p>독립 파츠 리깅, 얼굴 추적과 Windows 실행 앱. 15초 시연과 남은 과제를 기록합니다.</p><span class="home-project__status">개발 중 · 저장소 비공개</span></a>
+    <a class="home-project" href="{{ '/projects/mopago/' | relative_url }}"><span class="home-project__tag">Projects · Mopago</span><h3>한글 모아모아의 다음 수 찾기 <span aria-hidden="true">↗</span></h3><p>게임판과 보유 조각을 입력하면 다음 배치를 추천하는 독립 웹 도구.</p></a>
+    <a class="home-project" href="{{ '/projects/repo-style-pngtuber/' | relative_url }}"><span class="home-project__tag">Projects · PNGTuber</span><h3>목소리에 반응하는 작은 캐릭터 <span aria-hidden="true">↗</span></h3><p>두 캐릭터의 뚜껑 개폐·눈 깜빡임 에셋과 마이크 반응형 OBS 오버레이.</p></a>
   </div>
 </section>
+
+{% include visitor-stats.html %}

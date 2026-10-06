@@ -330,6 +330,12 @@ PC에서 충분한 너비와 모바일 약 390px 너비를 확인합니다. 공�
 
 영상은 자동 재생 여부·controls·muted·playsinline·preload를 목적에 맞게 설정하고 실제 재생을 확인합니다. 외부 iframe은 모든 방문자에게 외부 서비스를 로드하므로 기존 서비스 결정과 공개 요구를 확인합니다.
 
+### Home 일일 방문 통계
+
+2026-10-06 요청에 따라 Home의 프로젝트 카드를 갱신하고, 일일 방문 수·최근 7일 그래프를 추가합니다. 연결 정보와 집계 의미는 [방문 통계 안내](VISITOR_STATS.md)를 따릅니다.
+
+설정은 `_data/visitor-stats.yml`, 위젯은 `_includes/visitor-stats.html`, 동작은 `js/visitor-stats.js`입니다. 공개 사이트 코드만 사용하고 API 토큰·개인 이메일은 넣지 않습니다. 계정 연결 전에는 집계를 비활성으로 유지하고 실제 수치처럼 보이는 샘플 데이터를 게시하지 않습니다. 미연결·네트워크 실패·이전 날짜와 실제 0을 구분합니다. 코드 검사에서는 `node --test scripts/test-visitor-stats.mjs`도 실행합니다.
+
 ### 수학·다이어그램
 
 현재 `_includes/head.html`은 해당 페이지의 `mathjax`, `mermaid`가 참일 때만 관련 include를 로드합니다. `_config.yml`에 수학 관련 값이 있다고 모든 페이지에서 자동 렌더링되는 것은 아닙니다.

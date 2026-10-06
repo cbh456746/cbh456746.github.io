@@ -10,3 +10,8 @@
 </footer>
 <script src="{{ '/js/site.js' | relative_url }}" defer></script>
 {% if site.retire-service-worker %}<script src="{{ '/js/sw-retire.js' | relative_url }}" defer></script>{% endif %}
+
+{% assign visits = site.data['visitor-stats'] %}
+{% if visits.enabled or page.home_design == 'garden' %}
+<script src="{{ '/js/visitor-stats.js' | relative_url }}" defer data-visits-enabled="{{ visits.enabled }}" data-visits-code="{{ visits.site_code | escape }}" data-visits-start="{{ visits.started_on | escape }}"></script>
+{% endif %}

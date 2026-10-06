@@ -2,6 +2,13 @@
 
 Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
+## Maintenance — 2026-10-06
+
+| ID | Status | Task | Acceptance criteria |
+|---|---|---|---|
+| M-05 | complete | Refresh Home's current projects. | Mesh Avatar Studio, Mopago, and PNGTuber link to their current project pages; PC/mobile display and publication verified. |
+| M-06 | in progress | Add daily visit widget and 7-day chart. | Korean day buckets, no private credentials or fake history, privacy/error handling tested. Provider site code and actual collection remain pending owner setup. |
+
 ## Maintenance — 2026-10-03
 
 | ID | Status | Task | Acceptance criteria |

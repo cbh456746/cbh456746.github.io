@@ -35,5 +35,20 @@ if (fs.existsSync(profileFile)) {
 }
 const configFile = path.join(root, '_config.yml');
 if (fs.existsSync(configFile) && /^email:\s*\S+/m.test(read(configFile))) errors.push('public contact email is not approved');
+// The visitor adapter only accepts a public GoatCounter code, never a URL or API token.
+const visitsFile = path.join(root, '_data/visitor-stats.yml');
+if (fs.existsSync(visitsFile)) {
+  const visits = read(visitsFile);
+  const keys = [...visits.matchAll(/^([a-z_]+):/gm)].map(match => match[1]);
+  if (keys.some(key => !['enabled','site_code','started_on'].includes(key))) errors.push('visitor statistics: unsupported setting; private credentials must not be stored here');
+  const setting = key => (visits.match(new RegExp(`^${key}:\\s*(.*)$`, 'm'))?.[1] ?? '').replace(/^['"]|['"]$/g, '').trim();
+  const enabled = setting('enabled'), code = setting('site_code'), start = setting('started_on');
+  if (!['true','false'].includes(enabled)) errors.push('visitor statistics: enabled must be true or false');
+  if (code && !/^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/.test(code)) errors.push('visitor statistics: use a public site code, not a URL or credential');
+  const date = new Date(start + 'T00:00:00Z');
+  const validDate = /^\d{4}-\d{2}-\d{2}$/.test(start) && Number.isFinite(date.getTime()) && date.toISOString().slice(0,10) === start;
+  if (start && !validDate) errors.push('visitor statistics: started_on must be a real YYYY-MM-DD');
+  if (enabled === 'true' && (!code || !validDate)) errors.push('visitor statistics: an active counter needs its public site code and collection start date');
+}
 if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
 console.log('Content validation passed.');
