@@ -14,6 +14,9 @@
 @media (max-width: 720px) { .site-header__inner { padding:0 1.1rem; } .site-nav { display:none; } .site-menu { display:block; position:relative; } .site-menu summary { cursor:pointer; color:var(--muted); } .site-menu nav { position:absolute; right:0; top:2.1rem; min-width:9rem; padding:.5rem; background:var(--surface); border:1px solid var(--line); box-shadow:0 .5rem 1.5rem rgba(0,0,0,.08); } .site-menu nav a { display:block; padding:.45rem .6rem; text-decoration:none; } .page-shell,.content-shell,.listing-shell,.resume-shell { padding:3.5rem 1.1rem; } .soul-shell { padding:6rem 1.1rem 3rem; } .archive-shell { display:block; padding:3rem 1.1rem; } .tag-index { position:static; overflow:auto; padding:0 0 1.5rem; } .tag-index__buttons { display:flex; width:max-content; } .tag-index { max-width:100%; } .tag-filter { border:1px solid var(--line); border-radius:999px; white-space:nowrap; } .tag-filter.is-active { border-color:var(--accent); } .archive-item a { grid-template-columns:1fr auto; } .archive-item__date { grid-column:1/-1; } .site-footer { margin-top:2rem; padding:1.6rem 1.1rem; flex-direction:column; } }
 @media print { .site-header,.site-footer { display:none; } .resume-shell { padding:0; max-width:none; } }
 
+/* Explicit article anchors stay below the sticky navigation. */
+.prose .article-anchor { display:block; scroll-margin-top:6rem; }
+
 /* Home: photograph, open sky, and a quiet editorial rhythm. */
 .home-garden { --home-ink:#243b30; padding:2rem 2rem 0; color:var(--home-ink); }
 .home-garden .soul-content { max-width:none; }

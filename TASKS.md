@@ -7,7 +7,7 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 | ID | Status | Task | Acceptance criteria |
 |---|---|---|---|
 | M-07 | complete | Connect the avatar project to its reviewed public source and desktop workflow. | The existing project entry links to the independent source repository, describes the agent and beginner workflow, and distinguishes the previous video from current desktop validation; no duplicate post or private character assets are added. |
-| M-08 | in progress | Publish an in-depth avatar research article comparing the experiments with Live2D. | Research article and three project cross-links prepared; historical results, limitations and planned pose-first workflow separated. Source, links and privacy reviewed; Pages deployment and public rendering verification follow. |
+| M-08 | complete | Publish an in-depth avatar research article comparing the experiments with Live2D. | Research article, three project cross-links and VTuber/Live2D archive tags published. Content, privacy, Pages build/deploy, rendered article, listing/search/RSS entries checked; scope and remaining verification limits are in docs/AVATAR_RESEARCH_PUBLICATION.md. |
 
 ## Maintenance — 2026-10-06
 
