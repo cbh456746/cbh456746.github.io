@@ -2,6 +2,12 @@
 
 Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
+## Maintenance — 2026-10-18
+
+| ID | Status | Task | Acceptance criteria |
+|---|---|---|---|
+| M-07 | complete | Connect the avatar project to its reviewed public source and desktop workflow. | The existing project entry links to the independent source repository, describes the agent and beginner workflow, and distinguishes the previous video from current desktop validation; no duplicate post or private character assets are added. |
+
 ## Maintenance — 2026-10-06
 
 | ID | Status | Task | Acceptance criteria |
