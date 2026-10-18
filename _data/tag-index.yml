@@ -10,6 +10,10 @@
   key: Play
 - label: Game
   key: Game
+- label: VTuber
+  key: VTuber
+- label: Live2D
+  key: Live2D
 - label: Data Science
   key: Data-Science
 - label: Statistics

@@ -40,3 +40,5 @@ Windows의 `PNGTuber Launcher.exe`를 더블클릭하면 로컬 서버와 미리
 ## 얼굴 추적 방송 예제와 비교
 
 [브라우저/VTube Studio 아바타 예제](/projects/browser-vtuber-avatar-project/)에서 얼굴 방향과 눈·입 상태에 따라 이미지를 전환하는 방송 화면을 볼 수 있다. 뚜껑형 PNGTuber는 마이크 음량 기반 12상태이고, 해당 예제는 얼굴 추적 브라우저 아바타로 구성과 입력이 다르다. 두 방식의 설정 절차와 관찰 가능한 범위를 예제 글에 정리했다.
+
+[Live2D와 비교한 아바타 제작 연구](/research/vtuber-avatar-live2d-gap/)는 뚜껑형 PNGTuber에서 이미지 전환형·메시 아바타까지의 시도와 한계, 자연스러운 회전과 물리를 위한 다음 과제를 함께 정리한 심층 기록이다.
