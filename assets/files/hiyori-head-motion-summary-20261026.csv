@@ -1,0 +1,7 @@
+model,pose,requested_x_control,applied_x_control,min_directional_scale,max_directional_scale,p05_min_scale_area_weighted,p95_max_scale_area_weighted,projected_area_ratio
+silver-braid-v4,yaw--30,-30,-11.448543,0.926035,1.001469,0.93441,1.001061,0.955231
+silver-braid-v4,yaw-30,30,11.448543,0.932686,1.001469,0.93869,1.001098,0.95852
+silver-braid-lab-03,yaw--30,-30,-22.847825,0.082792,3.532472,0.435761,1.956018,0.959844
+silver-braid-lab-03,yaw-30,30,22.847825,0.137745,3.496914,0.384846,1.74566,0.904671
+silver-braid-coherence-01,yaw--30,-30,-22.847825,0.765641,1.078325,0.784821,1.061845,0.915432
+silver-braid-coherence-01,yaw-30,30,22.847825,0.774591,1.083122,0.793824,1.066695,0.91996
