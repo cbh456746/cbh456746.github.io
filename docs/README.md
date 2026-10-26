@@ -22,6 +22,8 @@ For ongoing maintenance, begin with [the full blog operations handoff](BLOG_OPER
 
 ## Document status
 
+- [Hiyori head-motion research publication](HIYORI_HEAD_MOTION_RESEARCH_PUBLICATION.md) — the 2026-10-26 comparison-photo article, selected public media, deformation evidence and verified Pages/desktop/mobile checks.
+
 - [Avatar research publication record](AVATAR_RESEARCH_PUBLICATION.md) — the 2026-10-18 Live2D comparison article, public-file review, publication evidence and verification scope.
 
 The original Phase 0 was documentation-only. Subsequent implementation and publication are recorded in the later decisions and [current handoff](BLOG_OPERATIONS_HANDOFF.md). Recheck live source and deployment before continuing work.
