@@ -72,7 +72,6 @@
   .home-section__description { font-size:.73rem; }
   .home-current { grid-template-columns:1fr; gap:1.5rem; }
   .home-current__heading h2 { font-size:1.5rem; }
-  .home-current__heading > p:last-child br { display:none; }
   .home-current__list { border-top:1px solid var(--line); padding-top:1.5rem; }
   .home-project h3 { font-size:1.15rem; }
 }

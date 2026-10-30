@@ -8,7 +8,7 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 |---|---|---|---|
 | M-09 | complete | Publish the KEL local AI animation failure study with visual evidence and collapsible prompts. | Research article, own video, selected comparison figures, 27 prompt disclosures and sanitized reproduction data published. Exact-commit Pages build/deploy, desktop/mobile rendering, playback, keyboard toggles and Research/Archive/search/RSS discovery checked. Publication scope and verification are recorded in docs/KEL_ANIMATION_RESEARCH_PUBLICATION.md. |
 | M-10 | complete | Add selective post reference exports and durable cross-project agent instructions. | Published reviewed metadata, v2 bounded catalog/topic pages, local limited-result search and same-SHA body/appendix exports. 1,205-article unit and real Jekyll fixtures, visibility/provenance/stale cleanup, public files/hashes/search, PC/mobile entry page and receiving-project guidance verified. See docs/AI_REFERENCE_PUBLICATION.md and docs/AI_REFERENCE_SCALE_REVIEW.md. |
-| M-11 | in progress | Rewrite the human README and make current-work updates part of every blog task. | State agent-operated writing/design/deployment and owner role; link required reading and safeguards; persist per-task Home updates in execution/operations/review guidance, add task/date/summary checks, update the current Home and verify README publication plus PC/mobile Home display. |
+| M-11 | complete | Rewrite the human README and make current-work updates part of every blog task. | Published the human README, agent reading order, safeguards and mandatory per-task Home update across operating guides. Basic task/date/summary checks passed with one valid and four invalid private fixtures; 26 README links, preserved Home content, public README, same-SHA Pages deployment and PC/mobile Home/card navigation checked. Keep the Home date on a separate line on mobile. |
 
 ## Maintenance — 2026-10-18
 
@@ -58,10 +58,10 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
 | ID | Status | Task | Acceptance criteria |
 |---|---|---|---|
-| P2-01 | planned | Connect this local work repository to the owner-controlled GitHub repository through GitHub Desktop. | The owner signs in, the intended remote repository and branch are compared before connection, and `origin` is verified without overwriting remote history. |
+| P2-01 | complete | Connect the working repository to the owner's GitHub repository. | The original Desktop-only plan is superseded by authorized AI-agent maintenance. The intended origin/main and working branch are verified before a normal fast-forward push; no history replacement is required. |
 | P2-02 | complete | Document the safe GitHub Desktop workflow for pull, review, commit, push, and recovery. | `MAINTENANCE_RUNBOOK.md` provides a Korean checklist and stop conditions. |
 | P2-03 | complete | Add a reproducible GitHub Pages build-and-validation workflow. | `.github/workflows/pages.yml` validates content and builds/deploys Pages after an owner-controlled push. |
-| P2-04 | planned | Verify the first non-destructive push and GitHub Pages build. | The remote history remains intact, the build result is recorded, and the production site is not changed until explicit publication approval. |
+| P2-04 | complete | Verify non-destructive publication and the GitHub Pages build. | Authorized main pushes and public deployment are established. M-09 through M-11 record current verification; M-11's source 4e90d62 passed Pages run 41024466225 and live checks. Each subsequent publication still requires its own same-SHA build and live-output verification. |
 
 ## Phase 3 — Authoring foundation
 
@@ -95,8 +95,6 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 | P6-02 | planned | Audit performance, accessibility, SEO, and external services. | The quality budget is met on representative home, resume, archive, project, and post pages. |
 | P6-03 | complete | Decide and safely migrate or retire PWA behavior. | The inherited service worker is retired with a scoped cleanup script and documented decision D-013. |
 
-## Next approval gate
+## Current follow-up
 
-## Remaining owner-controlled gate
-
-P2-01 and P2-04 remain: connect the owner's real clone, commit/push this delivery, confirm the GitHub Pages Actions build, then inspect the published pages in Edge. These actions cannot be safely performed from this local package without the owner's GitHub account and approval.
+Repository connection and authorized publication are established; the initial P2-01/P2-04 connection gate is historical. Do not request the same approval again for an already authorized task. Check the current request, remote state and publication scope, then verify that task's exact commit and public output. M-06 production-widget verification and P6-02's broader audit remain separate open work; do not infer their completion from a README or Home check.
