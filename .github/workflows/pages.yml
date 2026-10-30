@@ -40,7 +40,10 @@ jobs:
           print('Generated RSS XML is valid')
           PY
       - name: Export reviewed article context
-        run: python3 scripts/export-context.py --site _site --sha "$GITHUB_SHA"
+        run: |
+          # The Jekyll container creates root-owned build outputs.
+          sudo chown -R -- "$(id -u):$(id -g)" "$GITHUB_WORKSPACE/_site/context"
+          python3 scripts/export-context.py --site _site --sha "$GITHUB_SHA"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site

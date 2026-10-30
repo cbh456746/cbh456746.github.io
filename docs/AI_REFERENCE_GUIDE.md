@@ -59,6 +59,8 @@
 
 `context/index.json` 원본은 Jekyll manifest 템플릿이다. 빌드 후 `scripts/export-context.py --site _site --sha <전체 커밋 SHA>`가 공개용 `stage: complete` 색인으로 완성한다. 소스 템플릿을 완성된 색인으로 오인하지 않는다. 별도 API·유료 모델·벡터 DB나 Python 외부 패키지는 요구하지 않는다.
 
+GitHub의 Jekyll 컨테이너 출력은 root 소유일 수 있으므로 workflow는 생성 전용 `_site/context`의 소유권만 runner에 맞춘 뒤 내보낸다. 전체 저장소·호스트 권한을 바꾸는 단계로 확대하지 않는다.
+
 빌드 단계의 필수 검사:
 
 - 네 콘텐츠 종류의 실제 출력만 포함하고 published:false·미래 글·초안·운영 문서를 제외한다.
