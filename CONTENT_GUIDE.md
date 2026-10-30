@@ -7,6 +7,8 @@
 3. Change the title, date, tags, and body.
 4. Run `npm run validate` or let GitHub Actions check the push.
 
+AI agents perform routine authoring, review and authorized publication; the owner supplies the intended outcome and materials. For every blog-writing/change task, also update `index.md`'s `home_current` task/date/actual summary and the relevant Currently exploring cards, as required by [AGENTS.md](AGENTS.md). This includes documentation tasks; read-only reuse from another project does not modify the blog. See the [human operating guide](README.md).
+
 File names should be lowercase English with hyphens, for example `my-first-project.md`. Dates use `YYYY-MM-DD HH:MM:SS`.
 
 ## Reviewed context for reuse

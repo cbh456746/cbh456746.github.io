@@ -1,5 +1,7 @@
 # Maintenance runbook (GitHub Desktop)
 
+This is a supplementary manual/recovery reference. Routine writing, design, code changes, checks and authorized publication are performed by AI agents; start with the human [README](README.md) and [AGENTS.md](AGENTS.md). The owner provides requests, materials and feedback. The historical delivery/clone steps below are not the default routine for an existing site.
+
 For current whole-blog operation, begin with [the full blog operations handoff](docs/BLOG_OPERATIONS_HANDOFF.md). The initial clone and delivery steps below are for first setup only. Routine work applies reviewed changes to the existing clone; never copy a private production workspace or its `.git` folder into the public repository.
 
 ## One-time setup
@@ -25,6 +27,7 @@ For current whole-blog operation, begin with [the full blog operations handoff](
 1. Fetch/Pull first.
 2. Edit one Markdown or YAML data file.
 3. Check the Change list; only expected files should be present.
+   For a blog change task, include the actual Currently exploring update and `home_current` task/date/summary in `index.md`.
 4. Commit with a sentence explaining the change, then Push origin.
 
 ## When to stop

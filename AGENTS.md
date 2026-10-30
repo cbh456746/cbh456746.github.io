@@ -1,4 +1,4 @@
-# Working rules for AI-assisted maintenance
+# Working rules for an AI-operated blog
 
 Keep content body text intact unless the owner approves a content rewrite. Do not push to a remote repository, force push, change GitHub Pages settings, remove ads/analytics/comments, or expose personal data without explicit approval. Prefer a small documented change, validate it, and explain how the owner can review it in GitHub Desktop.
 
@@ -7,6 +7,14 @@ Keep content body text intact unless the owner approves a content rewrite. Do no
 Read [the full blog operations handoff](docs/BLOG_OPERATIONS_HANDOFF.md) and the latest decisions before making changes. The canonical guide belongs to this blog repository and covers all content, layout, GitHub publication, privacy, and maintenance. Individual project development belongs in that project's documentation. Earlier staged plans may describe obsolete setup or dummy-profile states; compare them with current source and deployment.
 
 Honor the user's latest request and existing authorization. Keep Resume limited to its two approved fields and Mopago's introduction in Projects only. RSS removal, hiding, and summary-only changes are paused pending the user's direction. D-015 is a one-time privacy-rewrite exception, not general force-push permission.
+
+## Agent-operated blog and current work: every task
+
+AI agents perform the requested writing, design, code changes, validation, commits and authorized deployment. The owner provides goals, materials, publication scope and feedback. README.md is the human entry point; these instructions and the whole-blog handoff govern execution. Do not treat agent operation as permission for unsolicited work or account changes.
+
+For every task that writes, changes or publishes this blog, including documentation and fixes, update `index.md`'s **Currently exploring / 지금 만들어가는 것들** before delivery. Maintain `home_current.task_id` (a real TASKS.md entry), `updated_on` (actual Asia/Seoul update date) and a short evidence-based `summary`. Review the relevant project cards and update their descriptions, links and actual status as needed. A documentation task may update the operations card/recent-work text; do not invent project progress, remove unrelated active cards, accumulate duplicate cards or change only a date. Follow-up verification/record commits can belong to the same logical task.
+
+Keep the heading, Hanasaka hero and four content links intact. Confirm that the current-work summary actually renders, links work and PC/mobile presentation remains usable. The validator checks required metadata, task linkage and template bindings; it cannot verify the truth of a summary or infer every new task. Include the home update and actual verification in the task's completion report. A read-only consultation of posts from another project does not authorize editing or publishing this blog.
 
 ## Reusing posts in another project
 

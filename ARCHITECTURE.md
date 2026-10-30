@@ -2,6 +2,8 @@
 
 The site is a static Jekyll GitHub Pages site. GitHub builds the source files and publishes the generated HTML; no database or server is required.
 
+Routine writing, design, code, validation and authorized deployment are agent-operated. The owner supplies goals/materials and reviews the result. README.md explains this for people; AGENTS.md and whole-blog operations are the execution guidance. Every blog change task maintains Home's Currently exploring through the `index.md` `home_current` task/date/summary and the relevant project cards. The validator checks required fields, a TASKS.md link and display bindings; agents verify factual accuracy and presentation.
+
 ```text
 Markdown/YAML content → Jekyll layouts + CSS/JS → GitHub Pages
      _data/profile.yml       _layouts/           public website

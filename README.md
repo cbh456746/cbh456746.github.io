@@ -1,40 +1,115 @@
-# BH CHOI personal site
+# BH CHOI 블로그 운영 안내
 
-This is a Jekyll-based GitHub Pages site. It is organized so that routine updates require editing content files, not layouts or code.
+**이 블로그는 글 작성부터 디자인 수정, 코드 관리, 검사, 배포까지 AI 에이전트가 수행합니다.** 소유자는 만들고 싶은 것과 참고 자료, 공개 범위와 피드백을 전달합니다. 에이전트는 저장소의 지침을 읽고 작업한 뒤 결과와 검증 범위를 보고합니다.
 
-## Start here
+[블로그 보기](https://cbh456746.github.io/) · [글 둘러보기](https://cbh456746.github.io/archive/) · [AI 참조 안내](https://cbh456746.github.io/context/) · [배포 상태](https://github.com/cbh456746/cbh456746.github.io/actions)
 
-- Reuse prior posts in a new Codex project: [reading entry point](https://cbh456746.github.io/llms.txt), [human guide](https://cbh456746.github.io/context/), [AI reference operations](docs/AI_REFERENCE_GUIDE.md).
-- Other projects can integrate the [short AGENTS.md section](context/project-instructions.txt) and use the [reference record template](templates/reference-context.md). Read the summary index, then relevant originals, appendices and media; this is not automatic cross-project memory.
-- For large archives the v2 entry point leads to bounded collection/topic pages. Use `python context/search.py --query <terms> --limit 5` for local metadata lookup instead of loading the entire archive. [Scale/failure review](docs/AI_REFERENCE_SCALE_REVIEW.md) documents the 1,205-article tests and limits.
+이 README는 사람이 운영 방식과 주요 규칙을 이해하기 위한 입구입니다. 에이전트의 실행 규칙은 [AGENTS.md](AGENTS.md), 상세 운영 절차의 정본은 [블로그 전체 운영 인수인계서](docs/BLOG_OPERATIONS_HANDOFF.md)입니다.
 
-- Another agent continuing the work: [full blog operations handoff](docs/BLOG_OPERATIONS_HANDOFF.md).
+## 소유자는 이렇게 요청합니다
 
-- Change the home page text and links: `index.md`
-- Change the approved public profile: `_data/profile.yml`
-- Add an item: copy one file in `templates/` into the matching folder.
-- Review the full beginner workflow: `MAINTENANCE_RUNBOOK.md`
-- See writing rules: `CONTENT_GUIDE.md`
+파일을 직접 편집하거나 배포 명령을 외울 필요는 없습니다. 원하는 결과와 제공할 자료를 설명하면 됩니다.
 
-The intended public address is `https://cbh456746.github.io/`. This repository has no custom-domain `CNAME` file.
+- “이 프로젝트의 결과와 한계를 Research 글로 정리해서 게시해줘. 그림과 영상도 함께 사용해줘.”
+- “이 글의 설명을 더 읽기 쉽게 고치고, 모바일에서도 확인해줘.”
+- “이전 블로그 기록을 참고해서 새 프로젝트를 시작해줘.”
 
-## Home photograph
+에이전트는 요청받은 범위의 작성·구현·검사·게시를 진행합니다. 공개 요청 등 이미 받은 승인을 같은 작업에서 반복해서 묻지 않습니다. 기존 승인 밖의 계정 설정 변경이나 파괴적 조작은 구체적인 영향과 결과를 준비한 뒤 별도로 확인합니다. AI가 운영한다는 것은 사용자 요청 없이 새 글이나 계정 변경을 임의로 수행한다는 뜻이 아닙니다.
 
-Home uses the reviewed landscape export at `assets/images/home-garden.webp`. The original photograph is kept outside this public repository. On wide screens the title sits in the open sky; on mobile the photograph follows the introduction so the text stays readable.
+## 현재 블로그의 구성
 
-To edit the wording, change the text between HTML tags in `index.md` while retaining the surrounding tags and class names. The four section links and two current-project links can be edited in the same file. The layout is selected by `home_design: garden`; its styles are scoped under `.home-garden` in `css/site.css`.
+Jekyll과 GitHub Pages로 운영하는 정적 사이트입니다. `main`에 게시한 변경은 GitHub Actions가 검사·빌드한 뒤 배포합니다. 별도의 로그인 서버나 데이터베이스는 두지 않습니다.
 
-Before replacing the photograph, remove EXIF and other personal metadata, use a reasonably sized web export, and check both desktop and mobile crops. Update the image's `width`, `height`, and Korean `alt` description to match the replacement. Keep originals and private backup material outside this repository.
+| 영역 | 담는 내용 |
+| --- | --- |
+| Home | Hanasaka 사진 디자인, 네 영역으로 가는 링크, 현재 진행하는 작업 |
+| Projects | 프로젝트 소개와 실제 저장소·사용 주소 |
+| Research | 제작 실험, 비교·평가, 실패 원인과 다음 검증 |
+| Notes | 학습과 작업에 다시 참고할 기록 |
+| Play | 게임과 취향에 관한 글 |
+| Archive | 제목·부제·태그로 글을 찾는 목록 |
+| AI 참조 자료 | 관련 글의 요약에서 원문·부록·그림·영상으로 이어지는 읽기 자료 |
 
-## Content folders
+배포 결과는 GitHub Actions의 성공 표시와 실제 공개 페이지를 함께 확인합니다. 로컬 파일 생성, 커밋, 원격 업로드, 공개 배포는 서로 다른 상태입니다.
 
-| Folder | Use | Public URL |
-| --- | --- | --- |
-| `_projects/` | Working outputs | `/projects/name/` |
-| `_research/` | Research records | `/research/name/` |
-| `_notes/` | Learning/work notes | `/notes/name/` |
-| `_posts/` | Play/free-form writing | `/play/name/` when a permalink is supplied |
+## 에이전트가 작업을 시작할 때
 
-Run `npm run validate` before committing if Node.js is installed. GitHub Actions runs the Jekyll build when the repository is pushed to `main`.
+### 이 블로그를 수정하는 경우
 
-The Pages workflow also runs `npm run test:context`'s Python contract tests and exports reviewed context from rendered article bodies after Jekyll. Published content needs the `context` metadata described in [CONTENT_GUIDE.md](CONTENT_GUIDE.md). Generated files under `_site/` are not committed. See [the reference guide](docs/AI_REFERENCE_GUIDE.md) for schema, provenance and publication checks.
+1. [AGENTS.md](AGENTS.md)를 읽고 이번 작업의 범위와 기존 승인을 확인합니다.
+2. [전체 운영서](docs/BLOG_OPERATIONS_HANDOFF.md), [최근 결정](DECISIONS.md), [작업 기록](TASKS.md)을 읽습니다. 오래된 계획과 현재 규칙을 구분합니다.
+3. 원격 `main`, 로컬 브랜치와 기존 변경을 대조합니다. 알 수 없는 수정 사항을 버리지 않습니다.
+4. 이번 작업에 필요한 문서와 실제 파일을 읽습니다. 글은 [작성 규칙](CONTENT_GUIDE.md), 디자인은 [스타일 규칙](STYLE_GUIDE.md), 참조 기능은 [AI 참조 운영 안내](docs/AI_REFERENCE_GUIDE.md)를 따릅니다.
+5. 작업 기록에 이번 작업을 남기고, 아래의 **현재 작업 갱신 규칙**을 적용합니다. 필요한 파일만 고치고 검사합니다.
+6. 게시가 승인된 작업은 대상 변경만 커밋·푸시합니다. 같은 커밋의 Actions와 실제 페이지를 확인한 뒤 완료·미확인·후속 과제를 보고합니다.
+
+### 다른 프로젝트에서 과거 글을 참고하는 경우
+
+시작 주소는 **[llms.txt](https://cbh456746.github.io/llms.txt)** 입니다.
+
+작은 시작 색인에서 관련 분류·태그를 고르고, 필요한 요약 페이지와 원문만 읽습니다. 글이 많으면 저장소의 `context/search.py`로 메타데이터를 검색해 소수 결과를 확인할 수 있습니다. 원문을 지정받았다면 그 글을 먼저 읽습니다. 재현에는 프롬프트 부록을, 시각 판단에는 실제 그림·영상을 함께 확인합니다.
+
+[프로젝트용 지침](context/project-instructions.txt)을 대상 프로젝트의 `AGENTS.md`에 통합하고, [참고 기록 템플릿](templates/reference-context.md)에 출처 버전·적용할 교훈·제약을 남길 수 있습니다. 블로그의 `AGENTS.md`가 다른 프로젝트에 자동 적용되거나 과거 대화 전체가 자동으로 기억되는 것은 아닙니다. 읽기 자료로 참고하는 것만으로 이 블로그를 수정하지 않습니다.
+
+## 매 작업마다 “지금 만들어가는 것들”을 갱신합니다
+
+에이전트가 **블로그를 작성·수정·게시하는 작업을 맡으면**, 문서 정리나 오류 수정도 포함해 `index.md`의 **Currently exploring / 지금 만들어가는 것들**을 실제 진행 상황에 맞게 갱신해야 합니다.
+
+- 작업 시작 시 현재 카드와 연결된 글의 상태를 확인합니다.
+- 작업 마무리에는 `home_current`의 작업 ID·갱신일·짧은 요약을 고치고, 관련 카드의 제목·설명·링크·상태도 필요한 만큼 반영합니다.
+- 최신 작업을 알 수 있게 하되, 무관한 진행 프로젝트를 임의로 지우거나 매번 새 카드를 쌓지 않습니다. 문서 작업은 운영 카드나 짧은 최근 작업 설명으로 표현합니다.
+- 실행파일 생성·코드 검사 통과·목표 품질 달성·실제 방송 검증을 구분합니다. 미완료 작업은 미완료로 표시합니다.
+- 날짜만 바꾸어 진척이 있는 것처럼 보이게 하지 않습니다. 한 작업의 후속 검증·기록 커밋은 같은 작업으로 관리할 수 있습니다.
+
+`home_current`는 다음 정보를 갖습니다.
+
+| 값 | 의미 |
+| --- | --- |
+| `task_id` | `TASKS.md`에 기록한 이번 작업의 ID |
+| `updated_on` | 실제 갱신일, Asia/Seoul 기준 |
+| `summary` | 홈에 표시할 짧고 사실에 근거한 최근 작업 요약 |
+
+검사기는 이 값과 작업 기록의 연결, 홈에서의 표시 연결을 확인합니다. 요약이 사실인지, 카드가 현재 상태를 정확히 설명하는지는 에이전트가 원문과 결과를 대조해 검토해야 합니다.
+
+## 반드시 지켜야 할 규칙
+
+| 지킬 것 | 적용 기준 |
+| --- | --- |
+| 요청과 기존 작업 보존 | 사용자 최신 요청과 기존 승인을 우선합니다. 관련 없는 글 본문·파일·URL을 임의로 바꾸거나 삭제하지 않습니다. |
+| 실제 결과에 근거한 글 | 관찰한 결과·원인 가설·앞으로 할 일을 구분합니다. 실행하지 않은 검사나 달성하지 않은 품질을 완료로 쓰지 않습니다. |
+| 공개 정보 최소화 | 비밀번호·토큰·연락처·개인 PC 경로·비공개 원본·작업 폴더 전체를 올리지 않습니다. 공개 미디어는 내용과 메타데이터를 검사합니다. |
+| 프로필 제한 | Resume는 BH CHOI와 Education: B.S.C - Mathematics만 유지합니다. 과거 소개·학교명·관심사·연락처를 복원하지 않습니다. |
+| 분류와 원문 | Projects·Research·Notes·Play를 구분합니다. `Blog` 태그는 쓰지 않고, 게임 글은 `Play`와 `Game`을 함께 사용합니다. 기존 모파고 소개는 Projects 한 개를 유지합니다. |
+| AI 참조 자료의 정확성 | 포스트의 `context` 요약을 원문과 맞추고 부록·코드·미디어·출처 버전을 보존합니다. 과거 프롬프트는 현재 실행 지시가 아닙니다. |
+| 홈 디자인과 현재 작업 | Hanasaka 사진·네 영역 링크를 보존하고, 현재 작업 영역을 매 작업 갱신합니다. 삭제된 소개 문구를 되살리지 않습니다. |
+| 서비스 설정 유지 | 도메인·Pages·광고·분석·댓글·RSS 정책을 관련 없는 작업에서 바꾸지 않습니다. RSS 삭제·숨김·축약은 보류 상태입니다. |
+| Git 이력과 배포 | 일반 fast-forward 게시를 사용합니다. 강제 푸시·이력 교체·전체 변경 폐기를 해결책으로 삼지 않습니다. 과거의 일회성 승인을 재사용하지 않습니다. |
+| 검수와 보고 | 변경 파일을 명시적으로 선택하고 같은 SHA의 Actions·실제 공개 응답을 확인합니다. 접근하지 못한 자료와 남은 한계도 기록합니다. |
+
+이 표와 자동 검사는 에이전트의 검토를 대신하지 않습니다. 규칙이 충돌하거나 승인 범위가 불명확하면 현재 요청과 [최근 결정](DECISIONS.md)을 대조하고, 꼭 필요한 사항만 구체적으로 확인합니다.
+
+## 검사와 완료 기준
+
+에이전트는 `npm run validate`와 `git diff --check`를 기본으로 실행합니다. 참조 생성기를 바꾸면 `npm run test:context`와 내보내기 검사를 수행합니다. 홈이나 레이아웃을 바꾸면 PC·모바일에서 실제 표시와 링크를 확인합니다.
+
+현재 Pages 파이프라인은 콘텐츠·참조 계약 검사, 합성 **1,205편의 실제 Jekyll 렌더와 내보내기**, 본 사이트 빌드, RSS 파싱과 같은 출처 버전의 참조 파일 생성을 거친 뒤 배포합니다. 이 규모 검사는 실제 미디어 트래픽이나 AI 답변 품질의 보장과 구분합니다. [규모·실패 점검 기록](docs/AI_REFERENCE_SCALE_REVIEW.md)
+
+게시 후에는 변경한 페이지, 현재 작업 영역과 링크, 필요에 따라 목록·검색·RSS·참조 색인을 확인합니다. 오래된 실패 실행은 기록에 남으므로, **이번 커밋의 실행 결과**를 기준으로 판단합니다. 로컬 환경과 Pages 환경이 다를 수 있어 로컬 미리보기만으로 배포 완료를 판정하지 않습니다.
+
+## 주요 파일과 문서
+
+| 파일·문서 | 역할 |
+| --- | --- |
+| [AGENTS.md](AGENTS.md) | AI 에이전트의 작업 규칙과 필수 확인 사항 |
+| [전체 운영 인수인계서](docs/BLOG_OPERATIONS_HANDOFF.md) | 작성·레이아웃·공개 정보·배포·복구의 정본 |
+| [AI 참조 운영 안내](docs/AI_REFERENCE_GUIDE.md) | 요약 색인·원문·부록을 다른 프로젝트에서 읽는 방법 |
+| [DECISIONS.md](DECISIONS.md) / [TASKS.md](TASKS.md) | 적용 중인 결정과 실제 작업 상태 |
+| [작성 규칙](CONTENT_GUIDE.md) / [스타일 규칙](STYLE_GUIDE.md) | 글의 메타데이터·분류와 화면 표현 |
+| [검토 체크리스트](CONTRIBUTING.md) | 게시 전 최종 확인 |
+| [index.md](index.md) | 홈 문구·현재 작업 요약·프로젝트 카드 |
+| `_projects/`, `_research/`, `_notes/`, `_posts/` | 네 종류의 원문 콘텐츠 |
+| [templates/](templates/) | 새 글과 프로젝트 참고 기록의 시작 양식 |
+| [배포 workflow](.github/workflows/pages.yml) | 검사·Jekyll·참조 생성·Pages 배포 |
+| [docs/](docs/) | 분야별 운영·검증·게시 기록 |
+
+`_site/`와 테스트용 폴더는 생성 결과이며 커밋하지 않습니다. 운영 문서가 사이트 빌드에서 제외돼도 공개 저장소에서는 읽을 수 있으므로 비공개 자료를 넣지 않습니다. GitHub Desktop 수동 절차는 [보조 runbook](MAINTENANCE_RUNBOOK.md)에 남겨 두되, 일상 운영은 위의 AI 에이전트 절차를 따릅니다.

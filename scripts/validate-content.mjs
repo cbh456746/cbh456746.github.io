@@ -30,6 +30,26 @@ for (const area of areas) {
 for (const file of ['_config.yml', '_data/profile.yml', '_data/navigation.yml', '_data/tag-index.yml']) {
   if (!fs.existsSync(path.join(root, file))) errors.push(`missing required file: ${file}`);
 }
+// Every logical blog task records real current work on Home; factual review remains an agent responsibility.
+const homeFile = path.join(root, 'index.md');
+if (!fs.existsSync(homeFile)) errors.push('missing Home source: index.md');
+else {
+  const home = read(homeFile);
+  const header = home.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/)?.[1] ?? '';
+  const current = header.match(/^home_current:[ \t]*\r?\n((?: {2}[^\r\n]*(?:\r?\n|$))*)/m)?.[1] ?? '';
+  const field = key => (current.match(new RegExp(`^  ${key}:[ \\t]*(.*)$`, 'm'))?.[1] ?? '').trim().replace(/^['"]|['"]$/g, '');
+  const task = field('task_id'), updated = field('updated_on'), summary = field('summary');
+  const date = new Date(updated + 'T00:00:00Z');
+  if (!/^M-\d+$/.test(task)) errors.push('Home: home_current.task_id must identify a maintenance task');
+  else {
+    const tasks = path.join(root, 'TASKS.md');
+    if (!fs.existsSync(tasks) || !read(tasks).match(new RegExp(`^\\| ${task} \\|`, 'm'))) errors.push('Home: current task must exist in TASKS.md');
+  }
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(updated) || !Number.isFinite(date.getTime()) || date.toISOString().slice(0,10) !== updated) errors.push('Home: home_current.updated_on must be a real YYYY-MM-DD');
+  if (!summary || ['|','>'].includes(summary)) errors.push('Home: home_current.summary must contain an actual one-line work summary');
+  for (const key of ['summary','updated_on']) if (!home.match(new RegExp(`\\{\\{\\s*page\\.home_current\\.${key}(?:\\s*\\||\\s*\\}\\})`))) errors.push(`Home: current-work ${key} must be connected to the displayed section`);
+  if (!home.includes('id="home-current-title"') || !home.includes('Currently exploring') || !home.includes('지금 만들어가는 것들')) errors.push('Home: preserve the Currently exploring section and headings');
+}
 // Public profile is limited to the fields approved by the owner.
 const profileFile = path.join(root, '_data/profile.yml');
 if (fs.existsSync(profileFile)) {

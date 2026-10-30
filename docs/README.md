@@ -1,5 +1,7 @@
 # Project documentation
 
+For the human operating overview start with [README](../README.md). AI agents perform the requested writing/design/code/checks/publication using [AGENTS.md](../AGENTS.md) and the canonical whole-blog handoff. Every blog change task also maintains Currently exploring; the original phase documents below remain historical where superseded by later decisions.
+
 This directory is the source of truth for the staged modernization of this personal site. These documents describe the repository as it exists today and the decisions that govern future work; they do not, by themselves, change the published website.
 
 ## Reading order
