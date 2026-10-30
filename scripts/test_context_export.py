@@ -4,10 +4,13 @@ import json
 from pathlib import Path
 import sys
 import tempfile
+import time
 import unittest
 
 spec=importlib.util.spec_from_file_location('context_export',Path(__file__).with_name('export-context.py'))
 module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)
+search_spec=importlib.util.spec_from_file_location('context_search',Path(__file__).resolve().parents[1]/'context/search.py')
+search_module=importlib.util.module_from_spec(search_spec);search_spec.loader.exec_module(search_module)
 COMMIT='a'*40
 
 class ContextExportTests(unittest.TestCase):
@@ -29,7 +32,14 @@ class ContextExportTests(unittest.TestCase):
         (self.site/'context/index.json').write_text(json.dumps(data),encoding='utf-8')
         path=self.site/'research/example/index.html';path.parent.mkdir(parents=True,exist_ok=True)
         path.write_text('<nav>Private UI noise</nav>'+(body or self.body)+'<footer>Footer</footer>',encoding='utf-8')
-    def run_export(self): return module.export(self.site,COMMIT)
+    def run_export(self):
+        root=module.export(self.site,COMMIT)
+        url=root['catalogs'][0]['first_page'];items=[]
+        from urllib.parse import urlsplit
+        while url:
+            page=json.loads((self.site/urlsplit(url).path.lstrip('/')).read_text(encoding='utf-8'))
+            items.extend(page['items']);url=page['next']
+        return root|{'documents':items}
     def test_source_provenance_and_body_only(self):
         result=self.run_export();entry=result['documents'][0]
         text=(self.site/'context/posts/research-example.md').read_text(encoding='utf-8')
@@ -106,5 +116,44 @@ class ContextExportTests(unittest.TestCase):
         self.run_export();text=(self.site/'context/posts/research-example.md').read_text(encoding='utf-8')
         self.assertIn('run()\n  indented()',module.fenced_payloads(text))
         self.assertNotIn('1\n2\n',text)
+    def test_over_1000_articles_and_topics_stay_paged_and_searchable(self):
+        from urllib.parse import urlsplit
+        count=1205;items=[]
+        for i in range(count):
+            kind=['research','projects','notes','play'][i%4]
+            area='_posts' if kind=='play' else '_'+kind
+            url=f'/{kind}/sample-{i:04d}/'
+            item=self.item|{'kind':kind,'source_path':f'{area}/sample-{i:04d}.md','url':url,'title':f'Sample {i}',
+                            'tags':['Scale',f'Topic-{i:04d}'],'context':self.item['context']|{'keywords':['scale',f'unique-{i:04d}']}}
+            items.append(item)
+            target=self.site/url.lstrip('/')/'index.html';target.parent.mkdir(parents=True,exist_ok=True)
+            target.write_text('<div class="prose"><p>'+('Evidence text. '*600)+'</p><pre><code>run('+str(i)+')</code></pre></div>',encoding='utf-8')
+        self.write(items=items)
+        started=time.perf_counter();result=self.run_export();elapsed=time.perf_counter()-started
+        self.assertEqual(len(result['documents']),count)
+        root=json.loads((self.site/'context/index.json').read_text(encoding='utf-8'))
+        self.assertNotIn('documents',root);self.assertLess((self.site/'context/index.json').stat().st_size,4096)
+        self.assertGreater(root['topics']['page_count'],1)
+        pages=list((self.site/'context/catalogs').rglob('*.json'))+list((self.site/'context/topics').glob('*.json'))
+        for p in pages:
+            data=json.loads(p.read_text(encoding='utf-8'))
+            self.assertLessEqual(p.stat().st_size,module.PAGE_BYTES)
+            self.assertLessEqual(len(data['items']),100 if '/topics/' in p.as_posix() else module.PAGE_ITEMS)
+            self.assertEqual(data['source_commit'],COMMIT)
+        def load(url):return json.loads((self.site/urlsplit(url).path.lstrip('/')).read_text(encoding='utf-8'))
+        found=search_module.search(root,'unique-1204',load=load,tag='Topic-1204')
+        self.assertEqual(found['matched'],1);self.assertIn('1204',found['results'][0]['id'])
+        print(json.dumps({'scale_documents':count,'unique_topics':root['topics']['count'],'root_bytes':(self.site/'context/index.json').stat().st_size,
+                          'max_page_bytes':max(p.stat().st_size for p in pages),'metadata_pages':len(pages),'export_seconds':round(elapsed,3)},sort_keys=True))
+        # Shrinking the inventory removes old body and catalog files, not unrelated files.
+        old_page=self.site/'context/catalogs/all/0002.json';self.assertTrue(old_page.exists())
+        self.write(items=[items[0]]);self.run_export();self.assertFalse(old_page.exists())
+        self.assertFalse((self.site/'context/posts/research-sample-1204.md').exists())
+    def test_search_rejects_mixed_deployment_versions(self):
+        self.run_export();root=json.loads((self.site/'context/index.json').read_text(encoding='utf-8'))
+        with self.assertRaises(ValueError):search_module.search(root,'CFG',load=lambda url:{'source_commit':'b'*40,'items':[],'next':None})
+    def test_oversized_single_context_record_fails_explicitly(self):
+        self.write(items=[self.item|{'context':self.item['context']|{'summary':'x'*70000}}])
+        with self.assertRaisesRegex(ValueError,'budget'):self.run_export()
 
 if __name__=='__main__': unittest.main()

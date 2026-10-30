@@ -31,6 +31,8 @@ exclude:
     "README.zh.md",
     "docs",
     "scripts",
+    "_context_scale_source",
+    "_context_scale_site",
     "templates",
     "package-lock.json",
     "TASKS.md",

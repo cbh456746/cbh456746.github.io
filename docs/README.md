@@ -25,6 +25,7 @@ For ongoing maintenance, begin with [the full blog operations handoff](BLOG_OPER
 - [AI post reference operations](AI_REFERENCE_GUIDE.md) — canonical reading workflow, context metadata, exports and cross-project templates.
 - [Reference workflow review](CODEX_POST_REFERENCE_REVIEW.md) — the initial 19-post audit and alternatives.
 - [Reference implementation/publication record](AI_REFERENCE_PUBLICATION.md) — scope, tests and deployment verification.
+- [Reference scale and failure review](AI_REFERENCE_SCALE_REVIEW.md) — 1,205-article paging tests, failed attempts, corrections and scale limits.
 
 - [KEL animation research publication](KEL_ANIMATION_RESEARCH_PUBLICATION.md) — the 2026-10-30 failed-target animation study, selected visual evidence, collapsible actual prompts, reproduction scope and deployment checks.
 

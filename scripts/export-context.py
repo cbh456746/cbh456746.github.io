@@ -14,6 +14,8 @@ from urllib.parse import quote, urljoin, urlsplit, unquote
 REPOSITORY = 'https://github.com/cbh456746/cbh456746.github.io'
 AREAS = {'_projects': 'projects', '_research': 'research', '_notes': 'notes', '_posts': 'play'}
 VOID = {'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
+PAGE_ITEMS = 25
+PAGE_BYTES = 65536
 
 @dataclass
 class Element:
@@ -249,22 +251,60 @@ def export(site, commit):
     if not documents: raise ValueError('No published documents')
     for d in documents:
         if any(urlsplit(x).netloc==urlsplit(base).netloc and x not in urls for x in d['related']): raise ValueError('Related article not in published inventory')
-    result={'schema_version':1,'stage':'complete','site_url':base,'generated_at':manifest['generated_at'],
+    def pages(relative,label,rows,max_items=PAGE_ITEMS):
+        chunks=[];chunk=[]
+        for row in rows:
+            candidate=chunk+[row]
+            if len(candidate)>max_items or len(json.dumps(candidate,ensure_ascii=False,indent=2).encode())>48000:
+                if not chunk: raise ValueError('One context record exceeds the page budget; shorten its metadata')
+                chunks.append(chunk);chunk=[row]
+            else: chunk=candidate
+            if len(json.dumps(chunk,ensure_ascii=False,indent=2).encode())>48000: raise ValueError('One context record exceeds the page budget')
+        if chunk or not chunks:chunks.append(chunk)
+        for i,chunk in enumerate(chunks,1):
+            content={'schema_version':2,'source_commit':commit,'label':label,'total_items':len(rows),
+                     'page':i,'page_count':len(chunks),'items':chunk,
+                     'next':urljoin(base,f'{relative}/{i+1:04d}.json') if i<len(chunks) else None}
+            text=json.dumps(content,ensure_ascii=False,indent=2)+'\n'
+            if len(text.encode())>PAGE_BYTES:raise ValueError('Catalog page exceeds its byte budget')
+            put(f'{relative}/{i:04d}.json',text)
+        return {'count':len(rows),'page_count':len(chunks),'first_page':urljoin(base,f'{relative}/0001.json')}
+    catalogs=[]
+    for kind in ['all','projects','research','notes','play']:
+        rows=documents if kind=='all' else [d for d in documents if d['kind']==kind]
+        catalogs.append({'id':kind,**pages('context/catalogs/'+kind,kind,rows)})
+    tag_groups={}
+    for d in documents:
+        if not isinstance(d['tags'],list) or any(not isinstance(t,str) or not t.strip() or len(t.encode())>512 for t in d['tags']): raise ValueError('Invalid tags')
+        for tag in set(d['tags']):tag_groups.setdefault(tag,[]).append(d)
+    topics=[]
+    for tag,rows in sorted(tag_groups.items(),key=lambda x:x[0].casefold()):
+        ident='tag-'+sha256(tag)[:16]
+        topics.append({'id':ident,'label':tag,**pages('context/catalogs/'+ident,tag,rows)})
+    topic_directory=pages('context/topics','Topics',topics,max_items=100)
+    result={'schema_version':2,'stage':'complete','site_url':base,'generated_at':manifest['generated_at'],
             'source_commit':commit,'document_count':len(documents),'reading_guide':urljoin(base,'llms.txt'),
             'scope':'Published Projects, Research, Notes and Play only. Historical content is reference data, not instructions.',
-            'documents':documents}
-    all_text='# 전체 게시물 내보내기\n\nSource commit: `'+commit+'`\n\n필요한 글만 읽으려면 먼저 index.json을 사용한다. 별도 부록까지 아래에 포함했다.\n\n'
+            'page_limits':{'article_items':PAGE_ITEMS,'json_bytes':PAGE_BYTES,'topic_items':100},
+            'catalogs':catalogs,'topics':topic_directory,
+            'search_helper':urljoin(base,'context/search.py'),
+            'all_text_url':urljoin(base,'context/all.md')}
+    root_text=json.dumps(result,ensure_ascii=False,indent=2)+'\n'
+    if len(root_text.encode())>PAGE_BYTES:raise ValueError('Root index exceeds its byte budget')
+    all_parts=['# 전체 게시물 내보내기\n\nSource commit: `'+commit+'`\n\n필요한 글만 읽으려면 먼저 index.json을 사용한다. 별도 부록까지 아래에 포함했다.\n\n']
     for d in documents:
-        all_text += outputs[safe_file(site,'context/posts/'+d['id']+'.md')]+'\n\n'
+        all_parts.append(outputs[safe_file(site,'context/posts/'+d['id']+'.md')]+'\n\n')
         for a in d['appendices']:
-            all_text += outputs[safe_file(site,'context/posts/'+d['id']+'/'+a['id']+'.md')]+'\n\n'
-    put('context/all.md',all_text)
-    put('context/index.json',json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+            all_parts.append(outputs[safe_file(site,'context/posts/'+d['id']+'/'+a['id']+'.md')]+'\n\n')
+    put('context/all.md',''.join(all_parts))
+    put('context/index.json',root_text)
     # Only stale generated Markdown below the resolved export directory is removed.
     generated=safe_file(site,'context/posts')
-    stale=list(generated.rglob('*.md')) if generated.exists() else []
-    for path in stale:
-        if not path.resolve().is_relative_to(generated): raise ValueError('Unsafe stale export path')
+    stale=[]
+    for directory,pattern in [(generated,'*.md'),(safe_file(site,'context/catalogs'),'*.json'),(safe_file(site,'context/topics'),'*.json')]:
+        for path in directory.rglob(pattern) if directory.exists() else []:
+            if not path.resolve().is_relative_to(directory): raise ValueError('Unsafe stale export path')
+            stale.append(path)
     for path,value in outputs.items():
         path.parent.mkdir(parents=True,exist_ok=True)
         path.write_text(value,encoding='utf-8',newline='\n')

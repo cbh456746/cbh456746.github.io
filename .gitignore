@@ -11,5 +11,7 @@ node_modules
 .jekyll-cache
 __pycache__/
 *.pyc
+_context_scale_source/
+_context_scale_site/
 */.DS_Store
 */*/.DS_Store

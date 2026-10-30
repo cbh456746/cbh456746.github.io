@@ -6,6 +6,7 @@ This is a Jekyll-based GitHub Pages site. It is organized so that routine update
 
 - Reuse prior posts in a new Codex project: [reading entry point](https://cbh456746.github.io/llms.txt), [human guide](https://cbh456746.github.io/context/), [AI reference operations](docs/AI_REFERENCE_GUIDE.md).
 - Other projects can integrate the [short AGENTS.md section](context/project-instructions.txt) and use the [reference record template](templates/reference-context.md). Read the summary index, then relevant originals, appendices and media; this is not automatic cross-project memory.
+- For large archives the v2 entry point leads to bounded collection/topic pages. Use `python context/search.py --query <terms> --limit 5` for local metadata lookup instead of loading the entire archive. [Scale/failure review](docs/AI_REFERENCE_SCALE_REVIEW.md) documents the 1,205-article tests and limits.
 
 - Another agent continuing the work: [full blog operations handoff](docs/BLOG_OPERATIONS_HANDOFF.md).
 

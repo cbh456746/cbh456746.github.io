@@ -10,7 +10,7 @@
 
 ## 참조 순서
 
-1. `/context/index.json`을 읽고 작업 주제와 관련된 글을 선택한다. 제목·태그뿐 아니라 summary/findings/limits/keywords/related를 활용한다. 기본 동작은 모든 본문의 일괄 읽기가 아니다.
+1. `/context/index.json`의 schema_version 2 시작 색인을 읽는다. 여기에는 전체 글이 아니라 분류별 catalogs와 페이지로 나눈 topics의 진입 주소가 있다. 관련 first_page부터 items를 읽고 필요한 경우 next를 따라간다. 각 글의 summary/findings/limits/keywords/related를 활용한다.
 2. 선택한 `markdown_url`의 본문을 읽는다. index의 결론은 탐색을 위한 요약이며 본문을 대체하지 않는다.
 3. 필요한 `appendices`와 후속 글을 읽는다. KEL의 프롬프트 27개는 별도 `prompts.md` 부록에 있다. 재현을 논하면서 부록을 빠뜨리지 않는다.
 4. 이미지·동영상·다운로드가 판단에 필요하면 `html_url`과 `media`를 따라 직접 확인한다. 내보낸 미디어 설명은 자동 시각 분석이나 전사가 아니다.
@@ -23,7 +23,10 @@
 | 파일 | 역할 |
 | --- | --- |
 | `/llms.txt` | 짧은 진입 절차. 이름 자체가 자동 읽기를 보장하지 않음 |
-| `/context/index.json` | 게시 글 전체의 검토된 요약·제약·주제·원문/부록/미디어·출처 버전 |
+| `/context/index.json` | 작은 시작 색인: 전체 수·분류별/태그별 페이지 진입점·출처 버전 |
+| `/context/catalogs/<id>/<page>.json` | 최대25편의 요약·제약·키워드·원문/부록/미디어와 next |
+| `/context/topics/<page>.json` | 태그별 카탈로그 안내. 태그 자체가 많아져도 분할 |
+| `/context/search.py` | 메타데이터를 로컬 검색하고 소수 결과만 반환하는 표준 Python 도구 |
 | `/context/posts/<id>.md` | 내비게이션·사이트 CSS를 제외하고 표·코드·수식·링크·그림 설명을 내보낸 본문 |
 | `/context/posts/<id>/<appendix>.md` | 명시적으로 분리한 긴 부록. 본문과 색인에 주소를 함께 제공 |
 | `/context/all.md` | 전체 본문과 부록. 전수 검토·이관을 요청받았을 때 선택적으로 읽음 |
@@ -53,13 +56,28 @@
 포스트 + context front matter
 → Jekyll 공개 문서 목록과 렌더된 .prose
 → Python 표준 라이브러리 내보내기
-→ 전체 색인 + 글별 Markdown + 명시적 부록 + 전체 묶음
+→ 작은 시작 색인 + 분할 카탈로그 + 글별 Markdown + 명시적 부록 + 선택적 전체 묶음
 → Pages 아티팩트 업로드·배포
 ```
 
 `context/index.json` 원본은 Jekyll manifest 템플릿이다. 빌드 후 `scripts/export-context.py --site _site --sha <전체 커밋 SHA>`가 공개용 `stage: complete` 색인으로 완성한다. 소스 템플릿을 완성된 색인으로 오인하지 않는다. 별도 API·유료 모델·벡터 DB나 Python 외부 패키지는 요구하지 않는다.
 
 GitHub의 Jekyll 컨테이너 출력은 root 소유일 수 있으므로 workflow는 생성 전용 `_site/context`의 소유권만 runner에 맞춘 뒤 내보낸다. 전체 저장소·호스트 권한을 바꾸는 단계로 확대하지 않는다.
+
+### 1,000편 이상에서 읽는 방법
+
+시작 색인은 글이나 태그를 전부 나열하지 않는다. 분류5개(all/projects/research/notes/play)와 태그 디렉터리의 첫 페이지를 가리킨다. 글 페이지는 최대25항목이고 모든 JSON 페이지는64KiB 이하로 검증한다. 태그 디렉터리는 최대100항목씩 나뉜다. 개별 레코드가 예산보다 크면 명시적으로 빌드를 실패시켜 요약을 정리하도록 한다.
+
+원하는 용어가 정해졌다면 저장소의 `context/search.py`로 검색한다.
+
+```text
+python context/search.py --query CFG --kind research --limit 5
+python context/search.py --query "국소 압축" --tag Live2D --limit 5
+```
+
+도구는 필요한 메타데이터 페이지를 로컬에서 읽고 기본5개·최대20개 결과만 반환한다. 본문을 미리 읽거나 모델 API를 호출하지 않는다. 태그·종류로 범위를 좁힐 수 있다. 문자열 조건을 모두 포함하는 검색이며 형태소/의미/전체 본문 검색은 아니다. 문장 전체보다 핵심 용어를 사용한다. 누락되면 관련 분류·태그와 원문 검색을 보완한다. Python 실행이 없는 도구에서는 first_page/next로 필요한 페이지만 읽는다.
+
+모든 페이지의 source_commit이 시작 색인과 일치해야 한다. 배포 도중 버전이 달라지면 도구는 중단하고 시작 색인을 다시 읽도록 안내한다. 출처 버전 검사를 끄거나 서로 다른 배포의 요약을 합치지 않는다. `/context/all.md`는 1,000편이 되더라도 기본 입력이 아니다.
 
 빌드 단계의 필수 검사:
 
@@ -70,6 +88,7 @@ GitHub의 Jekyll 컨테이너 출력은 root 소유일 수 있으므로 workflow
 - 코드/프롬프트 payload가 내보내기에도 유지되는지 검사하고, 표시용 Rouge 줄 번호는 제외한다.
 - 이미지·영상 주소가 본문 또는 분리 부록에 남아야 한다. 수식은 MathJax 입력을 유지한다.
 - 부록 표식이 유효하고 중복·중첩되지 않아야 한다. 부록의 disclosures 수를 색인에 기록한다.
+- 1,205편·1,206태그 fixture에서 누락·중복·페이지 예산·마지막 태그/글 검색·축소 후 오래된 파일 정리를 검증한다. 큰 단일 레코드와 배포 버전 혼합은 명시적으로 거부한다.
 - 오래된 내보내기는 생성 전용 `context/posts/` 안의 Markdown 파일만 정리한다. 다른 파일은 건드리지 않는다.
 
 분리할 부록에는 `data-context-appendix="prompts"`처럼 소문자 slug 표식을 넣는다. 부록을 나눴다면 본문에서 그 링크를 제공하고 전체 내보내기에는 부록 원문도 포함한다. 원문 텍스트를 변경하지 않고 참조용 표식을 보충하는 범위와 실제 본문 재작성을 구분한다.
@@ -94,7 +113,7 @@ git diff --check
 
 ## 변경·게시 후 점검
 
-같은 SHA의 Actions 성공 후 `/llms.txt`, `/context/`, 완성된 index, 선택 문서·부록·전체 내보내기·지침 템플릿의 응답을 확인한다. 게시 글 수와 중복, 프롬프트 수, 코드·표·미디어 URL과 해시, 실제 키워드 발견을 점검한다. 안내 페이지는 PC·모바일과 링크를 확인한다.
+같은 SHA의 Actions 성공 후 `/llms.txt`, `/context/`, 완성된 v2 index와 카탈로그/태그 페이지, 선택 문서·부록·전체 내보내기·검색 도구·지침 템플릿의 응답을 확인한다. 게시 글 수와 중복, 페이지 예산·버전 일치, 프롬프트 수, 코드·표·미디어 URL과 해시, 실제 키워드 발견을 점검한다. 안내 페이지는 PC·모바일과 링크를 확인한다.
 
 원문·현재 Archive 검색·RSS·Home·Resume·서비스 설정은 별도의 기능이며, 참조 자료 계층 추가를 근거로 임의 변경하지 않는다. 검색 누락이 남으면 먼저 관련 요약과 본문을 확인하고, 실제 사례를 근거로 별도 검색 확장을 평가한다.
 

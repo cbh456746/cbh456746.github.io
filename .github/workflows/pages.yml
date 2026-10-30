@@ -27,6 +27,17 @@ jobs:
       - name: Test agent reference export contracts
         run: python3 -m unittest discover -s scripts -p 'test_context_export.py'
       - uses: actions/configure-pages@v5
+      - name: Prepare isolated 1205-article Jekyll fixture
+        run: python3 scripts/context-scale-fixture.py --prepare
+      - name: Build isolated large article fixture
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./_context_scale_source
+          destination: ./_context_scale_site
+      - name: Verify large rendered reference export
+        run: |
+          sudo chown -R -- "$(id -u):$(id -g)" "$GITHUB_WORKSPACE/_context_scale_site/context"
+          python3 scripts/context-scale-fixture.py --sha "$GITHUB_SHA"
       - uses: actions/jekyll-build-pages@v1
         with:
           source: ./

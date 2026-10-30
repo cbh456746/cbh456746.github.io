@@ -246,7 +246,7 @@ PNGTuber에는 Projects 소개와 별도 Play 착수 기록이 있습니다. 이
 
 ### 다른 프로젝트와 AI 에이전트의 포스트 참조
 
-참조 절차의 정본은 [AI_REFERENCE_GUIDE.md](AI_REFERENCE_GUIDE.md)다. `/llms.txt` → `/context/index.json` → 관련 `markdown_url` → 필요한 부록·원본 미디어 순으로 읽고, 출처 버전·적용할 교훈·제약·미확인 사항을 대상 프로젝트에 기록한다. 개별 포스트 URL을 지정하면 그 글을 우선한다. 전수 검토를 요청한 경우에만 `/context/all.md`를 기본 대신 사용한다.
+참조 절차의 정본은 [AI_REFERENCE_GUIDE.md](AI_REFERENCE_GUIDE.md)다. `/llms.txt` → 작은 `/context/index.json` → 관련 분류/태그의 분할 페이지 또는 로컬 `context/search.py` 검색 → 선택한 `markdown_url` → 필요한 부록·원본 미디어 순으로 읽는다. 출처 버전·적용할 교훈·제약·미확인 사항을 대상 프로젝트에 기록한다. 개별 포스트 URL을 지정하면 그 글을 우선한다. 전수 검토를 요청한 경우에만 `/context/all.md`를 사용한다. 1,000편 이상을 고려한 25항목·64KiB 페이지 제한, 태그 목록 분할과 1,205편 회귀 검사를 유지한다.
 
 새 글과 수정 글은 front matter의 검토된 `context` 요약을 유지한다. 요약 검토일은 원래 작성일이나 결과의 재검증일과 다르다. Actions에서 Jekyll 렌더 이후 `scripts/export-context.py`가 실제 게시된 네 콘텐츠 종류만 내보내고 부록·코드·미디어·버전을 검증한다. `_site/`의 생성 결과를 직접 편집·커밋하지 않는다. 자세한 필드와 명령은 작성 규칙과 정본을 따른다.
 
@@ -509,11 +509,12 @@ python -c "import xml.etree.ElementTree as E; r=E.parse('_site/feed.xml').getroo
 
 1. 소스 checkout과 Node.js 22 준비.
 2. 콘텐츠 규칙과 AI 참조 내보내기 계약 검사.
-3. GitHub Pages용 Jekyll 빌드, 출력 `_site/`.
-4. 생성된 RSS XML 파싱.
-5. 같은 source SHA의 게시물 요약 색인·렌더 본문·부록 내보내기와 보존 검사.
-6. Pages 아티팩트 업로드.
-7. GitHub Pages 배포.
+3. 분리된 합성1,205편의 실제 Jekyll 렌더와 참조 내보내기·제외·보존 검사.
+4. 본 사이트의 GitHub Pages용 Jekyll 빌드, 출력 `_site/`.
+5. 생성된 RSS XML 파싱.
+6. 같은 source SHA의 게시물 요약 색인·렌더 본문·부록 내보내기와 보존 검사.
+7. `_site/`만 Pages 아티팩트로 업로드. 규모 시험 자료는 제외.
+8. GitHub Pages 배포.
 
 권한은 `contents: read`, `pages: write`, `id-token: write`입니다. 이 파이프라인은 블로그용이며, 독립 프로젝트의 npm 빌드와 혼동하지 않습니다.
 
