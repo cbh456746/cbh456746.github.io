@@ -1,0 +1,466 @@
+[
+  {
+    "run": "quiet_13b_test_v001",
+    "phase": "preflight",
+    "model": "ltxv-13b-0.9.8-distilled-fp8.safetensors",
+    "width": 1024,
+    "height": 576,
+    "generated_frames": 49,
+    "fps": 24,
+    "seed": 42,
+    "cfg": 1.0,
+    "positive": "A stylized 3D cartoon cinematic close-up of Rio holding a fully drawn bow at night beside a futuristic white laboratory. Her eyes remain gently closed for the entire shot. She is listening calmly because she has already predicted the opponent's blink. Her silver hair has broad clean sculpted locks, matte shading and restrained warm rim light. Her head, torso and arms remain in exactly the same poised position. Her right fingers continue to hold one arrow and the taut string against her cheek; her left hand continues to hold the bow out of frame. She holds the tension without lowering the bow or releasing the arrow. A very light breeze moves only the loose tips of her hair. Fixed camera, consistent face and costume, black and gold jacket, yellow necktie, cool blue night, dry pavement and warm doorway light. The shot begins and ends in the same steady pose. Extremely restrained breathing and hair animation, a quiet moment before the decisive shot.\n",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, firing, arrow release, walking, sliding feet, text",
+    "decode": "VAEDecodeTiled",
+    "guide_images": [
+      "KF05_rio_eyes_closed.png",
+      "KF05_rio_eyes_closed.png"
+    ],
+    "selected": false,
+    "selection": null,
+    "graph": "workflows/preflight/quiet_13b_test_v001.json",
+    "steps": 8,
+    "sampler": "euler",
+    "sigmas": "1, 0.9937, 0.9875, 0.9812, 0.975, 0.9094, 0.725, 0.4219, 0"
+  },
+  {
+    "run": "quiet_test_v001",
+    "phase": "preflight",
+    "model": "ltxv-2b-0.9.8-distilled-fp8.safetensors",
+    "width": 1024,
+    "height": 576,
+    "generated_frames": 73,
+    "fps": 24,
+    "seed": 42,
+    "cfg": 1.0,
+    "positive": "A restrained stylized 3D cartoon cinematic close-up at night. The silver-haired archer Rio has already anticipated her opponent. Rio keeps her eyes gently closed and remains calm, her head almost completely still. She takes one subtle breath. A light breeze moves only the ends of her long silver hair and the small loose strands beside her face. Her black and gold collar and yellow necktie stay unchanged. A faint warm light from the laboratory doorway illuminates one edge of her cheek against the cool blue night. Keep her face, anatomy, costume and the laboratory architecture consistent. Matte cartoon materials, broad clean sculpted shadow shapes, quiet suspense before a decisive action. Fixed camera, continuous shot, barely perceptible movement. No speech, no smile, no attack, no camera move.\n",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, firing, arrow release, walking, sliding feet, text",
+    "decode": "VAEDecodeTiled",
+    "guide_images": [
+      "KF05_rio_eyes_closed.png"
+    ],
+    "selected": false,
+    "selection": null,
+    "graph": "workflows/preflight/quiet_test_v001.json",
+    "steps": 8,
+    "sampler": "euler",
+    "sigmas": "1, 0.9937, 0.9875, 0.9812, 0.975, 0.9094, 0.725, 0.4219, 0"
+  },
+  {
+    "run": "rotation_13b_test_v001",
+    "phase": "preflight",
+    "model": "ltxv-13b-0.9.8-distilled-fp8.safetensors",
+    "width": 1024,
+    "height": 576,
+    "generated_frames": 49,
+    "fps": 24,
+    "seed": 42,
+    "cfg": 1.0,
+    "positive": "A continuous stylized 3D cartoon cinematic shot at night outside a white futuristic laboratory. The same two women remain in the scene. In the foreground, Rio, a silver-haired archer wearing a black and gold jacket, yellow tie and grey skirt, calmly pivots her planted feet, hips and shoulders to aim her drawn bow at the woman behind her, on the right side of the image. Her left hand holds the black and gold bow; her right hand keeps the same single arrow drawn against her cheek throughout the turn. Her hands and bow remain connected naturally. Li Dailin, the dark-haired martial artist wearing a yellow outfit, has just arrived behind Rio and stays near the laboratory wall, bracing to attack. Rio anticipates her without surprise. The arrow is not released in this shot. One fluid deliberate body rotation, subtle hair and jacket follow-through, locked camera, coherent proportions, matte surfaces, broad sculpted shadow shapes, deep blue night and restrained warm exterior lamps.",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, firing, arrow release, walking, sliding feet, text",
+    "decode": "VAEDecodeTiled",
+    "guide_images": [
+      "KF04_blink_arrival.png",
+      "KF06_backward_archery_v3.png"
+    ],
+    "selected": false,
+    "selection": null,
+    "graph": "workflows/preflight/rotation_13b_test_v001.json",
+    "steps": 8,
+    "sampler": "euler",
+    "sigmas": "1, 0.9937, 0.9875, 0.9812, 0.975, 0.9094, 0.725, 0.4219, 0"
+  },
+  {
+    "run": "rotation_test_v001",
+    "phase": "preflight",
+    "model": "ltxv-2b-0.9.8-distilled-fp8.safetensors",
+    "width": 512,
+    "height": 288,
+    "generated_frames": 49,
+    "fps": 24,
+    "seed": 42,
+    "cfg": 1.0,
+    "positive": "A continuous stylized 3D cartoon cinematic shot at night outside a white futuristic laboratory. The same two women remain in the scene. In the foreground, Rio, a silver-haired archer wearing a black and gold jacket, yellow tie and grey skirt, calmly pivots her planted feet, hips and shoulders to aim her drawn bow at the woman behind her, on the right side of the image. Her left hand holds the black and gold bow; her right hand keeps the same single arrow drawn against her cheek throughout the turn. Her hands and bow remain connected naturally. Li Dailin, the dark-haired martial artist wearing a yellow outfit, has just arrived behind Rio and stays near the laboratory wall, bracing to attack. Rio anticipates her without surprise. The arrow is not released in this shot. One fluid deliberate body rotation, subtle hair and jacket follow-through, locked camera, coherent proportions, matte surfaces, broad sculpted shadow shapes, deep blue night and restrained warm exterior lamps.",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, firing, arrow release, walking, sliding feet, text",
+    "decode": "VAEDecodeTiled",
+    "guide_images": [
+      "KF04_blink_arrival.png",
+      "KF06_backward_archery_v3.png"
+    ],
+    "selected": false,
+    "selection": null,
+    "graph": "workflows/preflight/rotation_test_v001.json",
+    "steps": 8,
+    "sampler": "euler",
+    "sigmas": "1, 0.9937, 0.9875, 0.9812, 0.975, 0.9094, 0.725, 0.4219, 0"
+  },
+  {
+    "run": "S00_v001",
+    "phase": "production",
+    "model": "ltxv-13b-0.9.8-distilled-fp8.safetensors",
+    "width": 1024,
+    "height": 576,
+    "generated_frames": 25,
+    "fps": 24,
+    "seed": 500,
+    "cfg": 1.0,
+    "positive": "A brief slow-motion beat immediately before the first arrow is released. Preserve the supplied full-body composition exactly. The black-haired martial artist in yellow on the left is suspended for a split second during her forward lunge. Her trailing hair and red tassels flutter slightly, with a small drift of dust behind her. The silver-haired archer on the right remains poised with the arrow drawn, her hair tips moving gently. Both bodies and all hands remain in the same supplied positions. No release yet. The camera is absolutely locked, showing both women. Quiet anticipation before a fast burst of action. Keep the same matte stylized 3D cartoon faces and clothing, blue night and warm laboratory doorway lamps. No zoom, no new step, no changing bow or arrow.\n",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, unintended repeated actions, sliding feet, text",
+    "decode": "VAEDecodeTiled",
+    "guide_images": [
+      "KF01_charge.png",
+      "KF01_charge.png"
+    ],
+    "selected": true,
+    "selection": {
+      "id": "S00",
+      "start": 0,
+      "count": 16
+    },
+    "graph": "workflows/production/S00_v001.json",
+    "steps": 8,
+    "sampler": "euler",
+    "sigmas": "1, 0.9937, 0.9875, 0.9812, 0.975, 0.9094, 0.725, 0.4219, 0"
+  },
+  {
+    "run": "S01_v001",
+    "phase": "production",
+    "model": "ltxv-13b-0.9.8-distilled-fp8.safetensors",
+    "width": 1024,
+    "height": 576,
+    "generated_frames": 97,
+    "fps": 24,
+    "seed": 101,
+    "cfg": 1.0,
+    "positive": "Stylized 3D cartoon game cinematic at NIGHT outside a white concrete laboratory. Cool blue night lighting and small warm doorway lamps. Matte surfaces, sculpted hair locks, clean broad shadow planes. Rio is the silver-haired archer in a black and gold jacket, yellow necktie, grey skirt and dark knee boots. Li Dailin is the black-haired woman with twin hair buns in a yellow martial arts outfit with red tassels. Exactly the same two adult characters. Preserve their faces, costumes, body proportions and the laboratory geometry. A single fluid action shot. The yellow-clad martial artist on the LEFT charges a short distance toward the silver-haired archer on the RIGHT. The archer takes one small backward evasive step, then releases ONE arrow from her left-hand bow. Her right drawing fingers open once. The arrow hits the opponent's upper torso; the opponent recoils and slides only one short step backward, her feet staying close to the ground. Her loose trousers and hair follow the movement. Finish in the supplied recoil pose. Keep the archer on the right and the opponent on the left, full bodies visible, steady camera. One arrow release only.",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, unintended repeated actions, sliding feet, text",
+    "decode": "VAEDecodeTiled",
+    "guide_images": [
+      "KF01_charge.png",
+      "KF02_first_knockback.png"
+    ],
+    "selected": false,
+    "selection": null,
+    "graph": "workflows/production/S01_v001.json",
+    "steps": 8,
+    "sampler": "euler",
+    "sigmas": "1, 0.9937, 0.9875, 0.9812, 0.975, 0.9094, 0.725, 0.4219, 0"
+  },
+  {
+    "run": "S01_v002",
+    "phase": "production",
+    "model": "ltxv-13b-0.9.8-distilled-fp8.safetensors",
+    "width": 1024,
+    "height": 576,
+    "generated_frames": 33,
+    "fps": 24,
+    "seed": 201,
+    "cfg": 1.0,
+    "positive": "A brief stylized 3D cartoon action shot at night outside the laboratory. The camera is locked in a full-body wide shot. Both women remain fully visible at the same scale. On the left, the black-haired martial artist in yellow takes one quick charging step toward the right. On the right, the silver-haired archer makes one short evasive step back and opens her right drawing fingers ONCE to release the already-drawn arrow toward the opponent's torso. Her left arm continues to hold the bow steady. The opponent recoils a little from that single hit. One short, crisp, continuous action. Preserve both faces, costumes, limbs and the bow. Keep the matte cartoon style and cool blue night with warm wall lamps. No zoom, no camera push, no repeated shot, no new arrow, no close-up.\n",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, unintended repeated actions, sliding feet, text",
+    "decode": "VAEDecodeTiled",
+    "guide_images": [
+      "KF01_charge.png"
+    ],
+    "selected": false,
+    "selection": null,
+    "graph": "workflows/production/S01_v002.json",
+    "steps": 8,
+    "sampler": "euler",
+    "sigmas": "1, 0.9937, 0.9875, 0.9812, 0.975, 0.9094, 0.725, 0.4219, 0"
+  },
+  {
+    "run": "S01_v003",
+    "phase": "production",
+    "model": "ltxv-13b-0.9.8-distilled-fp8.safetensors",
+    "width": 1024,
+    "height": 576,
+    "generated_frames": 25,
+    "fps": 24,
+    "seed": 301,
+    "cfg": 1.0,
+    "positive": "In one quick continuous action, the silver-haired archer on the RIGHT releases one arrow toward the LEFT. Her right drawing fingers open and her right hand moves behind her ear as the bowstring snaps straight. Her left hand keeps holding the bow. The arrow hits the black-haired fighter in yellow on the LEFT, interrupting her approach and pushing her back only a small distance. Finish at the supplied recoil pose. The camera makes a brief gentle push to the supplied ending composition. Keep the same two women, same costumes and matte 3D cartoon night lighting. One release and one recoil, without repeating. Coherent anatomy, connected hands and bow, no walking cycle, no new arrow and no additional shot.\n",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, unintended repeated actions, sliding feet, text",
+    "decode": "VAEDecodeTiled",
+    "guide_images": [
+      "KF01_charge.png",
+      "KF02_first_knockback.png"
+    ],
+    "selected": true,
+    "selection": {
+      "id": "S01",
+      "start": 0,
+      "count": 16
+    },
+    "graph": "workflows/production/S01_v003.json",
+    "steps": 8,
+    "sampler": "euler",
+    "sigmas": "1, 0.9937, 0.9875, 0.9812, 0.975, 0.9094, 0.725, 0.4219, 0"
+  },
+  {
+    "run": "S02_v001",
+    "phase": "production",
+    "model": "ltxv-13b-0.9.8-distilled-fp8.safetensors",
+    "width": 1024,
+    "height": 576,
+    "generated_frames": 65,
+    "fps": 24,
+    "seed": 102,
+    "cfg": 1.0,
+    "positive": "Stylized 3D cartoon game cinematic at NIGHT outside a white concrete laboratory. Cool blue night lighting and small warm doorway lamps. Matte surfaces, sculpted hair locks, clean broad shadow planes. Rio is the silver-haired archer in a black and gold jacket, yellow necktie, grey skirt and dark knee boots. Li Dailin is the black-haired woman with twin hair buns in a yellow martial arts outfit with red tassels. Exactly the same two adult characters. Preserve their faces, costumes, body proportions and the laboratory geometry. After the first small impact, the martial artist on the LEFT regains a low grounded stance, planting both feet. On the RIGHT, the archer brings her right drawing hand back to her cheek and readies her second arrow. Her left hand keeps holding the same bow. Finish with one arrow fully drawn, patiently aiming toward the opponent on the left. Calm deliberate movements and coherent hands. Nobody fires in this shot. No new impact. Locked camera.",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, unintended repeated actions, sliding feet, text",
+    "decode": "VAEDecodeTiled",
+    "guide_images": [
+      "KF02_first_knockback.png",
+      "KF03_second_arrow_ready.png"
+    ],
+    "selected": true,
+    "selection": {
+      "id": "S02",
+      "start": 0,
+      "count": 65
+    },
+    "graph": "workflows/production/S02_v001.json",
+    "steps": 8,
+    "sampler": "euler",
+    "sigmas": "1, 0.9937, 0.9875, 0.9812, 0.975, 0.9094, 0.725, 0.4219, 0"
+  },
+  {
+    "run": "S03_v001",
+    "phase": "production",
+    "model": "ltxv-13b-0.9.8-distilled-fp8.safetensors",
+    "width": 1024,
+    "height": 576,
+    "generated_frames": 73,
+    "fps": 24,
+    "seed": 103,
+    "cfg": 1.0,
+    "positive": "Stylized 3D cartoon game cinematic at NIGHT outside a white concrete laboratory. Cool blue night lighting and small warm doorway lamps. Matte surfaces, sculpted hair locks, clean broad shadow planes. Rio is the silver-haired archer in a black and gold jacket, yellow necktie, grey skirt and dark knee boots. Li Dailin is the black-haired woman with twin hair buns in a yellow martial arts outfit with red tassels. Exactly the same two adult characters. Preserve their faces, costumes, body proportions and the laboratory geometry. The archer on the RIGHT holds the same second arrow fully drawn against her cheek and waits calmly, breathing very slightly. Her left bow hand, right drawing hand and arrow stay connected and steady. The martial artist on the LEFT remains crouched in a prepared stance, making a very small weight shift. A breeze stirs their hair tips and loose cloth. A quiet moment of anticipation. No release, no walking, no new arrow, no camera movement.",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, unintended repeated actions, sliding feet, text",
+    "decode": "VAEDecodeTiled",
+    "guide_images": [
+      "KF03_second_arrow_ready.png",
+      "KF03_second_arrow_ready.png"
+    ],
+    "selected": true,
+    "selection": {
+      "id": "S03",
+      "start": 0,
+      "count": 73
+    },
+    "graph": "workflows/production/S03_v001.json",
+    "steps": 8,
+    "sampler": "euler",
+    "sigmas": "1, 0.9937, 0.9875, 0.9812, 0.975, 0.9094, 0.725, 0.4219, 0"
+  },
+  {
+    "run": "S04_v001",
+    "phase": "production",
+    "model": "ltxv-13b-0.9.8-distilled-fp8.safetensors",
+    "width": 1024,
+    "height": 576,
+    "generated_frames": 41,
+    "fps": 24,
+    "seed": 104,
+    "cfg": 1.0,
+    "positive": "Stylized 3D cartoon game cinematic at NIGHT outside a white concrete laboratory. Cool blue night lighting and small warm doorway lamps. Matte surfaces, sculpted hair locks, clean broad shadow planes. Rio is the silver-haired archer in a black and gold jacket, yellow necktie, grey skirt and dark knee boots. Li Dailin is the black-haired woman with twin hair buns in a yellow martial arts outfit with red tassels. Exactly the same two adult characters. Preserve their faces, costumes, body proportions and the laboratory geometry. Immediately after teleporting, the martial artist is now BEHIND the archer on the RIGHT, beside the laboratory wall. She settles her bent legs into the exact arrival stance and leans forward only slightly, her hair tips and yellow sleeves still settling. Faint blue teleportation motes fade around her. The archer in front remains calm and keeps the same one arrow drawn toward the old direction on the LEFT. Keep both figures in their supplied positions. No running, no new teleport, no arrow release. A stable continuous shot.",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, unintended repeated actions, sliding feet, text",
+    "decode": "VAEDecodeTiled",
+    "guide_images": [
+      "KF04_blink_arrival.png",
+      "KF04_blink_arrival.png"
+    ],
+    "selected": true,
+    "selection": {
+      "id": "S04",
+      "start": 0,
+      "count": 32
+    },
+    "graph": "workflows/production/S04_v001.json",
+    "steps": 8,
+    "sampler": "euler",
+    "sigmas": "1, 0.9937, 0.9875, 0.9812, 0.975, 0.9094, 0.725, 0.4219, 0"
+  },
+  {
+    "run": "S05_v001",
+    "phase": "production",
+    "model": "ltxv-13b-0.9.8-distilled-fp8.safetensors",
+    "width": 1024,
+    "height": 576,
+    "generated_frames": 33,
+    "fps": 24,
+    "seed": 105,
+    "cfg": 1.0,
+    "positive": "Stylized 3D cartoon game cinematic at NIGHT outside a white concrete laboratory. Cool blue night lighting and small warm doorway lamps. Matte surfaces, sculpted hair locks, clean broad shadow planes. Rio is the silver-haired archer in a black and gold jacket, yellow necktie, grey skirt and dark knee boots. Li Dailin is the black-haired woman with twin hair buns in a yellow martial arts outfit with red tassels. Exactly the same two adult characters. Preserve their faces, costumes, body proportions and the laboratory geometry. A close-up of Rio's face and drawing hand. Her eyes remain gently closed, calm and certain because she has already predicted her opponent's blink. A tiny exhale, a slight movement of her hair tips. Her right fingers continue holding the same arrow and taut string at her cheek. Her head and arms remain steady. She never lowers her bow. Keep her face and eyelids exactly consistent. Fixed close-up camera. No speech and no arrow release.",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, unintended repeated actions, sliding feet, text",
+    "decode": "VAEDecodeTiled",
+    "guide_images": [
+      "KF05_rio_eyes_closed.png",
+      "KF05_rio_eyes_closed.png"
+    ],
+    "selected": true,
+    "selection": {
+      "id": "S05",
+      "start": 4,
+      "count": 14
+    },
+    "graph": "workflows/production/S05_v001.json",
+    "steps": 8,
+    "sampler": "euler",
+    "sigmas": "1, 0.9937, 0.9875, 0.9812, 0.975, 0.9094, 0.725, 0.4219, 0"
+  },
+  {
+    "run": "S06_v001",
+    "phase": "production",
+    "model": "ltxv-13b-0.9.8-distilled-fp8.safetensors",
+    "width": 1024,
+    "height": 576,
+    "generated_frames": 49,
+    "fps": 24,
+    "seed": 106,
+    "cfg": 1.0,
+    "positive": "Stylized 3D cartoon game cinematic at NIGHT outside a white concrete laboratory. Cool blue night lighting and small warm doorway lamps. Matte surfaces, sculpted hair locks, clean broad shadow planes. Rio is the silver-haired archer in a black and gold jacket, yellow necktie, grey skirt and dark knee boots. Li Dailin is the black-haired woman with twin hair buns in a yellow martial arts outfit with red tassels. Exactly the same two adult characters. Preserve their faces, costumes, body proportions and the laboratory geometry. The archer on the LEFT has already turned to face the opponent behind her, on the RIGHT. Holding a grounded wide stance, she releases the ONE already-drawn arrow toward the yellow-clad opponent's torso on the right. Her right drawing fingers open once and her right hand follows back beside her cheek, while her left arm continues holding the bow toward the right. The bowstring snaps forward once and settles. Her hair swings gently after the turn. The opponent flinches backward. One decisive release, then follow-through. No nocking another arrow, no second release, no character swap, no camera move.",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, unintended repeated actions, sliding feet, text",
+    "decode": "VAEDecodeTiled",
+    "guide_images": [
+      "KF06_backward_archery_v3.png"
+    ],
+    "selected": false,
+    "selection": null,
+    "graph": "workflows/production/S06_v001.json",
+    "steps": 8,
+    "sampler": "euler",
+    "sigmas": "1, 0.9937, 0.9875, 0.9812, 0.975, 0.9094, 0.725, 0.4219, 0"
+  },
+  {
+    "run": "S06_v002",
+    "phase": "production",
+    "model": "ltxv-13b-0.9.8-distilled-fp8.safetensors",
+    "width": 1024,
+    "height": 576,
+    "generated_frames": 33,
+    "fps": 24,
+    "seed": 206,
+    "cfg": 1.0,
+    "positive": "A fast continuous stylized 3D cartoon cinematic action at night. The silver-haired archer on the LEFT FIRES HER BOW ONCE at the yellow-clad martial artist on the RIGHT. The archer's right fingers let go of the string. Her right hand follows backward beside her ear as the bowstring straightens and one arrow shoots to the right. Her left hand keeps holding the bow. The single arrow immediately hits the opponent's torso and drives her backward into the white laboratory wall on the right. The camera rapidly tracks right with the shot, finishing close to the opponent's impact against the wall, with the archer smaller in the left background. Dust bursts at the point of wall contact. Use the supplied ending composition. One fast release and one impact. Preserve the two characters and their costumes, cool blue night, matte cartoon materials, consistent anatomy. No extra arrow, no new nock, no blood.\n",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, unintended repeated actions, sliding feet, text",
+    "decode": "VAEDecodeTiled",
+    "guide_images": [
+      "KF06_backward_archery_v3.png",
+      "KF07_wall_impact.png"
+    ],
+    "selected": true,
+    "selection": {
+      "id": "S06",
+      "start": 0,
+      "count": 14
+    },
+    "graph": "workflows/production/S06_v002.json",
+    "steps": 8,
+    "sampler": "euler",
+    "sigmas": "1, 0.9937, 0.9875, 0.9812, 0.975, 0.9094, 0.725, 0.4219, 0"
+  },
+  {
+    "run": "S06_wan_v001",
+    "phase": "production",
+    "model": "wan2.2_ti2v_5B_fp16.safetensors",
+    "width": 512,
+    "height": 288,
+    "generated_frames": 49,
+    "fps": 24,
+    "seed": 406,
+    "cfg": 5.0,
+    "positive": "The silver-haired archer on the left releases her drawn bow once. Her right hand opens and moves backward beside her ear. The bowstring snaps forward, a single physical arrow flies rightward toward the dark-haired woman in yellow beside the laboratory wall. The woman in yellow recoils from the hit. The archer keeps her left bow arm extended and then holds her follow-through. One arrow release, one reaction, a brief decisive action. Fixed wide camera, both women stay visible. Preserve the matte stylized 3D cartoon character designs, costumes and faces from the input image. Blue night lighting, warm laboratory doorway lamps. Natural coordinated limbs and hands, readable bow mechanics, stable proportions. No new arrow, no renocking, no beam from the face, no camera zoom.\n",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, unintended repeated actions, sliding feet, text",
+    "decode": "VAEDecodeTiled",
+    "guide_images": [
+      "KF06_backward_archery_v3.png"
+    ],
+    "selected": false,
+    "selection": null,
+    "graph": "workflows/production/S06_wan_v001.json",
+    "steps": 20,
+    "sampler": "uni_pc",
+    "scheduler": "simple",
+    "shift": 8.0
+  },
+  {
+    "run": "S06_wan_v002",
+    "phase": "production",
+    "model": "wan2.2_ti2v_5B_fp16.safetensors",
+    "width": 512,
+    "height": 288,
+    "generated_frames": 49,
+    "fps": 24,
+    "seed": 406,
+    "cfg": 5.0,
+    "positive": "The silver-haired archer on the left releases her drawn bow once. Her right hand opens and moves backward beside her ear. The bowstring snaps forward, a single physical arrow flies rightward toward the dark-haired woman in yellow beside the laboratory wall. The woman in yellow recoils from the hit. The archer keeps her left bow arm extended and then holds her follow-through. One arrow release, one reaction, a brief decisive action. Fixed wide camera, both women stay visible. Preserve the matte stylized 3D cartoon character designs, costumes and faces from the input image. Blue night lighting, warm laboratory doorway lamps. Natural coordinated limbs and hands, readable bow mechanics, stable proportions. No new arrow, no renocking, no beam from the face, no camera zoom.\n",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, unintended repeated actions, sliding feet, text, laser beam, continuous energy beam, light from mouth, changing weapon, renocking",
+    "decode": "VAEDecode",
+    "guide_images": [
+      "KF06_backward_archery_v3.png"
+    ],
+    "selected": false,
+    "selection": null,
+    "graph": "workflows/production/S06_wan_v002.json",
+    "steps": 20,
+    "sampler": "uni_pc",
+    "scheduler": "simple",
+    "shift": 8.0
+  },
+  {
+    "run": "S07_v001",
+    "phase": "production",
+    "model": "ltxv-13b-0.9.8-distilled-fp8.safetensors",
+    "width": 1024,
+    "height": 576,
+    "generated_frames": 65,
+    "fps": 24,
+    "seed": 107,
+    "cfg": 1.0,
+    "positive": "Stylized 3D cartoon game cinematic at NIGHT outside a white concrete laboratory. Cool blue night lighting and small warm doorway lamps. Matte surfaces, sculpted hair locks, clean broad shadow planes. Rio is the silver-haired archer in a black and gold jacket, yellow necktie, grey skirt and dark knee boots. Li Dailin is the black-haired woman with twin hair buns in a yellow martial arts outfit with red tassels. Exactly the same two adult characters. Preserve their faces, costumes, body proportions and the laboratory geometry. The yellow-clad martial artist in the RIGHT foreground has just struck the laboratory wall with her upper back. Continue that immediate physical impact: a short heavy jolt, a puff of concrete dust from behind her shoulders, her loose sleeves and hair following through. Her knees bend and her body lowers a little against the wall, alive but stunned. The archer remains in the LEFT background with her bow arm extended after the release. The characters stay separate. No new shot, no blood, no death, no additional impact. Fixed camera; keep the same laboratory wall and grounded contact.",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, unintended repeated actions, sliding feet, text",
+    "decode": "VAEDecodeTiled",
+    "guide_images": [
+      "KF07_wall_impact.png"
+    ],
+    "selected": true,
+    "selection": {
+      "id": "S07",
+      "start": 0,
+      "count": 65
+    },
+    "graph": "workflows/production/S07_v001.json",
+    "steps": 8,
+    "sampler": "euler",
+    "sigmas": "1, 0.9937, 0.9875, 0.9812, 0.975, 0.9094, 0.725, 0.4219, 0"
+  },
+  {
+    "run": "S08_v001",
+    "phase": "production",
+    "model": "ltxv-13b-0.9.8-distilled-fp8.safetensors",
+    "width": 1024,
+    "height": 576,
+    "generated_frames": 81,
+    "fps": 24,
+    "seed": 108,
+    "cfg": 1.0,
+    "positive": "Stylized 3D cartoon game cinematic at NIGHT outside a white concrete laboratory. Cool blue night lighting and small warm doorway lamps. Matte surfaces, sculpted hair locks, clean broad shadow planes. Rio is the silver-haired archer in a black and gold jacket, yellow necktie, grey skirt and dark knee boots. Li Dailin is the black-haired woman with twin hair buns in a yellow martial arts outfit with red tassels. Exactly the same two adult characters. Preserve their faces, costumes, body proportions and the laboratory geometry. A quiet aftermath shot. Rio stands in the LEFT foreground, her bow lowered and resting in her left hand with no arrow nocked. She lets out a small controlled breath; only her silver hair ends and jacket hem move in the night breeze. In the RIGHT background the martial artist remains sitting unconscious against the same wall, breathing faintly. The archer's victory is conveyed by her calm posture. Preserve both supplied positions, both faces and all costume details. No walking, no grin, no celebration, no new attack, no death effect. Locked camera, restrained natural follow-through.",
+    "negative": "daylight, photorealism, glossy skin, camera orbit, cuts, dissolve, morphing, extra limbs, extra fingers, broken hands, changing costumes, extra characters, duplicated bow, disconnected bowstring, extra arrows, unintended repeated actions, sliding feet, text",
+    "decode": "VAEDecodeTiled",
+    "guide_images": [
+      "KF08_rio_victory.png",
+      "KF08_rio_victory.png"
+    ],
+    "selected": true,
+    "selection": {
+      "id": "S08",
+      "start": 0,
+      "count": 81
+    },
+    "graph": "workflows/production/S08_v001.json",
+    "steps": 8,
+    "sampler": "euler",
+    "sigmas": "1, 0.9937, 0.9875, 0.9812, 0.975, 0.9094, 0.725, 0.4219, 0"
+  }
+]

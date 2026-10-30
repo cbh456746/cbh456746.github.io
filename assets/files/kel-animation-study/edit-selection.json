@@ -1,0 +1,65 @@
+[
+  {
+    "id": "S00",
+    "file": "S00_v001",
+    "start": 0,
+    "count": 16,
+    "label": "brief slow-motion anticipation"
+  },
+  {
+    "id": "S01",
+    "file": "S01_v003",
+    "start": 0,
+    "count": 16,
+    "label": "charge / first release"
+  },
+  {
+    "id": "S02",
+    "file": "S02_v001",
+    "start": 0,
+    "count": 65,
+    "label": "small recoil / second arrow"
+  },
+  {
+    "id": "S03",
+    "file": "S03_v001",
+    "start": 0,
+    "count": 73,
+    "label": "anticipation"
+  },
+  {
+    "id": "S04",
+    "file": "S04_v001",
+    "start": 0,
+    "count": 32,
+    "label": "blink arrival behind Rio"
+  },
+  {
+    "id": "S05",
+    "file": "S05_v001",
+    "start": 4,
+    "count": 14,
+    "label": "calm closed eyes"
+  },
+  {
+    "id": "S06",
+    "file": "S06_v002",
+    "start": 0,
+    "count": 14,
+    "label": "rear shot / second release"
+  },
+  {
+    "id": "S07",
+    "file": "S07_v001",
+    "start": 0,
+    "count": 65,
+    "label": "wall impact / stun"
+  },
+  {
+    "id": "S08",
+    "file": "S08_v001",
+    "start": 0,
+    "count": 81,
+    "label": "quiet victory"
+  }
+]
