@@ -33,6 +33,7 @@ exclude:
     "scripts",
     "_context_scale_source",
     "_context_scale_site",
+    "_context_test_tmp",
     "templates",
     "package-lock.json",
     "TASKS.md",

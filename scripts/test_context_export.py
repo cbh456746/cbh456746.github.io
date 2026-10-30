@@ -12,10 +12,14 @@ module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.
 search_spec=importlib.util.spec_from_file_location('context_search',Path(__file__).resolve().parents[1]/'context/search.py')
 search_module=importlib.util.module_from_spec(search_spec);search_spec.loader.exec_module(search_module)
 COMMIT='a'*40
+TEST_ROOT=Path(__file__).resolve().parents[1]/'_context_test_tmp'
 
 class ContextExportTests(unittest.TestCase):
     def setUp(self):
-        self.tmp=tempfile.TemporaryDirectory();self.site=Path(self.tmp.name)
+        # Keep fixtures in the writable clone; Windows sandbox TEMP may deny child writes.
+        TEST_ROOT.mkdir(exist_ok=True)
+        self.tmp=tempfile.TemporaryDirectory(dir=TEST_ROOT,prefix='fixture-');self.site=Path(self.tmp.name)
+        assert self.site.resolve().is_relative_to(TEST_ROOT.resolve())
         (self.site/'context').mkdir()
         self.item={'source_path':'_research/example.md','kind':'research','url':'/research/example/',
                    'title':'Example','subtitle':'A rendered article','date':'2026-10-01T00:00:00+09:00',
@@ -25,7 +29,9 @@ class ContextExportTests(unittest.TestCase):
                               'followups':[],'keywords':['CFG'],'related':[]}}
         self.body='<div class="prose"><h2 id="result">Result</h2><p>A result, not a success claim.</p></div>'
         self.write()
-    def tearDown(self): self.tmp.cleanup()
+    def tearDown(self):
+        assert self.site.resolve().is_relative_to(TEST_ROOT.resolve())
+        self.tmp.cleanup()
     def write(self,items=None,body=None):
         data={'stage':'jekyll-manifest','site_url':'https://example.test/',
               'generated_at':'2026-10-30T10:00:00+09:00','documents':items if items is not None else [self.item]}

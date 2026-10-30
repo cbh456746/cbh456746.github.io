@@ -105,6 +105,8 @@ git diff --check
 
 로컬 Ruby/Bundler가 없으면 단위 검사와 실제 게시 HTML 기반 통합 검사를 먼저 수행하고, 실제 Jekyll 빌드는 승인된 게시의 Actions에서 확인한다. HTML fixture를 로컬 Jekyll 빌드라고 보고하지 않는다. 출력 파일은 `_site/`에만 생성하고 Git에 커밋하지 않는다.
 
+단위 검사의 임시 자료는 복제본 내부 `_context_test_tmp`에 만든다. Windows 샌드박스의 기본 TEMP 쓰기 문제를 피하기 위한 전용 경로이며 Git과 사이트 빌드에서 제외한다. 정리 전 fixture가 그 경로 아래인지 검사한다. 전역 TEMP나 호스트 권한을 바꾸지 않는다.
+
 ## 버전과 해시
 
 색인·본문·부록의 `source_commit`은 같은 빌드의 SHA다. `content_sha256`은 본문 Markdown 응답 바이트의 SHA-256이고 부록에도 SHA-256을 제공한다. `rendered_body_markdown_sha256`은 부록을 포함한 렌더 본문을 Markdown으로 정규화한 내용의 해시이며, 원래 HTML 응답 자체의 해시가 아니다.
