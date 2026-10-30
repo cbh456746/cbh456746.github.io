@@ -29,6 +29,8 @@ Ruby/Bundler가 없는 로컬 환경이므로 실제 Jekyll manifest 렌더는 �
 
 진행 중. 동일 SHA의 Actions 성공과 공개 진입점·안내 페이지·완성 색인·본문·부록·전체 내보내기·지침 템플릿, 출처 버전/해시와 19편/27프롬프트 보존, PC/모바일 안내 페이지를 확인한 뒤 갱신한다.
 
+첫 v2 규모 실행 [41020358413](https://github.com/cbh456746/cbh456746.github.io/actions/runs/41020358413)은 단위 검사17개 통과 후 최소 Jekyll fixture의 빈 컬렉션 누락으로 실패했다. fixture에도 Projects·Notes 컬렉션을 명시해 실제 블로그 manifest가 요구하는 배열 조건을 맞췄다. 이 실행에서는 본 사이트 재빌드·배포가 시작되지 않았다.
+
 ## 운영과 남은 범위
 
 참조 정본은 [AI_REFERENCE_GUIDE.md](AI_REFERENCE_GUIDE.md)다. 사용자는 `https://cbh456746.github.io/llms.txt`를 한 번 제공하거나 프로젝트 지침에서 연결한다. 이것을 자동 전역 기억이나 새 모델의 답변 품질 보장으로 소개하지 않는다. 이번 검사는 자료 생성·보존·접근 계약에 관한 것이며 독립적인 모델 답변 품질/속도/토큰 절감 A/B는 수행하지 않았다.

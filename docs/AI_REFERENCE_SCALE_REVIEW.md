@@ -23,6 +23,7 @@ schema v2는 다음과 같이 바꿨다.
 | 코드 내보내기 | 실제 Rouge 코드 wrapper의 줄 번호와 중첩 코드가 단순 추출을 방해 | 코드 셀과 실제 fenced payload를 분리. 중첩 목록 코드 회귀 검사 추가 |
 | 첫 Actions 배포 | cb20bcd에서 Jekyll/RSS/계약 검사 통과 후 생성 폴더 쓰기 거부, deploy 미실행 | Jekyll 컨테이너의 root 소유권이 원인. 생성 전용 context 폴더만 runner 소유로 변경 |
 | 소유권 수정 배포 | f7ca61b의 Actions 41017560293 성공 | 쓰기 실패 수정은 확인했지만 이 초기 v1을 최종 규모 검증 완료로 소개하지 않음 |
+| 첫 Jekyll 규모 fixture | 1ccfa0a의 Actions 41020358413에서 concat 배열 오류 | 최소 fixture 설정에 빈 Projects/Notes 컬렉션이 빠져 있었다. 실제 블로그와 같은 네 콘텐츠 집합을 제공하도록 수정. 본 사이트의 데이터 크기 실패와 구분 |
 | 초기 단일 색인 | 글 증가에 따른 초기 읽기량 증가 | v2 분할 카탈로그·태그 디렉터리·제한된 검색 출력으로 보완 |
 | include/접힌 자료 | 원문 Markdown만 읽으면 KEL 프롬프트 누락 가능 | 렌더된 본문에서27개를 별도 부록으로 보존하고 본문·카탈로그에서 연결 |
 

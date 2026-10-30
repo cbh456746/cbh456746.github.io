@@ -22,6 +22,12 @@ markdown: kramdown
 kramdown:
   input: GFM
 collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+  notes:
+    output: true
+    permalink: /notes/:name/
   research:
     output: true
     permalink: /research/:name/
