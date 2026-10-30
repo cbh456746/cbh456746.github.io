@@ -1,6 +1,7 @@
 """Search paged blog metadata locally; no model/API key and no article-body preload."""
 import argparse
 import json
+import sys
 from urllib.parse import urlsplit
 from urllib.request import Request, urlopen
 
@@ -47,6 +48,7 @@ def search(index,query,load=load_json,kind='all',tag=None,limit=5):
             'results':[{k:x[k] for k in ['id','title','summary','limits','markdown_url','html_url','appendices','related']} for score,x in matches[:limit]]}
 
 if __name__=='__main__':
+    sys.stdout.reconfigure(encoding='utf-8')
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--query',required=True);parser.add_argument('--kind',default='all',choices=['all','projects','research','notes','play'])
     parser.add_argument('--tag');parser.add_argument('--limit',type=int,default=5);parser.add_argument('--index',default=DEFAULT_INDEX)

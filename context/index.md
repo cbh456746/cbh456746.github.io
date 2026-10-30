@@ -4,15 +4,18 @@ title: AI 참조 안내
 description: 이전 프로젝트와 연구 기록을 새 작업에 연결하는 읽기 안내
 permalink: /context/
 ---
-<article class="content-shell">
+<article class="content-shell context-reference">
+<style>
+.context-reference .content-header h1 { word-break:keep-all; overflow-wrap:break-word; text-wrap:balance; }
+.context-reference .context-entry { padding:1rem; border:1px solid var(--line); border-radius:.35rem; background:var(--surface); }
+.context-reference .context-entry code { white-space:normal; overflow-wrap:anywhere; }
+</style>
 <header class="content-header"><p class="eyebrow">Reference</p><h1>이전 기록을 다음 작업에 연결하기</h1><p class="lede">블로그를 한 번 지정한 뒤 관련된 글과 근거 자료를 골라 읽습니다.</p></header>
 <div class="prose" markdown="1">
 
 새 프로젝트를 시작할 때 아래 주소를 Codex에 전달하거나 프로젝트의 참조 지침에 연결하세요.
 
-```text
-https://cbh456746.github.io/llms.txt
-```
+<p class="context-entry"><a href="/llms.txt"><code>https://cbh456746.github.io/llms.txt</code></a></p>
 
 1. 작은 시작 색인에서 분류·태그를 고르고 필요한 페이지에서 관련 글을 찾습니다.
 2. 원문의 결론·실패 원인·제약과 관련 글을 읽습니다.

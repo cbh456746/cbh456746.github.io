@@ -27,7 +27,21 @@ Ruby/Bundler가 없는 로컬 환경이므로 실제 Jekyll manifest 렌더는 �
 
 첫 구현 커밋 `cb20bcd0ee7596ef84c4a0f8288da1764f832700`의 [Actions 실행](https://github.com/cbh456746/cbh456746.github.io/actions/runs/41017281212)은 콘텐츠·계약 검사·Jekyll·RSS가 통과한 뒤 내보내기 쓰기 권한에서 실패했다. Jekyll 컨테이너가 생성 폴더를 root 소유로 만들었기 때문이다. 배포는 실행되지 않았다. 후속 커밋에서 `_site/context`에만 runner 소유권을 적용한 뒤 일반 Python 생성기를 실행하도록 수정했다. 전체 작업 공간이나 서비스 권한을 변경하지 않는다.
 
-진행 중. 동일 SHA의 Actions 성공과 공개 진입점·안내 페이지·완성 색인·본문·부록·전체 내보내기·지침 템플릿, 출처 버전/해시와 19편/27프롬프트 보존, PC/모바일 안내 페이지를 확인한 뒤 갱신한다.
+v2 본체 커밋 [`924a496325b9562761707d53b101d26da76771a0`](https://github.com/cbh456746/cbh456746.github.io/commit/924a496325b9562761707d53b101d26da76771a0)의 [Actions 41020600569](https://github.com/cbh456746/cbh456746.github.io/actions/runs/41020600569)에서 단위 검사17개, 합성1,205편의 실제 Jekyll 렌더·내보내기, 본 사이트 Jekyll·RSS·참조 생성과 Pages 배포가 모두 성공했다.
+
+배포 후 공개 파일에서 확인한 사항:
+
+| 검사 | 결과 |
+| --- | --- |
+| 시작 색인 | schema_version 2, stage complete, source_commit 일치,1,585바이트 |
+| 게시 목록 | 실제 search.json과 같은19편, 고유 ID19개 |
+| Markdown·부록 |20개 응답의 SHA-256이 카탈로그와 모두 일치, text/markdown; charset=utf-8 |
+| KEL | 프롬프트27개 보존, 본문에서 부록과 MP4 주소 연결, 긴 프롬프트는 본문에서 분리 |
+| 전체 내보내기 | 모든 본문·부록 텍스트 포함 |
+| 검색 | CFG/research → KEL, 국소 압축/Live2D 태그 → Hiyori 연구, WebSocket/projects → 방송 아바타 글 각각1개 |
+| 진입점·지침 | llms.txt·프로젝트 템플릿·안내 HTML과 링크 확인 |
+
+안내 페이지의 데스크톱 표시를 확인한 뒤 긴 제목의 단어 단위 줄바꿈과 URL 표시를 보완했다. Windows에서 검색 JSON의 한글이 도구에 올바르게 전달되도록 stdout을 UTF-8로 지정했다. 후속 배포의 PC/모바일 표시와 최신 source SHA는 별도로 확인한다.
 
 첫 v2 규모 실행 [41020358413](https://github.com/cbh456746/cbh456746.github.io/actions/runs/41020358413)은 단위 검사17개 통과 후 최소 Jekyll fixture의 빈 컬렉션 누락으로 실패했다. fixture에도 Projects·Notes 컬렉션을 명시해 실제 블로그 manifest가 요구하는 배열 조건을 맞췄다. 이 실행에서는 본 사이트 재빌드·배포가 시작되지 않았다.
 
