@@ -43,6 +43,12 @@ v2 본체 커밋 [`924a496325b9562761707d53b101d26da76771a0`](https://github.com
 
 안내 페이지의 데스크톱 표시를 확인한 뒤 긴 제목의 단어 단위 줄바꿈과 URL 표시를 보완했다. Windows에서 검색 JSON의 한글이 도구에 올바르게 전달되도록 stdout을 UTF-8로 지정했다. 후속 배포의 PC/모바일 표시와 최신 source SHA는 별도로 확인한다.
 
+보완 커밋 [`90f770d031cc71977c898ab5583eb3e5b99ef613`](https://github.com/cbh456746/cbh456746.github.io/commit/90f770d031cc71977c898ab5583eb3e5b99ef613)의 [Actions 41021282966](https://github.com/cbh456746/cbh456746.github.io/actions/runs/41021282966)도 전체 검사와 배포가 성공했다. 공개 색인 source_commit과20개 Markdown/부록 해시를 다시 확인했다. 저장소에서 읽은 AGENTS.md에도 first_page/next·검색 도구·1,205편/64KiB 규칙이 존재했다.
+
+안내 페이지는 인앱 Chromium의1280px 데스크톱과390×844 모바일 viewport에서 제목·주소·목록·표·링크를 확인했다. 모바일 client/scroll width는 모두375px로 페이지 전체 가로 넘침이 없었다. 임시 viewport 설정은 복원했다. 실제 휴대전화 실기 검사는 아니다. 공개 응답과 URL 연결을 확인했으며, 전체 블로그 방문 트래픽이나 모든 과거 글의 시각 배치를 전수 검사한 결과로 확대하지 않는다.
+
+M-10의 구현·게시·참조 계약 검증을 완료했다. 이 기록 자체의 후속 커밋은 본문 기능 변경과 구분하고, 최종 사용자 보고 전에는 그 SHA의 Actions와 공개 source_commit도 확인한다.
+
 첫 v2 규모 실행 [41020358413](https://github.com/cbh456746/cbh456746.github.io/actions/runs/41020358413)은 단위 검사17개 통과 후 최소 Jekyll fixture의 빈 컬렉션 누락으로 실패했다. fixture에도 Projects·Notes 컬렉션을 명시해 실제 블로그 manifest가 요구하는 배열 조건을 맞췄다. 이 실행에서는 본 사이트 재빌드·배포가 시작되지 않았다.
 
 ## 운영과 남은 범위

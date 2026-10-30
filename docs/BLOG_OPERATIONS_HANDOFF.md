@@ -674,6 +674,7 @@ RSS 삭제·숨김·축약 변경은 현재 보류 상태입니다.
 
 - [KEL 애니메이션 연구 게시 기록](KEL_ANIMATION_RESEARCH_PUBLICATION.md) — 영상·비교 그림·접이식 프롬프트와 재현 자료의 공개 범위 및 검증.
 - [AI 포스트 참조 운영 정본](AI_REFERENCE_GUIDE.md), [초기 점검](CODEX_POST_REFERENCE_REVIEW.md), [구현·게시 기록](AI_REFERENCE_PUBLICATION.md).
+- [1,000편 이상 규모·실패 점검](AI_REFERENCE_SCALE_REVIEW.md) — 분할 카탈로그·검색 제한·1,205편 회귀/실제 Jekyll 시험과 한계.
 - [에이전트 작업 규칙](../AGENTS.md)
 - [결정 기록](../DECISIONS.md), [작업 기록](../TASKS.md)
 - [콘텐츠 작성 규칙](../CONTENT_GUIDE.md), [스타일 규칙](../STYLE_GUIDE.md)
