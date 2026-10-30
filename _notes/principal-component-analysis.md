@@ -12,6 +12,24 @@ tags:
   - Data-Science
   - Machine-Learning
   - PCA
+context:
+  reviewed_on: '2026-10-30'
+  summary: PCA의 분산·고유값·주성분 선택과 Python 실습을 정리했다.
+  findings:
+  - 표준화·공분산·고유벡터·누적 설명 분산의 관계를 설명한다.
+  limits:
+  - 선형 차원 축소의 정보 손실과 해석 제약을 다루며 실제 모델 성능 개선을 입증한 글은 아니다.
+  followups: []
+  keywords:
+  - PCA
+  - 주성분 분석
+  - 차원 축소
+  - 고유값
+  - 설명 분산
+  - 표준화
+  related:
+  - /notes/confusion-matrix/
+  - /notes/hypothesis-testing-basics/
 ---
 ### 주성분 분석 (PCA: Principal Component Analysis)
 

@@ -9,6 +9,21 @@ tags:
   - Notes
   - Git
   - GitHub-Desktop
+context:
+  reviewed_on: '2026-10-30'
+  summary: GitHub Desktop 복제·수정·로컬 Jekyll 미리보기·커밋·푸시의 짧은 학습 노트다.
+  findings:
+  - 로컬 미리보기와 원격 공개 페이지 확인을 순서로 정리한다.
+  limits:
+  - 사용자명·주소는 예시다. 현재 블로그 운영에는 최신 AGENTS와 운영 인수인계서를 적용한다.
+  followups: []
+  keywords:
+  - GitHub Desktop
+  - Git
+  - Jekyll
+  - 커밋
+  - 푸시
+  related: []
 ---
 
 # 로컬 github Desktop에서 레포지토리 수정하기

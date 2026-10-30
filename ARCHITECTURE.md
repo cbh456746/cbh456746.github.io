@@ -18,3 +18,9 @@ Markdown/YAML content → Jekyll layouts + CSS/JS → GitHub Pages
 The older service worker is retired with `js/sw-retire.js` so visitors do not keep receiving old cached layouts. Old PWA source files remain in the repository for now but are no longer registered.
 
 For current content, layout, publication, privacy, and recovery procedures, read [the blog operations handoff](docs/BLOG_OPERATIONS_HANDOFF.md).
+
+## Article reference exports
+
+The same Pages build adds a selective-reading interface for other projects. Jekyll creates a published-only metadata manifest at `context/index.json`; `scripts/export-context.py` then reads each rendered `.prose` body and emits the complete index, per-article Markdown, marked appendices and `context/all.md` under `_site/`. Python standard-library contract tests run before Jekyll. Source code/prompt payloads, media URLs, summaries and provenance are checked before artifact upload.
+
+`llms.txt` is the stable entry point. `context/index.md` is the human-facing guide; `context/project-instructions.txt` is a reusable AGENTS.md section. The manually reviewed discovery metadata lives in each article's front matter. Generation needs no model API or vector database. Existing article URLs, Archive search and RSS remain separate. For contracts and operating steps read [AI_REFERENCE_GUIDE.md](docs/AI_REFERENCE_GUIDE.md).

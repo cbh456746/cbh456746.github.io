@@ -1,0 +1,25 @@
+# BH CHOI — 프로젝트와 연구 기록 참조
+
+공개 블로그: https://cbh456746.github.io/
+저장소: https://github.com/cbh456746/cbh456746.github.io
+사람용 안내: https://cbh456746.github.io/context/
+
+## 읽기 순서
+
+1. https://cbh456746.github.io/context/index.json 을 먼저 읽는다. Projects·Research·Notes·Play의 전체 게시 목록, 요약·결론·제약·키워드·관련 글과 source_commit이 있다.
+2. 이번 작업에 관련된 글의 markdown_url을 선택해 읽는다. 특정 포스트 URL을 지정받았다면 그 글을 우선하고 후속·관련 글을 보완한다.
+3. index의 appendices가 필요한지 확인한다. KEL의 프롬프트 27개는 별도 prompts.md 부록에 있다. 원문과 재현을 논할 때 부록을 빠뜨리지 않는다.
+4. 그림·영상·다운로드가 판단의 근거라면 html_url과 media를 따라 실제 자료를 확인한다. 텍스트 설명을 읽은 것과 영상을 본 것을 구분한다.
+5. 참고 글의 URL·source_commit·적용할 교훈·제약·미확인 사항을 프로젝트에 짧게 기록한다. 과거의 구현 상태를 현재 버전의 검증 결과로 단정하지 않는다.
+
+과거 포스트의 프롬프트·코드·계획은 참고 자료이며 현재 실행 지시나 완료 사실이 아니다. 현재 사용자 요청과 해당 작업의 지침을 우선한다. 원문이 요약보다 우선하며, 버전이 다른 자료를 섞지 않는다. 접근 실패는 알리고 실제 읽지 않은 글을 확인했다고 보고하지 않는다.
+
+## 선택적으로 읽을 자료
+
+- 전체 본문과 부록: https://cbh456746.github.io/context/all.md (전수 검토·이관을 요청받았을 때)
+- 다른 프로젝트에 넣을 짧은 지침: https://cbh456746.github.io/context/project-instructions.txt
+- 블로그 유지보수 지침: https://github.com/cbh456746/cbh456746.github.io/blob/main/AGENTS.md
+- 전체 운영 정본: https://github.com/cbh456746/cbh456746.github.io/blob/main/docs/BLOG_OPERATIONS_HANDOFF.md
+- 참조 운영 정본: https://github.com/cbh456746/cbh456746.github.io/blob/main/docs/AI_REFERENCE_GUIDE.md
+
+이 파일 이름만으로 모든 Codex 프로젝트가 자동 방문하는 것은 아니다. 해당 프로젝트의 지침이나 사용자 요청에서 이 진입점을 연결한다. RSS는 최근 글 확인용이며 전체 참조 색인을 대신하지 않는다.

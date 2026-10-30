@@ -12,6 +12,24 @@ tags:
   - Data-Science
   - Statistics
   - Machine-Learning
+context:
+  reviewed_on: '2026-10-30'
+  summary: 이진 분류의 혼동행렬과 TP·TN·FP·FN 및 평가 지표를 정리한 학습 노트다.
+  findings:
+  - 분류 예측과 실제값의 조합으로 평가 지표를 해석한다.
+  limits:
+  - 개념 설명이며 특정 분류 모델의 실제 성능 검증 결과는 아니다.
+  followups: []
+  keywords:
+  - 혼동행렬
+  - Confusion Matrix
+  - TP
+  - FP
+  - 정밀도
+  - 재현율
+  related:
+  - /notes/principal-component-analysis/
+  - /notes/hypothesis-testing-basics/
 ---
 
 # 혼동 행렬 (Confusion Matrix)

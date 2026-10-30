@@ -24,6 +24,8 @@ jobs:
           node-version: 22
       - name: Validate content rules
         run: node scripts/validate-content.mjs
+      - name: Test agent reference export contracts
+        run: python3 -m unittest discover -s scripts -p 'test_context_export.py'
       - uses: actions/configure-pages@v5
       - uses: actions/jekyll-build-pages@v1
         with:
@@ -37,6 +39,8 @@ jobs:
           assert root.tag == 'rss' and root.find('channel') is not None, 'Expected RSS channel'
           print('Generated RSS XML is valid')
           PY
+      - name: Export reviewed article context
+        run: python3 scripts/export-context.py --site _site --sha "$GITHUB_SHA"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site

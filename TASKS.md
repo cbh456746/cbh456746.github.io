@@ -7,6 +7,7 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 | ID | Status | Task | Acceptance criteria |
 |---|---|---|---|
 | M-09 | complete | Publish the KEL local AI animation failure study with visual evidence and collapsible prompts. | Research article, own video, selected comparison figures, 27 prompt disclosures and sanitized reproduction data published. Exact-commit Pages build/deploy, desktop/mobile rendering, playback, keyboard toggles and Research/Archive/search/RSS discovery checked. Publication scope and verification are recorded in docs/KEL_ANIMATION_RESEARCH_PUBLICATION.md. |
+| M-10 | in progress | Add selective post reference exports and durable cross-project agent instructions. | Reviewed metadata for published articles; stable entry, same-SHA summary/body/appendix exports, preserved code/media, automatic visibility/provenance checks, receiving-project templates and whole-blog guidance; verify Pages and live files before completion. See docs/AI_REFERENCE_PUBLICATION.md. |
 
 ## Maintenance — 2026-10-18
 

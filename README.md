@@ -4,6 +4,9 @@ This is a Jekyll-based GitHub Pages site. It is organized so that routine update
 
 ## Start here
 
+- Reuse prior posts in a new Codex project: [reading entry point](https://cbh456746.github.io/llms.txt), [human guide](https://cbh456746.github.io/context/), [AI reference operations](docs/AI_REFERENCE_GUIDE.md).
+- Other projects can integrate the [short AGENTS.md section](context/project-instructions.txt) and use the [reference record template](templates/reference-context.md). Read the summary index, then relevant originals, appendices and media; this is not automatic cross-project memory.
+
 - Another agent continuing the work: [full blog operations handoff](docs/BLOG_OPERATIONS_HANDOFF.md).
 
 - Change the home page text and links: `index.md`
@@ -32,3 +35,5 @@ Before replacing the photograph, remove EXIF and other personal metadata, use a 
 | `_posts/` | Play/free-form writing | `/play/name/` when a permalink is supplied |
 
 Run `npm run validate` before committing if Node.js is installed. GitHub Actions runs the Jekyll build when the repository is pushed to `main`.
+
+The Pages workflow also runs `npm run test:context`'s Python contract tests and exports reviewed context from rendered article bodies after Jekyll. Published content needs the `context` metadata described in [CONTENT_GUIDE.md](CONTENT_GUIDE.md). Generated files under `_site/` are not committed. See [the reference guide](docs/AI_REFERENCE_GUIDE.md) for schema, provenance and publication checks.

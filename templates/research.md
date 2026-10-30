@@ -4,6 +4,14 @@ subtitle: "질문 또는 가설을 한 줄로 설명"
 date: 2026-07-17 12:00:00
 tags:
   - Research
+context:
+  reviewed_on: YYYY-MM-DD
+  summary: ""
+  findings: []
+  limits: []
+  followups: []
+  keywords: []
+  related: []
 ---
 
 ## Question

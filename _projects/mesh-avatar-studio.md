@@ -6,6 +6,27 @@ tags:
   - Projects
 repository_url: ""
 demo_url: ""
+context:
+  reviewed_on: '2026-10-30'
+  summary: 일러스트를14개 파츠의2D 메시 아바타와 Windows portable 앱으로 만든 개발 기록이다.
+  findings:
+  - 독립 파츠와 숨은 영역 복원으로 동반 이동·중복·연결 문제를 일부 줄였다.
+  - 실행 앱 구현과15초 시연을 모든 자세의 시각 품질 승인으로 보지 않는다.
+  limits:
+  - 프로젝트 저장소는 본문 기준 비공개이며 공개 준비 중이다.
+  - 시연만으로 추적 지연·음성 동기화·OBS 송출을 검증하지 못한다.
+  followups:
+  - 형태 복원·눈입 전환·목 접합·회전 자세를 먼저 검수한다.
+  keywords:
+  - Mesh Avatar Studio
+  - 파츠 분리
+  - 목 접합
+  - 얼굴 회전
+  - 머리카락 물리
+  - portable
+  related:
+  - /research/vtuber-avatar-live2d-gap/
+  - /research/hiyori-silver-braid-head-motion-study/
 ---
 
 [Mesh Avatar Studio](https://github.com/shinshin86/mesh-avatar-studio)를 기반으로 한 장의 캐릭터 일러스트를 움직이는 **2D 메쉬 아바타**로 제작하고 있다. 눈·입 표정, 고개와 상체 움직임, 머리카락 물리를 추가하고 일반 사용자용 실행 앱까지 만들었다. Cubism 모델을 생성하거나 VTube Studio의 모델 목록에 설치하는 방식은 아니다.

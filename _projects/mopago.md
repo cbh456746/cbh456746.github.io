@@ -9,6 +9,23 @@ tags:
   - Machine-Learning
 repository_url: "https://github.com/cbh456746/mopago"
 demo_url: "https://cbh456746.github.io/mopago/"
+context:
+  reviewed_on: '2026-10-30'
+  summary: 한글 모아모아의 보드·조각·능력을 수동 입력해 다음 배치를 추천하는 웹 도구다.
+  findings:
+  - 실행 후 상태를 사용자가 갱신하며 작은 조각이 완만히 줄어드는 가정을 사용한다.
+  limits:
+  - 정확한 공식 조각 출현 확률은 확인되지 않았다.
+  - 모의 평가 점수는 실제 게임 점수를 보장하지 않는다.
+  followups: []
+  keywords:
+  - 모파고
+  - 한글 모아모아
+  - 보드
+  - 조각
+  - 학습
+  - 추천
+  related: []
 ---
 
 메이플스토리 미니게임 **한글 모아모아**의 다음 수를 찾는 독립 웹 도구다. 게임판·보유 조각·능력을 입력하면 배치 위치와 회전·반전 또는 능력 사용을 추천한다.

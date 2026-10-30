@@ -6,6 +6,29 @@ tags:
   - Research
   - VTuber
   - Live2D
+context:
+  reviewed_on: '2026-10-30'
+  summary: Hiyori 비교 사진과 Silver Braid 세 빌드에서 고개 회전·얼굴 국소 변형·목 연결을 분석했다.
+  findings:
+  - lab-03의 심한 국소 압축·늘어남은 확인됐고 coherence-01의 완화만으로 목표 품질 달성을 승인하지 않았다.
+  - 가동범위 축소와 방향별 형태·가림의 근본 교정을 구분한다.
+  limits:
+  - 376장은 시간 간격이 있는 캡처이며 연속 영상376프레임이 아니다.
+  - 비교 모델의 정확한 버전·내부 파라미터와 물리적 회전각은 확인하지 않았다.
+  followups:
+  - 머리 방향별 볼·턱·눈·코·귀와 목의 관계를 먼저 교정한다.
+  keywords:
+  - Hiyori
+  - Silver Braid
+  - 고개 회전
+  - 국소 압축
+  - 목 연결
+  - 가림
+  - 특이값
+  - 메시
+  related:
+  - /research/vtuber-avatar-live2d-gap/
+  - /projects/mesh-avatar-studio/
 ---
 
 고개를 돌렸는데 캐릭터가 옆을 보는 대신 얼굴 그림이 눌리는 것처럼 보인다. 볼은 좁아지고, 턱은 뾰족해지거나 귀 밑에서 어색하게 이어진다. 움직임은 연속적이고 프로그램 오류도 없지만 사람의 머리가 움직인다는 인상은 약하다. 한 장의 일러스트에서 출발한 Silver Braid 메시 아바타를 제작하며 반복해서 만난 문제다.

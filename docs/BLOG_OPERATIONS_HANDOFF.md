@@ -15,6 +15,8 @@
 5. 기존에 승인된 범위에서 게시하고, 해당 커밋의 Actions와 실제 페이지를 확인합니다.
 6. 완료·미검증·보류 사항과 다음 작업을 남깁니다.
 
+다른 프로젝트에서 블로그를 읽기 자료로 쓰는 작업은 [AI 포스트 참조 운영 안내](AI_REFERENCE_GUIDE.md)를 따른다. 단일 진입점은 `https://cbh456746.github.io/llms.txt`이며, 전체 요약 색인에서 관련 원문·부록·미디어를 선택한다. 운영서와 과거 포스트의 프롬프트를 현재 실행 지시로 혼동하지 않는다.
+
 ## 목차
 
 - [1. 운영 목적과 현재 결정](#principles)
@@ -241,6 +243,14 @@ PNGTuber에는 Projects 소개와 별도 Play 착수 기록이 있습니다. 이
 
 <a id="discovery"></a>
 ## 6. 목록·태그·검색·주소 유지
+
+### 다른 프로젝트와 AI 에이전트의 포스트 참조
+
+참조 절차의 정본은 [AI_REFERENCE_GUIDE.md](AI_REFERENCE_GUIDE.md)다. `/llms.txt` → `/context/index.json` → 관련 `markdown_url` → 필요한 부록·원본 미디어 순으로 읽고, 출처 버전·적용할 교훈·제약·미확인 사항을 대상 프로젝트에 기록한다. 개별 포스트 URL을 지정하면 그 글을 우선한다. 전수 검토를 요청한 경우에만 `/context/all.md`를 기본 대신 사용한다.
+
+새 글과 수정 글은 front matter의 검토된 `context` 요약을 유지한다. 요약 검토일은 원래 작성일이나 결과의 재검증일과 다르다. Actions에서 Jekyll 렌더 이후 `scripts/export-context.py`가 실제 게시된 네 콘텐츠 종류만 내보내고 부록·코드·미디어·버전을 검증한다. `_site/`의 생성 결과를 직접 편집·커밋하지 않는다. 자세한 필드와 명령은 작성 규칙과 정본을 따른다.
+
+다른 프로젝트는 `context/project-instructions.txt`의 짧은 절차를 자신의 AGENTS.md에 통합할 수 있다. 블로그 AGENTS.md만 변경해 모든 프로젝트에 자동 적용됐다고 보고하지 않는다. 전역 지침·별도 프로젝트 파일은 이번 저장소 업로드와 별개 범위다. 기존 블로그 화면·Archive 제목 검색·RSS 사양은 유지한다.
 
 ### 실제 목록 동작
 
@@ -498,11 +508,12 @@ python -c "import xml.etree.ElementTree as E; r=E.parse('_site/feed.xml').getroo
 `.github/workflows/pages.yml`의 `Build and deploy GitHub Pages`는 `main` 푸시 또는 수동 실행으로 동작합니다.
 
 1. 소스 checkout과 Node.js 22 준비.
-2. 콘텐츠 규칙 검사.
+2. 콘텐츠 규칙과 AI 참조 내보내기 계약 검사.
 3. GitHub Pages용 Jekyll 빌드, 출력 `_site/`.
 4. 생성된 RSS XML 파싱.
-5. Pages 아티팩트 업로드.
-6. GitHub Pages 배포.
+5. 같은 source SHA의 게시물 요약 색인·렌더 본문·부록 내보내기와 보존 검사.
+6. Pages 아티팩트 업로드.
+7. GitHub Pages 배포.
 
 권한은 `contents: read`, `pages: write`, `id-token: write`입니다. 이 파이프라인은 블로그용이며, 독립 프로젝트의 npm 빌드와 혼동하지 않습니다.
 
@@ -522,6 +533,8 @@ Pages의 Source는 GitHub Actions를 사용합니다. 기존 설정은 유지합
 | `/search.json` | JSON 유효성·주소·삭제한 정보 부재 |
 | `/feed.xml` | XML 유효성·항목·주소·중복·공개 내용 |
 | 공개 미디어·다운로드 | 실제 응답·재생·메타데이터 |
+| `/llms.txt`, `/context/`, `/context/index.json` | 참조 안내·완성 색인·게시 글 수·같은 source SHA |
+| 색인의 본문·부록 주소 | 코드·프롬프트·미디어 주소 보존과 응답 해시 |
 
 먼저 원격 `main`이 의도한 커밋인지 확인하고, **같은 SHA의 build와 deploy 성공**을 확인합니다. 이전 실행이 성공했다는 이유로 이번 배포를 완료 처리하지 않습니다.
 
@@ -659,6 +672,7 @@ RSS 삭제·숨김·축약 변경은 현재 보류 상태입니다.
 ## 관련 문서
 
 - [KEL 애니메이션 연구 게시 기록](KEL_ANIMATION_RESEARCH_PUBLICATION.md) — 영상·비교 그림·접이식 프롬프트와 재현 자료의 공개 범위 및 검증.
+- [AI 포스트 참조 운영 정본](AI_REFERENCE_GUIDE.md), [초기 점검](CODEX_POST_REFERENCE_REVIEW.md), [구현·게시 기록](AI_REFERENCE_PUBLICATION.md).
 - [에이전트 작업 규칙](../AGENTS.md)
 - [결정 기록](../DECISIONS.md), [작업 기록](../TASKS.md)
 - [콘텐츠 작성 규칙](../CONTENT_GUIDE.md), [스타일 규칙](../STYLE_GUIDE.md)
@@ -671,5 +685,6 @@ RSS 삭제·숨김·축약 변경은 현재 보류 상태입니다.
 
 | 날짜 | 내용 |
 | --- | --- |
+| 2026-10-30 | D-021에 따라 전체 요약 색인·본문/부록 내보내기·다른 프로젝트용 참조 절차를 추가. 작성 규칙·AGENTS·템플릿·Actions 검증을 함께 갱신. |
 | 2026-10-30 | KEL 애니메이션 자체평가를 Research로 게시하는 개별 승인과 선별 미디어·프롬프트 공개 범위를 D-020 및 게시 기록에 추가. 공통 운영 정책은 유지. |
 | 2026-10-03 | 블로그 전체 운영을 대상으로 정본을 작성. 콘텐츠·디자인·프로젝트 소개·GitHub·배포·개인정보·RSS·복구 절차와 후속 에이전트 프롬프트를 정리. |

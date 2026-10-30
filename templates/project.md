@@ -7,6 +7,14 @@ tags:
   - Data-Science
 repository_url: ""
 demo_url: ""
+context:
+  reviewed_on: YYYY-MM-DD
+  summary: ""
+  findings: []
+  limits: []
+  followups: []
+  keywords: []
+  related: []
 ---
 
 ## Problem

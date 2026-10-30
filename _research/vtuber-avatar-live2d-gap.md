@@ -8,6 +8,29 @@ tags:
   - Game
   - VTuber
   - Live2D
+context:
+  reviewed_on: '2026-10-30'
+  summary: PNGTuber·이미지 전환형·메시 아바타의 성과와 Live2D 수준에 남은 입체감·물리의 간극을 정리했다.
+  findings:
+  - 실행 앱과 입력 연결의 구현을 자연스러운 그림과 동일시하지 않는다.
+  - 물리 OFF 상태에서 회전 자세와 캐릭터 형태를 먼저 확인하는 제작 기준을 제안한다.
+  limits:
+  - Mesh Avatar 후보의 목표 시각 품질과 실제 방송 검증이 모두 완료된 상태는 아니다.
+  - Akari 관찰은 모든 Live2D 모델을 대표하는 절대 기준이 아니다.
+  followups:
+  - 자연스러운 정지 자세를 승인한 뒤 연속 경로·표정·물리를 결합한다.
+  keywords:
+  - Live2D
+  - Akari
+  - 메시 아바타
+  - 물리 OFF
+  - 입체감
+  - 얼굴 추적
+  related:
+  - /research/hiyori-silver-braid-head-motion-study/
+  - /projects/mesh-avatar-studio/
+  - /projects/browser-vtuber-avatar-project/
+  - /projects/repo-style-pngtuber/
 ---
 
 일러스트 한 장을 넣고 얼굴 추적을 연결하면 자연스러운 버튜버 아바타가 완성될까? 지금까지 뚜껑형 PNGTuber, 방향별 이미지를 전환하는 아바타, 파츠를 분리해 움직이는 메시 아바타를 제작하며 이 질문을 실험했다.

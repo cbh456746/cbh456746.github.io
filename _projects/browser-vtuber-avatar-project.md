@@ -12,6 +12,27 @@ tags:
   - Play
   - React
   - VTube-Studio
+context:
+  reviewed_on: '2026-10-30'
+  summary: 방향별 이미지 아바타를 VTube Studio 입력과 Windows 방송 앱으로 확장한 기록이다.
+  findings:
+  - 2026-10-18 공개 소스·데스크톱 절차와 이전 브라우저 시제품의 예제 영상을 구분한다.
+  - 추적과 자동 눈·입 입력의 충돌, WebSocket 인증·재연결을 다룬다.
+  limits:
+  - 실제 마이크·iPhone·OBS 송출과 장시간 방송은 별도 확인이 필요하다.
+  - 예제 영상은 현재 데스크톱 앱의 실방송 검증 영상이 아니다.
+  followups: []
+  keywords:
+  - VTube Studio
+  - WebSocket
+  - 인증
+  - 토큰
+  - OBS
+  - 이미지 전환
+  - Windows
+  related:
+  - /research/vtuber-avatar-live2d-gap/
+  - /projects/repo-style-pngtuber/
 ---
 
 

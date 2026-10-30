@@ -11,6 +11,25 @@ tags:
   - Notes
   - Big-Data-Analyst
   - Exam
+context:
+  reviewed_on: '2026-10-30'
+  summary: 빅데이터 분석 기획·거버넌스·수집·저장과 개인정보 개념을 정리한 시험 학습 노트다.
+  findings:
+  - 주제별 개념과 비교 기준을 한 문서에 정리한다.
+  limits:
+  - 시험 학습 기록이며 현재 법령이나 제품 사양 확인을 대신하지 않는다.
+  followups: []
+  keywords:
+  - 빅데이터 분석기사
+  - 분석 기획
+  - 거버넌스
+  - 데이터 품질
+  - 개인정보
+  - 수집
+  - 저장
+  related:
+  - /notes/big-data-analyst-unit-1-practice/
+  - /notes/big-data-analyst-8th-exam/
 ---
 # 빅데이터 분석 기획
 

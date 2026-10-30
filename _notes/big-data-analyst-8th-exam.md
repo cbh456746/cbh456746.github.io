@@ -11,6 +11,24 @@ tags:
   - Notes
   - Big-Data-Analyst
   - Exam
+context:
+  reviewed_on: '2026-10-30'
+  summary: 빅데이터 분석기사8회 기출 복원 문제를 모은 학습 노트다.
+  findings:
+  - 분석 기획·데이터 처리·통계·모형 관련 문제를 복습할 수 있다.
+  limits:
+  - 복원 기록이며 공식 문제집이나 정답 인증 자료로 간주하지 않는다.
+  followups: []
+  keywords:
+  - 빅데이터 분석기사
+  - 8회
+  - 기출 복원
+  - 통계
+  - 표본분산
+  - 주성분
+  related:
+  - /notes/big-data-analyst-unit-1-summary/
+  - /notes/big-data-analyst-unit-1-practice/
 ---
 
 ## 문제 

@@ -10,6 +10,23 @@ tags:
   - Data-Science
   - Web-Scraping
   - Finance
+context:
+  reviewed_on: '2026-10-30'
+  summary: 네이버 금융 기업 리포트의 종목·날짜·투자의견을 수집해 JSON에 저장하는 Python 코드다.
+  findings:
+  - HTTP 세션·429 재시도·페이지 순회와 종목별 갱신 로직을 설명한다.
+  limits:
+  - 현재 사이트 구조와 접근 정책에 대한 재검증 자료가 아니다.
+  - 수집된 투자의견은 투자 성과나 매수 권고의 검증 결과가 아니다.
+  followups: []
+  keywords:
+  - 네이버 금융
+  - 투자의견
+  - 크롤러
+  - '429'
+  - BeautifulSoup
+  - JSON
+  related: []
 ---
 
 # 네이버 금융 증권사 리포트 투자의견 크롤링 해보기

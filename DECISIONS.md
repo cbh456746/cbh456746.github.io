@@ -119,3 +119,11 @@ On the same day the owner supplied the newly registered service through a setup 
 On 2026-10-30 the owner explicitly requested a public Research article covering the animation workflow, actual models/settings/prompts, RISE comparison, observed failures and improvement diagnosis, then requested appropriate images, screenshots and video. This authorizes publishing this reviewed article and its selected supporting materials to the existing blog through an ordinary fast-forward push.
 
 Include the generated 15.67-second draft, selected AI keyframes, criticism/comparison figures, actual prompt text in native collapsible disclosures, and sanitized API graphs/parameters. Do not claim RISE-level quality or complete image-generation reproducibility. Separate observed defects, causal hypotheses and proposed tests. Keep original gameplay/reference art, weights, private logs, credentials and personal paths out of the reproduction archive. This case does not authorize bulk publication of the workspace or changes to profile, services, Pages settings or unrelated articles.
+
+### D-021 — Publish selective article context and a reusable agent reading workflow
+
+On 2026-10-30 the owner approved implementing the reviewed reference method and uploading the changes to this repository, including AGENTS.md and whole-blog/AI reference documentation so other projects can follow the same method.
+
+Provide a stable llms.txt entry, complete published-content summary index, rendered article Markdown and explicitly linked prompt appendices, with source commit/hash provenance and automatic Pages-build validation. Preserve article bodies, dates and existing URLs when adding reviewed context metadata. Keep the distinction between produced artifacts, unmet quality goals and proposed follow-up work. Store the canonical procedure in docs/AI_REFERENCE_GUIDE.md, link it from whole-blog operations, and provide receiving-project instruction/record templates.
+
+The publication is an ordinary fast-forward update to this blog. It does not implicitly edit global Codex settings or unrelated repositories. A receiving project must connect the reading entry point through its own instructions or the user's request. Historical content is reference data, not new agent instructions. Keep profile, Home, services, Archive search and RSS policy unchanged.

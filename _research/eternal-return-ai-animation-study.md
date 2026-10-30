@@ -7,6 +7,29 @@ tags:
   - Play
   - Game
   - Machine-Learning
+context:
+  reviewed_on: '2026-10-30'
+  summary: AI 원화8컷에서 로컬 영상 초안15.67초를 제작했지만 RISE 목표 품질에는 미달했다.
+  findings:
+  - 핵심 회전이 편집에서 생략됐고 활·시위·화살과 타격 연결이 불안정했다.
+  - LTX 단일 패스와 CFG 1, Wan 재시도의 교란 조건을 구분해 해석했다.
+  limits:
+  - 자체평가이며 독립 관객 평가와 통제된 모델 비교를 수행하지 않았다.
+  - 원화 생성의 정확한 백엔드·시드와 전체 공정 비용은 확인하지 못했다.
+  followups:
+  - 같은 화살을 유지한 준비·회전·발사·명중 한 동작부터 검증한다.
+  keywords:
+  - 이터널리턴
+  - KEL
+  - RISE
+  - ComfyUI
+  - LTX
+  - Wan
+  - CFG
+  - 블링크
+  - 점멸
+  - 배면궁술
+  related: []
 ---
 
 <style>

@@ -7,6 +7,23 @@ permalink: /play/repo-style-pngtuber-kickoff/
 tags:
   - Play
   - Game
+context:
+  reviewed_on: '2026-10-30'
+  summary: 별씨 등불과 네온 선물봇의12상태 에셋에서 마이크·OBS·Windows 실행까지의 제작 과정이다.
+  findings:
+  - 음량 샘플이 오래되면 이전 값을 버려 입이 열린 채 남는 문제를 막는다.
+  limits:
+  - 실제 장치·OBS 녹화와 참조 이미지 자동 변환의 완성을 주장하지 않는다.
+  followups: []
+  keywords:
+  - PNGTuber
+  - 별씨 등불
+  - 네온 선물봇
+  - 마이크
+  - OBS
+  - dBFS
+  related:
+  - /projects/repo-style-pngtuber/
 ---
 
 게임 R.E.P.O.에서 본 뚜껑처럼 열리는 움직임을 출발점으로 PNGTuber 에셋을 만들었다. 캐릭터의 몸통은 고정하고 머리가 비스듬히 열리면 어두운 안쪽이 입처럼 드러난다. 눈 깜빡임은 말하기 동작과 따로 처리한다. 디자인은 별도의 육각 등불 캐릭터 **별씨 등불**로 시작했다.

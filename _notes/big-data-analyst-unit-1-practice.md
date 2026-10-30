@@ -11,6 +11,23 @@ tags:
   - Notes
   - Big-Data-Analyst
   - Exam
+context:
+  reviewed_on: '2026-10-30'
+  summary: 빅데이터 분석기사1단원과 심화 주제의 예상문제를 모은 학습 기록이다.
+  findings:
+  - 개요·산업·조직·분석 계획·수집 저장을 문제 형식으로 복습한다.
+  limits:
+  - 공식 출제·정답 검증 자료로 간주하지 않는다.
+  followups: []
+  keywords:
+  - 빅데이터 분석기사
+  - 예상문제
+  - 심화문제
+  - 분석 계획
+  - 개인정보
+  related:
+  - /notes/big-data-analyst-unit-1-summary/
+  - /notes/big-data-analyst-8th-exam/
 ---
 # 1단원 예상 시험문제
 

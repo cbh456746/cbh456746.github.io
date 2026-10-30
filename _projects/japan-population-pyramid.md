@@ -10,6 +10,23 @@ tags:
   - Data-Visualization
   - Statistics
   - Japan
+context:
+  reviewed_on: '2026-10-30'
+  summary: 일본 연령·성별 인구 JSON을 연도별 PNG와 GIF로 바꾸는 Python 코드 기록이다.
+  findings:
+  - 남성 값을 음수로 배치해 좌우 막대를 그리고 이미지 목록으로 GIF를 만든다.
+  limits:
+  - 게시된 코드 예시이며 입력 데이터와 실행 환경의 현재 동작을 재검증한 결과는 아니다.
+  followups: []
+  keywords:
+  - 일본
+  - 인구 피라미드
+  - JSON
+  - PNG
+  - GIF
+  - Python
+  - 시각화
+  related: []
 ---
 
 # 인구 피라미드 시각화 프로젝트

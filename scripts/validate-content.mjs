@@ -11,9 +11,15 @@ function frontMatter(file) {
   if (!match) { errors.push(`${file}: missing YAML front matter`); return {}; }
   const block = match[1];
   for (const field of ['title:', 'date:', 'tags:']) if (!block.match(new RegExp(`^${field}`, 'm'))) errors.push(`${file}: missing ${field.slice(0, -1)}`);
-  const tags = [...block.matchAll(/^\s*-\s+(.+)$/gm)].map((x) => x[1].trim().replace(/^['"]|['"]$/g, ''));
+  const tagBlock = block.match(/^tags:[ \t]*\r?\n((?:[ \t]+[^\r\n]*(?:\r?\n|$))*)/m)?.[1] ?? '';
+  const tags = [...tagBlock.matchAll(/^\s*-\s+(.+)$/gm)].map((x) => x[1].trim().replace(/^['"]|['"]$/g, ''));
   if (tags.includes('Blog')) errors.push(`${file}: Blog tag is forbidden; use Play`);
   if (tags.includes('Game') && !tags.includes('Play')) errors.push(`${file}: Game entries must also carry Play`);
+  if (!/^context:[ \t]*$/m.test(block)) errors.push(`${file}: missing reviewed context block`);
+  const summary = block.match(/^  summary:[ \t]*(.*)$/m)?.[1]?.trim();
+  if (!summary || ['""', "''", '|', '>'].includes(summary)) errors.push(`${file}: context.summary must contain a reviewed one-line summary`);
+  if (!/^  reviewed_on: ['"]?\d{4}-\d{2}-\d{2}['"]?[ \t]*$/m.test(block)) errors.push(`${file}: context.reviewed_on must be YYYY-MM-DD`);
+  for (const field of ['findings','limits','followups','keywords','related']) if (!block.match(new RegExp(`^  ${field}:`, 'm'))) errors.push(`${file}: missing context.${field}`);
   return { tags };
 }
 for (const area of areas) {

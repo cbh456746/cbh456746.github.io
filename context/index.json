@@ -1,0 +1,33 @@
+---
+layout: null
+---
+{% assign documents = site.posts | concat: site.projects | concat: site.research | concat: site.notes | sort: 'date' | reverse %}
+{
+  "stage": "jekyll-manifest",
+  "site_url": {{ '/' | absolute_url | jsonify }},
+  "generated_at": {{ site.time | date_to_xmlschema | jsonify }},
+  "documents": [
+  {% assign first = true %}
+  {% for item in documents %}
+  {% unless item.published == false %}
+  {% unless item.path contains '_drafts/' %}
+  {% if item.date <= site.time %}
+  {% unless first %},{% endunless %}{% assign first = false %}
+  {
+    "source_path": {{ item.path | jsonify }},
+    "kind": {% if item.collection == 'posts' %}"play"{% else %}{{ item.collection | jsonify }}{% endif %},
+    "url": {{ item.url | jsonify }},
+    "title": {{ item.title | jsonify }},
+    "subtitle": {{ item.subtitle | default: '' | jsonify }},
+    "date": {{ item.date | date_to_xmlschema | jsonify }},
+    "updated": {{ item.updated | jsonify }},
+    "published": true,
+    "tags": {{ item.tags | jsonify }},
+    "context": {{ item.context | jsonify }}
+  }
+  {% endif %}
+  {% endunless %}
+  {% endunless %}
+  {% endfor %}
+  ]
+}

@@ -11,6 +11,23 @@ tags:
   - Web-Scraping
   - Data-Collection
   - Music
+context:
+  reviewed_on: '2026-10-30'
+  summary: Bugs J-POP 차트와 가사 페이지를 수집해 JSON·데이터프레임으로 정리하는 Python 코드 기록이다.
+  findings:
+  - 차트 수집과 가사 행의 전처리·저장 흐름을 예시 코드로 설명한다.
+  limits:
+  - 현재 사이트·접근 정책·콘텐츠 이용 허용을 재검증한 결과가 아니다.
+  followups: []
+  keywords:
+  - Bugs
+  - J-POP
+  - 가사
+  - 크롤링
+  - JSON
+  - 데이터프레임
+  - '429'
+  related: []
 ---
 # Bugs 가사 크롤러
 

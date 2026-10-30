@@ -11,6 +11,24 @@ tags:
   - Notes
   - Data-Engineering
   - Data-Collection
+context:
+  reviewed_on: '2026-10-30'
+  summary: Chukwa·Flume·Scribe·Sqoop·Scrapy·Nutch의 목적과 특징을 비교한 학습 노트다.
+  findings:
+  - 로그 수집·RDBMS 전송·웹 수집의 용도를 구분해 비교한다.
+  limits:
+  - 현재 프로젝트 유지 상태나 버전별 기능을 검증한 최신 제품 선정표는 아니다.
+  followups: []
+  keywords:
+  - 데이터 수집
+  - Hadoop
+  - Flume
+  - Sqoop
+  - Scrapy
+  - Nutch
+  - Chukwa
+  - Scribe
+  related: []
 ---
 
 ### 빅데이터 수집 및 처리 프레임워크 비교

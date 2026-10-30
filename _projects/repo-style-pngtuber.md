@@ -8,6 +8,28 @@ tags:
   - Game
 repository_url: "https://github.com/cbh456746/repo-style-pngtuber"
 demo_url: ""
+context:
+  reviewed_on: '2026-10-30'
+  summary: 두 독자 캐릭터의 좌우12상태 에셋과 마이크 반응·OBS 투명 오버레이를 만든 시제품이다.
+  findings:
+  - 3단계 개폐와2개 눈 상태를 좌우로 정렬하고 디지털 음량 dBFS로 입을 전환한다.
+  - OBS 목소리 송출은 별도 마이크 오디오 설정이 필요하다.
+  limits:
+  - 실제 마이크별 감도와 OBS 녹화는 본문 기준 검증 중이다.
+  - 임의 참조 이미지에서12상태를 자동 생성하는 기능은 구현되지 않았다.
+  followups: []
+  keywords:
+  - PNGTuber
+  - 12상태
+  - dBFS
+  - 마이크
+  - OBS
+  - SVG
+  - 뚜껑형
+  related:
+  - /play/repo-style-pngtuber-kickoff/
+  - /projects/browser-vtuber-avatar-project/
+  - /research/vtuber-avatar-live2d-gap/
 ---
 
 게임 R.E.P.O.의 뚜껑처럼 열리는 움직임에서 아이디어를 얻어, 방송 장면에 올릴 수 있는 **독자적인 PNGTuber 시제품**을 만들었다. 머리가 열리면 몸통의 어두운 안쪽이 입처럼 보이고, 눈은 말하기와 별도로 깜빡인다. 실제 게임 모델이나 참고 판매 에셋의 이미지 파일은 사용하지 않았다.

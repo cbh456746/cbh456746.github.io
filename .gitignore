@@ -9,5 +9,7 @@ node_modules
 *.sh
 .DS_Store
 .jekyll-cache
+__pycache__/
+*.pyc
 */.DS_Store
 */*/.DS_Store

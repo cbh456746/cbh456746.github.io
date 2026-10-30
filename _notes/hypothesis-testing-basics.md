@@ -11,6 +11,21 @@ tags:
   - Notes
   - Statistics
   - Hypothesis-Testing
+context:
+  reviewed_on: '2026-10-30'
+  summary: 모수 공간과 귀무·대립가설의 기호 정의를 기록한 짧은 통계 노트다.
+  findings:
+  - H0와 H1을 모수 공간의 부분집합으로 표현한다.
+  limits:
+  - 정의 수준의 짧은 기록이며 검정 절차와 실제 데이터 분석 전체를 다루지 않는다.
+  followups: []
+  keywords:
+  - 가설검정
+  - 귀무가설
+  - 대립가설
+  - 모수 공간
+  - 통계
+  related: []
 ---
 
 # 정의

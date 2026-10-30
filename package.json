@@ -19,6 +19,7 @@
     "scripts": {
         "start": "bundle exec jekyll serve",
         "dev": "grunt watch & npm run start",
-        "validate": "node scripts/validate-content.mjs"
+        "validate": "node scripts/validate-content.mjs",
+        "test:context": "python -m unittest discover -s scripts -p test_context_export.py"
     }
 }
