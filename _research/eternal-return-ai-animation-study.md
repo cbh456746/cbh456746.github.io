@@ -10,6 +10,7 @@ tags:
 ---
 
 <style>
+.content-shell .content-header h1 { word-break:keep-all; overflow-wrap:break-word; text-wrap:balance; }
 .kel-figure { margin:2rem 0; }
 .kel-figure img,.kel-study-video { display:block; width:100%; height:auto; border-radius:.3rem; }
 .kel-figure figcaption { margin-top:.7rem; color:var(--muted); font-size:.87rem; line-height:1.75; }
