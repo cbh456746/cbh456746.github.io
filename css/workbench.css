@@ -1,0 +1,40 @@
+.workbench { max-width:1180px; margin:auto; padding:4.5rem 2rem; }
+.wb-heading { max-width:760px; margin-bottom:3rem; }
+.wb-heading h1 { font-size:clamp(2.4rem,5vw,4.5rem); }
+.wb-toolbar { display:flex; justify-content:space-between; align-items:end; gap:1.5rem; flex-wrap:wrap; border-bottom:1px solid var(--line); padding-bottom:1.25rem; }
+.wb-toolbar label { display:grid; gap:.3rem; color:var(--muted); font-size:.85rem; }
+.wb-toolbar select { max-width:100%; padding:.6rem 2rem .6rem .7rem; border:1px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; }
+.wb-views { display:flex; flex-wrap:wrap; gap:.5rem; }
+.wb-views button,.wb-action { font:inherit; padding:.55rem .85rem; border:1px solid var(--line); border-radius:3px; background:transparent; color:var(--ink); cursor:pointer; }
+.wb-views [aria-pressed="true"] { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+#wb-message { font-size:.84rem; color:var(--muted); margin:1rem 0 2rem; }
+.wb-summary { display:grid; grid-template-columns:minmax(0,1fr) minmax(220px,.65fr); gap:2.5rem; padding-bottom:2rem; }
+.wb-summary h2 { margin:0 0 .7rem; font-size:1.65rem; }
+.wb-summary p { margin:.4rem 0; }
+.wb-next { border-left:2px solid #82917b; padding-left:1.2rem; }
+.wb-caption { color:var(--muted); font-size:.82rem; }
+.wb-counts { display:flex; flex-wrap:wrap; gap:1.25rem; margin-top:1rem; font-size:.87rem; }
+.wb-body { display:grid; grid-template-columns:minmax(0,1fr) 285px; gap:2rem; align-items:start; }
+.wb-board { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.2rem; }
+.wb-column h3 { margin:0 0 .8rem; font-size:.85rem; letter-spacing:0; color:var(--muted); }
+.wb-card { width:100%; display:block; text-align:left; padding:1rem; margin-bottom:.7rem; background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:3px; cursor:pointer; font:inherit; }
+.wb-card:hover,.wb-card[aria-pressed="true"] { border-color:var(--accent); }
+.wb-card[aria-pressed="true"] { box-shadow:inset 3px 0 var(--accent); }
+.wb-card strong { display:block; font-size:1rem; line-height:1.5; margin:.45rem 0; }
+.wb-state { font-size:.76rem; color:var(--muted); }
+.wb-state[data-state="complete"] { color:#3c633f; }.wb-state[data-state="blocked"] { color:#9c432a; }
+.wb-detail { border-top:2px solid var(--ink); padding-top:1.2rem; overflow-wrap:anywhere; }
+.wb-detail h2 { font-size:1.25rem; margin:.5rem 0 1rem; }
+.wb-detail h3 { font-size:.85rem; margin-top:1.7rem; letter-spacing:0; }
+.wb-detail p,.wb-detail li { font-size:.88rem; }
+.wb-detail ul { padding-left:1.2rem; }.wb-detail li { margin:.5rem 0; }
+.wb-detail .wb-action { display:block; width:100%; margin:.6rem 0; font-size:.82rem; }
+.wb-flow { display:grid; gap:.8rem; }.wb-flow-level { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; }
+.wb-flow-step { color:var(--muted); font-size:.8rem; margin:.2rem 0; }
+.wb-flow .wb-card { margin:0; }.wb-dependency { display:block; margin-top:.7rem; font-size:.77rem; color:var(--muted); }
+.wb-reference { border-top:1px solid var(--line); padding:1rem 0; overflow-wrap:anywhere; }.wb-reference h3 { margin:.1rem 0; font-size:1.1rem; }.wb-reference p { font-size:.9rem; }
+.wb-history { margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line); }.wb-history h2 { font-size:1.4rem; }.wb-history ol { list-style:none; padding:0; }.wb-history li { display:grid; grid-template-columns:100px 1fr; gap:1rem; padding:.6rem 0; font-size:.88rem; }.wb-history time { color:var(--muted); font-size:.8rem; }
+.wb-footnote { border-top:1px solid var(--line); margin-top:2rem; padding-top:1rem; font-size:.82rem; color:var(--muted); }
+.wb-empty { font-size:.85rem; color:var(--muted); padding:1rem 0; }
+@media(max-width:960px) { .wb-body { grid-template-columns:minmax(0,1fr); }.wb-detail { margin-top:1rem; } }
+@media(max-width:620px) { .workbench { padding:2.5rem 1.1rem; }.wb-summary { grid-template-columns:minmax(0,1fr); gap:1.25rem; }.wb-toolbar { align-items:stretch; }.wb-toolbar label { width:100%; }.wb-board,.wb-flow-level { grid-template-columns:minmax(0,1fr); }.wb-views button { min-height:44px; }.wb-history li { grid-template-columns:1fr; gap:.2rem; }.wb-card { min-height:80px; } }

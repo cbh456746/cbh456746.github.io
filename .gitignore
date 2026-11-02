@@ -14,5 +14,10 @@ __pycache__/
 _context_scale_source/
 _context_scale_site/
 _context_test_tmp/
+_workbench_test_tmp/
+.workbench-runs/
+_data/*.write-lock
+_data/*.next
+workbench-review.json
 */.DS_Store
 */*/.DS_Store
