@@ -6,7 +6,6 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
 | ID | Status | Task | Acceptance criteria |
 |---|---|---|---|
-| M-13 | in progress | Connect goals, project tasks, reference repositories and bounded agent review in a public workbench. | One canonical project dataset drives board/flow/reference/detail views and versioned handoffs. Dependency, ownership, review, cancellation, retry and concurrent-write contracts pass. Home, PC/mobile, real Jekyll/RSS/context build and publication state are verified separately; unattended editing remains a follow-up. |
 | M-12 | complete | Point the existing footer GitHub link to this blog repository. | The shared footer links to cbh456746/cbh456746.github.io with the existing GitHub label; no extra button or widget. Home records this task and date. Content validation, same-commit Pages deployment and the published Home/footer destination must pass verification. |
 
 ## Maintenance — 2026-10-30

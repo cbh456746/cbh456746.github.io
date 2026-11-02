@@ -1,5 +1,0 @@
----
-layout: null
-permalink: /workbench/state.json
----
-{{ site.data.workbench | jsonify }}
