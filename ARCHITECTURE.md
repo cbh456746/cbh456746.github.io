@@ -21,10 +21,6 @@ The older service worker is retired with `js/sw-retire.js` so visitors do not ke
 
 For current content, layout, publication, privacy, and recovery procedures, read [the blog operations handoff](docs/BLOG_OPERATIONS_HANDOFF.md).
 
-## Project workbench
-
-The project workbench is separate from published article retrieval. `_data/workbench.json` drives `/workbench/`, `/workbench/state.json`, `css/workbench.css` and `js/workbench.js`. The browser derives board/flow/reference/detail views and handoff packets; it has no write API or agent credentials. `scripts/workbench.mjs` validates state and controls revision-checked, single-writer claims, evidence/review, retry/cancel and next-task packets. TASKS.md remains the logical maintenance ledger. Optional `workbench-agent-review.mjs` runs two bounded read-only Codex roles; local run files are excluded. `project-review.yml` checks contracts on relevant PR/manual events. See [PROJECT_WORKFLOW.md](docs/PROJECT_WORKFLOW.md) for operations and unverified live-model/continuous-writing limits.
-
 ## Article reference exports
 
 The same Pages build adds a selective-reading interface for other projects. Jekyll creates a published-only metadata manifest at `context/index.json`; `scripts/export-context.py` then reads each rendered `.prose` body and emits the complete index, per-article Markdown, marked appendices and `context/all.md` under `_site/`. Python standard-library contract tests run before Jekyll. Source code/prompt payloads, media URLs, summaries and provenance are checked before artifact upload.

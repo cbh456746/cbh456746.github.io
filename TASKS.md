@@ -6,7 +6,6 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
 | ID | Status | Task | Acceptance criteria |
 |---|---|---|---|
-| M-13 | complete | Connect goals, project tasks, reference repositories and bounded agent review in a public workbench. | Canonical data, board/flow/reference/detail and handoffs implemented; 9 workflow and 17 existing reference tests passed. PC/mobile, actual Jekyll/RSS/context and c5482eb same-SHA Actions/public output verified. Pre-deployment backup and checked forward-only recovery route retained; see docs/WORKBENCH_RELEASE.md. Actual model execution and unattended editing remain follow-ups. |
 | M-12 | complete | Point the existing footer GitHub link to this blog repository. | The shared footer links to cbh456746/cbh456746.github.io with the existing GitHub label; no extra button or widget. Home records this task and date. Content validation, same-commit Pages deployment and the published Home/footer destination must pass verification. |
 
 ## Maintenance — 2026-10-30
