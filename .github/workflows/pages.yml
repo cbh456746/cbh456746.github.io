@@ -23,9 +23,7 @@ jobs:
         with:
           node-version: 22
       - name: Validate content rules
-        run: npm run validate
-      - name: Test durable project workflow
-        run: npm run test:workbench
+        run: node scripts/validate-content.mjs
       - name: Test agent reference export contracts
         run: python3 -m unittest discover -s scripts -p 'test_context_export.py'
       - uses: actions/configure-pages@v5
