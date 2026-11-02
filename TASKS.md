@@ -2,6 +2,12 @@
 
 Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
+## Maintenance — 2026-11-02
+
+| ID | Status | Task | Acceptance criteria |
+|---|---|---|---|
+| M-12 | complete | Point the existing footer GitHub link to this blog repository. | The shared footer links to cbh456746/cbh456746.github.io with the existing GitHub label; no extra button or widget. Home records this task and date. Content validation, same-commit Pages deployment and the published Home/footer destination must pass verification. |
+
 ## Maintenance — 2026-10-30
 
 | ID | Status | Task | Acceptance criteria |

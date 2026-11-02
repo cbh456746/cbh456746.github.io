@@ -331,6 +331,8 @@ PC에서 충분한 너비와 모바일 약 390px 너비를 확인합니다. 공�
 
 공통 메뉴는 `_data/navigation.yml`을 수정하고 `_includes/nav.html`의 PC·모바일 출력을 함께 확인합니다. footer는 별도이며 메뉴 파일을 바꿨다고 footer까지 자동 변경되지 않습니다.
 
+2026-11-02의 D-023에 따라 공통 footer의 **GitHub** 링크는 계정 프로필이 아닌 [이 블로그 저장소](https://github.com/cbh456746/cbh456746.github.io)를 가리킵니다. 기존 링크를 재사용하며 Home에 별도 버튼·위젯을 중복 추가하지 않습니다.
+
 <a id="media"></a>
 ## 8. 사진·영상·다운로드·기술 콘텐츠
 

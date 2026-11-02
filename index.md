@@ -4,9 +4,9 @@ title: Home
 description: BH CHOI의 프로젝트, 탐구, 학습과 취향을 담는 개인 기록 공간.
 home_design: garden
 home_current:
-  task_id: M-11
-  updated_on: '2026-10-30'
-  summary: '사람용 운영 안내와 에이전트 지침을 정리하고, 작업별 홈 갱신 절차를 마련했습니다.'
+  task_id: M-12
+  updated_on: '2026-11-02'
+  summary: '블로그 하단 GitHub 링크에서 이 블로그의 소스 저장소를 바로 열 수 있도록 변경했습니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">
