@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 12,
+  "revision": 15,
   "updated_on": "2026-11-02",
   "projects": [
     {
@@ -9,7 +9,7 @@
       "goal": "목표·자료·변경·피드백을 관련 기록과 연결하고, 필요한 작업과 검증 결과를 다음 작업으로 이어갑니다.",
       "status": "active",
       "updated_on": "2026-11-02",
-      "next_step": "검증한 개편안을 공개 경로에 반영하고, 실제 복수 모델 검수·지속 실행을 이어서 검증합니다.",
+      "next_step": "실제 복수 모델 검수와 지속 실행의 환경·비용 한도를 정하고 단계별로 검증합니다.",
       "acceptance": [
         "새 세션에서 목표·현재 상태·다음 작업을 복원할 수 있습니다.",
         "작업의 선행 조건·완료 근거·중단 이유를 함께 확인합니다.",
@@ -135,7 +135,7 @@
       "project_id": "blog-evolution",
       "title": "개편 결과를 공개 경로에서 확인하기",
       "description": "게시 범위 확인 후 같은 커밋의 빌드·배포와 작업실·Home·참조 자료를 확인합니다.",
-      "status": "active",
+      "status": "complete",
       "role": "coordinator",
       "depends_on": [
         "workbench-view",
@@ -147,9 +147,20 @@
       ],
       "attempts": 1,
       "owner": "publisher",
-      "lease_until": "2026-11-02T11:21:24.672Z",
-      "evidence": [],
-      "reviewed_by": null,
+      "lease_until": null,
+      "evidence": [
+        {
+          "summary": "c5482eb의 build/deploy 성공과 공개 Home·작업실·동일 SHA 참조 색인·본문 해시 확인",
+          "ref": "https://github.com/cbh456746/cbh456746.github.io/actions/runs/41405832879",
+          "checked_on": "2026-11-02"
+        },
+        {
+          "summary": "공개 8개 경로, 글·RSS 19개, 선택 본문 해시와 브라우저 화면 확인. 원격 백업·별도 복제 복구도 검증.",
+          "ref": "docs/WORKBENCH_RELEASE.md",
+          "checked_on": "2026-11-02"
+        }
+      ],
+      "reviewed_by": "public-verification",
       "blocked_reason": null
     },
     {
@@ -305,6 +316,22 @@
       "task_id": "publication-check",
       "kind": "claim",
       "summary": "publisher: 개편 결과를 공개 경로에서 확인하기 작업 배정"
+    },
+    {
+      "id": "d8b79fda-38fa-4f72-ab88-d6e1475d87ff",
+      "on": "2026-11-02",
+      "project_id": "blog-evolution",
+      "task_id": "publication-check",
+      "kind": "submit",
+      "summary": "c5482eb의 build/deploy 성공과 공개 Home·작업실·동일 SHA 참조 색인·본문 해시 확인"
+    },
+    {
+      "id": "2df27aff-8f4c-4648-9e56-46eb39f36f94",
+      "on": "2026-11-02",
+      "project_id": "blog-evolution",
+      "task_id": "publication-check",
+      "kind": "accept",
+      "summary": "공개 8개 경로, 글·RSS 19개, 선택 본문 해시와 브라우저 화면 확인. 원격 백업·별도 복제 복구도 검증."
     }
   ]
 }
