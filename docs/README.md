@@ -8,6 +8,8 @@ This directory is the source of truth for the staged modernization of this perso
 
 For goal-driven project continuation read [PROJECT_WORKFLOW.md](PROJECT_WORKFLOW.md): public workbench, canonical task data, evidence/review, reference repositories and optional bounded agent review. The [implementation validation](WORKBENCH_VALIDATION.md) distinguishes local checks, model execution and publication.
 
+The [workbench release and recovery guide](WORKBENCH_RELEASE.md) records the pre-deployment baseline, retained backup and forward-only restoration route.
+
 For ongoing maintenance, begin with [the full blog operations handoff](BLOG_OPERATIONS_HANDOFF.md), the latest accepted decisions, and current source. This repository owns the canonical operations guide; project-specific development is documented in each project repository. The documents below retain the original modernization stages; statements about dummy profiles or an unconnected repository are historical and must not be restored as the current state.
 
 1. [PRODUCT_REQUIREMENTS.md](PRODUCT_REQUIREMENTS.md) — product goals and non-negotiable user-experience requirements.

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 11,
+  "revision": 12,
   "updated_on": "2026-11-02",
   "projects": [
     {
@@ -135,7 +135,7 @@
       "project_id": "blog-evolution",
       "title": "개편 결과를 공개 경로에서 확인하기",
       "description": "게시 범위 확인 후 같은 커밋의 빌드·배포와 작업실·Home·참조 자료를 확인합니다.",
-      "status": "planned",
+      "status": "active",
       "role": "coordinator",
       "depends_on": [
         "workbench-view",
@@ -145,9 +145,9 @@
         "같은 SHA의 Pages 빌드와 배포가 성공합니다.",
         "공개 작업실과 Home의 내용·링크를 확인합니다."
       ],
-      "attempts": 0,
-      "owner": null,
-      "lease_until": null,
+      "attempts": 1,
+      "owner": "publisher",
+      "lease_until": "2026-11-02T11:21:24.672Z",
       "evidence": [],
       "reviewed_by": null,
       "blocked_reason": null
@@ -297,6 +297,14 @@
       "task_id": "agent-review",
       "kind": "accept",
       "summary": "작업 패킷·두 역할 명령·응답 검증 계약과 실행 계획 확인. 실제 모델 실행 검증은 후속 단계."
+    },
+    {
+      "id": "05e84c18-2377-4366-9436-e697a513e872",
+      "on": "2026-11-02",
+      "project_id": "blog-evolution",
+      "task_id": "publication-check",
+      "kind": "claim",
+      "summary": "publisher: 개편 결과를 공개 경로에서 확인하기 작업 배정"
     }
   ]
 }

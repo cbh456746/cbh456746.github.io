@@ -6,7 +6,7 @@ home_design: garden
 home_current:
   task_id: M-13
   updated_on: '2026-11-02'
-  summary: '프로젝트 작업실, 연결 흐름과 참고 저장소를 구현하고 상태 관리·인수인계·PC·모바일 화면을 로컬에서 검증했습니다.'
+  summary: '프로젝트 작업실과 인수인계 흐름을 검증하고, 배포 전 상태의 원격 백업과 복구 경로를 확보해 공개 반영을 진행합니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">

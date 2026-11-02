@@ -145,3 +145,7 @@ On 2026-11-02 the owner clarified that the repository shortcut should reuse the 
 ### D-024 — Connect project goals, evidence and agent handoffs through a workbench
 
 On 2026-11-02 the owner confirmed a blog that responds to goals, materials, changes and feedback by finding relevant records, performing/verifying work and updating understandable progress, then requested implementation along the reviewed direction. Add a public workbench from one versioned dataset for scope, acceptance, tasks, dependencies, evidence, references and events. Keep TASKS as the logical maintenance ledger and existing article retrieval separate. Provide local state transitions and optional bounded two-role read-only review; do not imply live-model verification or unattended editing. Preserve existing content/URLs, Home identity, profile limits and services. Publication follows the owner's actual authorization and same-SHA verification.
+
+### D-025 — Publish the workbench after securing recovery to the prior site
+
+On 2026-11-02 the owner explicitly approved public deployment and required a route back to the pre-deployment state. Preserve main `07055c747b56a0d7e8a9181927cb8d446ec70694` in a remote backup branch and separately verified local recovery files before publication. Prepare a forward-only recovery commit with the baseline tree and current deployment parent; check both before use. Publish and verify ordinary main updates without force push, settings changes or unrelated content changes. See docs/WORKBENCH_RELEASE.md.
