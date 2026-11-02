@@ -46,3 +46,5 @@ git push origin origin/codex/rollback-workbench-20261102:refs/heads/main
 공개 Home, 작업실, 상태 JSON(revision 12), 안내, llms, 참조 색인, RSS, Resume를 확인했다. 공개 글 19편·RSS 19개를 유지했고 선택 본문의 SHA-256과 source_commit을 대조했다. 공개 브라우저에서도 작업실을 확인했다. 이 단락과 완료 상태를 기록하는 후속 커밋은 별도로 빌드·공개 확인하며, 복구 브랜치의 첫 부모도 그 최종 커밋에 맞춘다.
 
 로컬 bundle을 별도 폴더에 복제해 기준 커밋으로 체크아웃하고 트리 일치까지 확인했다. 실제 운영 사이트를 되돌리는 복구 배포는 수행하지 않았다.
+
+완료 기록 커밋 `a5fd03a7bcac56be17c1c2e963b9585c3d574a14`의 [Actions 41406384049](https://github.com/cbh456746/cbh456746.github.io/actions/runs/41406384049)도 성공했고, 공개 JSON revision 15와 완료 상태·참조 버전·본문 해시를 확인했다. 이어진 브라우저 재열기에서는 이전 JSON을 캐시에서 재사용하는 현상을 관찰했다. 작업실 CSS·JS·상태 URL에 빌드 버전을 붙이고 상태를 no-store로 읽으며, 페이지가 기대한 revision과 다르면 혼합 표시를 거부하도록 보완했다. 이 수정도 별도 배포 검증 대상이다.

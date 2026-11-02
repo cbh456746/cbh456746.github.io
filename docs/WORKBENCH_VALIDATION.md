@@ -29,6 +29,8 @@ Jekyll 출력물을 loopback HTTP로 제공해 PC와 390×844 모바일에서 �
 
 최초 파일 교체 검사는 Windows 도구의 제한된 TEMP에서 EPERM이 발생했다. 복제본 안의 전용 `_workbench_test_tmp`로 옮겨 원자적 교체와 충돌 검사를 통과했다. 저장 실패 때 원본을 지우는 우회는 추가하지 않았다.
 
+공개 JSON 자체가 revision 15로 갱신됐지만 브라우저 재열기에서 revision 12를 재사용한 사례가 있었다. 빌드별 자산·상태 URL, no-store 읽기와 페이지/데이터 revision 일치 검사로 캐시·버전 혼합을 보완했다.
+
 고정 미리보기 포트의 bind가 거부되어 OS가 배정한 임시 로컬 포트로 검수했다. Windows 보안 설정은 변경하지 않았다. 실제 Jekyll 확인을 위해 WSL에 Ruby/Jekyll 개발 도구를 설치했다.
 
 ## 남은 범위
