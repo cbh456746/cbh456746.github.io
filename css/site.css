@@ -35,8 +35,8 @@
 .stock-star__select:focus-visible { outline:2px solid #50694a; outline-offset:3px; }
 .stock-star__name { font-weight:650; font-size:.84rem; }
 .stock-star__ticker { color:var(--muted); font-size:.75rem; white-space:nowrap; }
-.stock-star__quote { min-height:50px; margin-top:.35rem; font-size:.7rem; color:var(--muted); overflow:hidden; }
-.stock-star__quote .tradingview-widget-container { width:100%; min-height:50px; }
+.stock-star__quote { height:101px; margin-top:.35rem; font-size:.7rem; color:var(--muted); overflow:hidden; }
+.stock-star__quote .tradingview-widget-container { width:100%; height:101px; }
 .stock-data-note { color:var(--muted); font-size:.7rem; line-height:1.65; }
 .stock-sidebar > .stock-data-note { padding:0 1.3rem .5rem; }
 .stock-panel[hidden] { display:none; }

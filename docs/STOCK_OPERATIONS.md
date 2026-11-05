@@ -6,7 +6,7 @@ Stock은 소유자가 고른 미국 상장 주식·ADR·ETF만 보여주는 공�
 
 - Stars 정본은 `_data/stock-stars.yml`입니다. 표기 순서도 이 파일을 따릅니다. 방문자가 공개 사이트에서 목록을 수정하는 기능은 없습니다. 소유자가 종목을 요청하면 AI가 이 파일을 수정·검증·게시합니다.
 - 최초 목록은 소유자가 제공한 관심 종목 이미지의 미국 상장 항목 24개입니다. 현대차·오리온홀딩스·대한항공은 코스피 항목이므로 제외했습니다. 쿠팡은 회사의 소재와 무관하게 NYSE 상장 종목이라 포함했습니다.
-- 이미지에 보이는 원화 가격, 장전 표시, 변동 수치를 저장하거나 USD로 환산하지 않았습니다. 화면의 가격·등락과 차트는 방문 시 TradingView 위젯이 제공합니다. 공급자·거래소별로 실시간, 지연, 종가 데이터가 다를 수 있고, 위젯이 차단되거나 장애가 나면 표시되지 않을 수 있습니다. [TradingView 데이터 안내](https://www.tradingview.com/widget-docs/faq/data/)와 [위젯 안내](https://www.tradingview.com/widget/)를 확인합니다.
+- 이미지에 보이는 원화 가격, 장전 표시, 변동 수치를 저장하거나 USD로 환산하지 않았습니다. 화면의 가격·등락과 차트는 방문 시 TradingView 위젯이 제공합니다. TradingView는 미국 주식 공개 위젯에 지연 데이터만 제공한다고 명시합니다. 위젯이 차단되거나 장애가 나면 표시되지 않을 수 있습니다. [TradingView 데이터 안내](https://www.tradingview.com/widget-docs/faq/data/)와 [위젯 안내](https://www.tradingview.com/widget/)를 확인합니다.
 - 위젯은 외부 스크립트와 데이터 연결을 사용합니다. TradingView는 위젯 작동을 위해 방문자의 IP 주소, 포함한 페이지 URL, 위젯 종류, 표시 종목을 처리한다고 설명합니다. [공식 FAQ](https://www.tradingview.com/widget-docs/faq/general/). 이 사이트에 시세 API 키나 방문자 계정 권한은 두지 않습니다.
 - 이 영역은 개인 분석 기록용입니다. 수치나 글을 주문 실행 또는 투자 자문으로 오인하지 않도록 작성일과 시세 시점을 구분합니다.
 

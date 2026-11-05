@@ -28,7 +28,7 @@ permalink: /stock/
         </li>
         {% endfor %}
       </ol>
-      <p class="stock-data-note">시세 제공: <a href="https://www.tradingview.com/widget/" target="_blank" rel="noopener noreferrer">TradingView</a>. 거래소와 데이터 제공 조건에 따라 지연될 수 있습니다. 위젯을 열면 외부 서비스로 접속합니다.</p>
+      <p class="stock-data-note">시세 제공: <a href="https://www.tradingview.com/widget/" target="_blank" rel="noopener noreferrer">TradingView</a>. 미국 주식 위젯 시세는 지연 데이터입니다. 위젯을 열면 외부 서비스로 접속합니다.</p>
     </aside>
     <div class="stock-detail">
       {% for star in stars %}
@@ -36,7 +36,7 @@ permalink: /stock/
       <section class="stock-panel" data-stock-panel="{{ star.symbol | escape }}"{% unless forloop.first %} hidden{% endunless %} aria-labelledby="stock-panel-title-{{ forloop.index }}">
         <header class="stock-panel__heading"><div><p class="eyebrow">{{ star.symbol | escape }} · USD</p><h2 id="stock-panel-title-{{ forloop.index }}">{{ star.name | escape }}</h2></div><span class="stock-panel__badge">STAR {{ forloop.index }}</span></header>
         <div class="stock-chart" data-stock-chart="{{ star.symbol | escape }}"><p class="stock-chart__placeholder">차트를 불러오는 중…</p></div>
-        <p class="stock-data-note">차트의 시세·당일 변동은 <a href="https://www.tradingview.com/symbols/{{ star.symbol | replace: ':', '-' | escape }}/" target="_blank" rel="noopener noreferrer">TradingView</a>가 제공합니다. 지연 여부와 거래 시간을 확인한 뒤 이용하세요.</p>
+        <p class="stock-data-note">차트의 시세·당일 변동은 <a href="https://www.tradingview.com/symbols/{{ star.symbol | replace: ':', '-' | escape }}/" target="_blank" rel="noopener noreferrer">TradingView</a>가 제공하는 지연 데이터입니다. 거래 시간을 확인한 뒤 이용하세요.</p>
         <div class="stock-articles">
           <div class="stock-articles__heading"><p class="eyebrow">My notes</p><h3>이 종목에 관한 분석</h3></div>
           {% assign match_count = 0 %}
