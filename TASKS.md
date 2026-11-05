@@ -6,7 +6,7 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
 | ID | Status | Task | Acceptance criteria |
 |---|---|---|---|
-| M-25 | in progress | Publish a concise Play work log of the 2026-11-05 Stock page work. | Summarize verified scope and results, show one reviewed public UI screenshot, distinguish delayed third-party quotes and browser-only ordering from owner-managed Stars, then validate and verify the Play listing, article and same-SHA Pages deployment on desktop/mobile. |
+| M-25 | complete | Publish a concise Play work log of the 2026-11-05 Stock page work. | The article summarizes 24 Stars, USD delayed quotes and Area chart, search, browser-only order editing, bottom move and compact mobile layout. A reviewed public screenshot is attributed and warns that its captured price is not current; no personal path or image metadata was published. Content validation passed. Article commit 76abde7 and mobile title fix 4e4ff2d built/deployed in Pages runs 42051220694 and 42052559778. The live article image loaded; the post appeared first in Play, Home summary rendered, and desktop, 390 px and 320 px layouts had no horizontal overflow. |
 
 ## Maintenance — 2026-11-05
 
