@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "STOCK 페이지 제작기"
+title: "STOCK 제작기"
 subtitle: "Stars 24개 종목에서 검색, 차트, 개인 순서 편집까지"
 date: 2026-11-05 23:55:00 +0900
 permalink: /play/stock-watchlist-build-log/
