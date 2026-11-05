@@ -177,3 +177,7 @@ After the Watchlist update, the owner requested a tutorial based on `livliv-dev/
 ### D-032 — Write for readers and use media where it explains
 
 On 2026-11-05 the owner requested a more readable LivLiv tutorial and a durable blog-wide writing rule. Lead with the reader's goal and first action; use short focused sections, useful captions and concrete outcomes. Screenshots, diagrams and optional motion should clarify a step that prose alone handles poorly. There is no required media count: a clear text-only page is valid. Review rights, attribution, privacy, metadata, load cost, accessibility and narrow-screen layout. The LivLiv article uses a captured public PNG example and an opt-in, externally hosted official GIF with its separate character licence linked. Source review and public-demo observation do not establish local camera/microphone performance.
+
+### D-033 — Size Stock Watchlist quotes to the rendered widget
+
+On 2026-11-05 the owner showed that Stock Watchlist rows still had large empty space after the previous spacing change. In the live page the TradingView single-quote iframe rendered 69 px tall, while the reserved `.stock-star__quote` area was 101 px; 32 px per row was unused. Set the reserved area to the observed iframe height and reduce outer padding slightly. Preserve the widget itself, its attribution and the stable space while loading. Recheck desktop and narrow screens because provider markup can change.

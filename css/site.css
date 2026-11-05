@@ -45,7 +45,7 @@
 .stock-currency,.stock-panel__badge { border:1px solid #d6ddd4; color:#536a58; padding:.2rem .55rem; border-radius:999px; font-size:.68rem; letter-spacing:.06em; white-space:nowrap; }
 .stock-sidebar__hint { color:var(--muted); font-size:.73rem; padding:0 1.3rem; margin:.55rem 0 .8rem; }
 .stock-stars { margin:0; padding:0; list-style:none; max-height:min(65vh,760px); overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-.stock-star { padding:.48rem .8rem .38rem 1rem; border-bottom:1px solid #eeede9; }
+.stock-star { padding:.3rem .8rem .25rem 1rem; border-bottom:1px solid #eeede9; }
 .stock-star[hidden] { display:none; }
 .stock-star:last-child { border-bottom:0; }
 .stock-star:has(.stock-star__select[aria-current="true"]) { background:#f2f5ef; box-shadow:inset 3px 0 #6b8a68; }
@@ -58,8 +58,8 @@
 .stock-star__move { display:flex; gap:.2rem; }
 .stock-star__move[hidden] { display:none; }
 .stock-star__move button { min-width:1.5rem; min-height:1.5rem; padding:0; line-height:1; font-size:.9rem; }
-.stock-star__quote { height:101px; margin-top:.18rem; font-size:.7rem; color:var(--muted); overflow:hidden; }
-.stock-star__quote .tradingview-widget-container { width:100%; height:101px; }
+.stock-star__quote { height:69px; margin-top:.18rem; font-size:.7rem; color:var(--muted); overflow:hidden; }
+.stock-star__quote .tradingview-widget-container { width:100%; height:69px; }
 .stock-data-note { color:var(--muted); font-size:.7rem; line-height:1.65; }
 .stock-sidebar > .stock-data-note { padding:0 1.3rem .5rem; }
 .stock-panel[hidden] { display:none; }
