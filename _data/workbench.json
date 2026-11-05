@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 29,
+  "revision": 33,
   "updated_on": "2026-11-05",
   "projects": [
     {
@@ -48,6 +48,57 @@
           "poster": "/assets/videos/browser-vtuber-avatar/poster.jpg",
           "alt": "브라우저 방송 아바타 프로젝트의 공개 시연 영상",
           "caption": "기존 프로젝트의 공개 영상입니다. Board 조작 튜토리얼 영상은 아닙니다."
+        }
+      ]
+    },
+    {
+      "id": "mesh-avatar",
+      "title": "Mesh Avatar · 자연스러운 AI 아바타 제작",
+      "goal": "한 장의 일러스트를 출발점으로, Hiyori·Akari 샘플을 기준 삼아 고개·시선·목·상체가 자연스럽게 움직이는 방송 아바타 제작 흐름을 검증합니다. 현재는 연구·후보 구현 단계이며 목표 품질은 미달입니다.",
+      "status": "active",
+      "updated_on": "2026-11-05",
+      "next_step": "물리·표정을 고정한 좌우·상하 회전과 시선 단독 시험부터 비교합니다. LivLiv Player는 문서 검토 후보이며 도입·성능 검증 전입니다.",
+      "acceptance": [
+        "얼굴 방향과 무관한 국소 찌그러짐·관절 늘어남·윤곽 이중상 없이 고개와 목이 이어집니다. 원근에 따른 화면상 비율 변화는 별도로 판단합니다.",
+        "시선만 움직일 때 턱선과 머리 형태는 유지되고, 눈꺼풀·홍채·입모양은 독립적으로 동작합니다.",
+        "생성 → 좌표 등록 → 합성 → 단독 동작 → 복합·연속 검토를 같은 원본과 고정 입력으로 확인합니다.",
+        "파일 무결성·수치 검사와 시각 품질을 구분하고, 실제 추적·OBS 송출·재시작 검증을 통과한 버전만 방송용 완성본으로 표시합니다."
+      ],
+      "scope": [
+        "독립 파츠와 가려진 영역 복원, 원본 대비 소재 소유 영역 검사",
+        "고개·목·시선의 움직임 구조와 방향별 형태·가림 비교",
+        "눈·입·상체·호흡·머리카락의 독립 제어와 복합 가동",
+        "Windows 실행·VTube Studio 입력·OBS 출력의 버전별 검증",
+        "공개 Board에는 검수한 진행 요약과 기존 공개 자료만 기록"
+      ],
+      "policy": {
+        "execution": "local_changes",
+        "publication": "owner_authorized",
+        "max_attempts": 3
+      },
+      "reference_ids": [
+        "mesh-avatar-upstream",
+        "livliv-player",
+        "see-through",
+        "stdgen"
+      ],
+      "media": [
+        {
+          "id": "mesh-initial-demo",
+          "kind": "video",
+          "title": "초기 Mesh Avatar 공개 시연",
+          "src": "/assets/videos/mesh-avatar-studio/demo.mp4",
+          "poster": "/assets/videos/mesh-avatar-studio/poster.jpg",
+          "alt": "초기 Mesh Avatar 캐릭터의 눈과 입, 고개와 상체 움직임을 보여주는 시연",
+          "caption": "기존에 공개한 14.9초 초기 버전 영상입니다. 후속 Rose Duet 후보의 시연 및 최종 품질 평가와 구분합니다."
+        },
+        {
+          "id": "mesh-hiyori-yaw-study",
+          "kind": "image",
+          "title": "Hiyori와 Silver Braid의 고개 방향 비교",
+          "src": "/assets/images/hiyori-head-motion-study/yaw-comparison.webp",
+          "alt": "위쪽 Hiyori 샘플과 아래쪽 Silver Braid 후보에서 눈과 코, 볼과 옆머리의 상대 배치를 비교한 공개 연구 그림",
+          "caption": "2026-10-26 공개 연구의 선택 자세입니다. 서로 다른 캐릭터·입력이므로 동일 회전각이나 연속 동작 속도를 입증하지 않습니다."
         }
       ]
     }
@@ -270,6 +321,174 @@
       ],
       "attempts": 1,
       "blocked_reason": null
+    },
+    {
+      "id": "mesh-public-record",
+      "project_id": "mesh-avatar",
+      "title": "현재 성과와 미해결 과제 정리",
+      "description": "초기 독립 파츠·Windows 앱·VTS 입력 연결 기록, Silver Braid 회전 연구, Rose Duet의 별도 입체 두상 실험을 구분해 공개 요약합니다. Rose Duet의 보관 로그는 새 검사 13개·정적 24자세·합성 480프레임을 기록하지만 Hiyori급 작화 및 실제 VTS·OBS 검증을 승인한 결과는 아닙니다.",
+      "status": "review",
+      "role": "coordinator",
+      "depends_on": [],
+      "acceptance": [
+        "기존 소개와 연구를 연결하고, 새 후보의 결과·한계·검증일을 명확히 구분합니다.",
+        "원본·캐릭터 소재·개인 경로·비공개 저장소 식별자를 새로 공개하지 않습니다.",
+        "Board 선택·흐름·근거·참고 저장소·인수인계와 Home 연결을 확인합니다."
+      ],
+      "attempts": 1,
+      "owner": "mesh-board-coordinator",
+      "lease_until": null,
+      "evidence": [
+        {
+          "summary": "프로젝트·7개 작업·4개 참고 저장소와 기존 공개 미디어를 등록하고 Home·소개글을 연결했습니다. 콘텐츠·Board 계약 13개 검사와 기존 객체 보존을 확인했습니다. 실제 공개 배포·화면 검증과 독립 수락은 별도입니다.",
+          "ref": "docs/MESH_AVATAR_BOARD_20261105.md",
+          "checked_on": "2026-11-05"
+        }
+      ],
+      "reviewed_by": null,
+      "blocked_reason": null
+    },
+    {
+      "id": "mesh-head-benchmark",
+      "project_id": "mesh-avatar",
+      "title": "고개·목·시선을 같은 입력으로 비교",
+      "description": "Hiyori 사진은 자세의 참고로 사용하고 실제 회전각·속도를 역산하지 않습니다. Silver Braid, Rose Duet와 공개 LivLiv 샘플의 물리 OFF·정면·좌우·상하·시선 단독 조건을 먼저 분리합니다. LivLiv는 문서·소스 검토 단계이며 같은 조건의 실행 비교는 아직 없습니다.",
+      "status": "ready",
+      "role": "researcher",
+      "depends_on": [],
+      "acceptance": [
+        "카메라·배율·입력·버전·자동 움직임 여부가 기록된 비교판을 만듭니다.",
+        "머리 회전의 원근과 볼의 국소 압축, 목 접합, 윤곽 중복을 각각 판정합니다.",
+        "시선만 바꾼 조건에서 턱선과 두상 형상이 함께 움직이지 않는지 확인합니다.",
+        "LivLiv의 개선형 Nana와 일반 생성 모델, 회전 키폼 적용 전후를 구분합니다."
+      ],
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null,
+      "evidence": [
+        {
+          "summary": "선택 Hiyori 사진과 세 Silver Braid 빌드의 방향·국소 변형을 비교한 공개 연구가 있습니다. 사진은 약 10초 간격으로 연속 동작의 시간 정답이 아닙니다.",
+          "ref": "https://cbh456746.github.io/research/hiyori-silver-braid-head-motion-study/",
+          "checked_on": "2026-11-05"
+        },
+        {
+          "summary": "LivLiv 튜토리얼은 공개 소스·예제 검토 기록입니다. 우리 모델로 설치·카메라·회전 품질을 검증한 결과는 아닙니다.",
+          "ref": "https://cbh456746.github.io/notes/livliv-player-getting-started/",
+          "checked_on": "2026-11-05"
+        }
+      ],
+      "reviewed_by": null,
+      "blocked_reason": null
+    },
+    {
+      "id": "mesh-material-integrity",
+      "project_id": "mesh-avatar",
+      "title": "움직일 부위의 소재와 숨은 영역 재검수",
+      "description": "머리카락에 옷·어깨가 섞이거나 밑그림에 원래 부위가 남아 동반 이동·중복이 생긴 실패를 기준 삼습니다. 원본과 가려진 영역, 투명 가장자리, 좌표 등록 및 합성을 먼저 심사합니다.",
+      "status": "planned",
+      "role": "builder",
+      "depends_on": [
+        "mesh-head-benchmark"
+      ],
+      "acceptance": [
+        "밝은·어두운 배경과 확대 단독 파츠에서 소유 영역과 투명 테두리를 확인합니다.",
+        "원본·수정 전·수정 후를 보존하고 숨은 영역의 틈·중복·의상 혼입을 검사합니다.",
+        "파일 디코딩·해시 통과와 캐릭터 형태·그림체의 시각 승인을 구분합니다."
+      ],
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null,
+      "evidence": [],
+      "reviewed_by": null,
+      "blocked_reason": null
+    },
+    {
+      "id": "mesh-head-neck-rig",
+      "project_id": "mesh-avatar",
+      "title": "턱·볼·목을 유지하는 회전 구조 보완",
+      "description": "실패가 확인된 자세를 대상으로 기본 두상, 방향별 보정, 귀·머리카락의 앞뒤 가림과 목 피부·옷깃 연결을 수정합니다. 정점 밀도 증가나 가동 범위 축소만으로 품질 달성을 선언하지 않습니다.",
+      "status": "planned",
+      "role": "builder",
+      "depends_on": [
+        "mesh-material-integrity"
+      ],
+      "acceptance": [
+        "좌우·상하 및 중간 자세에서 턱선·눈꼬리·귀 연결이 한 얼굴로 읽힙니다.",
+        "목 골격 길이 검사와 실제 피부·턱밑·옷깃의 연결 검토를 모두 통과합니다.",
+        "정면 복원과 연속 회전에서 얼굴 비례 변화·팝핑·이중상이 재발하지 않습니다."
+      ],
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null,
+      "evidence": [],
+      "reviewed_by": null,
+      "blocked_reason": null
+    },
+    {
+      "id": "mesh-expression-body-motion",
+      "project_id": "mesh-avatar",
+      "title": "표정·상체·부수 움직임 결합",
+      "description": "승인한 고개·목 구조에 눈감기·시선·입형·눈썹과 몸통·어깨·호흡·가슴·머리카락의 추종을 순서대로 결합합니다. 다른 부위의 크기를 늘려 이동을 대체하지 않습니다.",
+      "status": "planned",
+      "role": "builder",
+      "depends_on": [
+        "mesh-head-neck-rig"
+      ],
+      "acceptance": [
+        "작게 뜬 눈과 완전한 깜박임, 홍채 방향 및 발음별 입형을 원화와 비교합니다.",
+        "공통 위치 이동과 머리·몸 회전, 머리카락 묶음의 지연을 별도로 제어합니다.",
+        "회전＋눈감기＋입 개방＋상체 이동 조합에서 소재 중복·틈·충돌을 검토합니다."
+      ],
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null,
+      "evidence": [],
+      "reviewed_by": null,
+      "blocked_reason": null
+    },
+    {
+      "id": "mesh-tracking-output",
+      "project_id": "mesh-avatar",
+      "title": "실제 추적과 방송 출력 재검증",
+      "description": "초기 앱에서의 iPhone→VTS 입력 연결과 새 후보의 연동 상태를 분리합니다. 채택한 후보에서 인증·추적 수신·좌표 보정·감지 상실·재연결, OBS 소스 재사용과 목표 1080p/60fps 출력을 확인합니다.",
+      "status": "planned",
+      "role": "builder",
+      "depends_on": [
+        "mesh-expression-body-motion"
+      ],
+      "acceptance": [
+        "합성·모의 입력과 실제 기기 입력의 기록을 구분합니다.",
+        "새 후보의 VTS 입력 어댑터 유무와 원본 형식·Cubism 호환 범위를 명시합니다.",
+        "OBS 종료·재시작 뒤 소스 재사용, 장시간 동작과 실제 출력 조건을 검증합니다."
+      ],
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null,
+      "evidence": [],
+      "reviewed_by": null,
+      "blocked_reason": null
+    },
+    {
+      "id": "mesh-release-workflow",
+      "project_id": "mesh-avatar",
+      "title": "재현 가능한 제작 흐름과 실행 앱 정리",
+      "description": "검증된 후보를 일러스트 입력부터 소재·등록·리깅·심사·실행까지 재현하도록 문서화합니다. 파츠 호환성과 자동화는 실제 검토·유지 비용을 기준으로 범위를 결정합니다.",
+      "status": "planned",
+      "role": "builder",
+      "depends_on": [
+        "mesh-tracking-output"
+      ],
+      "acceptance": [
+        "처음 보는 사용자와 에이전트가 입력·출력·실패 복구·품질 기준을 이해합니다.",
+        "실행파일 생성, 목표 품질 승인, 실제 추적·방송 검증의 상태를 각각 표시합니다.",
+        "소스·에셋의 공개는 별도 검수된 범위에서만 진행하며 현재 비공개 상태를 유지합니다."
+      ],
+      "attempts": 0,
+      "owner": null,
+      "lease_until": null,
+      "evidence": [],
+      "reviewed_by": null,
+      "blocked_reason": null
     }
   ],
   "references": [
@@ -313,6 +532,63 @@
         "README.markdown"
       ],
       "limits": "기존 사이트의 생성기입니다. 실제 사용 패키지는 Gemfile과 빌드 환경을 확인합니다."
+    },
+    {
+      "id": "mesh-avatar-upstream",
+      "title": "Mesh Avatar Studio 원본",
+      "url": "https://github.com/shinshin86/mesh-avatar-studio",
+      "purpose": "초기 메시 아바타·에디터와 좌표 등록·단독 자세 검토의 출발점을 확인합니다.",
+      "status": "documented",
+      "revision": null,
+      "checked_on": "2026-11-05",
+      "entry_points": [
+        "README.md",
+        "docs/agent-guide.md"
+      ],
+      "limits": "원본 공개 프로젝트의 문서 검토입니다. 후속 자체 구현 전체가 포함된 저장소가 아니며, 이번 Board 작업에서 실행 성능을 재시험하지 않았습니다."
+    },
+    {
+      "id": "livliv-player",
+      "title": "LivLiv Player",
+      "url": "https://github.com/livliv-dev/player",
+      "purpose": "독립 파츠·깊이·회전 키폼·눈 가림·개별 체인과 공통 재생 API를 비교합니다.",
+      "status": "documented",
+      "revision": "aeeb8e49b7fd2039b53db971102992dcc6c8a852",
+      "checked_on": "2026-11-05",
+      "entry_points": [
+        "README.md",
+        "API.md",
+        "FORMAT.md",
+        "src/runtime/puppet.ts",
+        "characters/LICENSE.md"
+      ],
+      "limits": "문서·소스 검토이며 미도입입니다. Player는 이미지 자동 제작 파이프라인이 아니고 Cubism 파일을 읽지 않습니다. 코드와 샘플 캐릭터의 라이선스가 다르며, 우리 모델의 품질 개선은 아직 검증하지 않았습니다."
+    },
+    {
+      "id": "see-through",
+      "title": "See-through",
+      "url": "https://github.com/shitagaki-lab/see-through",
+      "purpose": "한 장의 애니메이션풍 일러스트에서 의미별 파츠·가려진 영역을 복원하는 제작 단계의 참고입니다.",
+      "status": "documented",
+      "revision": null,
+      "checked_on": "2026-11-05",
+      "entry_points": [
+        "README.md"
+      ],
+      "limits": "공개 연구 문서 검토 단계입니다. 분리된 PSD가 완성 리깅이나 자연스러운 회전을 보장하지 않으며 이번 프로젝트에 설치·검증하지 않았습니다."
+    },
+    {
+      "id": "stdgen",
+      "title": "StdGEN",
+      "url": "https://github.com/hyz317/StdGEN",
+      "purpose": "몸·의상·머리카락을 구분한 입체 생성과 다방향 복원의 대안을 검토합니다.",
+      "status": "documented",
+      "revision": null,
+      "checked_on": "2026-11-05",
+      "entry_points": [
+        "README.md"
+      ],
+      "limits": "문서 검토 단계이며 미도입입니다. 3D 생성 연구와 Live2D식 작화 품질, 추적·방송용 리깅의 달성을 구분합니다."
     }
   ],
   "events": [
@@ -504,6 +780,36 @@
       "task_id": "board-name-private-boundary-20261105",
       "kind": "accept",
       "summary": "e3198a5 Pages build/deploy 성공; 공개 Home 메뉴·카드, Board revision 28, 안내·기록 도구와 390px 화면 확인; 비공개 식별자 공개 검사 0건"
+    },
+    {
+      "id": "e43923c5-131b-48ec-acb8-fa77d1f012c4",
+      "on": "2026-11-05",
+      "project_id": "mesh-avatar",
+      "kind": "import",
+      "summary": "프로젝트와 작업 명세를 등록했습니다."
+    },
+    {
+      "id": "05a12871-8019-403b-9635-6fe076a671c5",
+      "on": "2026-11-05",
+      "project_id": "mesh-avatar",
+      "task_id": "mesh-public-record",
+      "kind": "claim",
+      "summary": "mesh-board-coordinator: 현재 성과와 미해결 과제 정리 작업 배정"
+    },
+    {
+      "id": "mesh-avatar-board-request-20261105",
+      "on": "2026-11-05",
+      "project_id": "mesh-avatar",
+      "kind": "input",
+      "summary": "현재 Mesh Avatar의 성과와 한계를 기존 공개 연구와 연결하고, 고개·목·시선 비교부터 이어갈 신규 Board 프로젝트로 등록했습니다. 모델 개발·새 소재 공개는 실행하지 않았습니다."
+    },
+    {
+      "id": "cba07766-9e45-4bb3-8520-b806d935ae10",
+      "on": "2026-11-05",
+      "project_id": "mesh-avatar",
+      "task_id": "mesh-public-record",
+      "kind": "submit",
+      "summary": "프로젝트·7개 작업·4개 참고 저장소와 기존 공개 미디어를 등록하고 Home·소개글을 연결했습니다. 콘텐츠·Board 계약 13개 검사와 기존 객체 보존을 확인했습니다. 실제 공개 배포·화면 검증과 독립 수락은 별도입니다."
     }
   ]
 }
