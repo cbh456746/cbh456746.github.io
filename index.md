@@ -5,8 +5,8 @@ description: BH CHOI의 프로젝트, 탐구, 학습과 취향을 담는 개인 
 home_design: garden
 home_current:
   task_id: M-23
-  updated_on: '2026-11-05'
-  summary: 'Mesh Avatar의 목표·검증 단계를 Board에 정리하고 모바일 선택창을 보완했습니다. Stock은 개인 순서의 맨 아래 이동도 지원합니다.'
+  updated_on: '2026-11-06'
+  summary: 'Mesh Avatar의 목표·검증 단계를 Board에 정리하고 PC·모바일 연결과 표시를 확인했습니다. Stock은 개인 순서의 맨 아래 이동도 지원합니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">
