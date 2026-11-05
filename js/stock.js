@@ -9,30 +9,127 @@
   let active = null;
 
   const list = root.querySelector('.stock-stars');
-  const sortButton = root.querySelector('[data-stock-sort]');
-  if (list && sortButton) {
-    const originalItems = [...list.children];
-    const originalOrder = new Map(originalItems.map((item, index) => [item, index]));
-    const collator = new Intl.Collator('ko', { sensitivity: 'base', numeric: true });
-    const modes = [
-      { label: '기본', direction: 0 },
-      { label: '이름 ↑', direction: 1 },
-      { label: '이름 ↓', direction: -1 }
-    ];
-    let modeIndex = 0;
-    sortButton.addEventListener('click', () => {
-      modeIndex = (modeIndex + 1) % modes.length;
-      const mode = modes[modeIndex];
-      const items = [...originalItems];
-      if (mode.direction) items.sort((a, b) => {
-        const nameA = a.querySelector('.stock-star__name')?.textContent ?? '';
-        const nameB = b.querySelector('.stock-star__name')?.textContent ?? '';
-        return mode.direction * collator.compare(nameA, nameB) || originalOrder.get(a) - originalOrder.get(b);
-      });
+  const searchInput = root.querySelector('[data-stock-search]');
+  const searchStatus = root.querySelector('[data-stock-search-status]');
+  const sortMode = root.querySelector('[data-stock-sort-mode]');
+  const orderButton = root.querySelector('[data-stock-order-toggle]');
+  const resetButton = root.querySelector('[data-stock-order-reset]');
+  const orderHelp = root.querySelector('[data-stock-order-help]');
+  if (list && searchInput && searchStatus && sortMode && orderButton && resetButton && orderHelp) {
+    const storageKey = 'stock-stars-order-v1';
+    const sourceItems = [...list.children];
+    const bySymbol = new Map(sourceItems.map((item) => [item.dataset.stockItem, item]));
+    const collator = new Intl.Collator('en', { sensitivity: 'base', numeric: true });
+    let customItems = [...sourceItems];
+    let editing = false;
+    let canStore = true;
+
+    try {
+      const saved = JSON.parse(localStorage.getItem(storageKey) || 'null');
+      if (Array.isArray(saved)) {
+        const seen = new Set();
+        const reordered = saved.map((symbol) => {
+          if (seen.has(symbol)) return null;
+          seen.add(symbol);
+          return bySymbol.get(symbol);
+        }).filter(Boolean);
+        customItems = [...reordered, ...sourceItems.filter((item) => !seen.has(item.dataset.stockItem))];
+        sortMode.value = 'custom';
+      }
+    } catch {
+      canStore = false;
+    }
+
+    function applySort(mode) {
+      const items = mode === 'custom' ? [...customItems] : [...sourceItems];
+      if (mode === 'name-asc' || mode === 'name-desc') {
+        const direction = mode === 'name-asc' ? 1 : -1;
+        items.sort((a, b) => direction * collator.compare(
+          a.querySelector('.stock-star__name').textContent,
+          b.querySelector('.stock-star__name').textContent
+        ));
+      }
       list.append(...items);
+      if (editing) updateMoveButtons();
       list.scrollTop = 0;
-      sortButton.textContent = `정렬: ${mode.label}`;
+    }
+
+    function saveOrder() {
+      customItems = [...list.children];
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(customItems.map((item) => item.dataset.stockItem)));
+      } catch {
+        canStore = false;
+        orderHelp.textContent = '브라우저 저장을 사용할 수 없어 현재 화면에만 순서가 적용됩니다.';
+      }
+    }
+
+    function updateMoveButtons() {
+      const items = [...list.children];
+      items.forEach((item, index) => {
+        item.querySelector('[data-stock-move="up"]').disabled = index === 0;
+        item.querySelector('[data-stock-move="down"]').disabled = index === items.length - 1;
+      });
+    }
+
+    function setEditing(value) {
+      editing = value;
+      if (value) {
+        sortMode.value = 'custom';
+        applySort('custom');
+      }
+      orderButton.setAttribute('aria-pressed', String(value));
+      orderButton.textContent = value ? '편집 완료' : '순서 편집';
+      resetButton.hidden = !value;
+      orderHelp.hidden = !value;
+      for (const item of list.children) item.querySelector('.stock-star__move').hidden = !value;
+      if (value) updateMoveButtons();
+    }
+
+    applySort(sortMode.value);
+    sortMode.addEventListener('change', () => {
+      if (editing) setEditing(false);
+      applySort(sortMode.value);
     });
+    orderButton.addEventListener('click', () => setEditing(!editing));
+    resetButton.addEventListener('click', () => {
+      customItems = [...sourceItems];
+      try { localStorage.removeItem(storageKey); } catch { canStore = false; }
+      setEditing(false);
+      sortMode.value = 'default';
+      applySort('default');
+    });
+    list.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-stock-move]');
+      if (!editing || !button) return;
+      const item = button.closest('[data-stock-item]');
+      const direction = button.dataset.stockMove;
+      const neighbor = direction === 'up' ? item.previousElementSibling : item.nextElementSibling;
+      if (!neighbor) return;
+      if (direction === 'up') list.insertBefore(item, neighbor);
+      else list.insertBefore(item, neighbor.nextElementSibling);
+      saveOrder();
+      updateMoveButtons();
+      const nextFocus = button.disabled ? item.querySelector(`[data-stock-move="${direction === 'up' ? 'down' : 'up'}"]`) : button;
+      nextFocus.focus();
+    });
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.trim().toLocaleLowerCase();
+      if (query && editing) setEditing(false);
+      orderButton.disabled = Boolean(query);
+      let shown = 0;
+      for (const item of list.children) {
+        const name = item.querySelector('.stock-star__name').textContent;
+        const ticker = item.querySelector('.stock-star__ticker').textContent;
+        const searchable = `${name} ${ticker} ${item.dataset.stockItem}`.toLocaleLowerCase();
+        item.hidden = !searchable.includes(query);
+        if (!item.hidden) shown += 1;
+      }
+      searchStatus.hidden = !query;
+      searchStatus.textContent = shown ? `${shown}개 종목 표시 · 순서를 바꾸려면 검색어를 지우세요.` : '검색 결과가 없습니다.';
+      list.scrollTop = 0;
+    });
+    if (!canStore) orderHelp.textContent = '브라우저 저장을 사용할 수 없어 현재 화면에만 순서가 적용됩니다.';
   }
 
   // The owner-curated YAML is the sole symbol allowlist. Never render a URL query as widget code.
