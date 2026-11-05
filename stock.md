@@ -52,4 +52,4 @@ permalink: /stock/
   <p class="empty-state">아직 Stars에 등록된 종목이 없습니다. 소유자가 종목을 지정하면 목록과 차트가 공개됩니다.</p>
   {% endif %}
 </section>
-<script src="{{ '/js/stock.js' | relative_url }}" defer></script>
+<script src="{{ '/js/stock.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
