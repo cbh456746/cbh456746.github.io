@@ -4,9 +4,9 @@ title: Home
 description: BH CHOI의 프로젝트, 탐구, 학습과 취향을 담는 개인 기록 공간.
 home_design: garden
 home_current:
-  task_id: M-23
+  task_id: M-25
   updated_on: '2026-11-06'
-  summary: 'Mesh Avatar의 목표·검증 단계를 Board에 정리하고 PC·모바일 연결과 표시를 확인했습니다. Stock은 개인 순서의 맨 아래 이동도 지원합니다.'
+  summary: 'Stock Watchlist를 만든 과정과 검색·차트·개인 순서 편집의 결과를 Play에 기록했습니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">
@@ -28,7 +28,7 @@ home_current:
 <section class="home-current" aria-labelledby="home-current-title">
   <div class="home-current__heading"><p class="home-kicker">Currently exploring</p><h2 id="home-current-title">지금 만들어가는 것들</h2><p><time datetime="{{ page.home_current.updated_on }}">{{ page.home_current.updated_on | date: '%Y.%m.%d' }}</time><br>{{ page.home_current.summary }}</p></div>
   <div class="home-current__list">
-    <a class="home-project" href="{{ '/stock/' | relative_url }}"><span class="home-project__tag">Stock · Stars</span><h3>관심 종목과 분석을 한 화면에 <span aria-hidden="true">↗</span></h3><p>미국 상장 관심 종목의 USD 시세와 차트를 살펴보고, 종목별 분석 기록을 이어갑니다.</p><span class="home-project__status">검색·개인 순서 편집 공개 · 분석 글은 준비 중</span></a>
+    <a class="home-project" href="{{ '/stock/' | relative_url }}"><span class="home-project__tag">Stock · Stars</span><h3>관심 종목과 분석을 한 화면에 <span aria-hidden="true">↗</span></h3><p>미국 상장 관심 종목의 USD 시세와 차트를 살펴보고, 종목별 분석 기록을 이어갑니다.</p><span class="home-project__status">검색·맨 아래 이동을 포함한 개인 순서 편집 공개 · 분석 글은 준비 중</span></a>
     <a class="home-project" href="{{ '/workbench/' | relative_url }}"><span class="home-project__tag">Operations · Board</span><h3>목표와 기록을 다음 작업으로 <span aria-hidden="true">↗</span></h3><p>목표·작업·근거와 공개 미디어를 블록으로 살펴봅니다. 사용법과 별도 개인 대화 파일 도구도 이용할 수 있습니다.</p><span class="home-project__status">사용성 개편 공개 · 자율 실행은 단계별 검증</span></a>
     <a class="home-project" href="{{ '/workbench/?project=mesh-avatar' | relative_url }}"><span class="home-project__tag">Projects · Mesh Avatar Studio</span><h3>한 장의 그림을 움직이는 아바타로 <span aria-hidden="true">↗</span></h3><p>고개·시선·목의 자연스러움, 독립 소재와 별도 입체 두상 후보를 비교합니다.</p><span class="home-project__status">회전 품질 검증 중 · 저장소 비공개</span></a>
     <a class="home-project" href="{{ '/projects/mopago/' | relative_url }}"><span class="home-project__tag">Projects · Mopago</span><h3>한글 모아모아의 다음 수 찾기 <span aria-hidden="true">↗</span></h3><p>게임판과 보유 조각을 입력하면 다음 배치를 추천하는 독립 웹 도구.</p></a>

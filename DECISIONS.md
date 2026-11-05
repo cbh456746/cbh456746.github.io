@@ -185,3 +185,7 @@ On 2026-11-05 the owner showed that Stock Watchlist rows still had large empty s
 ### D-034 — Move a Watchlist Star directly to the bottom
 
 On 2026-11-05 the owner requested a "move to bottom" button in Watchlist sorting. Add it beside the existing up/down controls for each Star while personal-order editing is active. Move the chosen Star to the last position in one action, persist the same allowlisted symbol order in browser storage, and disable the button for the last Star. Keep search's editing lockout, keyboard-accessible labels and the owner-managed public default list unchanged.
+
+### D-035 — Publish the Stock build log in Play
+
+On 2026-11-05 the owner requested a Play post summarizing that day's Stock page work and results. Keep this post a human-readable work log, not a Stock analysis article or a claim of live market-data accuracy. Cover the public Stars list, USD delayed quote/chart, search, browser-only personal order, one-step bottom move, compact/mobile layout and verification. Include one reviewed screenshot of the public interface with a captured-price caveat and TradingView attribution. Do not publish private paths, personal records, unverified financial claims or a public write route. Keep the owner-managed Stars and the currently empty analysis catalog distinct from the Play post.

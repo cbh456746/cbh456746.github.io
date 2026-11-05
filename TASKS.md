@@ -2,6 +2,12 @@
 
 Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
+## Maintenance — 2026-11-06
+
+| ID | Status | Task | Acceptance criteria |
+|---|---|---|---|
+| M-25 | in progress | Publish a concise Play work log of the 2026-11-05 Stock page work. | Summarize verified scope and results, show one reviewed public UI screenshot, distinguish delayed third-party quotes and browser-only ordering from owner-managed Stars, then validate and verify the Play listing, article and same-SHA Pages deployment on desktop/mobile. |
+
 ## Maintenance — 2026-11-05
 
 | ID | Status | Task | Acceptance criteria |
