@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 24,
+  "revision": 25,
   "updated_on": "2026-11-05",
   "projects": [
     {
@@ -9,7 +9,7 @@
       "goal": "목표·자료·변경·피드백을 관련 기록과 연결하고, 필요한 작업과 검증 결과를 다음 작업으로 이어갑니다.",
       "status": "active",
       "updated_on": "2026-11-05",
-      "next_step": "같은 커밋의 Pages 빌드와 공개 PC·모바일 화면에서 사용법·미디어·대화 기록 도구를 확인합니다.",
+      "next_step": "실제 복수 모델 검수와 지속 실행의 환경·비용 한도를 정하고 단계별로 검증합니다.",
       "acceptance": [
         "새 세션에서 목표·현재 상태·다음 작업을 복원할 수 있습니다.",
         "작업의 선행 조건·완료 근거·중단 이유를 함께 확인합니다.",
@@ -210,7 +210,7 @@
       "project_id": "blog-evolution",
       "title": "작업실 안내·미디어·대화 기록 개선",
       "description": "블록형 작업실의 가독성을 높이고 사용법, 공개 미디어 카드, 개인 대화 전문과 선별 프롬프트의 파일 보관 도구를 제공합니다.",
-      "status": "review",
+      "status": "complete",
       "role": "builder",
       "depends_on": [
         "publication-check"
@@ -228,9 +228,14 @@
           "summary": "콘텐츠 검사, 작업실 계약 13개, 기존 참조 17개와 JS 구문·차이 검사 통과; 공개 렌더와 화면 검수는 배포 후 확인",
           "ref": "docs/WORKBENCH_USABILITY_20261105.md",
           "checked_on": "2026-11-05"
+        },
+        {
+          "summary": "72594a4의 Pages build/deploy 성공, 공개 작업실·사용법·기록 도구와 PC·390px 화면·미디어 카드·턴/프롬프트 입력·JSON 다운로드 요청 확인",
+          "ref": "https://github.com/cbh456746/cbh456746.github.io/actions/runs/42017336240",
+          "checked_on": "2026-11-05"
         }
       ],
-      "reviewed_by": null,
+      "reviewed_by": "public-verification",
       "blocked_reason": null
     }
   ],
@@ -427,6 +432,14 @@
       "task_id": "workbench-usability-20261105",
       "kind": "submit",
       "summary": "콘텐츠 검사, 작업실 계약 13개, 기존 참조 17개와 JS 구문·차이 검사 통과; 공개 렌더와 화면 검수는 배포 후 확인"
+    },
+    {
+      "id": "5e0252d5-117f-46b9-b3a2-89c8ca4fbd3d",
+      "on": "2026-11-05",
+      "project_id": "blog-evolution",
+      "task_id": "workbench-usability-20261105",
+      "kind": "accept",
+      "summary": "72594a4의 Pages build/deploy 성공, 공개 작업실·사용법·기록 도구와 PC·390px 화면·미디어 카드·턴/프롬프트 입력·JSON 다운로드 요청 확인"
     }
   ]
 }

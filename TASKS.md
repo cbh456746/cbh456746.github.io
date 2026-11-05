@@ -6,7 +6,7 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
 | ID | Status | Task | Acceptance criteria |
 |---|---|---|---|
-| M-15 | in progress | Improve Workbench readability, tutorial, media cards and private conversation/prompt file workflow. | Isolated source, content and contract tests pass; the workbench task is awaiting actual Pages render and PC/mobile public review. Preserve private transcripts outside public data. See docs/WORKBENCH_USABILITY_20261105.md and detailed task workbench-usability-20261105. |
+| M-15 | complete | Improve Workbench readability, tutorial, media cards and private conversation/prompt file workflow. | Isolated source, content and contract tests passed. Commit 72594a4 passed Pages build/deploy in run 42017336240; public Workbench, guide, Home, media cards and conversation tool were checked on desktop and 390px. Browser entry and JSON download request were observed; JSON round-trip and invalid imports passed contract tests. Private transcripts remain outside public state. See docs/WORKBENCH_USABILITY_20261105.md. |
 
 ## Maintenance — 2026-11-02
 
