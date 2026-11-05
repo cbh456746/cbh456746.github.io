@@ -2,8 +2,8 @@
 .wb-heading { max-width:760px; margin-bottom:3rem; }
 .wb-heading h1 { font-size:clamp(2.4rem,5vw,4.5rem); }
 .wb-toolbar { display:flex; justify-content:space-between; align-items:end; gap:1.5rem; flex-wrap:wrap; border-bottom:1px solid var(--line); padding-bottom:1.25rem; }
-.wb-toolbar label { display:grid; gap:.3rem; color:var(--muted); font-size:.85rem; }
-.wb-toolbar select { max-width:100%; padding:.6rem 2rem .6rem .7rem; border:1px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; }
+.wb-toolbar label { min-width:0; max-width:100%; display:grid; gap:.3rem; color:var(--muted); font-size:.85rem; }
+.wb-toolbar select { width:100%; min-width:0; max-width:100%; box-sizing:border-box; padding:.6rem 2rem .6rem .7rem; border:1px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; }
 .wb-views { display:flex; flex-wrap:wrap; gap:.5rem; }
 .wb-views button,.wb-action { font:inherit; padding:.55rem .85rem; border:1px solid var(--line); border-radius:3px; background:transparent; color:var(--ink); cursor:pointer; }
 .wb-views [aria-pressed="true"] { background:var(--ink); color:var(--paper); border-color:var(--ink); }
