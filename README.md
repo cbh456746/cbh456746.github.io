@@ -27,6 +27,7 @@ Jekyll과 GitHub Pages로 운영하는 정적 사이트입니다. `main`에 게�
 | Research | 제작 실험, 비교·평가, 실패 원인과 다음 검증 |
 | Notes | 학습과 작업에 다시 참고할 기록 |
 | Play | 게임과 취향에 관한 글 |
+| [Stock](https://cbh456746.github.io/stock/) | 소유자가 고른 미국 상장 Stars의 USD 시세·차트와 종목별 분석 글. [운영 안내](docs/STOCK_OPERATIONS.md) |
 | Archive | 제목·부제·태그로 글을 찾는 목록 |
 | AI 참조 자료 | 관련 글의 요약에서 원문·부록·그림·영상으로 이어지는 읽기 자료 |
 | [Board](https://cbh456746.github.io/workbench/) | 프로젝트 목표·작업 보드·의존 흐름·검증 근거·참고 저장소와 에이전트 인수인계 |

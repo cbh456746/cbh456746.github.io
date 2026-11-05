@@ -1,11 +1,11 @@
 # Site settings
 title: BH CHOI
-SEOTitle: BH CHOI — Projects, Research, Notes & Play
+SEOTitle: BH CHOI — Projects, Research, Notes, Play & Stock
 lang: ko
 timezone: Asia/Seoul
 header-img: img/home-bg.jpg
-description: "프로젝트, 연구, 학습 노트, 그리고 Play를 기록하는 개인 아카이브"
-keyword: "projects, research, notes, play, data science, machine learning"
+description: "프로젝트, 연구, 학습 노트, Play와 Stock을 기록하는 개인 아카이브"
+keyword: "projects, research, notes, play, stock, data science, machine learning"
 url: "https://cbh456746.github.io"
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -68,6 +68,9 @@ collections:
   notes:
     output: true
     permalink: /notes/:name/
+  stock_analysis:
+    output: true
+    permalink: /stock/analysis/:name/
 
 defaults:
   - scope:
@@ -88,6 +91,12 @@ defaults:
     values:
       layout: note
       show_in_archive: true
+  - scope:
+      path: ""
+      type: stock_analysis
+    values:
+      layout: stock-analysis
+      show_in_archive: false
 
 # Markdown settings
 # replace redcarpet to kramdown,

@@ -1,0 +1,50 @@
+# Public owner-curated Stars. Use exchange-qualified US-listed symbols only.
+# Order is the order shown in the owner's reference list. Prices are never stored here.
+- symbol: NYSE:MUFG
+  name: Mitsubishi UFJ Financial Group ADR
+- symbol: NYSE:SONY
+  name: Sony Group ADR
+- symbol: NASDAQ:PYPL
+  name: PayPal Holdings
+- symbol: NASDAQ:SBUX
+  name: Starbucks
+- symbol: NASDAQ:COST
+  name: Costco Wholesale
+- symbol: NASDAQ:AMZN
+  name: Amazon
+- symbol: NASDAQ:META
+  name: Meta Platforms
+- symbol: NASDAQ:MSFT
+  name: Microsoft
+- symbol: NASDAQ:NVDA
+  name: NVIDIA
+- symbol: NASDAQ:CSCO
+  name: Cisco Systems
+- symbol: NYSE:NOK
+  name: Nokia ADR
+- symbol: NYSE:USFD
+  name: US Foods Holding
+- symbol: NASDAQ:KHC
+  name: Kraft Heinz
+- symbol: NYSE:RDDT
+  name: Reddit
+- symbol: NYSE:SPOT
+  name: Spotify Technology
+- symbol: NYSE:MCD
+  name: McDonald's
+- symbol: NYSE:BRK.B
+  name: Berkshire Hathaway Class B
+- symbol: NYSE:DELL
+  name: Dell Technologies
+- symbol: NASDAQ:AAPL
+  name: Apple
+- symbol: NYSE:TSM
+  name: Taiwan Semiconductor Manufacturing ADR
+- symbol: NASDAQ:NFLX
+  name: Netflix
+- symbol: NASDAQ:TSLA
+  name: Tesla
+- symbol: NYSE:NKE
+  name: Nike
+- symbol: NYSE:CPNG
+  name: Coupang

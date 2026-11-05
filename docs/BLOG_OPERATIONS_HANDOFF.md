@@ -50,7 +50,7 @@
 | 배포 | `main` → GitHub Actions → GitHub Pages | 커밋·푸시·배포·실제 응답을 구분 |
 | Home | 사진 기반 Hanasaka, 수동으로 편집하는 소개와 링크 | 개인정보·자동 최신 글 목록을 임의 추가하지 않음 |
 | Resume | BH CHOI와 Education: B.S.C - Mathematics | 소개·Interests·대학명·연락처를 복원하지 않음 |
-| 분류 | Projects / Research / Notes / Play | 일반 Blog 태그는 사용하지 않음 |
+| 분류 | Projects / Research / Notes / Play / Stock | 일반 Blog 태그는 사용하지 않음; Stock은 Stars 전용 |
 | 게임 콘텐츠 | Play와 Game 태그를 함께 사용 | 콘텐츠 종류와 태그는 서로 다른 개념 |
 | 모파고 소개 | Projects에 한 개만 유지 | 삭제한 중복 포스트를 다시 생성하지 않음 |
 | RSS | 생성과 footer 링크 유지, XML 오류 수정 완료 | 제거·숨김·본문 축약 변경은 보류 |
@@ -90,6 +90,7 @@ Jekyll 컬렉션·Liquid 템플릿
 | Home 문구·사진·영역 링크·현재 프로젝트 카드 | `index.md` |
 | Home의 바깥 구조 | `_layouts/soul.html` |
 | 공통 화면·반응형 디자인 | `css/site.css` |
+| Stock의 Stars·차트·분석 글 | `_data/stock-stars.yml`, `stock.md`, `js/stock.js`, `_stock_analysis/`, `docs/STOCK_OPERATIONS.md` |
 | 공통 HTML 구조 | `_layouts/default.html` |
 | 메뉴 항목 | `_data/navigation.yml`, `_includes/nav.html` |
 | 제목·메타 설명·canonical·CSS 연결 | `_includes/head.html` |
@@ -707,6 +708,7 @@ RSS 삭제·숨김·축약 변경은 현재 보류 상태입니다.
 
 | 날짜 | 내용 |
 | --- | --- |
+| 2026-11-05 | D-028: Stock/Stars를 소유자 관리 미국 상장 종목으로 추가. USD 시세·차트와 종목별 글 카탈로그, 데이터·프라이버시 경계는 `STOCK_OPERATIONS.md`를 따름. |
 | 2026-11-05 | D-027: 공개 명칭을 Board로 바꾸되 주소와 내부 도구 경로는 유지. 별도 Private 기록실의 안전한 사용 경계를 공개 문서에 정리. |
 | 2026-11-05 | D-026: 작업실의 사용법·미디어·개인 대화 파일 보관 흐름을 명확히 구분. 공개 상태와 개인 원본을 분리하고 정적 페이지의 한계를 기록. |
 | 2026-10-30 | D-022: AI 에이전트 전담 운영을 사람용 README에 정리하고, 매 블로그 작업의 Currently exploring 갱신과 기본 검사·완료 기준을 지침에 반영. |

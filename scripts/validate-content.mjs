@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const areas = ['_posts', '_projects', '_research', '_notes'];
+const areas = ['_posts', '_projects', '_research', '_notes', '_stock_analysis'];
 const errors = [];
 const read = (file) => fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '');
 function frontMatter(file) {
@@ -20,12 +20,37 @@ function frontMatter(file) {
   if (!summary || ['""', "''", '|', '>'].includes(summary)) errors.push(`${file}: context.summary must contain a reviewed one-line summary`);
   if (!/^  reviewed_on: ['"]?\d{4}-\d{2}-\d{2}['"]?[ \t]*$/m.test(block)) errors.push(`${file}: context.reviewed_on must be YYYY-MM-DD`);
   for (const field of ['findings','limits','followups','keywords','related']) if (!block.match(new RegExp(`^  ${field}:`, 'm'))) errors.push(`${file}: missing context.${field}`);
-  return { tags };
+  return { tags, block };
+}
+// A public analysis can only target one of the owner's Stars. Exchange-qualified
+// symbols are data, never a script URL or a free-form query parameter.
+const starsFile = path.join(root, '_data/stock-stars.yml');
+const starSymbols = new Set();
+if (!fs.existsSync(starsFile)) errors.push('Stock: missing _data/stock-stars.yml');
+else {
+  const stars = read(starsFile);
+  const entries = [...stars.matchAll(/^- symbol: ([^\r\n]+)\r?\n  name: ([^\r\n]+)$/gm)];
+  const nonCommentLines = stars.split(/\r?\n/).filter(line => line.trim() && !line.trimStart().startsWith('#'));
+  if (entries.length * 2 !== nonCommentLines.length) errors.push('Stock: each Star needs exactly symbol and name');
+  for (const [, symbol, name] of entries) {
+    if (!/^(NASDAQ|NYSE|AMEX):[A-Z][A-Z0-9.\-]{0,11}$/.test(symbol)) errors.push(`Stock: invalid US-listed symbol ${symbol}`);
+    if (!name.trim() || /[<>{}\[\]]/.test(name) || name.length > 90) errors.push(`Stock: invalid display name for ${symbol}`);
+    if (starSymbols.has(symbol)) errors.push(`Stock: duplicate Star ${symbol}`);
+    starSymbols.add(symbol);
+  }
 }
 for (const area of areas) {
   const dir = path.join(root, area);
   if (!fs.existsSync(dir)) continue;
-  for (const name of fs.readdirSync(dir).filter((x) => x.endsWith('.md'))) frontMatter(path.join(dir, name));
+  for (const name of fs.readdirSync(dir).filter((x) => x.endsWith('.md'))) {
+    const file = path.join(dir, name);
+    const meta = frontMatter(file);
+    if (area === '_stock_analysis') {
+      const symbol = meta.block?.match(/^stock_symbol:\s*['"]?([^'"\r\n]+)['"]?\s*$/m)?.[1]?.trim();
+      if (!symbol || !starSymbols.has(symbol)) errors.push(`${file}: stock_symbol must be a current Star`);
+      if (!meta.tags?.includes('Stock')) errors.push(`${file}: Stock analysis needs Stock tag`);
+    }
+  }
 }
 for (const file of ['_config.yml', '_data/profile.yml', '_data/navigation.yml', '_data/tag-index.yml']) {
   if (!fs.existsSync(path.join(root, file))) errors.push(`missing required file: ${file}`);

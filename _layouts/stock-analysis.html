@@ -1,0 +1,9 @@
+---
+layout: default
+---
+<article class="content-shell">
+  <p class="eyebrow"><a href="{{ '/stock/' | relative_url }}?symbol={{ page.stock_symbol | url_encode }}">Stock / {{ page.stock_symbol | escape }} / Stars</a></p>
+  <header class="content-header"><h1>{{ page.title | escape }}</h1>{% if page.subtitle %}<p class="lede">{{ page.subtitle | escape }}</p>{% endif %}<p class="content-meta"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y.%m.%d' }}</time><span>{{ page.stock_symbol | escape }}</span></p></header>
+  <div class="prose">{{ content }}</div>
+  <p class="stock-data-note">이 글은 작성일의 개인 분석 기록입니다. 현재 시세와 투자 판단은 별도로 확인하세요.</p>
+</article>

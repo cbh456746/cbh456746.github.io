@@ -12,6 +12,8 @@ The [workbench release and recovery guide](WORKBENCH_RELEASE.md) records the pre
 
 For ongoing maintenance, begin with [the full blog operations handoff](BLOG_OPERATIONS_HANDOFF.md), the latest accepted decisions, and current source. This repository owns the canonical operations guide; project-specific development is documented in each project repository. The documents below retain the original modernization stages; statements about dummy profiles or an unconnected repository are historical and must not be restored as the current state.
 
+The public [Stock / Stars operations guide](STOCK_OPERATIONS.md) explains the owner-curated US-listed watchlist, USD quote/chart widgets, stock-analysis catalog, and safe add/remove workflow.
+
 1. [PRODUCT_REQUIREMENTS.md](PRODUCT_REQUIREMENTS.md) — product goals and non-negotiable user-experience requirements.
 2. [BASELINE_AUDIT.md](BASELINE_AUDIT.md) — inherited theme, content, deployment, and maintenance risks.
 3. [CONTENT_MIGRATION_REGISTER.md](CONTENT_MIGRATION_REGISTER.md) — inventory and proposed destination for every known Markdown document.

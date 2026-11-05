@@ -12,5 +12,7 @@
   url: /notes/
 - label: Play
   url: /play/
+- label: Stock
+  url: /stock/
 - label: Archive
   url: /archive/

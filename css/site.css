@@ -14,6 +14,58 @@
 @media (max-width: 720px) { .site-header__inner { padding:0 1.1rem; } .site-nav { display:none; } .site-menu { display:block; position:relative; } .site-menu summary { cursor:pointer; color:var(--muted); } .site-menu nav { position:absolute; right:0; top:2.1rem; min-width:9rem; padding:.5rem; background:var(--surface); border:1px solid var(--line); box-shadow:0 .5rem 1.5rem rgba(0,0,0,.08); } .site-menu nav a { display:block; padding:.45rem .6rem; text-decoration:none; } .page-shell,.content-shell,.listing-shell,.resume-shell { padding:3.5rem 1.1rem; } .soul-shell { padding:6rem 1.1rem 3rem; } .archive-shell { display:block; padding:3rem 1.1rem; } .tag-index { position:static; overflow:auto; padding:0 0 1.5rem; } .tag-index__buttons { display:flex; width:max-content; } .tag-index { max-width:100%; } .tag-filter { border:1px solid var(--line); border-radius:999px; white-space:nowrap; } .tag-filter.is-active { border-color:var(--accent); } .archive-item a { grid-template-columns:1fr auto; } .archive-item__date { grid-column:1/-1; } .site-footer { margin-top:2rem; padding:1.6rem 1.1rem; flex-direction:column; } }
 @media print { .site-header,.site-footer { display:none; } .resume-shell { padding:0; max-width:none; } }
 
+/* Stock: a quiet, owner-curated watchlist beside the selected chart and writing. */
+.stock-shell { max-width:var(--wide); margin:auto; padding:4rem 2rem 5rem; }
+.stock-intro { margin:0 0 2.5rem; max-width:760px; }
+.stock-intro h1 { font-family:Georgia,"Times New Roman",serif; font-weight:400; font-size:clamp(2.7rem,5vw,4.4rem); }
+.stock-intro > p:last-child { color:var(--muted); font-size:1.02rem; line-height:1.85; }
+.stock-workspace { display:grid; grid-template-columns:minmax(280px,320px) minmax(0,1fr); gap:2.2rem; align-items:start; }
+.stock-sidebar { min-width:0; position:sticky; top:5.6rem; border:1px solid var(--line); background:var(--surface); }
+.stock-sidebar__heading { display:flex; align-items:end; justify-content:space-between; gap:1rem; padding:1.3rem 1.3rem .3rem; }
+.stock-sidebar__heading h2 { font-family:Georgia,"Times New Roman",serif; font-weight:400; font-size:1.8rem; margin:0; }
+.stock-sidebar__heading h2 span { font-family:system-ui,sans-serif; font-size:.72rem; color:var(--muted); vertical-align:middle; }
+.stock-currency,.stock-panel__badge { border:1px solid #d6ddd4; color:#536a58; padding:.2rem .55rem; border-radius:999px; font-size:.68rem; letter-spacing:.06em; white-space:nowrap; }
+.stock-sidebar__hint { color:var(--muted); font-size:.73rem; padding:0 1.3rem; margin:.55rem 0 1rem; }
+.stock-stars { margin:0; padding:0; list-style:none; max-height:min(65vh,760px); overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.stock-star { padding:.8rem 1rem .75rem 1.3rem; border-bottom:1px solid #eeede9; }
+.stock-star:last-child { border-bottom:0; }
+.stock-star:has(.stock-star__select[aria-current="true"]) { background:#f2f5ef; box-shadow:inset 3px 0 #6b8a68; }
+.stock-star__select { display:flex; align-items:baseline; justify-content:space-between; gap:.6rem; text-decoration:none; line-height:1.35; }
+.stock-star__select:hover .stock-star__name,.stock-star__select:focus-visible .stock-star__name { text-decoration:underline; }
+.stock-star__select:focus-visible { outline:2px solid #50694a; outline-offset:3px; }
+.stock-star__name { font-weight:650; font-size:.84rem; }
+.stock-star__ticker { color:var(--muted); font-size:.75rem; white-space:nowrap; }
+.stock-star__quote { min-height:50px; margin-top:.35rem; font-size:.7rem; color:var(--muted); overflow:hidden; }
+.stock-star__quote .tradingview-widget-container { width:100%; min-height:50px; }
+.stock-data-note { color:var(--muted); font-size:.7rem; line-height:1.65; }
+.stock-sidebar > .stock-data-note { padding:0 1.3rem .5rem; }
+.stock-panel[hidden] { display:none; }
+.stock-panel__heading { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin:0 0 1.4rem; }
+.stock-panel__heading h2 { font-family:Georgia,"Times New Roman",serif; font-weight:400; margin:.1rem 0; font-size:clamp(1.6rem,2.6vw,2.4rem); }
+.stock-chart { width:100%; height:480px; background:#fff; border:1px solid var(--line); }
+.stock-chart .tradingview-widget-container,.stock-chart .tradingview-widget-container__widget { height:100%; width:100%; }
+.stock-chart__placeholder { color:var(--muted); padding:2rem; }
+.stock-articles { margin-top:3.5rem; }
+.stock-articles__heading { padding-bottom:.85rem; border-bottom:1px solid var(--line); }
+.stock-articles__heading h3 { font-size:1.35rem; font-weight:500; margin:0; }
+.stock-article { display:grid; grid-template-columns:92px 1fr; gap:0 1.5rem; padding:1.25rem .1rem; border-bottom:1px solid var(--line); }
+.stock-article time { color:var(--muted); font-size:.77rem; }
+.stock-article h4 { margin:0; font-size:1rem; font-weight:600; }
+.stock-article h4 a { text-decoration:none; }
+.stock-article p { grid-column:2; color:var(--muted); font-size:.86rem; margin:.25rem 0 0; }
+.stock-articles__empty { color:var(--muted); padding:1.2rem 0; font-size:.89rem; }
+@media (max-width:760px) {
+  .stock-shell { padding:2.8rem 1.1rem 4rem; }
+  .stock-workspace { display:block; }
+  .stock-sidebar { position:static; margin-bottom:2.5rem; }
+  .stock-stars { max-height:300px; }
+  .stock-detail { scroll-margin-top:5.5rem; }
+  .stock-chart { height:390px; }
+  .stock-panel__badge { display:none; }
+  .stock-article { grid-template-columns:1fr; gap:.25rem; }
+  .stock-article p { grid-column:1; }
+}
+
 /* Explicit article anchors stay below the sticky navigation. */
 .prose .article-anchor { display:block; scroll-margin-top:6rem; }
 

@@ -2,7 +2,7 @@
 
 ## The simplest routine
 
-1. Pick a matching file from `templates/`.
+1. Pick a matching file from `templates/`. For Stock analysis, follow [Stock operations](docs/STOCK_OPERATIONS.md) and target a current Star.
 2. Copy it into `_projects`, `_research`, `_notes`, or `_posts`.
 3. Change the title, date, tags, and body.
 4. Run `npm run validate` or let GitHub Actions check the push.
