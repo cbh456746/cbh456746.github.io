@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 25,
+  "revision": 28,
   "updated_on": "2026-11-05",
   "projects": [
     {
@@ -16,7 +16,7 @@
         "공개 가능한 결과와 참고 자료를 사람이 읽기 쉽게 전시합니다."
       ],
       "scope": [
-        "작업실 화면과 공개 프로젝트 데이터",
+        "Board 화면과 공개 프로젝트 데이터",
         "에이전트 인수인계·배정·검토·변경 기록",
         "공개 미디어 표시와 개인 대화·프롬프트 파일 도구",
         "기존 Home와 탐색 경로 연결"
@@ -47,7 +47,7 @@
           "src": "/assets/videos/browser-vtuber-avatar/example.mp4",
           "poster": "/assets/videos/browser-vtuber-avatar/poster.jpg",
           "alt": "브라우저 방송 아바타 프로젝트의 공개 시연 영상",
-          "caption": "기존 프로젝트의 공개 영상입니다. 작업실 조작 튜토리얼 영상은 아닙니다."
+          "caption": "기존 프로젝트의 공개 영상입니다. Board 조작 튜토리얼 영상은 아닙니다."
         }
       ]
     }
@@ -236,6 +236,34 @@
         }
       ],
       "reviewed_by": "public-verification",
+      "blocked_reason": null
+    },
+    {
+      "reviewed_by": null,
+      "owner": "implementation",
+      "id": "board-name-private-boundary-20261105",
+      "lease_until": null,
+      "title": "Board 이름과 개인 기록 경계 정리",
+      "evidence": [
+        {
+          "summary": "Board 명칭과 공개·비공개 경계 문서 작성, 콘텐츠·계약·참조 검사 통과, 비공개 식별자 노출 검사 0건; 공개 배포 검증은 후속",
+          "ref": "docs/BOARD_PRIVATE_RECORDS.md",
+          "checked_on": "2026-11-05"
+        }
+      ],
+      "role": "builder",
+      "project_id": "blog-evolution",
+      "description": "공개 탐색 명칭을 Board로 통일하고 AI 운영 지침과 분리된 개인 기록 보관 흐름을 안전한 공개 수준으로 설명합니다.",
+      "acceptance": [
+        "공개 메뉴·Home·안내에서 Board 명칭이 일관되게 표시되고 기존 주소가 유지됩니다.",
+        "에이전트 문서에 Board 상태·인수인계·검증·개인 기록 사용 경계가 구체적으로 설명됩니다.",
+        "비공개 저장소의 식별자·원문·접근 수단을 공개하지 않고 배포 후 실제 페이지와 보안 검사를 확인합니다."
+      ],
+      "status": "review",
+      "depends_on": [
+        "workbench-usability-20261105"
+      ],
+      "attempts": 1,
       "blocked_reason": null
     }
   ],
@@ -440,6 +468,29 @@
       "task_id": "workbench-usability-20261105",
       "kind": "accept",
       "summary": "72594a4의 Pages build/deploy 성공, 공개 작업실·사용법·기록 도구와 PC·390px 화면·미디어 카드·턴/프롬프트 입력·JSON 다운로드 요청 확인"
+    },
+    {
+      "id": "249da42a-dd68-4d80-a20d-f1a991865b43",
+      "on": "2026-11-05",
+      "project_id": null,
+      "kind": "import",
+      "summary": "프로젝트와 작업 명세를 등록했습니다."
+    },
+    {
+      "id": "295187a3-282e-420a-9c81-c0f60d309d48",
+      "on": "2026-11-05",
+      "project_id": "blog-evolution",
+      "task_id": "board-name-private-boundary-20261105",
+      "kind": "claim",
+      "summary": "implementation: Board 이름과 개인 기록 경계 정리 작업 배정"
+    },
+    {
+      "id": "b79dab2f-9b17-45ed-9a58-4af019c5dfbd",
+      "on": "2026-11-05",
+      "project_id": "blog-evolution",
+      "task_id": "board-name-private-boundary-20261105",
+      "kind": "submit",
+      "summary": "Board 명칭과 공개·비공개 경계 문서 작성, 콘텐츠·계약·참조 검사 통과, 비공개 식별자 노출 검사 0건; 공개 배포 검증은 후속"
     }
   ]
 }

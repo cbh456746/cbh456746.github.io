@@ -6,7 +6,7 @@ This directory is the source of truth for the staged modernization of this perso
 
 ## Reading order
 
-For goal-driven project continuation read [PROJECT_WORKFLOW.md](PROJECT_WORKFLOW.md): public workbench, canonical task data, evidence/review, reference repositories and optional bounded agent review. The [implementation validation](WORKBENCH_VALIDATION.md) distinguishes local checks, model execution and publication.
+For goal-driven project continuation read [PROJECT_WORKFLOW.md](PROJECT_WORKFLOW.md): the public Board, canonical task data, evidence/review, reference repositories and optional bounded agent review. [BOARD_PRIVATE_RECORDS.md](BOARD_PRIVATE_RECORDS.md) defines the boundary between public state and the separate private records flow. The [implementation validation](WORKBENCH_VALIDATION.md) distinguishes local checks, model execution and publication.
 
 The [workbench release and recovery guide](WORKBENCH_RELEASE.md) records the pre-deployment baseline, retained backup and forward-only restoration route.
 
