@@ -4,9 +4,9 @@ title: Home
 description: BH CHOI의 프로젝트, 탐구, 학습과 취향을 담는 개인 기록 공간.
 home_design: garden
 home_current:
-  task_id: M-23
+  task_id: M-24
   updated_on: '2026-11-05'
-  summary: 'Mesh Avatar를 Board에 등록하고 초기 앱·후속 회전 실험·미해결 과제와 다음 검증 순서를 정리했습니다.'
+  summary: 'Stock Watchlist의 개인 순서 편집에 종목을 맨 아래로 보내는 버튼을 추가했습니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">

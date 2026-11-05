@@ -69,6 +69,7 @@
       items.forEach((item, index) => {
         item.querySelector('[data-stock-move="up"]').disabled = index === 0;
         item.querySelector('[data-stock-move="down"]').disabled = index === items.length - 1;
+        item.querySelector('[data-stock-move="bottom"]').disabled = index === items.length - 1;
       });
     }
 
@@ -101,17 +102,20 @@
     });
     list.addEventListener('click', (event) => {
       const button = event.target.closest('[data-stock-move]');
-      if (!editing || !button) return;
+      if (!editing || !button || button.disabled) return;
       const item = button.closest('[data-stock-item]');
       const direction = button.dataset.stockMove;
-      const neighbor = direction === 'up' ? item.previousElementSibling : item.nextElementSibling;
-      if (!neighbor) return;
-      if (direction === 'up') list.insertBefore(item, neighbor);
-      else list.insertBefore(item, neighbor.nextElementSibling);
+      if (direction === 'bottom') list.append(item);
+      else {
+        const neighbor = direction === 'up' ? item.previousElementSibling : item.nextElementSibling;
+        if (!neighbor) return;
+        if (direction === 'up') list.insertBefore(item, neighbor);
+        else list.insertBefore(item, neighbor.nextElementSibling);
+      }
       saveOrder();
       updateMoveButtons();
-      const nextFocus = button.disabled ? item.querySelector(`[data-stock-move="${direction === 'up' ? 'down' : 'up'}"]`) : button;
-      nextFocus.focus();
+      const nextFocus = button.disabled ? [...item.querySelectorAll('[data-stock-move]')].find((candidate) => !candidate.disabled) : button;
+      nextFocus?.focus();
     });
     searchInput.addEventListener('input', () => {
       const query = searchInput.value.trim().toLocaleLowerCase();
