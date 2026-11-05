@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 28,
+  "revision": 29,
   "updated_on": "2026-11-05",
   "projects": [
     {
@@ -239,7 +239,7 @@
       "blocked_reason": null
     },
     {
-      "reviewed_by": null,
+      "reviewed_by": "public-verification",
       "owner": "implementation",
       "id": "board-name-private-boundary-20261105",
       "lease_until": null,
@@ -248,6 +248,11 @@
         {
           "summary": "Board 명칭과 공개·비공개 경계 문서 작성, 콘텐츠·계약·참조 검사 통과, 비공개 식별자 노출 검사 0건; 공개 배포 검증은 후속",
           "ref": "docs/BOARD_PRIVATE_RECORDS.md",
+          "checked_on": "2026-11-05"
+        },
+        {
+          "summary": "e3198a5 Pages build/deploy 성공; 공개 Home 메뉴·카드, Board revision 28, 안내·기록 도구와 390px 화면 확인; 비공개 식별자 공개 검사 0건",
+          "ref": "https://github.com/cbh456746/cbh456746.github.io/actions/runs/42020266910",
           "checked_on": "2026-11-05"
         }
       ],
@@ -259,7 +264,7 @@
         "에이전트 문서에 Board 상태·인수인계·검증·개인 기록 사용 경계가 구체적으로 설명됩니다.",
         "비공개 저장소의 식별자·원문·접근 수단을 공개하지 않고 배포 후 실제 페이지와 보안 검사를 확인합니다."
       ],
-      "status": "review",
+      "status": "complete",
       "depends_on": [
         "workbench-usability-20261105"
       ],
@@ -491,6 +496,14 @@
       "task_id": "board-name-private-boundary-20261105",
       "kind": "submit",
       "summary": "Board 명칭과 공개·비공개 경계 문서 작성, 콘텐츠·계약·참조 검사 통과, 비공개 식별자 노출 검사 0건; 공개 배포 검증은 후속"
+    },
+    {
+      "id": "dd5e88db-22ba-46cc-b8cc-b84159873321",
+      "on": "2026-11-05",
+      "project_id": "blog-evolution",
+      "task_id": "board-name-private-boundary-20261105",
+      "kind": "accept",
+      "summary": "e3198a5 Pages build/deploy 성공; 공개 Home 메뉴·카드, Board revision 28, 안내·기록 도구와 390px 화면 확인; 비공개 식별자 공개 검사 0건"
     }
   ]
 }

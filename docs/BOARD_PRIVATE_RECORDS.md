@@ -30,3 +30,5 @@
 2026-11-05에 비공개 저장소의 공개 범위, 직접 접근, Pages, 배포 키와 공개 블로그의 연결을 점검했습니다. 확인한 현재 설정과 파일 구성에서는 공개 Board가 개인 기록을 읽는 경로를 찾지 못했습니다. **이 점검은 침입 불가능성의 보증이 아닙니다.** 계정 탈취, 연결 앱의 과도한 권한, 실수로 바뀐 공개 범위, 로컬 JSON 사본·브라우저 확장·기기 악성코드, 공개 커밋 이력은 별도의 위험입니다.
 
 운영자는 계정 다중요소 인증, 협업자·앱 권한, 저장소 공개 범위, Pages와 새 배포 경로를 주기적으로 확인합니다. 비공개 저장소가 GitHub에 있다는 사실만으로 종단간 암호화가 되는 것은 아닙니다. 인증 정보, 신분증, 금융 정보처럼 노출 피해가 큰 원문은 이 흐름에 넣지 않습니다.
+
+관련 기준: [GitHub 저장소 공개 범위](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories), [설치된 GitHub App 권한 검토](https://docs.github.com/en/apps/using-github-apps/reviewing-and-modifying-installed-github-apps).
