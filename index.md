@@ -4,9 +4,9 @@ title: Home
 description: BH CHOI의 프로젝트, 탐구, 학습과 취향을 담는 개인 기록 공간.
 home_design: garden
 home_current:
-  task_id: M-19
+  task_id: M-20
   updated_on: '2026-11-05'
-  summary: 'Stock Watchlist에 즉시 검색과 브라우저별 순서 편집을 추가하고 종목 간격을 줄였습니다.'
+  summary: 'LivLiv Player의 PNGTuber·2.5D·VRM 실행법과 한계를 Notes 튜토리얼로 정리했습니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">
