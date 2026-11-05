@@ -1,0 +1,32 @@
+---
+layout: null
+title: 대화·프롬프트 기록 도구
+description: AI 대화의 각 턴과 별도 프롬프트를 개인 JSON 파일로 정리합니다.
+permalink: /workbench/records/
+---
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="robots" content="noindex, nofollow">
+  <title>대화·프롬프트 기록 도구 · BH CHOI</title>
+  <link rel="stylesheet" href="{{ '/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <link rel="stylesheet" href="{{ '/css/workbench-records.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <script type="module" src="{{ '/js/workbench-records.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
+  <header class="wbr-top"><a href="{{ '/workbench/' | relative_url }}">← 작업실로 돌아가기</a><span>PRIVATE FILE WORKSPACE</span></header>
+  <main id="main-content" class="wbr-shell">
+    <header class="wbr-intro"><p class="eyebrow">Conversation archive</p><h1>대화는 턴별로,<br>프롬프트는 따로.</h1><p>한 프로젝트에서 AI와 나눈 대화를 순서대로 보존하고, 다시 쓸 프롬프트만 별도로 골라 저장합니다. 내용은 이 브라우저에서 편집한 뒤 JSON 파일로 내려받습니다.</p></header>
+    <div class="wbr-steps" aria-label="기록 순서"><div><b>01</b><span>프로젝트와 대화 제목 적기</span></div><div><b>02</b><span>사용자·AI 턴과 프롬프트 구분하기</span></div><div><b>03</b><span>개인 JSON 파일로 저장·재열기</span></div></div>
+    <aside class="wbr-safety"><strong>개인 기록 보관 안내</strong><p>이 페이지에는 계정 로그인이나 서버 저장 기능이 없습니다. 입력 내용은 사이트에 전송하거나 공개 작업 데이터에 합치지 않습니다. 파일은 직접 내려받아 비공개 저장소나 개인 보관 위치에 두세요. 공용 PC나 믿을 수 없는 브라우저에서는 사용하지 마세요.</p></aside>
+    <section class="wbr-panel" aria-labelledby="wbr-session-heading"><div class="wbr-panel__head"><div><p class="eyebrow">01 · Session</p><h2 id="wbr-session-heading">대화 정보</h2></div><div class="wbr-file-actions"><label class="wbr-file-button">JSON 불러오기<input id="wbr-import" type="file" accept="application/json,.json"></label><button type="button" id="wbr-export" class="wbr-primary">JSON 저장</button><button type="button" id="wbr-reset">새 기록</button></div></div><div class="wbr-fields"><label>대화 제목<input id="wbr-title" type="text" maxlength="160" placeholder="예: 작업실 개편 논의"></label><label>프로젝트 이름 또는 ID<input id="wbr-project" type="text" maxlength="160" placeholder="예: blog-evolution"></label></div><p id="wbr-status" role="status" aria-live="polite">아직 저장된 파일을 불러오지 않았습니다.</p></section>
+    <div class="wbr-columns"><section class="wbr-panel" aria-labelledby="wbr-turns-heading"><div class="wbr-panel__head"><div><p class="eyebrow">02 · Full conversation</p><h2 id="wbr-turns-heading">대화 전문 <span id="wbr-turn-count">0턴</span></h2></div><button type="button" id="wbr-add-turn">+ 턴 추가</button></div><p class="wbr-hint">한 턴에 화자와 발화 전문을 그대로 적습니다. 순서는 위에서 아래로 보존됩니다.</p><div id="wbr-turns" class="wbr-list"></div></section><section class="wbr-panel" aria-labelledby="wbr-prompts-heading"><div class="wbr-panel__head"><div><p class="eyebrow">03 · Prompt library</p><h2 id="wbr-prompts-heading">선별 프롬프트 <span id="wbr-prompt-count">0개</span></h2></div><button type="button" id="wbr-add-prompt">+ 프롬프트 추가</button></div><p class="wbr-hint">대화 전문과 구분해 저장합니다. 사용자 턴에서 선택해 복사할 수도 있습니다.</p><div id="wbr-prompts" class="wbr-list"></div></section></div>
+    <footer class="wbr-bottom"><p>JSON 파일은 <code>turns</code>와 <code>prompts</code>를 별도 목록으로 보관합니다. 불러오면 턴 순서, 줄바꿈, 프롬프트 출처가 복원됩니다.</p><a href="{{ '/workbench/guide/#conversation' | relative_url }}">자세한 사용법 ↗</a></footer>
+  </main>
+</body>
+</html>

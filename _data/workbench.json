@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "revision": 15,
-  "updated_on": "2026-11-02",
+  "revision": 24,
+  "updated_on": "2026-11-05",
   "projects": [
     {
       "id": "blog-evolution",
       "title": "AI와 함께 발전하는 블로그",
       "goal": "목표·자료·변경·피드백을 관련 기록과 연결하고, 필요한 작업과 검증 결과를 다음 작업으로 이어갑니다.",
       "status": "active",
-      "updated_on": "2026-11-02",
-      "next_step": "실제 복수 모델 검수와 지속 실행의 환경·비용 한도를 정하고 단계별로 검증합니다.",
+      "updated_on": "2026-11-05",
+      "next_step": "같은 커밋의 Pages 빌드와 공개 PC·모바일 화면에서 사용법·미디어·대화 기록 도구를 확인합니다.",
       "acceptance": [
         "새 세션에서 목표·현재 상태·다음 작업을 복원할 수 있습니다.",
         "작업의 선행 조건·완료 근거·중단 이유를 함께 확인합니다.",
@@ -18,6 +18,7 @@
       "scope": [
         "작업실 화면과 공개 프로젝트 데이터",
         "에이전트 인수인계·배정·검토·변경 기록",
+        "공개 미디어 표시와 개인 대화·프롬프트 파일 도구",
         "기존 Home와 탐색 경로 연결"
       ],
       "policy": {
@@ -29,6 +30,25 @@
         "blog-source",
         "github-agentic-workflows",
         "jekyll"
+      ],
+      "media": [
+        {
+          "id": "blog-home-photo",
+          "kind": "image",
+          "title": "블로그 Home의 풍경 사진",
+          "src": "/assets/images/home-garden.webp",
+          "alt": "푸른 나무와 산책길 너머로 건물의 지붕이 보이는 풍경",
+          "caption": "현재 블로그의 시각적 출발점으로 쓰는 공개 이미지입니다."
+        },
+        {
+          "id": "avatar-video-example",
+          "kind": "video",
+          "title": "영상 자료 표시 예시",
+          "src": "/assets/videos/browser-vtuber-avatar/example.mp4",
+          "poster": "/assets/videos/browser-vtuber-avatar/poster.jpg",
+          "alt": "브라우저 방송 아바타 프로젝트의 공개 시연 영상",
+          "caption": "기존 프로젝트의 공개 영상입니다. 작업실 조작 튜토리얼 영상은 아닙니다."
+        }
       ]
     }
   ],
@@ -184,6 +204,34 @@
       "evidence": [],
       "reviewed_by": null,
       "blocked_reason": null
+    },
+    {
+      "id": "workbench-usability-20261105",
+      "project_id": "blog-evolution",
+      "title": "작업실 안내·미디어·대화 기록 개선",
+      "description": "블록형 작업실의 가독성을 높이고 사용법, 공개 미디어 카드, 개인 대화 전문과 선별 프롬프트의 파일 보관 도구를 제공합니다.",
+      "status": "review",
+      "role": "builder",
+      "depends_on": [
+        "publication-check"
+      ],
+      "acceptance": [
+        "PC·모바일에서 작업실의 정보 위계와 기능 안내를 이해하고 탐색할 수 있습니다.",
+        "공개 이미지·영상은 설명과 대체 정보를 갖고 실제 정적 파일에서 표시됩니다.",
+        "개인 JSON 저장·불러오기로 턴 순서·전문·프롬프트 출처가 복원되며 공개 데이터에는 원문이 남지 않습니다."
+      ],
+      "attempts": 2,
+      "owner": "implementation",
+      "lease_until": null,
+      "evidence": [
+        {
+          "summary": "콘텐츠 검사, 작업실 계약 13개, 기존 참조 17개와 JS 구문·차이 검사 통과; 공개 렌더와 화면 검수는 배포 후 확인",
+          "ref": "docs/WORKBENCH_USABILITY_20261105.md",
+          "checked_on": "2026-11-05"
+        }
+      ],
+      "reviewed_by": null,
+      "blocked_reason": null
     }
   ],
   "references": [
@@ -332,6 +380,53 @@
       "task_id": "publication-check",
       "kind": "accept",
       "summary": "공개 8개 경로, 글·RSS 19개, 선택 본문 해시와 브라우저 화면 확인. 원격 백업·별도 복제 복구도 검증."
+    },
+    {
+      "id": "b75449aa-ea84-4260-9f2e-6dba8f9b8d2d",
+      "on": "2026-11-05",
+      "project_id": "blog-evolution",
+      "task_id": "workbench-usability-20261105",
+      "kind": "claim",
+      "summary": "implementation: 작업실 안내·미디어·대화 기록 개선 작업 배정"
+    },
+    {
+      "id": "ed251851-7c33-4e54-9a6a-ccac8f99fa9b",
+      "on": "2026-11-05",
+      "project_id": "blog-evolution",
+      "task_id": "workbench-usability-20261105",
+      "kind": "block",
+      "summary": "로컬 Jekyll 및 PC·모바일 화면 검증 경로가 이 환경에서 사용 불가하여 실제 렌더·시각 확인 전 게시 보류"
+    },
+    {
+      "id": "workbench-usability-feedback-20261105",
+      "on": "2026-11-05",
+      "project_id": "blog-evolution",
+      "kind": "input",
+      "summary": "가독성·사용법·공개 미디어·턴별 개인 대화와 선별 프롬프트 보관을 작업실의 다음 사용성 목표로 기록"
+    },
+    {
+      "id": "eee3af7c-71c3-4a55-9d06-7288a5132849",
+      "on": "2026-11-05",
+      "project_id": "blog-evolution",
+      "task_id": "workbench-usability-20261105",
+      "kind": "retry",
+      "summary": "게시 승인과 분리된 복제본의 검증 환경 확보"
+    },
+    {
+      "id": "66ffba27-98e2-4c92-bf53-fb609d77532b",
+      "on": "2026-11-05",
+      "project_id": "blog-evolution",
+      "task_id": "workbench-usability-20261105",
+      "kind": "claim",
+      "summary": "implementation: 작업실 안내·미디어·대화 기록 개선 작업 배정"
+    },
+    {
+      "id": "9fa4cc6a-9481-4b12-92ec-8c77d188e791",
+      "on": "2026-11-05",
+      "project_id": "blog-evolution",
+      "task_id": "workbench-usability-20261105",
+      "kind": "submit",
+      "summary": "콘텐츠 검사, 작업실 계약 13개, 기존 참조 17개와 JS 구문·차이 검사 통과; 공개 렌더와 화면 검수는 배포 후 확인"
     }
   ]
 }

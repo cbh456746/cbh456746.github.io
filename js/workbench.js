@@ -5,6 +5,7 @@
   const labels = { planned:'계획', ready:'진행 가능', active:'작업 중', review:'검토 대기', blocked:'진행 보류', complete:'완료', cancelled:'취소' };
   const roles = { coordinator:'조정', researcher:'조사', builder:'구현', reviewer:'검토' };
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const safeMediaPath = value => typeof value === 'string' && /^\/assets\/(?:images|videos)\/[a-zA-Z0-9/_-]+\.(?:webp|png|jpe?g|svg|mp4|webm)$/.test(value);
   let data, view = 'board', selected;
   const project = () => data.projects.find(p => p.id === $('wb-project').value) ?? data.projects[0];
   const tasks = () => data.tasks.filter(t => t.project_id === project().id);
@@ -21,6 +22,9 @@
     const p = project(), list = tasks(); if (!list.some(t => t.id === selected)) selected = list.find(available)?.id ?? list[0]?.id;
     const complete = list.filter(t => t.status === 'complete').length;
     $('wb-project-summary').innerHTML = `<section class="wb-summary"><div><h2>${esc(p.title)}</h2><p>${esc(p.goal)}</p><div class="wb-counts"><span>완료 ${complete}/${list.length}개 작업</span><span>진행 가능 ${list.filter(available).length}</span><span>보류 ${list.filter(t => t.status === 'blocked').length}</span></div></div><div class="wb-next"><span class="wb-caption">다음으로 이어갈 일</span><p>${esc(p.next_step)}</p><span class="wb-caption">기록 갱신 ${esc(p.updated_on)}</span></div></section>`;
+    const media = (p.media ?? []).filter(m => safeMediaPath(m.src) && (m.kind === 'image' || (m.kind === 'video' && safeMediaPath(m.poster))));
+    root.querySelector('.wb-media-section').hidden = media.length === 0;
+    $('wb-media').innerHTML = media.map(m => `<figure class="wb-media-card">${m.kind === 'image' ? `<img src="${esc(m.src)}" alt="${esc(m.alt)}" loading="lazy" decoding="async">` : `<video controls preload="none" playsinline poster="${esc(m.poster)}" aria-label="${esc(m.alt)}"><source src="${esc(m.src)}" type="${m.src.endsWith('.webm') ? 'video/webm' : 'video/mp4'}">이 브라우저는 영상을 재생할 수 없습니다.</video>`}<figcaption><strong>${esc(m.title)}</strong><span>${esc(m.caption)}</span></figcaption></figure>`).join('');
     if (view === 'references') {
       const refs = data.references.filter(r => p.reference_ids.includes(r.id));
       $('wb-view').innerHTML = refs.length ? refs.map(r => `<article class="wb-reference"><p class="wb-caption">${esc({candidate:'후보',documented:'문서 검토',tested:'실험 검증',adopted:'사용 중',rejected:'제외'}[r.status])} · 확인 ${esc(r.checked_on)}</p><h3><a href="${esc(r.url)}" rel="noopener noreferrer" target="_blank">${esc(r.title)} ↗</a></h3><p>${esc(r.purpose)}</p><p class="wb-caption">${esc(r.limits)}</p><p class="wb-caption">확인 버전: ${esc(r.revision ?? '커밋 고정 전 · 도입 시 재확인')}</p></article>`).join('') : '<p class="wb-empty">연결된 참고 저장소가 없습니다.</p>';

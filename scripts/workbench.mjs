@@ -11,6 +11,7 @@ export function load(file = FILE) { return JSON.parse(fs.readFileSync(file, 'utf
 const check = (condition, message) => { if (!condition) throw new Error(message); };
 const nonempty = value => typeof value === 'string' && value.trim().length > 0;
 const idOK = id => typeof id === 'string' && /^[a-z0-9][a-z0-9-]{0,79}$/.test(id);
+const publicMediaPath = value => typeof value === 'string' && /^\/assets\/(?:images|videos)\/[a-zA-Z0-9/_-]+\.(?:webp|png|jpe?g|svg|mp4|webm)$/.test(value) && fs.existsSync(path.join(ROOT, value.slice(1)));
 const dateOK = date => typeof date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(date) && Number.isFinite(Date.parse(date)) && new Date(date).toISOString().slice(0, 10) === date;
 const unique = (rows, kind) => { const ids = new Set(); for (const row of rows) { check(idOK(row.id) && !ids.has(row.id), `${kind}: invalid/duplicate id`); ids.add(row.id); } return ids; };
 const keysOnly = (object, keys, label) => { check(object && typeof object === 'object' && Object.keys(object).every(key => keys.includes(key)), `${label}: unsupported field`); };
@@ -22,12 +23,21 @@ export function validate(data) {
   check(data.projects.length > 0, 'At least one project required');
   const projects = unique(data.projects, 'project'), tasks = unique(data.tasks, 'task'), references = unique(data.references, 'reference');
   for (const p of data.projects) {
-    keysOnly(p, ['id','title','goal','status','updated_on','next_step','acceptance','scope','policy','reference_ids'], p.id);
+    keysOnly(p, ['id','title','goal','status','updated_on','next_step','acceptance','scope','media','policy','reference_ids'], p.id);
     keysOnly(p.policy, ['execution','publication','max_attempts'], p.id);
     check(nonempty(p.title) && nonempty(p.goal) && nonempty(p.next_step), `${p.id}: missing goal/title/next step`);
     check(['active', 'paused', 'complete'].includes(p.status) && dateOK(p.updated_on), `${p.id}: invalid project state/date`);
     check(Array.isArray(p.acceptance) && p.acceptance.length && p.acceptance.every(nonempty), `${p.id}: acceptance required`);
     check(Array.isArray(p.scope) && p.scope.length && p.scope.every(nonempty), `${p.id}: scope required`);
+    check(p.media === undefined || Array.isArray(p.media), `${p.id}: media must be an array`);
+    const mediaIds = new Set();
+    for (const m of p.media ?? []) {
+      keysOnly(m, ['id','kind','title','src','poster','alt','caption'], `${p.id}: media`);
+      check(idOK(m.id) && !mediaIds.has(m.id), `${p.id}: invalid/duplicate media id`); mediaIds.add(m.id);
+      check(['image','video'].includes(m.kind) && nonempty(m.title) && nonempty(m.alt) && nonempty(m.caption), `${p.id}: incomplete media`);
+      check(publicMediaPath(m.src), `${p.id}: media must reference an existing local public asset`);
+      check(m.kind === 'image' ? /\.(?:webp|png|jpe?g|svg)$/.test(m.src) && m.poster === undefined : /\.(?:mp4|webm)$/.test(m.src) && publicMediaPath(m.poster) && /\.(?:webp|png|jpe?g)$/.test(m.poster), `${p.id}: media type/poster mismatch`);
+    }
     check(p.policy && ['local_changes', 'proposal_only'].includes(p.policy.execution), `${p.id}: invalid execution policy`);
     check(p.policy.publication === 'owner_authorized' && Number.isInteger(p.policy.max_attempts) && p.policy.max_attempts > 0 && p.policy.max_attempts <= 10, `${p.id}: invalid policy`);
     check(Array.isArray(p.reference_ids) && p.reference_ids.every(id => references.has(id)), `${p.id}: unknown reference`);

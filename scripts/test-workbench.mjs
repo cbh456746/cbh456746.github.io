@@ -66,6 +66,14 @@ test('unverified repository revisions and unsupported completion evidence are re
   const d = load(); d.references[0].revision = 'main'; assert.throws(() => validate(d),/full SHA/);
   const f = fixture(); f.tasks[0].status='complete'; assert.throws(() => validate(f),/evidence/);
 });
+test('project media must use existing public assets with complete accessible metadata', () => {
+  const data = load(); validate(data);
+  data.projects[0].media[0].src = '/assets/images/../../private.png';
+  assert.throws(() => validate(data), /existing local public asset/);
+  data.projects[0].media[0].src = '/assets/images/home-garden.webp';
+  data.projects[0].media[1].poster = '/assets/images/missing.jpg';
+  assert.throws(() => validate(data), /type\/poster/);
+});
 test('CLI imports projects and deduplicates input events across coordinator restarts', () => {
   const base=path.join(ROOT,'_workbench_test_tmp'); fs.mkdirSync(base,{recursive:true}); const dir=fs.mkdtempSync(path.join(base,'cli-'));
   const file=path.join(dir,'state.json'), input=path.join(dir,'addition.json'); fs.writeFileSync(file,JSON.stringify(fixture()));

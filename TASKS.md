@@ -2,6 +2,12 @@
 
 Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
+## Maintenance — 2026-11-05
+
+| ID | Status | Task | Acceptance criteria |
+|---|---|---|---|
+| M-15 | in progress | Improve Workbench readability, tutorial, media cards and private conversation/prompt file workflow. | Isolated source, content and contract tests pass; the workbench task is awaiting actual Pages render and PC/mobile public review. Preserve private transcripts outside public data. See docs/WORKBENCH_USABILITY_20261105.md and detailed task workbench-usability-20261105. |
+
 ## Maintenance — 2026-11-02
 
 | ID | Status | Task | Acceptance criteria |

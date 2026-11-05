@@ -36,5 +36,28 @@
 .wb-history { margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line); }.wb-history h2 { font-size:1.4rem; }.wb-history ol { list-style:none; padding:0; }.wb-history li { display:grid; grid-template-columns:100px 1fr; gap:1rem; padding:.6rem 0; font-size:.88rem; }.wb-history time { color:var(--muted); font-size:.8rem; }
 .wb-footnote { border-top:1px solid var(--line); margin-top:2rem; padding-top:1rem; font-size:.82rem; color:var(--muted); }
 .wb-empty { font-size:.85rem; color:var(--muted); padding:1rem 0; }
+.wb-heading { max-width:860px; margin-bottom:2.2rem; }
+.wb-heading .lede { max-width:60ch; line-height:1.75; }
+.wb-heading__links { display:flex; flex-wrap:wrap; gap:.7rem; margin-top:1.5rem; }
+.wb-heading__links .wb-action { display:inline-flex; align-items:center; gap:.5rem; min-height:44px; text-decoration:none; background:var(--surface); }
+.wb-heading__links .wb-action--primary { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+.wb-start { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.8rem; margin:0 0 2.5rem; }
+.wb-start > div { padding:1.15rem 1.2rem; border:1px solid var(--line); background:var(--surface); }
+.wb-start span,.wb-start strong { display:block; }.wb-start span { font-size:.8rem; color:var(--accent); font-weight:700; }.wb-start strong { margin:.4rem 0; font-size:1.08rem; }.wb-start p { margin:.2rem 0 0; color:var(--muted); font-size:.9rem; line-height:1.6; }
+.wb-summary { margin:0 0 2.3rem; padding:1.6rem; border:1px solid var(--line); background:var(--surface); }
+.wb-summary h2 { font-size:clamp(1.4rem,2.7vw,2rem); }
+.wb-summary > div > p { max-width:64ch; line-height:1.7; }
+.wb-counts { gap:.6rem; }.wb-counts span { padding:.3rem .65rem; background:var(--paper); border:1px solid var(--line); border-radius:999px; }
+.wb-caption,.wb-state,.wb-dependency,.wb-detail p,.wb-detail li,.wb-reference p,.wb-history li { font-size:.9rem; line-height:1.65; }
+.wb-card { min-height:105px; padding:1.2rem; border-radius:8px; }.wb-card strong { font-size:1.05rem; }
+.wb-detail { background:var(--surface); border:1px solid var(--line); border-top:3px solid var(--accent); border-radius:0 0 8px 8px; padding:1.3rem; }
+.wb-detail h3 { font-size:.94rem; }.wb-detail .wb-action { min-height:44px; }
+.wb-section-heading { display:flex; align-items:end; justify-content:space-between; gap:2rem; margin-bottom:1rem; }.wb-section-heading h2 { margin:.1rem 0; font-size:1.5rem; }.wb-section-heading > p { max-width:33ch; color:var(--muted); font-size:.9rem; margin:0; }
+.wb-media-section { margin-bottom:2.8rem; }.wb-media-section[hidden] { display:none; }
+.wb-media-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+.wb-media-card { margin:0; overflow:hidden; border:1px solid var(--line); border-radius:8px; background:var(--surface); }
+.wb-media-card img,.wb-media-card video { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:#eae8e2; }
+.wb-media-card figcaption { display:grid; gap:.3rem; padding:.9rem 1.1rem 1.1rem; font-size:.9rem; line-height:1.6; }.wb-media-card figcaption span { color:var(--muted); }
+.wb-footnote { font-size:.9rem; line-height:1.7; }
 @media(max-width:960px) { .wb-body { grid-template-columns:minmax(0,1fr); }.wb-detail { margin-top:1rem; } }
-@media(max-width:620px) { .workbench { padding:2.5rem 1.1rem; }.wb-summary { grid-template-columns:minmax(0,1fr); gap:1.25rem; }.wb-toolbar { align-items:stretch; }.wb-toolbar label { width:100%; }.wb-board,.wb-flow-level { grid-template-columns:minmax(0,1fr); }.wb-views button { min-height:44px; }.wb-history li { grid-template-columns:1fr; gap:.2rem; }.wb-card { min-height:80px; } }
+@media(max-width:620px) { .workbench { padding:2.5rem 1.1rem; }.wb-start,.wb-media-grid { grid-template-columns:minmax(0,1fr); }.wb-summary { grid-template-columns:minmax(0,1fr); gap:1.25rem; padding:1.2rem; }.wb-section-heading { display:block; }.wb-toolbar { align-items:stretch; }.wb-toolbar label { width:100%; }.wb-board,.wb-flow-level { grid-template-columns:minmax(0,1fr); }.wb-views button { min-height:44px; }.wb-history li { grid-template-columns:1fr; gap:.2rem; }.wb-card { min-height:80px; } }

@@ -6,13 +6,15 @@ permalink: /workbench/
 ---
 <link rel="stylesheet" href="{{ '/css/workbench.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 <section class="workbench" data-workbench data-revision="{{ site.data.workbench.revision }}" data-source="{{ '/workbench/state.json' | relative_url }}?v={{ site.time | date: '%s' }}">
-  <header class="wb-heading"><p class="eyebrow">Work in progress</p><h1>목표를 다음 작업으로.</h1><p class="lede">만드는 과정도 하나의 기록이 됩니다.<br>프로젝트의 방향, 이어갈 일, 참고한 자료를 함께 살펴보세요.</p></header>
+  <header class="wb-heading"><p class="eyebrow">Project workbench</p><h1>목표에서 다음 작업까지.</h1><p class="lede">무엇을 만들고, 어디까지 확인했는지 한눈에 살펴보세요. 작업을 누르면 완료 기준과 근거를 읽고, 다음 에이전트에게 맥락을 전달할 수 있습니다.</p><div class="wb-heading__links"><a class="wb-action wb-action--primary" href="{{ '/workbench/guide/' | relative_url }}">3분 사용법 보기 <span aria-hidden="true">↗</span></a><a class="wb-action" href="{{ '/workbench/records/' | relative_url }}">대화·프롬프트 기록 도구 <span aria-hidden="true">↗</span></a></div></header>
+  <section class="wb-start" aria-label="작업실 이용 순서"><div><span>01 · 살펴보기</span><strong>프로젝트와 작업 상태</strong><p>현재 목표와 이어갈 일을 확인합니다.</p></div><div><span>02 · 근거 확인</span><strong>완료 기준과 자료</strong><p>선택한 작업의 결과와 남은 검증을 읽습니다.</p></div><div><span>03 · 이어가기</span><strong>인수인계와 기록</strong><p>맥락을 전달하고 대화 원본은 별도 파일로 보관합니다.</p></div></section>
   <div class="wb-toolbar"><label>프로젝트<select id="wb-project">{% for project in site.data.workbench.projects %}<option value="{{ project.id | escape }}">{{ project.title | escape }}</option>{% endfor %}</select></label><div class="wb-views" aria-label="작업 보기"><button type="button" data-view="board" aria-pressed="true">작업 보드</button><button type="button" data-view="flow" aria-pressed="false">연결 흐름</button><button type="button" data-view="references" aria-pressed="false">참고 저장소</button></div></div>
   <p id="wb-message" role="status" aria-live="polite">기록된 프로젝트 상태를 불러옵니다.</p>
   <div id="wb-project-summary"></div>
+  <section class="wb-media-section" aria-labelledby="wb-media-title" hidden><div class="wb-section-heading"><div><p class="eyebrow">Visual archive</p><h2 id="wb-media-title">프로젝트 미디어</h2></div><p>사진과 영상으로 작업의 맥락을 살펴봅니다.</p></div><div id="wb-media" class="wb-media-grid"></div></section>
   <div class="wb-body"><div id="wb-view"></div><aside id="wb-detail" aria-label="선택한 작업의 상세 내용"></aside></div>
   <section class="wb-history" aria-labelledby="wb-history-title"><h2 id="wb-history-title">이어온 기록</h2><ol id="wb-events"></ol></section>
-  <footer class="wb-footnote"><p>이 화면은 마지막으로 저장·배포된 작업 기록입니다. 실행 중인 에이전트의 실시간 화면과는 갱신 시점이 다를 수 있습니다.</p><a href="{{ '/workbench/guide/' | relative_url }}">프로젝트를 이어가는 방법 ↗</a> · <a href="{{ '/workbench/state.json' | relative_url }}">AI용 작업 데이터 ↗</a></footer>
+  <footer class="wb-footnote"><p>이 화면은 마지막으로 저장·배포된 공개 작업 기록입니다. 개인 대화 전문은 이 페이지나 공개 데이터에 저장하지 않습니다.</p><a href="{{ '/workbench/guide/' | relative_url }}">사용법 ↗</a> · <a href="{{ '/workbench/records/' | relative_url }}">대화 기록 도구 ↗</a> · <a href="{{ '/workbench/state.json' | relative_url }}">AI용 공개 작업 데이터 ↗</a></footer>
   <noscript><h2>프로젝트와 다음 작업</h2>{% for project in site.data.workbench.projects %}<h3>{{ project.title | escape }}</h3><p>{{ project.goal | escape }}</p><p>다음 작업: {{ project.next_step | escape }}</p>{% endfor %}<p>작업 상세와 참고 자료는 <a href="{{ '/workbench/state.json' | relative_url }}">작업 데이터</a>에서도 읽을 수 있습니다.</p></noscript>
 </section>
 <script src="{{ '/js/workbench.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
