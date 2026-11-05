@@ -18,7 +18,7 @@ Keep the heading, Hanasaka hero and four content links intact. Confirm that the 
 
 ## Stock / Stars
 
-The public `/stock/` page is an owner-managed, US-listed USD watchlist. Read [Stock operations](docs/STOCK_OPERATIONS.md) before changing `_data/stock-stars.yml`, `stock.md`, `js/stock.js`, or `_stock_analysis/`. An analysis document must target a current Star; do not republish screenshot KRW prices or unverified quotes. Stars changes require an owner request, source/market verification, validation and same-commit public review. The page loads TradingView widgets, so preserve attribution, delay/privacy notes, and the symbol allowlist. Do not add a public write API or expose a market-data key.
+The public `/stock/` page is an owner-managed, US-listed USD watchlist. Read [Stock operations](docs/STOCK_OPERATIONS.md) before changing `_data/stock-stars.yml`, `stock.md`, `js/stock.js`, or `_stock_analysis/`. An analysis document must target a current Star; do not republish screenshot KRW prices or unverified quotes. Stars changes require an owner request, source/market verification, validation and same-commit public review. The sort button changes only the current page order; it is not a public write route. The page loads TradingView widgets, so preserve attribution, delay/privacy notes, and the symbol allowlist. Do not add a public write API or expose a market-data key. The default chart is 12M Area; dark mode remains a reviewed option, not an active setting.
 
 ## Project Board
 

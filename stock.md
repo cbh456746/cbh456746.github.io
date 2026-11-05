@@ -8,14 +8,12 @@ permalink: /stock/
 {% assign analyses = site.stock_analysis | sort: 'date' | reverse %}
 <section class="stock-shell" data-stock-root aria-labelledby="stock-title">
   <header class="stock-intro">
-    <p class="eyebrow">Stock / Stars</p>
-    <h1 id="stock-title">관심 종목을 따라 읽는 기록</h1>
-    <p>소유자가 Stars에 담은 미국 상장 주식·ADR·ETF만 살펴봅니다. 목록에서 종목을 고르면 차트와 그 종목에 관한 글을 함께 볼 수 있습니다.</p>
+    <h1 id="stock-title">STOCK</h1>
   </header>
   {% if stars.size > 0 %}
   <div class="stock-workspace">
     <aside class="stock-sidebar" aria-labelledby="stock-stars-title">
-      <div class="stock-sidebar__heading"><div><p class="eyebrow">Watchlist</p><h2 id="stock-stars-title">Stars <span>{{ stars.size }}</span></h2></div><span class="stock-currency">USD</span></div>
+      <div class="stock-sidebar__heading"><div><p class="eyebrow">Watchlist</p><h2 id="stock-stars-title">Stars <span>{{ stars.size }}</span></h2></div><div class="stock-sidebar__controls"><button class="stock-sort" type="button" data-stock-sort title="기본·이름순·역순으로 정렬">정렬: 기본</button><span class="stock-currency">USD</span></div></div>
       <p class="stock-sidebar__hint">종목을 선택하세요. 목록은 휠과 터치로 탐색할 수 있습니다.</p>
       <ol class="stock-stars" aria-label="Stars 종목">
         {% for star in stars %}

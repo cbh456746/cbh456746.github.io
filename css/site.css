@@ -21,7 +21,11 @@
 .stock-intro > p:last-child { color:var(--muted); font-size:1.02rem; line-height:1.85; }
 .stock-workspace { display:grid; grid-template-columns:minmax(280px,320px) minmax(0,1fr); gap:2.2rem; align-items:start; }
 .stock-sidebar { min-width:0; position:sticky; top:5.6rem; border:1px solid var(--line); background:var(--surface); }
-.stock-sidebar__heading { display:flex; align-items:end; justify-content:space-between; gap:1rem; padding:1.3rem 1.3rem .3rem; }
+.stock-sidebar__heading { display:flex; flex-wrap:wrap; align-items:end; justify-content:space-between; gap:1rem; padding:1.3rem 1.3rem .3rem; }
+.stock-sidebar__controls { display:flex; align-items:center; gap:.4rem; flex-shrink:0; }
+.stock-sort { border:1px solid #d6ddd4; background:#fff; color:#536a58; padding:.2rem .55rem; border-radius:999px; font-size:.68rem; cursor:pointer; white-space:nowrap; }
+.stock-sort:hover { background:#f2f5ef; }
+.stock-sort:focus-visible { outline:2px solid #50694a; outline-offset:2px; }
 .stock-sidebar__heading h2 { font-family:Georgia,"Times New Roman",serif; font-weight:400; font-size:1.8rem; margin:0; }
 .stock-sidebar__heading h2 span { font-family:system-ui,sans-serif; font-size:.72rem; color:var(--muted); vertical-align:middle; }
 .stock-currency,.stock-panel__badge { border:1px solid #d6ddd4; color:#536a58; padding:.2rem .55rem; border-radius:999px; font-size:.68rem; letter-spacing:.06em; white-space:nowrap; }

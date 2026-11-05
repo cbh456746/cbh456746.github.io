@@ -8,6 +8,33 @@
   const allowed = new Set(links.map((link) => link.dataset.stockSelect));
   let active = null;
 
+  const list = root.querySelector('.stock-stars');
+  const sortButton = root.querySelector('[data-stock-sort]');
+  if (list && sortButton) {
+    const originalItems = [...list.children];
+    const originalOrder = new Map(originalItems.map((item, index) => [item, index]));
+    const collator = new Intl.Collator('ko', { sensitivity: 'base', numeric: true });
+    const modes = [
+      { label: '기본', direction: 0 },
+      { label: '이름 ↑', direction: 1 },
+      { label: '이름 ↓', direction: -1 }
+    ];
+    let modeIndex = 0;
+    sortButton.addEventListener('click', () => {
+      modeIndex = (modeIndex + 1) % modes.length;
+      const mode = modes[modeIndex];
+      const items = [...originalItems];
+      if (mode.direction) items.sort((a, b) => {
+        const nameA = a.querySelector('.stock-star__name')?.textContent ?? '';
+        const nameB = b.querySelector('.stock-star__name')?.textContent ?? '';
+        return mode.direction * collator.compare(nameA, nameB) || originalOrder.get(a) - originalOrder.get(b);
+      });
+      list.append(...items);
+      list.scrollTop = 0;
+      sortButton.textContent = `정렬: ${mode.label}`;
+    });
+  }
+
   // The owner-curated YAML is the sole symbol allowlist. Never render a URL query as widget code.
   function embed(host, source, settings, fallback) {
     const container = document.createElement('div');
@@ -32,9 +59,10 @@
     embed(host, 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js', {
       symbol: panel.dataset.stockPanel,
       interval: 'D',
+      range: '12M',
       timezone: 'America/New_York',
       theme: 'light',
-      style: '1',
+      style: '3',
       locale: 'en',
       autosize: true,
       allow_symbol_change: false,
@@ -102,7 +130,6 @@
     }, '시세를 불러오지 못했습니다.');
   }
   if ('IntersectionObserver' in window) {
-    const list = root.querySelector('.stock-stars');
     const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) if (entry.isIntersecting) {
         loadQuote(entry.target);
