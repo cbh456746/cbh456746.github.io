@@ -173,3 +173,7 @@ On 2026-11-05 the owner clarified that alphabetical sorting does not meet the de
 ### D-031 — Put the LivLiv Player tutorial in Notes
 
 After the Watchlist update, the owner requested a tutorial based on `livliv-dev/player`. Publish a Notes article grounded in the repository's README, API, examples, package scripts, format and separate character licence at inspected commit 83ecd9c. Start with the hosted examples and two-picture PNGTuber path, then explain the optional source build and the LivLiv/VRM alternatives. Distinguish source review and URL checks from unperformed local camera/microphone tests. Do not copy the repository's character assets into this blog or imply the player creates a rig from one image, supports Live2D files or has unrestricted character licensing.
+
+### D-032 — Write for readers and use media where it explains
+
+On 2026-11-05 the owner requested a more readable LivLiv tutorial and a durable blog-wide writing rule. Lead with the reader's goal and first action; use short focused sections, useful captions and concrete outcomes. Screenshots, diagrams and optional motion should clarify a step that prose alone handles poorly. There is no required media count: a clear text-only page is valid. Review rights, attribution, privacy, metadata, load cost, accessibility and narrow-screen layout. The LivLiv article uses a captured public PNG example and an opt-in, externally hosted official GIF with its separate character licence linked. Source review and public-demo observation do not establish local camera/microphone performance.

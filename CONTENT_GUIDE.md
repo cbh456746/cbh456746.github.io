@@ -9,6 +9,8 @@
 
 AI agents perform routine authoring, review and authorized publication; the owner supplies the intended outcome and materials. For every blog-writing/change task, also update `index.md`'s `home_current` task/date/actual summary and the relevant Currently exploring cards, as required by [AGENTS.md](AGENTS.md). This includes documentation tasks; read-only reuse from another project does not modify the blog. See the [human operating guide](README.md).
 
+Before publishing a new or substantially revised article, follow [the reader-first style guide](STYLE_GUIDE.md). Check the rendered page as a human would: can the reader identify the goal, first action and result without reading a wall of text? Add a screenshot, diagram or motion clip only when it makes a particular step easier to understand. Media is optional, never a required count.
+
 File names should be lowercase English with hyphens, for example `my-first-project.md`. Dates use `YYYY-MM-DD HH:MM:SS`.
 
 ## Reviewed context for reuse
@@ -31,6 +33,6 @@ Long prompt appendices may be marked with `data-context-appendix="slug"`. The ex
 
 The text between the first pair of `---` lines is the information box (title, date, tags). Keep its punctuation and indentation. Write the article below the second `---` line using ordinary Markdown.
 
-Use `![short description](/assets/images/file-name.jpg)` for images saved under `assets/images/`. Put PDFs and downloadable files under `assets/files/` and link them with `[download](/assets/files/file.pdf)`.
+Use `![short description](/assets/images/file-name.jpg)` for images saved under `assets/images/`. Add a useful caption and source when the context is not obvious. Put PDFs and downloadable files under `assets/files/` and link them with `[download](/assets/files/file.pdf)`.
 
-To embed a video, use the provider's iframe embed code in the body. Only embed videos you are comfortable loading for every reader.
+For video or animation, prefer controls or an explicit open action, plus a still description and a source link. Only embed a provider iframe when its third-party load is justified for every reader. Check rights, privacy, file size and mobile rendering before publishing.

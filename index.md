@@ -4,9 +4,9 @@ title: Home
 description: BH CHOI의 프로젝트, 탐구, 학습과 취향을 담는 개인 기록 공간.
 home_design: garden
 home_current:
-  task_id: M-20
+  task_id: M-21
   updated_on: '2026-11-05'
-  summary: 'LivLiv Player의 PNGTuber·2.5D·VRM 실행법과 한계를 Notes 튜토리얼로 정리했습니다.'
+  summary: 'LivLiv Player 튜토리얼에 실제 화면과 선택형 동작 예시를 더하고 읽기 쉬운 글쓰기 지침을 정리했습니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">
