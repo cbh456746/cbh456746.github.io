@@ -6,7 +6,7 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
 | ID | Status | Task | Acceptance criteria |
 |---|---|---|---|
-| M-26 | in progress | Correct Kraft Heinz's TradingView exchange symbol. | Replace the retired `NASDAQ:KHC` with verified `NYSE:KHC` in the owner-curated Stars list. Preserve old shared links and browser-saved personal order through an allowlisted alias. Validate, publish by normal push, check the same-SHA Pages deployment and live quote/chart, then record the outcome. |
+| M-26 | complete | Correct Kraft Heinz's TradingView exchange symbol. | The company and SEC confirmed the 2026-09-14 move to NYSE. The Stars list now uses `NYSE:KHC`; an allowlisted alias resolves old shared links and saved personal-order entries. Content validation, Board validation, JavaScript syntax and diff checks passed. Commit bd83077 built and deployed in Pages run 42143785998. The live page selected Kraft Heinz from an old `NASDAQ:KHC` URL and displayed the `NYSE:KHC` chart, delayed quote, source link and price history. |
 | M-25 | complete | Publish a concise Play work log of the 2026-11-05 Stock page work. | The article summarizes 24 Stars, USD delayed quotes and Area chart, search, browser-only order editing, bottom move and compact mobile layout. A reviewed public screenshot is attributed and warns that its captured price is not current; no personal path or image metadata was published. Content validation passed. Article commit 76abde7 and mobile title fix 4e4ff2d built/deployed in Pages runs 42051220694 and 42052559778. The live article image loaded; the post appeared first in Play, Home summary rendered, and desktop, 390 px and 320 px layouts had no horizontal overflow. |
 
 ## Maintenance — 2026-11-05

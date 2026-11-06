@@ -6,7 +6,7 @@ home_design: garden
 home_current:
   task_id: M-26
   updated_on: '2026-11-06'
-  summary: 'Kraft Heinz의 거래소 이동에 맞춰 Stock 차트·시세 기호를 바로잡고 있습니다.'
+  summary: 'Kraft Heinz의 NYSE 이전에 맞춰 Stock 차트·시세와 이전 공유 링크를 고쳤습니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">
