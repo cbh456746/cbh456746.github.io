@@ -6,6 +6,8 @@
   const panels = [...root.querySelectorAll('[data-stock-panel]')];
   if (!links.length || !panels.length) return;
   const allowed = new Set(links.map((link) => link.dataset.stockSelect));
+  const symbolAliases = new Map([['NASDAQ:KHC', 'NYSE:KHC']]);
+  const currentSymbol = (symbol) => symbolAliases.get(symbol) || symbol;
   let active = null;
 
   const list = root.querySelector('.stock-stars');
@@ -28,7 +30,8 @@
       const saved = JSON.parse(localStorage.getItem(storageKey) || 'null');
       if (Array.isArray(saved)) {
         const seen = new Set();
-        const reordered = saved.map((symbol) => {
+        const reordered = saved.map((storedSymbol) => {
+          const symbol = currentSymbol(storedSymbol);
           if (seen.has(symbol)) return null;
           seen.add(symbol);
           return bySymbol.get(symbol);
@@ -211,11 +214,11 @@
     }
   }));
   window.addEventListener('popstate', () => {
-    const symbol = new URLSearchParams(location.search).get('symbol');
+    const symbol = currentSymbol(new URLSearchParams(location.search).get('symbol'));
     select(allowed.has(symbol) ? symbol : links[0].dataset.stockSelect);
   });
 
-  const requested = new URLSearchParams(location.search).get('symbol');
+  const requested = currentSymbol(new URLSearchParams(location.search).get('symbol'));
   select(allowed.has(requested) ? requested : links[0].dataset.stockSelect);
 
   const quoteHosts = [...root.querySelectorAll('[data-stock-quote]')];

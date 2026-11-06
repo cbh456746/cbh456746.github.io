@@ -4,9 +4,9 @@ title: Home
 description: BH CHOI의 프로젝트, 탐구, 학습과 취향을 담는 개인 기록 공간.
 home_design: garden
 home_current:
-  task_id: M-25
+  task_id: M-26
   updated_on: '2026-11-06'
-  summary: 'Stock Watchlist를 만든 과정과 검색·차트·개인 순서 편집의 결과를 Play에 기록했습니다.'
+  summary: 'Kraft Heinz의 거래소 이동에 맞춰 Stock 차트·시세 기호를 바로잡고 있습니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">

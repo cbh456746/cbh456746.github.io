@@ -189,3 +189,7 @@ On 2026-11-05 the owner requested a "move to bottom" button in Watchlist sorting
 ### D-035 — Publish the Stock build log in Play
 
 On 2026-11-05 the owner requested a Play post summarizing that day's Stock page work and results. Keep this post a human-readable work log, not a Stock analysis article or a claim of live market-data accuracy. Cover the public Stars list, USD delayed quote/chart, search, browser-only personal order, one-step bottom move, compact/mobile layout and verification. Include one reviewed screenshot of the public interface with a captured-price caveat and TradingView attribution. Do not publish private paths, personal records, unverified financial claims or a public write route. Keep the owner-managed Stars and the currently empty analysis catalog distinct from the Play post.
+
+### D-036 — Follow Kraft Heinz's exchange move in Stock
+
+On 2026-11-06 the owner reported that Kraft Heinz did not connect to TradingView. The company moved KHC trading from Nasdaq to NYSE on 2026-09-14, as announced by the company and filed with the SEC. The public Stars symbol must be `NYSE:KHC`, which feeds both TradingView widgets and their source link. Resolve an old `?symbol=NASDAQ:KHC` link and a browser-saved `NASDAQ:KHC` personal-order entry to the currently published `NYSE:KHC` only after checking the current Stars allowlist. Keep this narrow compatibility mapping; do not accept arbitrary URL or stored symbols as widget input. Market data remains TradingView's delayed external content.
