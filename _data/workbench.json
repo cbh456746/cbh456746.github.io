@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 37,
+  "revision": 38,
   "updated_on": "2026-11-06",
   "projects": [
     {
@@ -508,6 +508,11 @@
           "summary": "워크플로우 비교·현재 코드·합성 입력 계측으로 원화 보존 성과와 동적 품질 미달을 구분했습니다. 개인 자료 없이 연구 글·도식·진단 집계와 Home·Board 연결을 준비했습니다. 실제 배포 검증은 후속 기록입니다.",
           "ref": "docs/AVATAR_WORKFLOW_REVIEW_20261106.md",
           "checked_on": "2026-11-06"
+        },
+        {
+          "summary": "연구 글 2f53613의 Pages build/deploy(42218933379)와 실제 글·Home·Research·검색·RSS·공개 집계·참조 본문 해시를 확인했습니다. PC·390·320px 전체 가로 넘침은 없었습니다. 동작 목표 미달과 실제 방송 미검증을 유지하며 기록은 별도 수락 전 review입니다.",
+          "ref": "docs/AVATAR_WORKFLOW_REVIEW_20261106.md",
+          "checked_on": "2026-11-06"
         }
       ],
       "attempts": 1,
@@ -867,6 +872,14 @@
       "task_id": "mesh-workflow-review-20261106",
       "kind": "submit",
       "summary": "워크플로우 비교·현재 코드·합성 입력 계측으로 원화 보존 성과와 동적 품질 미달을 구분했습니다. 개인 자료 없이 연구 글·도식·진단 집계와 Home·Board 연결을 준비했습니다. 실제 배포 검증은 후속 기록입니다."
+    },
+    {
+      "id": "avatar-workflow-review-publication-20261106",
+      "on": "2026-11-06",
+      "project_id": "mesh-avatar",
+      "task_id": "mesh-workflow-review-20261106",
+      "kind": "evidence",
+      "summary": "원화 보존 흐름과 동작 품질 한계 연구를 게시하고 Home·목록·모바일·공개 참조의 같은 커밋을 확인했습니다. 아바타 리깅 수정이나 Hiyori 수준 달성은 별도입니다."
     }
   ]
 }

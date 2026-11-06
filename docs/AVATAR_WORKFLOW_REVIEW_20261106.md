@@ -18,5 +18,7 @@ Next avatar work: semantic control contracts, approved directional head/eye/neck
 
 Checks and publication:
 - Content/Board validation passed; 13 Board tests and 17 context tests (including the 1,205-record contract fixture) passed. Changed public files passed the targeted personal-path/credential-pattern scan and diff whitespace check. Local Jekyll was unavailable; the existing Pages build and subsequent live browser checks are the render/deployment gates.
-- Exact source commit / Pages run / live Research, Home, project and public summary: pending.
+- Initial article commit: 2f536139635d0560555bf9425994fabf2aef9523; Pages build/deploy succeeded in run 42218933379.
+- The actual public article, owned SVG and historical comparison image loaded. Research/search/RSS, Home card and summary, Board revision 37, reading guide and public diagnostic JSON passed. At 1440/390/320 px the article and Home had no global horizontal overflow; one 320 px table uses contained horizontal scrolling. Exported Markdown SHA-256 matched its catalog and source commit.
+- Direct visual review found default figure margins made the mobile SVG smaller than useful. A page-scoped margin refinement follows; the same public checks are repeated on that final source before delivery. No common CSS or unrelated content is changed.
 - Board submission will remain in review until separately accepted; actor renaming will not be used as an independent review.

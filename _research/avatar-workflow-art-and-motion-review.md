@@ -59,7 +59,7 @@ context:
 
 현재 예제는 **23개 레이어·30개 활성 텍스처 파일·45개 제어 항목**으로 구성했다. 직전 제작 기록에는 정면 보호 영역에서 정한 채널 오차 4를 넘은 픽셀이 0개였다고 남아 있다. 이것은 **허용 오차 안에서 정면 외형을 보존했다는 뜻**이며 모든 RGBA 값이 완전히 같거나 움직임도 아름답다는 뜻은 아니다.
 
-<figure>
+<figure style="margin:1.8rem 0;">
 <a href="/assets/images/avatar-workflow-review/workflow.svg"><img src="/assets/images/avatar-workflow-review/workflow.svg" width="800" height="880" loading="lazy" alt="컨셉에서 확정 메인, 원본을 보존하는 소재와 정면 검수까지 이어지고, 자연스러운 방향별 동작 검수가 다음 관문으로 남는 제작 흐름"></a>
 <figcaption>제작 흐름에서 역할을 나눈 것이 정면 외형의 개선에 도움이 됐다. 노란색 동작 품질 단계는 이번 피드백에서 다시 미통과로 판단한 관문이다.</figcaption>
 </figure>
@@ -120,7 +120,7 @@ context:
 
 최종 판정에는 방향별 기준 형태가 필요하다. 가까운 눈과 먼 눈, 코의 돌출, 볼의 면, 턱과 목의 접합, 옆머리와 귀의 가림이 같은 방향을 설명해야 한다. 다음 그림은 **지난 Hiyori 연구의 비교 자료**이며 이번 새 모델의 렌더가 아니다.
 
-<figure>
+<figure style="margin:1.8rem 0;">
 <a href="/assets/images/hiyori-head-motion-study/yaw-comparison.webp"><img src="/assets/images/hiyori-head-motion-study/yaw-comparison.webp" width="1200" height="1105" loading="lazy" alt="과거 Hiyori와 Silver Braid 비교에서 눈·코·볼·옆머리의 상대 배치가 방향에 따라 달라지는 모습을 살핀 그림"></a>
 <figcaption>2026-10-26 연구에서 공개한 방향 비교. 서로 다른 캐릭터·입력의 선택 사진이다. Hiyori의 실제 각도·속도나 이번 후보와의 동기화된 A/B를 뜻하지 않는다. <a href="/research/hiyori-silver-braid-head-motion-study/">원래 연구의 조건과 한계</a>를 함께 읽어야 한다.</figcaption>
 </figure>
