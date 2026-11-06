@@ -1,0 +1,2040 @@
+{
+  "version": 1,
+  "reviewedOn": "2026-11-06",
+  "scope": "Synthetic current-candidate diagnostics; not real VTS/OBS, not Hiyori synchronized comparison",
+  "canvas": [
+    1122,
+    1402
+  ],
+  "dt": 0.016666666666666666,
+  "poseSettlingSteps": 150,
+  "bodyProbeNotes": "nearest mesh vertices, 3-5 model pixels from designated anatomical regions; chest at (561,803), waist-band at (561,1067), lower picture at (561,1375)",
+  "body": {
+    "bodyYaw": {
+      "input": {
+        "bodyX": 6
+      },
+      "probes": {
+        "shoulderL": {
+          "rest": [
+            363,
+            682
+          ],
+          "delta": [
+            8.027313232421875,
+            0
+          ]
+        },
+        "chestL": {
+          "rest": [
+            429,
+            803
+          ],
+          "delta": [
+            7.122955322265625,
+            0
+          ]
+        },
+        "chest": {
+          "rest": [
+            561,
+            803
+          ],
+          "delta": [
+            8.15576171875,
+            0
+          ]
+        },
+        "chestR": {
+          "rest": [
+            693,
+            803
+          ],
+          "delta": [
+            7.1229248046875,
+            0
+          ]
+        },
+        "shoulderR": {
+          "rest": [
+            759,
+            682
+          ],
+          "delta": [
+            8.02734375,
+            0
+          ]
+        },
+        "waistL": {
+          "rest": [
+            451,
+            1067
+          ],
+          "delta": [
+            2.6241455078125,
+            0
+          ]
+        },
+        "waist": {
+          "rest": [
+            561,
+            1067
+          ],
+          "delta": [
+            2.97259521484375,
+            0
+          ]
+        },
+        "waistR": {
+          "rest": [
+            671,
+            1067
+          ],
+          "delta": [
+            2.6241455078125,
+            0
+          ]
+        },
+        "hem": {
+          "rest": [
+            561,
+            1375
+          ],
+          "delta": [
+            0.00982666015625,
+            0
+          ]
+        }
+      }
+    },
+    "bodyRoll": {
+      "input": {
+        "bodyZ": 6
+      },
+      "probes": {
+        "shoulderL": {
+          "rest": [
+            363,
+            682
+          ],
+          "delta": [
+            104.09140014648438,
+            -14.1632080078125
+          ]
+        },
+        "chestL": {
+          "rest": [
+            429,
+            803
+          ],
+          "delta": [
+            77.06060791015625,
+            -7.5947265625
+          ]
+        },
+        "chest": {
+          "rest": [
+            561,
+            803
+          ],
+          "delta": [
+            76.625732421875,
+            3.113037109375
+          ]
+        },
+        "chestR": {
+          "rest": [
+            693,
+            803
+          ],
+          "delta": [
+            76.1905517578125,
+            13.82080078125
+          ]
+        },
+        "shoulderR": {
+          "rest": [
+            759,
+            682
+          ],
+          "delta": [
+            102.2313232421875,
+            24.173828125
+          ]
+        },
+        "waistL": {
+          "rest": [
+            451,
+            1067
+          ],
+          "delta": [
+            23.89788818359375,
+            -3.4342041015625
+          ]
+        },
+        "waist": {
+          "rest": [
+            561,
+            1067
+          ],
+          "delta": [
+            23.8304443359375,
+            0.4173583984375
+          ]
+        },
+        "waistR": {
+          "rest": [
+            671,
+            1067
+          ],
+          "delta": [
+            23.76300048828125,
+            4.268798828125
+          ]
+        },
+        "hem": {
+          "rest": [
+            561,
+            1375
+          ],
+          "delta": [
+            0.1119384765625,
+            0
+          ]
+        }
+      }
+    },
+    "headYaw": {
+      "input": {
+        "angleX": 18
+      },
+      "probes": {
+        "shoulderL": {
+          "rest": [
+            363,
+            682
+          ],
+          "delta": [
+            4.09393310546875,
+            0
+          ]
+        },
+        "chestL": {
+          "rest": [
+            429,
+            803
+          ],
+          "delta": [
+            3.6326904296875,
+            0
+          ]
+        },
+        "chest": {
+          "rest": [
+            561,
+            803
+          ],
+          "delta": [
+            4.159423828125,
+            0
+          ]
+        },
+        "chestR": {
+          "rest": [
+            693,
+            803
+          ],
+          "delta": [
+            3.6326904296875,
+            0
+          ]
+        },
+        "shoulderR": {
+          "rest": [
+            759,
+            682
+          ],
+          "delta": [
+            4.09393310546875,
+            0
+          ]
+        },
+        "waistL": {
+          "rest": [
+            451,
+            1067
+          ],
+          "delta": [
+            1.33831787109375,
+            0
+          ]
+        },
+        "waist": {
+          "rest": [
+            561,
+            1067
+          ],
+          "delta": [
+            1.51605224609375,
+            0
+          ]
+        },
+        "waistR": {
+          "rest": [
+            671,
+            1067
+          ],
+          "delta": [
+            1.33831787109375,
+            0
+          ]
+        },
+        "hem": {
+          "rest": [
+            561,
+            1375
+          ],
+          "delta": [
+            0.0050048828125,
+            0
+          ]
+        }
+      }
+    },
+    "rootShift": {
+      "input": {
+        "rootX": 0.065
+      },
+      "probes": {
+        "shoulderL": {
+          "rest": [
+            363,
+            682
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        },
+        "chestL": {
+          "rest": [
+            429,
+            803
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        },
+        "chest": {
+          "rest": [
+            561,
+            803
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        },
+        "chestR": {
+          "rest": [
+            693,
+            803
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        },
+        "shoulderR": {
+          "rest": [
+            759,
+            682
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        },
+        "waistL": {
+          "rest": [
+            451,
+            1067
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        },
+        "waist": {
+          "rest": [
+            561,
+            1067
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        },
+        "waistR": {
+          "rest": [
+            671,
+            1067
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        },
+        "hem": {
+          "rest": [
+            561,
+            1375
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "chestShift": {
+      "input": {
+        "chestX": 1
+      },
+      "probes": {
+        "shoulderL": {
+          "rest": [
+            363,
+            682
+          ],
+          "delta": [
+            0.0074462890625,
+            0
+          ]
+        },
+        "chestL": {
+          "rest": [
+            429,
+            803
+          ],
+          "delta": [
+            1.219879150390625,
+            0
+          ]
+        },
+        "chest": {
+          "rest": [
+            561,
+            803
+          ],
+          "delta": [
+            3.84381103515625,
+            0
+          ]
+        },
+        "chestR": {
+          "rest": [
+            693,
+            803
+          ],
+          "delta": [
+            1.2198486328125,
+            0
+          ]
+        },
+        "shoulderR": {
+          "rest": [
+            759,
+            682
+          ],
+          "delta": [
+            0.0074462890625,
+            0
+          ]
+        },
+        "waistL": {
+          "rest": [
+            451,
+            1067
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        },
+        "waist": {
+          "rest": [
+            561,
+            1067
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        },
+        "waistR": {
+          "rest": [
+            671,
+            1067
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        },
+        "hem": {
+          "rest": [
+            561,
+            1375
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "shoulderLift": {
+      "input": {
+        "shoulderL": 1
+      },
+      "probes": {
+        "shoulderL": {
+          "rest": [
+            363,
+            682
+          ],
+          "delta": [
+            0,
+            -3.54571533203125
+          ]
+        },
+        "chestL": {
+          "rest": [
+            429,
+            803
+          ],
+          "delta": [
+            0,
+            -0.00445556640625
+          ]
+        },
+        "chest": {
+          "rest": [
+            561,
+            803
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        },
+        "chestR": {
+          "rest": [
+            693,
+            803
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        },
+        "shoulderR": {
+          "rest": [
+            759,
+            682
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        },
+        "waistL": {
+          "rest": [
+            451,
+            1067
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        },
+        "waist": {
+          "rest": [
+            561,
+            1067
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        },
+        "waistR": {
+          "rest": [
+            671,
+            1067
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        },
+        "hem": {
+          "rest": [
+            561,
+            1375
+          ],
+          "delta": [
+            0,
+            0
+          ]
+        }
+      }
+    }
+  },
+  "faceFilter": "Triangle centroid material alpha >=235. This is not full composite visibility/occlusion testing; it can include underlying skin.",
+  "faceMetric": "singular-value ratio of projected local 2D Jacobian; not beauty/error score; normal projection may also be anisotropic",
+  "face": {
+    "neutral": {
+      "pose": {},
+      "face": {
+        "triangles": 483,
+        "folded": 0,
+        "smin": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "smax": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "anisotropy": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "area": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "eyeL": {
+        "triangles": 64,
+        "folded": 0,
+        "smin": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "smax": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "anisotropy": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "area": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "eyeR": {
+        "triangles": 67,
+        "folded": 0,
+        "smin": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "smax": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "anisotropy": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "area": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "nose": {
+        "requested": [
+          561,
+          443
+        ],
+        "rest": [
+          561,
+          440
+        ],
+        "position": [
+          561,
+          440
+        ],
+        "delta": [
+          0,
+          0
+        ],
+        "distance": 3
+      },
+      "chin": {
+        "requested": [
+          562,
+          539
+        ],
+        "rest": [
+          561,
+          539
+        ],
+        "position": [
+          561,
+          539
+        ],
+        "delta": [
+          0,
+          0
+        ],
+        "distance": 1
+      }
+    },
+    "left": {
+      "pose": {
+        "angleX": -18
+      },
+      "face": {
+        "triangles": 483,
+        "folded": 0,
+        "smin": {
+          "min": 0.7760644801033925,
+          "median": 0.9398601050532085,
+          "p95": 0.9971133844702302,
+          "max": 0.9997331171868064
+        },
+        "smax": {
+          "min": 1.0001376856398279,
+          "median": 1.0530948185616074,
+          "p95": 1.1612016068113151,
+          "max": 1.2154762917611535
+        },
+        "anisotropy": {
+          "min": 1.0043334044056935,
+          "median": 1.1328486770165427,
+          "p95": 1.303631816568754,
+          "max": 1.3523504329905636
+        },
+        "area": {
+          "min": 0.81243896484375,
+          "median": 0.9866721413352273,
+          "p95": 1.1086092862215908,
+          "max": 1.1571932705965908
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "eyeL": {
+        "triangles": 64,
+        "folded": 0,
+        "smin": {
+          "min": 0.8378131785359215,
+          "median": 0.9148036744685595,
+          "p95": 0.9591965337795566,
+          "max": 0.9699951847018569
+        },
+        "smax": {
+          "min": 1.0008570135201078,
+          "median": 1.0063152423642474,
+          "p95": 1.0144555672785216,
+          "max": 1.0179861944200768
+        },
+        "anisotropy": {
+          "min": 1.0363795646219924,
+          "median": 1.0987955187259908,
+          "p95": 1.1675664037138498,
+          "max": 1.1999347201709847
+        },
+        "area": {
+          "min": 0.8422712846235796,
+          "median": 0.9228238192471591,
+          "p95": 0.9629461115056818,
+          "max": 0.9751198508522727
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "eyeR": {
+        "triangles": 67,
+        "folded": 0,
+        "smin": {
+          "min": 0.9815245757063595,
+          "median": 0.991806105262155,
+          "p95": 0.9971133844702302,
+          "max": 0.9984761779245062
+        },
+        "smax": {
+          "min": 1.0175242734571273,
+          "median": 1.069899690553525,
+          "p95": 1.1332606833206293,
+          "max": 1.1482927072806155
+        },
+        "anisotropy": {
+          "min": 1.0242543269949675,
+          "median": 1.0780271196941886,
+          "p95": 1.1439573689388474,
+          "max": 1.1579496868914416
+        },
+        "area": {
+          "min": 1.0084727894176135,
+          "median": 1.0590709339488635,
+          "p95": 1.1226640181107954,
+          "max": 1.1387162642045454
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "nose": {
+        "requested": [
+          561,
+          443
+        ],
+        "rest": [
+          561,
+          440
+        ],
+        "position": [
+          532.6701049804688,
+          440
+        ],
+        "delta": [
+          -28.32989501953125,
+          0
+        ],
+        "distance": 3
+      },
+      "chin": {
+        "requested": [
+          562,
+          539
+        ],
+        "rest": [
+          561,
+          539
+        ],
+        "position": [
+          550.4154663085938,
+          539
+        ],
+        "delta": [
+          -10.58453369140625,
+          0
+        ],
+        "distance": 1
+      }
+    },
+    "right": {
+      "pose": {
+        "angleX": 18
+      },
+      "face": {
+        "triangles": 483,
+        "folded": 0,
+        "smin": {
+          "min": 0.7815333315071121,
+          "median": 0.9414980095986758,
+          "p95": 0.997231419618116,
+          "max": 0.9997414317406655
+        },
+        "smax": {
+          "min": 1.0001649955011067,
+          "median": 1.0532830239267876,
+          "p95": 1.1628215088888996,
+          "max": 1.2176655934105807
+        },
+        "anisotropy": {
+          "min": 1.0083828620351327,
+          "median": 1.1309236416386907,
+          "p95": 1.3008947955816808,
+          "max": 1.3564795644497303
+        },
+        "area": {
+          "min": 0.82379150390625,
+          "median": 0.9943181818181818,
+          "p95": 1.1102516867897727,
+          "max": 1.168548583984375
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "eyeL": {
+        "triangles": 64,
+        "folded": 0,
+        "smin": {
+          "min": 0.9793814677247084,
+          "median": 0.9922343326929792,
+          "p95": 0.9972408807493693,
+          "max": 0.9988200657541583
+        },
+        "smax": {
+          "min": 1.0158651662184497,
+          "median": 1.0657042277436048,
+          "p95": 1.1207245491178488,
+          "max": 1.1445983449893689
+        },
+        "anisotropy": {
+          "min": 1.0221287754319242,
+          "median": 1.0764661362908845,
+          "p95": 1.1320464589673904,
+          "max": 1.1505136129469349
+        },
+        "area": {
+          "min": 1.0058704723011365,
+          "median": 1.0536665482954546,
+          "p95": 1.1100880015980115,
+          "max": 1.1387134898792615
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "eyeR": {
+        "triangles": 67,
+        "folded": 0,
+        "smin": {
+          "min": 0.8350097586818018,
+          "median": 0.9129918867800774,
+          "p95": 0.9562394892447702,
+          "max": 0.9677489901125971
+        },
+        "smax": {
+          "min": 1.001160162151666,
+          "median": 1.0070998816748593,
+          "p95": 1.01527348976354,
+          "max": 1.0167608219036777
+        },
+        "anisotropy": {
+          "min": 1.0384115466516624,
+          "median": 1.1036719105938437,
+          "p95": 1.187304323833997,
+          "max": 1.208009425803565
+        },
+        "area": {
+          "min": 0.8422740589488636,
+          "median": 0.9219138405539773,
+          "p95": 0.9629461115056818,
+          "max": 0.9725119850852273
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "nose": {
+        "requested": [
+          561,
+          443
+        ],
+        "rest": [
+          561,
+          440
+        ],
+        "position": [
+          589.3298950195312,
+          440
+        ],
+        "delta": [
+          28.32989501953125,
+          0
+        ],
+        "distance": 3
+      },
+      "chin": {
+        "requested": [
+          562,
+          539
+        ],
+        "rest": [
+          561,
+          539
+        ],
+        "position": [
+          571.5845336914062,
+          539
+        ],
+        "delta": [
+          10.58453369140625,
+          0
+        ],
+        "distance": 1
+      }
+    },
+    "up": {
+      "pose": {
+        "angleY": 14
+      },
+      "face": {
+        "triangles": 483,
+        "folded": 0,
+        "smin": {
+          "min": 0.9686055182011696,
+          "median": 0.994278181705368,
+          "p95": 0.9999280684498569,
+          "max": 0.9999439471058824
+        },
+        "smax": {
+          "min": 1.0032248386990317,
+          "median": 1.0623120104628303,
+          "p95": 1.1499203698694842,
+          "max": 1.17019023256655
+        },
+        "anisotropy": {
+          "min": 1.0067784939202504,
+          "median": 1.0723755146530503,
+          "p95": 1.155496064220439,
+          "max": 1.1708862499649215
+        },
+        "area": {
+          "min": 0.9996837269176136,
+          "median": 1.0513361150568181,
+          "p95": 1.1401533647017046,
+          "max": 1.16949462890625
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "eyeL": {
+        "triangles": 64,
+        "folded": 0,
+        "smin": {
+          "min": 0.969340741434724,
+          "median": 0.9890240014357944,
+          "p95": 0.9965699595353259,
+          "max": 0.9984700453030121
+        },
+        "smax": {
+          "min": 1.0117187254049846,
+          "median": 1.0360585281405401,
+          "p95": 1.0630643981111467,
+          "max": 1.0659134989319192
+        },
+        "anisotropy": {
+          "min": 1.0154477744521297,
+          "median": 1.049391319339716,
+          "p95": 1.0826714866904354,
+          "max": 1.097483946512731
+        },
+        "area": {
+          "min": 1.0054543235085227,
+          "median": 1.0246443314985796,
+          "p95": 1.0437261408025569,
+          "max": 1.052337646484375
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "eyeR": {
+        "triangles": 67,
+        "folded": 0,
+        "smin": {
+          "min": 0.9705382937933484,
+          "median": 0.9885331197991799,
+          "p95": 0.9965689525923919,
+          "max": 0.9979799502805584
+        },
+        "smax": {
+          "min": 1.0129332665755477,
+          "median": 1.0386392175590822,
+          "p95": 1.0660550906124961,
+          "max": 1.0705951974905257
+        },
+        "anisotropy": {
+          "min": 1.0164453658332355,
+          "median": 1.0515340214237052,
+          "p95": 1.0916531893602912,
+          "max": 1.1009712367234554
+        },
+        "area": {
+          "min": 1.0068137428977273,
+          "median": 1.0260814319957385,
+          "p95": 1.0437261408025569,
+          "max": 1.0477988503196023
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "nose": {
+        "requested": [
+          561,
+          443
+        ],
+        "rest": [
+          561,
+          440
+        ],
+        "position": [
+          561,
+          426.2456970214844
+        ],
+        "delta": [
+          0,
+          -13.754302978515625
+        ],
+        "distance": 3
+      },
+      "chin": {
+        "requested": [
+          562,
+          539
+        ],
+        "rest": [
+          561,
+          539
+        ],
+        "position": [
+          561,
+          535.6549682617188
+        ],
+        "delta": [
+          0,
+          -3.34503173828125
+        ],
+        "distance": 1
+      }
+    },
+    "down": {
+      "pose": {
+        "angleY": -14
+      },
+      "face": {
+        "triangles": 483,
+        "folded": 0,
+        "smin": {
+          "min": 0.8245134677104333,
+          "median": 0.9342057651214747,
+          "p95": 0.9833102568424077,
+          "max": 0.9932185485637519
+        },
+        "smax": {
+          "min": 1.0000438259238176,
+          "median": 1.0054880925234801,
+          "p95": 1.0219272934938308,
+          "max": 1.0309027530108623
+        },
+        "anisotropy": {
+          "min": 1.0085217960060813,
+          "median": 1.0801074927747771,
+          "p95": 1.1881638745452057,
+          "max": 1.213668040235661
+        },
+        "area": {
+          "min": 0.8250787908380682,
+          "median": 0.9432373046875,
+          "p95": 0.9907864657315341,
+          "max": 0.9948896928267046
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "eyeL": {
+        "triangles": 64,
+        "folded": 0,
+        "smin": {
+          "min": 0.9303787369059799,
+          "median": 0.9578214417626516,
+          "p95": 0.9800759855065388,
+          "max": 0.9841183295495807
+        },
+        "smax": {
+          "min": 1.0011422451045269,
+          "median": 1.0095634345718998,
+          "p95": 1.022715789128111,
+          "max": 1.0309027530108623
+        },
+        "anisotropy": {
+          "min": 1.019560510547999,
+          "median": 1.0541524670571607,
+          "p95": 1.0906685124565443,
+          "max": 1.1031879821026356
+        },
+        "area": {
+          "min": 0.9422329989346591,
+          "median": 0.9699290882457386,
+          "p95": 0.9858121004971591,
+          "max": 0.9891190962357954
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "eyeR": {
+        "triangles": 67,
+        "folded": 0,
+        "smin": {
+          "min": 0.9271817522144742,
+          "median": 0.9584143185492373,
+          "p95": 0.9791292286844318,
+          "max": 0.9827434798063122
+        },
+        "smax": {
+          "min": 1.0015320281153552,
+          "median": 1.010827568538092,
+          "p95": 1.0250413285537423,
+          "max": 1.0297938934564
+        },
+        "anisotropy": {
+          "min": 1.0207368706696172,
+          "median": 1.0551908898654705,
+          "p95": 1.0988903309214961,
+          "max": 1.1084413759641363
+        },
+        "area": {
+          "min": 0.9467717950994318,
+          "median": 0.9684864390980114,
+          "p95": 0.9847911487926136,
+          "max": 0.9877596768465909
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "nose": {
+        "requested": [
+          561,
+          443
+        ],
+        "rest": [
+          561,
+          440
+        ],
+        "position": [
+          561,
+          453.25494384765625
+        ],
+        "delta": [
+          0,
+          13.25494384765625
+        ],
+        "distance": 3
+      },
+      "chin": {
+        "requested": [
+          562,
+          539
+        ],
+        "rest": [
+          561,
+          539
+        ],
+        "position": [
+          561,
+          541.308349609375
+        ],
+        "delta": [
+          0,
+          2.308349609375
+        ],
+        "distance": 1
+      }
+    },
+    "diagonal": {
+      "pose": {
+        "angleX": 18,
+        "angleY": 14,
+        "angleZ": 8
+      },
+      "face": {
+        "triangles": 483,
+        "folded": 0,
+        "smin": {
+          "min": 0.8297621984078236,
+          "median": 0.9661416319306791,
+          "p95": 1.00027939650061,
+          "max": 1.0005273832072696
+        },
+        "smax": {
+          "min": 1.0019187284091722,
+          "median": 1.0913471757995006,
+          "p95": 1.2445552710581336,
+          "max": 1.2898428160758628
+        },
+        "anisotropy": {
+          "min": 1.0043310410060582,
+          "median": 1.1461549629207999,
+          "p95": 1.3217261165623468,
+          "max": 1.3842923172701678
+        },
+        "area": {
+          "min": 0.8775939208971074,
+          "median": 1.0463547178136168,
+          "p95": 1.2055390767506824,
+          "max": 1.2829126747371244
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "eyeL": {
+        "triangles": 64,
+        "folded": 0,
+        "smin": {
+          "min": 0.9952342891346876,
+          "median": 0.9998616235740019,
+          "p95": 1.0005158493546606,
+          "max": 1.0005273832072696
+        },
+        "smax": {
+          "min": 1.0208140611607315,
+          "median": 1.0836456929785196,
+          "p95": 1.1473476744086406,
+          "max": 1.170597363920612
+        },
+        "anisotropy": {
+          "min": 1.0208279239967217,
+          "median": 1.0853857230389465,
+          "p95": 1.147213320157513,
+          "max": 1.1716344585319587
+        },
+        "area": {
+          "min": 1.0181957118459475,
+          "median": 1.0820804993845217,
+          "p95": 1.1474820443944747,
+          "max": 1.1695611873133618
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "eyeR": {
+        "triangles": 67,
+        "folded": 0,
+        "smin": {
+          "min": 0.8439846671811835,
+          "median": 0.9227731179263824,
+          "p95": 0.9631796601035204,
+          "max": 0.9727463240044265
+        },
+        "smax": {
+          "min": 1.0090719665707066,
+          "median": 1.0272872270376332,
+          "p95": 1.0466794851348513,
+          "max": 1.0508599268612329
+        },
+        "anisotropy": {
+          "min": 1.0409022145173605,
+          "median": 1.115310726874132,
+          "p95": 1.2126056327478445,
+          "max": 1.2368330003308874
+        },
+        "area": {
+          "min": 0.8775939208971074,
+          "median": 0.9472308289875424,
+          "p95": 0.9802880954028163,
+          "max": 0.9855344241931419
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "nose": {
+        "requested": [
+          561,
+          443
+        ],
+        "rest": [
+          561,
+          440
+        ],
+        "position": [
+          635.439697265625,
+          428.724365234375
+        ],
+        "delta": [
+          74.439697265625,
+          -11.275634765625
+        ],
+        "distance": 3
+      },
+      "chin": {
+        "requested": [
+          562,
+          539
+        ],
+        "rest": [
+          561,
+          539
+        ],
+        "position": [
+          610.5643920898438,
+          536.6331176757812
+        ],
+        "delta": [
+          49.56439208984375,
+          -2.36688232421875
+        ],
+        "distance": 1
+      }
+    },
+    "gaze": {
+      "pose": {
+        "eyeBallX": 1
+      },
+      "face": {
+        "triangles": 483,
+        "folded": 0,
+        "smin": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "smax": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "anisotropy": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "area": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "eyeL": {
+        "triangles": 64,
+        "folded": 0,
+        "smin": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "smax": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "anisotropy": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "area": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "eyeR": {
+        "triangles": 67,
+        "folded": 0,
+        "smin": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "smax": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "anisotropy": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "area": {
+          "min": 1,
+          "median": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "note": "2D projected local distortion, not a perceptual score or proof of wrong anatomy"
+      },
+      "nose": {
+        "requested": [
+          561,
+          443
+        ],
+        "rest": [
+          561,
+          440
+        ],
+        "position": [
+          561,
+          440
+        ],
+        "delta": [
+          0,
+          0
+        ],
+        "distance": 3
+      },
+      "chin": {
+        "requested": [
+          562,
+          539
+        ],
+        "rest": [
+          561,
+          539
+        ],
+        "position": [
+          561,
+          539
+        ],
+        "delta": [
+          0,
+          0
+        ],
+        "distance": 1
+      }
+    }
+  },
+  "hair": {
+    "offsetUnits": "maximum absolute displacement in one model-coordinate axis relative to chain rest; excludes rigid whole-head transport",
+    "steps": 300,
+    "headInput": {
+      "angleX": "10*sin(2*pi*0.35*t)",
+      "angleZ": "3*sin(2*pi*0.3*t)"
+    },
+    "headResponse": {
+      "fringeL": 0.192138671875,
+      "fringeR": 0.16107177734375,
+      "sideL": 0.25396728515625,
+      "sideR": 0.25701904296875,
+      "braidL": 0.432769775390625,
+      "braidR": 0.43096923828125,
+      "ahoge": 0.21893310546875,
+      "earringL": 0.0467529296875,
+      "earringR": 0.05487060546875
+    },
+    "rootInput": {
+      "rootX": "0.1*sin(2*pi*0.35*t)"
+    },
+    "rootResponse": {
+      "fringeL": 0,
+      "fringeR": 0,
+      "sideL": 0,
+      "sideR": 0,
+      "braidL": 0,
+      "braidR": 0,
+      "ahoge": 0,
+      "earringL": 0,
+      "earringR": 0
+    },
+    "restResponse": {
+      "fringeL": 0,
+      "fringeR": 0,
+      "sideL": 0,
+      "sideR": 0,
+      "braidL": 0,
+      "braidR": 0,
+      "ahoge": 0,
+      "earringL": 0,
+      "earringR": 0
+    }
+  },
+  "channelAudit": {
+    "count": 45,
+    "meaning": "geometric binding diagnostic; frame/opacity/projection controls also require renderer inspection",
+    "channels": [
+      {
+        "key": "angleX",
+        "label": "고개 좌우",
+        "target": 18,
+        "changedLayerIds": [
+          "body",
+          "arm_L",
+          "arm_R",
+          "long_L",
+          "long_R",
+          "neck",
+          "face",
+          "brows",
+          "eye_L",
+          "iris_L",
+          "eye_R",
+          "iris_R",
+          "mouth",
+          "side_L",
+          "side_R",
+          "front_hair_L",
+          "front_hair_R",
+          "ornament_L",
+          "ornament_R",
+          "ahoge"
+        ]
+      },
+      {
+        "key": "angleY",
+        "label": "고개 상하",
+        "target": 14,
+        "changedLayerIds": [
+          "body",
+          "long_L",
+          "long_R",
+          "neck",
+          "face",
+          "brows",
+          "eye_L",
+          "iris_L",
+          "eye_R",
+          "iris_R",
+          "mouth",
+          "side_L",
+          "side_R",
+          "front_hair_L",
+          "front_hair_R",
+          "ornament_L",
+          "ornament_R",
+          "ahoge"
+        ]
+      },
+      {
+        "key": "angleZ",
+        "label": "고개 기울기",
+        "target": 12,
+        "changedLayerIds": [
+          "body",
+          "arm_L",
+          "arm_R",
+          "long_L",
+          "long_R",
+          "neck",
+          "face",
+          "brows",
+          "eye_L",
+          "iris_L",
+          "eye_R",
+          "iris_R",
+          "mouth",
+          "side_L",
+          "side_R",
+          "front_hair_L",
+          "front_hair_R",
+          "ornament_L",
+          "ornament_R",
+          "ahoge"
+        ]
+      },
+      {
+        "key": "eyeLOpen",
+        "label": "왼쪽 눈 개방",
+        "target": 0,
+        "changedLayerIds": [
+          "closed_L",
+          "eye_L",
+          "iris_L"
+        ]
+      },
+      {
+        "key": "eyeROpen",
+        "label": "오른쪽 눈 개방",
+        "target": 0,
+        "changedLayerIds": [
+          "closed_R",
+          "eye_R",
+          "iris_R"
+        ]
+      },
+      {
+        "key": "eyeBallX",
+        "label": "양눈 시선 좌우",
+        "target": 1,
+        "changedLayerIds": [
+          "iris_L",
+          "iris_R"
+        ]
+      },
+      {
+        "key": "eyeBallY",
+        "label": "양눈 시선 상하",
+        "target": 1,
+        "changedLayerIds": [
+          "iris_L",
+          "iris_R"
+        ]
+      },
+      {
+        "key": "gazeLX",
+        "label": "왼쪽 시선 좌우 보정",
+        "target": 0.5,
+        "changedLayerIds": [
+          "iris_L"
+        ]
+      },
+      {
+        "key": "gazeLY",
+        "label": "왼쪽 시선 상하 보정",
+        "target": 0.5,
+        "changedLayerIds": [
+          "iris_L"
+        ]
+      },
+      {
+        "key": "gazeRX",
+        "label": "오른쪽 시선 좌우 보정",
+        "target": 0.5,
+        "changedLayerIds": [
+          "iris_R"
+        ]
+      },
+      {
+        "key": "gazeRY",
+        "label": "오른쪽 시선 상하 보정",
+        "target": 0.5,
+        "changedLayerIds": [
+          "iris_R"
+        ]
+      },
+      {
+        "key": "browLY",
+        "label": "왼쪽 눈썹 높이",
+        "target": -1,
+        "changedLayerIds": [
+          "brows"
+        ]
+      },
+      {
+        "key": "browRY",
+        "label": "오른쪽 눈썹 높이",
+        "target": -1,
+        "changedLayerIds": [
+          "brows"
+        ]
+      },
+      {
+        "key": "browLTilt",
+        "label": "왼쪽 눈썹 기울기",
+        "target": 1,
+        "changedLayerIds": [
+          "brows"
+        ]
+      },
+      {
+        "key": "browRTilt",
+        "label": "오른쪽 눈썹 기울기",
+        "target": 1,
+        "changedLayerIds": [
+          "brows"
+        ]
+      },
+      {
+        "key": "browLInner",
+        "label": "왼쪽 눈썹 안쪽",
+        "target": 1,
+        "changedLayerIds": [
+          "brows"
+        ]
+      },
+      {
+        "key": "browRInner",
+        "label": "오른쪽 눈썹 안쪽",
+        "target": 1,
+        "changedLayerIds": [
+          "brows"
+        ]
+      },
+      {
+        "key": "browLOuter",
+        "label": "왼쪽 눈썹 바깥쪽",
+        "target": 1,
+        "changedLayerIds": [
+          "brows"
+        ]
+      },
+      {
+        "key": "browROuter",
+        "label": "오른쪽 눈썹 바깥쪽",
+        "target": 1,
+        "changedLayerIds": [
+          "brows"
+        ]
+      },
+      {
+        "key": "mouthOpen",
+        "label": "입 벌림",
+        "target": 1,
+        "changedLayerIds": []
+      },
+      {
+        "key": "vowel",
+        "label": "둥근 입 ↔ 넓은 입",
+        "target": 1,
+        "changedLayerIds": []
+      },
+      {
+        "key": "smile",
+        "label": "미소",
+        "target": 1,
+        "changedLayerIds": [
+          "expr_smile"
+        ]
+      },
+      {
+        "key": "mouthWidth",
+        "label": "입 너비 보정",
+        "target": 1,
+        "changedLayerIds": [
+          "mouth"
+        ]
+      },
+      {
+        "key": "mouthHeight",
+        "label": "입 높이 보정",
+        "target": 1,
+        "changedLayerIds": [
+          "mouth"
+        ]
+      },
+      {
+        "key": "mouthCornerL",
+        "label": "왼쪽 입꼬리",
+        "target": 1,
+        "changedLayerIds": [
+          "mouth"
+        ]
+      },
+      {
+        "key": "mouthCornerR",
+        "label": "오른쪽 입꼬리",
+        "target": 1,
+        "changedLayerIds": [
+          "mouth"
+        ]
+      },
+      {
+        "key": "bodyX",
+        "label": "상체 좌우 회전",
+        "target": 6,
+        "changedLayerIds": [
+          "body",
+          "arm_L",
+          "arm_R",
+          "long_L",
+          "long_R",
+          "neck",
+          "face",
+          "brows",
+          "eye_L",
+          "iris_L",
+          "eye_R",
+          "iris_R",
+          "mouth",
+          "side_L",
+          "side_R",
+          "front_hair_L",
+          "front_hair_R",
+          "ornament_L",
+          "ornament_R",
+          "ahoge"
+        ]
+      },
+      {
+        "key": "bodyZ",
+        "label": "상체 기울기",
+        "target": 6,
+        "changedLayerIds": [
+          "body",
+          "arm_L",
+          "arm_R",
+          "long_L",
+          "long_R",
+          "neck",
+          "face",
+          "brows",
+          "eye_L",
+          "iris_L",
+          "eye_R",
+          "iris_R",
+          "mouth",
+          "side_L",
+          "side_R",
+          "front_hair_L",
+          "front_hair_R",
+          "ornament_L",
+          "ornament_R",
+          "ahoge"
+        ]
+      },
+      {
+        "key": "breath",
+        "label": "호흡",
+        "target": 1,
+        "changedLayerIds": [
+          "body",
+          "arm_L",
+          "arm_R",
+          "long_L",
+          "long_R",
+          "neck",
+          "face",
+          "brows",
+          "eye_L",
+          "iris_L",
+          "eye_R",
+          "iris_R",
+          "mouth",
+          "side_L",
+          "side_R",
+          "front_hair_L",
+          "front_hair_R",
+          "ornament_L",
+          "ornament_R",
+          "ahoge"
+        ]
+      },
+      {
+        "key": "rootX",
+        "label": "몸 전체 좌우",
+        "target": 0.18,
+        "changedLayerIds": []
+      },
+      {
+        "key": "rootY",
+        "label": "몸 전체 상하",
+        "target": 0.15,
+        "changedLayerIds": []
+      },
+      {
+        "key": "rootZ",
+        "label": "몸 전체 깊이",
+        "target": 0.12,
+        "changedLayerIds": []
+      },
+      {
+        "key": "shoulderL",
+        "label": "왼쪽 어깨 높이",
+        "target": 1,
+        "changedLayerIds": [
+          "body",
+          "neck"
+        ]
+      },
+      {
+        "key": "shoulderR",
+        "label": "오른쪽 어깨 높이",
+        "target": 1,
+        "changedLayerIds": [
+          "body",
+          "neck"
+        ]
+      },
+      {
+        "key": "chestX",
+        "label": "가슴·옷 좌우 추종",
+        "target": 1,
+        "changedLayerIds": [
+          "body",
+          "arm_L",
+          "arm_R"
+        ]
+      },
+      {
+        "key": "chestY",
+        "label": "가슴·옷 상하 추종",
+        "target": 1,
+        "changedLayerIds": [
+          "body",
+          "arm_L",
+          "arm_R"
+        ]
+      },
+      {
+        "key": "fringeL",
+        "label": "왼쪽 앞머리",
+        "target": 1,
+        "changedLayerIds": [
+          "front_hair_L"
+        ]
+      },
+      {
+        "key": "fringeR",
+        "label": "오른쪽 앞머리",
+        "target": 1,
+        "changedLayerIds": [
+          "front_hair_R"
+        ]
+      },
+      {
+        "key": "sideL",
+        "label": "왼쪽 옆머리",
+        "target": 1,
+        "changedLayerIds": [
+          "side_L"
+        ]
+      },
+      {
+        "key": "sideR",
+        "label": "오른쪽 옆머리",
+        "target": 1,
+        "changedLayerIds": [
+          "side_R"
+        ]
+      },
+      {
+        "key": "braidL",
+        "label": "왼쪽 긴 머리",
+        "target": 1,
+        "changedLayerIds": [
+          "long_L"
+        ]
+      },
+      {
+        "key": "braidR",
+        "label": "오른쪽 긴 머리",
+        "target": 1,
+        "changedLayerIds": [
+          "long_R"
+        ]
+      },
+      {
+        "key": "ahoge",
+        "label": "바보털",
+        "target": 1,
+        "changedLayerIds": [
+          "ahoge"
+        ]
+      },
+      {
+        "key": "earringL",
+        "label": "왼쪽 머리 장식",
+        "target": 1,
+        "changedLayerIds": [
+          "ornament_L"
+        ]
+      },
+      {
+        "key": "earringR",
+        "label": "오른쪽 머리 장식",
+        "target": 1,
+        "changedLayerIds": [
+          "ornament_R"
+        ]
+      }
+    ]
+  },
+  "limits": [
+    "No character assets, full mesh, auth data or personal tracking logs included",
+    "Naturalness remains below target according to subsequent user review",
+    "No universal threshold makes anisotropy a defect",
+    "Whole-root motion can happen in projection without changing model-space vertices"
+  ]
+}

@@ -4,9 +4,9 @@ title: Home
 description: BH CHOI의 프로젝트, 탐구, 학습과 취향을 담는 개인 기록 공간.
 home_design: garden
 home_current:
-  task_id: M-26
+  task_id: M-27
   updated_on: '2026-11-06'
-  summary: 'Kraft Heinz의 NYSE 이전에 맞춰 Stock 차트·시세와 이전 공유 링크를 고쳤습니다.'
+  summary: '아바타의 원화 보존 개선과 남은 회전·관절·물리 문제를 비교하고, 다음 검수 기준을 연구 글로 정리했습니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">
@@ -30,7 +30,7 @@ home_current:
   <div class="home-current__list">
     <a class="home-project" href="{{ '/stock/' | relative_url }}"><span class="home-project__tag">Stock · Stars</span><h3>관심 종목과 분석을 한 화면에 <span aria-hidden="true">↗</span></h3><p>미국 상장 관심 종목의 USD 시세와 차트를 살펴보고, 종목별 분석 기록을 이어갑니다.</p><span class="home-project__status">검색·맨 아래 이동을 포함한 개인 순서 편집 공개 · 분석 글은 준비 중</span></a>
     <a class="home-project" href="{{ '/workbench/' | relative_url }}"><span class="home-project__tag">Operations · Board</span><h3>목표와 기록을 다음 작업으로 <span aria-hidden="true">↗</span></h3><p>목표·작업·근거와 공개 미디어를 블록으로 살펴봅니다. 사용법과 별도 개인 대화 파일 도구도 이용할 수 있습니다.</p><span class="home-project__status">사용성 개편 공개 · 자율 실행은 단계별 검증</span></a>
-    <a class="home-project" href="{{ '/workbench/?project=mesh-avatar' | relative_url }}"><span class="home-project__tag">Projects · Mesh Avatar Studio</span><h3>한 장의 그림을 움직이는 아바타로 <span aria-hidden="true">↗</span></h3><p>고개·시선·목의 자연스러움, 독립 소재와 별도 입체 두상 후보를 비교합니다.</p><span class="home-project__status">회전 품질 검증 중 · 저장소 비공개</span></a>
+    <a class="home-project" href="{{ '/research/avatar-workflow-art-and-motion-review/' | relative_url }}"><span class="home-project__tag">Projects · Mesh Avatar Studio</span><h3>한 장의 그림을 움직이는 아바타로 <span aria-hidden="true">↗</span></h3><p>컨셉·메인·작업용 아트로 정면을 보존하고, 회전·허리·머리카락의 부족한 표현을 진단합니다.</p><span class="home-project__status">원화 개선 · 동작 품질 재검토 · 저장소 비공개</span></a>
     <a class="home-project" href="{{ '/projects/mopago/' | relative_url }}"><span class="home-project__tag">Projects · Mopago</span><h3>한글 모아모아의 다음 수 찾기 <span aria-hidden="true">↗</span></h3><p>게임판과 보유 조각을 입력하면 다음 배치를 추천하는 독립 웹 도구.</p></a>
     <a class="home-project" href="{{ '/projects/repo-style-pngtuber/' | relative_url }}"><span class="home-project__tag">Projects · PNGTuber</span><h3>목소리에 반응하는 작은 캐릭터 <span aria-hidden="true">↗</span></h3><p>두 캐릭터의 뚜껑 개폐·눈 깜빡임 에셋과 마이크 반응형 OBS 오버레이.</p></a>
   </div>

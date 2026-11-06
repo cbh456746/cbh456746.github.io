@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "revision": 33,
-  "updated_on": "2026-11-05",
+  "revision": 37,
+  "updated_on": "2026-11-06",
   "projects": [
     {
       "id": "blog-evolution",
@@ -56,8 +56,8 @@
       "title": "Mesh Avatar · 자연스러운 AI 아바타 제작",
       "goal": "한 장의 일러스트를 출발점으로, Hiyori·Akari 샘플을 기준 삼아 고개·시선·목·상체가 자연스럽게 움직이는 방송 아바타 제작 흐름을 검증합니다. 현재는 연구·후보 구현 단계이며 목표 품질은 미달입니다.",
       "status": "active",
-      "updated_on": "2026-11-05",
-      "next_step": "물리·표정을 고정한 좌우·상하 회전과 시선 단독 시험부터 비교합니다. LivLiv Player는 문서 검토 후보이며 도입·성능 검증 전입니다.",
+      "updated_on": "2026-11-06",
+      "next_step": "컨셉·확정 메인·원본 보존 소재로 정면 외형은 개선됐지만 자연스러운 리깅 목표는 미달입니다. 슬라이더 의미·고개 방향·허리 기준 상체·가닥 관성을 같은 입력으로 재검수합니다.",
       "acceptance": [
         "얼굴 방향과 무관한 국소 찌그러짐·관절 늘어남·윤곽 이중상 없이 고개와 목이 이어집니다. 원근에 따른 화면상 비율 변화는 별도로 판단합니다.",
         "시선만 움직일 때 턱선과 머리 형태는 유지되고, 눈꺼풀·홍채·입모양은 독립적으로 동작합니다.",
@@ -489,6 +489,32 @@
       "evidence": [],
       "reviewed_by": null,
       "blocked_reason": null
+    },
+    {
+      "id": "mesh-workflow-review-20261106",
+      "project_id": "mesh-avatar",
+      "title": "이미지 제작 흐름의 개선과 움직임 검수 한계 기록",
+      "description": "이전 파츠 재생성 방식과 컨셉→확정 메인→원본 보존 소재 방식을 비교하고, 사용자 피드백을 바탕으로 허리 고정·상체 회전·얼굴·시선·머리카락·가슴 추종의 다음 합격 기준을 연구 글로 정리합니다. 모델을 고친 작업이나 목표 품질 달성으로 표시하지 않습니다.",
+      "status": "review",
+      "role": "coordinator",
+      "depends_on": [],
+      "acceptance": [
+        "원화 보존 성과와 동적 품질 미달을 구분하고 코드·합성 입력 검사·사용자 관찰을 명시합니다.",
+        "45개 화면 변화 검사를 회전·물리의 의미 검수로 오인하지 않도록 다음 시험을 제시합니다.",
+        "원본 캐릭터·비공개 소재·개인 경로를 공개하지 않고 Research와 Home의 실제 배포를 확인합니다."
+      ],
+      "evidence": [
+        {
+          "summary": "워크플로우 비교·현재 코드·합성 입력 계측으로 원화 보존 성과와 동적 품질 미달을 구분했습니다. 개인 자료 없이 연구 글·도식·진단 집계와 Home·Board 연결을 준비했습니다. 실제 배포 검증은 후속 기록입니다.",
+          "ref": "docs/AVATAR_WORKFLOW_REVIEW_20261106.md",
+          "checked_on": "2026-11-06"
+        }
+      ],
+      "attempts": 1,
+      "owner": "avatar-study-coordinator",
+      "lease_until": null,
+      "reviewed_by": null,
+      "blocked_reason": null
     }
   ],
   "references": [
@@ -552,9 +578,9 @@
       "title": "LivLiv Player",
       "url": "https://github.com/livliv-dev/player",
       "purpose": "독립 파츠·깊이·회전 키폼·눈 가림·개별 체인과 공통 재생 API를 비교합니다.",
-      "status": "documented",
-      "revision": "aeeb8e49b7fd2039b53db971102992dcc6c8a852",
-      "checked_on": "2026-11-05",
+      "status": "adopted",
+      "revision": "0ffb70f2b815d924ab10b07fa892c413846a71cd",
+      "checked_on": "2026-11-06",
       "entry_points": [
         "README.md",
         "API.md",
@@ -562,7 +588,7 @@
         "src/runtime/puppet.ts",
         "characters/LICENSE.md"
       ],
-      "limits": "문서·소스 검토이며 미도입입니다. Player는 이미지 자동 제작 파이프라인이 아니고 Cubism 파일을 읽지 않습니다. 코드와 샘플 캐릭터의 라이선스가 다르며, 우리 모델의 품질 개선은 아직 검증하지 않았습니다."
+      "limits": "0.3.0 재생기 일부를 새 후보에 고정 도입했습니다. 자체 소재·입력·어댑터의 합성 검사는 목표 자연스러움이나 Hiyori 품질 달성을 뜻하지 않습니다. 이미지 제작 서비스 및 샘플 캐릭터 자산은 별개입니다."
     },
     {
       "id": "see-through",
@@ -810,6 +836,37 @@
       "task_id": "mesh-public-record",
       "kind": "submit",
       "summary": "프로젝트·7개 작업·4개 참고 저장소와 기존 공개 미디어를 등록하고 Home·소개글을 연결했습니다. 콘텐츠·Board 계약 13개 검사와 기존 객체 보존을 확인했습니다. 실제 공개 배포·화면 검증과 독립 수락은 별도입니다."
+    },
+    {
+      "id": "97f201fc-6ae8-4053-a4f7-d67049476d20",
+      "on": "2026-11-06",
+      "project_id": null,
+      "kind": "import",
+      "summary": "프로젝트와 작업 명세를 등록했습니다."
+    },
+    {
+      "id": "91ee7e4b-65b7-4d46-91a0-e378dd1c93df",
+      "on": "2026-11-06",
+      "project_id": "mesh-avatar",
+      "task_id": "mesh-workflow-review-20261106",
+      "kind": "claim",
+      "summary": "avatar-study-coordinator: 이미지 제작 흐름의 개선과 움직임 검수 한계 기록 작업 배정"
+    },
+    {
+      "id": "avatar-workflow-motion-review-20261106",
+      "on": "2026-11-06",
+      "project_id": "mesh-avatar",
+      "task_id": "mesh-workflow-review-20261106",
+      "kind": "input",
+      "summary": "원본 보존 제작의 정면 개선과 회전·허리·머리카락·슬라이더 의미의 미해결 문제를 연구 글로 비교합니다. 아바타 코드 수정·새 캐릭터 소재 공개·실제 방송 검증은 수행하지 않습니다."
+    },
+    {
+      "id": "4ebb3f2c-c609-4983-9e2b-70c00fcc5732",
+      "on": "2026-11-06",
+      "project_id": "mesh-avatar",
+      "task_id": "mesh-workflow-review-20261106",
+      "kind": "submit",
+      "summary": "워크플로우 비교·현재 코드·합성 입력 계측으로 원화 보존 성과와 동적 품질 미달을 구분했습니다. 개인 자료 없이 연구 글·도식·진단 집계와 Home·Board 연결을 준비했습니다. 실제 배포 검증은 후속 기록입니다."
     }
   ]
 }
