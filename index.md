@@ -6,7 +6,7 @@ home_design: garden
 home_current:
   task_id: M-29
   updated_on: '2026-11-09'
-  summary: 'Google 검색 등록을 위한 사이트 소유권 확인 파일을 블로그 루트에 배치했습니다. 공개 주소와 배포 결과를 확인하고 있습니다.'
+  summary: 'Google 검색 등록을 위한 사이트 소유권 확인 파일을 공개하고 요청한 주소의 정상 응답을 확인했습니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">
