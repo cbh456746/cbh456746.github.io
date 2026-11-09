@@ -4,9 +4,9 @@ title: Home
 description: BH CHOI의 프로젝트, 탐구, 학습과 취향을 담는 개인 기록 공간.
 home_design: garden
 home_current:
-  task_id: M-28
+  task_id: M-29
   updated_on: '2026-11-09'
-  summary: '아바타 고개 회전의 좌표 실험과 다음 개발 범위, 사람이 화면에서 형태를 고치고 검수하는 제작 절차를 정리했습니다.'
+  summary: 'Google 검색 등록을 위한 사이트 소유권 확인 파일을 블로그 루트에 배치했습니다. 공개 주소와 배포 결과를 확인하고 있습니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">
