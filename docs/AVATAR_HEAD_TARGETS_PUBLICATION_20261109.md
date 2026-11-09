@@ -25,3 +25,5 @@ Validation before publication: content/Board validation, 13 Board tests, 17 cont
 - Actual Chromium desktop (1440 px) and mobile-width (390/320 px) article/Home checks found no global horizontal overflow or page JavaScript errors. Wide tables use contained scrolling; the lazy-loaded SVG was checked after scrolling into view. Visual inspection covered the article header, editor diagram section and Home project card. These are emulated browser widths, not physical phone tests.
 - The follow-up shortens the long headline and records publication evidence; repeat the same-SHA live check on that final source. No common CSS or old article body is changed.
 - Board task stays in review pending separate acceptance. Publication completion is distinct from implementing an editor or approving an avatar.
+
+- Follow-up source 49615bfe60a8ed336084c6f665d1dfa0b32ce2c9 passed Pages run 42580729682 and the same live checks. A final article-only heading wrap rule keeps Korean words together; common CSS is unchanged. Recheck the final deployment before delivery.
