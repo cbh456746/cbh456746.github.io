@@ -6,7 +6,7 @@ home_design: garden
 home_current:
   task_id: M-30
   updated_on: '2026-11-09'
-  summary: 'Google 사이트 소유권 확인을 마치고 공개 글을 찾기 위한 사이트맵을 준비했습니다. 검색 수집 상태는 계속 확인합니다.'
+  summary: 'Google 사이트 소유권 확인을 마치고 공개 페이지 33개를 담은 사이트맵을 배포했습니다. 검색 수집 상태는 계속 확인합니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">
