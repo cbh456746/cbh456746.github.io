@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": 42,
+  "revision": 43,
   "updated_on": "2026-11-09",
   "projects": [
     {
@@ -540,6 +540,11 @@
           "summary": "연구 결과와 미구현 편집 설계를 구분한 글·도식·집계를 준비했습니다. 콘텐츠/Board·13개 Board·17개 참조 테스트와 공개 범위 검사를 통과했으며 실제 배포 검증은 다음 단계입니다.",
           "ref": "docs/AVATAR_HEAD_TARGETS_PUBLICATION_20261109.md",
           "checked_on": "2026-11-09"
+        },
+        {
+          "summary": "연구 글 cd40fbc의 Pages build/deploy 42580376448과 실제 글·Home·Research·Archive·검색·RSS·도식·집계·참조 본문 해시를 확인했습니다. 1440/390/320px 전체 넘침은 없었고 시각 검수를 수행했습니다. 편집기·새 회전 모델은 미구현이며 기록은 별도 수락 전 review입니다.",
+          "ref": "docs/AVATAR_HEAD_TARGETS_PUBLICATION_20261109.md",
+          "checked_on": "2026-11-09"
         }
       ],
       "attempts": 1,
@@ -937,6 +942,13 @@
       "task_id": "mesh-head-target-editor-study-20261109",
       "kind": "submit",
       "summary": "연구 결과와 미구현 편집 설계를 구분한 글·도식·집계를 준비했습니다. 콘텐츠/Board·13개 Board·17개 참조 테스트와 공개 범위 검사를 통과했으며 실제 배포 검증은 다음 단계입니다."
+    },
+    {
+      "id": "head-target-editor-post-publication-20261109",
+      "on": "2026-11-09",
+      "project_id": "mesh-avatar",
+      "kind": "input",
+      "summary": "목표 얼굴·시각 편집 연구 글의 실제 배포와 PC·모바일·Home·참조 자료 검증을 기록했습니다. 아바타 개발 단계는 완료로 변경하지 않습니다."
     }
   ]
 }

@@ -6,7 +6,7 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
 | ID | Status | Task | Acceptance criteria |
 |---|---|---|---|
-| M-28 | in progress | Publish the head-target research and human visual-editing workflow. | Separate current head-shape limits from future keyform-basis mismatch; distinguish artificial coordinate tests from aesthetic quality. Document four next steps plus minimal human correction, persistence and replay. Validate privacy, content, Home, Board, same-SHA Pages and desktop/mobile output. See docs/AVATAR_HEAD_TARGETS_PUBLICATION_20261109.md. |
+| M-28 | complete | Publish the head-target research and human visual-editing workflow. | Published the scoped research, original design diagram and aggregate diagnostic conditions without private art/paths. Content/Board validation, 13 Board tests and 17 context tests passed. Source cd40fbc built/deployed in Pages run 42580376448; live article, Home, Research/Archive/search/RSS, Board and same-SHA context hash passed. 1440/390/320 px checks found no page overflow; wide tables scroll locally. Visual inspection passed; this follow-up shortens the headline and records evidence. Editor/new natural head rig remain unimplemented; no real VTS/OBS claim. See docs/AVATAR_HEAD_TARGETS_PUBLICATION_20261109.md. |
 
 ## Maintenance — 2026-11-06
 
