@@ -52,6 +52,21 @@ jobs:
           assert root.tag == 'rss' and root.find('channel') is not None, 'Expected RSS channel'
           print('Generated RSS XML is valid')
           PY
+      - name: Validate generated sitemap
+        run: |
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          namespace = '{http://www.sitemaps.org/schemas/sitemap/0.9}'
+          root = ET.parse('_site/sitemap.xml').getroot()
+          assert root.tag == namespace + 'urlset', 'Expected sitemap URL set'
+          urls = [node.text for node in root.iter(namespace + 'loc')]
+          assert len(urls) == len(set(urls)), 'Duplicate sitemap URL'
+          assert {'https://cbh456746.github.io/', 'https://cbh456746.github.io/projects/'} <= set(urls), 'Missing main pages'
+          assert all(url.startswith('https://cbh456746.github.io/') for url in urls), 'Unexpected sitemap host'
+          assert not any('/googlecbd5fbf8b460b385.html' in url or '/workbench/records/' in url for url in urls), 'Unexpected utility page'
+          assert open('_site/robots.txt', encoding='utf-8').read().strip() == 'Sitemap: https://cbh456746.github.io/sitemap.xml'
+          print(f'Generated sitemap is valid with {len(urls)} URLs')
+          PY
       - name: Export reviewed article context
         run: |
           # The Jekyll container creates root-owned build outputs.

@@ -1,0 +1,11 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+{% assign section_urls = '/,/resume/,/projects/,/research/,/notes/,/play/,/stock/,/archive/,/workbench/,/workbench/guide/' | split: ',' %}
+{% assign documents = site.posts | concat: site.projects | concat: site.research | concat: site.notes | concat: site.stock_analysis %}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for path in section_urls %}<url><loc>{{ path | absolute_url | xml_escape }}</loc></url>{% endfor %}
+  {% for document in documents %}<url><loc>{{ document.url | absolute_url | xml_escape }}</loc></url>{% endfor %}
+</urlset>

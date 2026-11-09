@@ -425,7 +425,7 @@ education:
 
 `_config.yml`의 현재 `url`은 `https://cbh456746.github.io`, `baseurl`은 빈 문자열입니다. 다른 도메인을 임의로 넣거나 과거 테마의 `CNAME`을 복원하지 않습니다. 실제 도메인 변경 요청이 오면 DNS·HTTPS·canonical·내부 링크·RSS·이전 주소를 함께 계획합니다.
 
-별도 sitemap·robots·Open Graph 파일이나 기능이 현재 있다고 가정하지 않습니다. 필요한 기능을 추가할 때 실제 생성 결과를 확인합니다. `noindex`나 robots 지시는 개인정보 접근을 막는 보안 장치가 아닙니다.
+`sitemap.xml`은 Home·공개 섹션과 게시된 글·컬렉션의 정식 주소를 생성하며, `robots.txt`가 그 위치를 알립니다. 새 글이 사이트맵에 포함되는지 빌드 결과로 확인하고, Search Console의 수집·색인 상태를 별도로 점검합니다. `noindex`나 robots 지시는 개인정보 접근을 막는 보안 장치가 아닙니다.
 
 ### 서비스워커와 캐시
 
