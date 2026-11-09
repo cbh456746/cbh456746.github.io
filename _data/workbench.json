@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "revision": 38,
-  "updated_on": "2026-11-06",
+  "revision": 42,
+  "updated_on": "2026-11-09",
   "projects": [
     {
       "id": "blog-evolution",
@@ -56,8 +56,8 @@
       "title": "Mesh Avatar · 자연스러운 AI 아바타 제작",
       "goal": "한 장의 일러스트를 출발점으로, Hiyori·Akari 샘플을 기준 삼아 고개·시선·목·상체가 자연스럽게 움직이는 방송 아바타 제작 흐름을 검증합니다. 현재는 연구·후보 구현 단계이며 목표 품질은 미달입니다.",
       "status": "active",
-      "updated_on": "2026-11-06",
-      "next_step": "컨셉·확정 메인·원본 보존 소재로 정면 외형은 개선됐지만 자연스러운 리깅 목표는 미달입니다. 슬라이더 의미·고개 방향·허리 기준 상체·가닥 관성을 같은 입력으로 재검수합니다.",
+      "updated_on": "2026-11-09",
+      "next_step": "승인된 정면을 보존하고 좌우 기준 그림·공통 좌표·머리 전용 후보를 먼저 검증합니다. 사람이 자세별 형태와 가림을 수정·저장하고 같은 입력으로 비교하는 최소 제작 도구는 설계 단계입니다.",
       "acceptance": [
         "얼굴 방향과 무관한 국소 찌그러짐·관절 늘어남·윤곽 이중상 없이 고개와 목이 이어집니다. 원근에 따른 화면상 비율 변화는 별도로 판단합니다.",
         "시선만 움직일 때 턱선과 머리 형태는 유지되고, 눈꺼풀·홍채·입모양은 독립적으로 동작합니다.",
@@ -69,7 +69,8 @@
         "고개·목·시선의 움직임 구조와 방향별 형태·가림 비교",
         "눈·입·상체·호흡·머리카락의 독립 제어와 복합 가동",
         "Windows 실행·VTube Studio 입력·OBS 출력의 버전별 검증",
-        "공개 Board에는 검수한 진행 요약과 기존 공개 자료만 기록"
+        "공개 Board에는 검수한 진행 요약과 기존 공개 자료만 기록",
+        "사람이 형태·가림을 시각적으로 수정하고 이력을 저장하는 최소 제작 화면 검토"
       ],
       "policy": {
         "execution": "local_changes",
@@ -520,6 +521,32 @@
       "lease_until": null,
       "reviewed_by": null,
       "blocked_reason": null
+    },
+    {
+      "id": "mesh-head-target-editor-study-20261109",
+      "project_id": "mesh-avatar",
+      "title": "목표 얼굴·좌표 실험·사람의 편집 절차 연구 기록",
+      "description": "개발 목적 달성 여부와 좌표 기준 실험의 범위를 설명하고, 방향별 기준 그림과 사람이 보고 수정하는 최소 제작 도구를 Research 글로 게시합니다. 자연스러운 새 모델이나 편집기 구현 완료로 표시하지 않습니다.",
+      "status": "review",
+      "role": "coordinator",
+      "depends_on": [],
+      "acceptance": [
+        "연구에서 확인된 사실과 새 그림·편집기 계획을 구분합니다.",
+        "기준 그림, 좌표 등록, 단독 시제품, 반복 검수에 사람의 수정·저장·재검증 절차를 결합합니다.",
+        "비공개 소재·개인 경로 없이 게시하고 동일 커밋 배포와 PC·모바일·Home·참조 내보내기를 확인합니다."
+      ],
+      "evidence": [
+        {
+          "summary": "연구 결과와 미구현 편집 설계를 구분한 글·도식·집계를 준비했습니다. 콘텐츠/Board·13개 Board·17개 참조 테스트와 공개 범위 검사를 통과했으며 실제 배포 검증은 다음 단계입니다.",
+          "ref": "docs/AVATAR_HEAD_TARGETS_PUBLICATION_20261109.md",
+          "checked_on": "2026-11-09"
+        }
+      ],
+      "attempts": 1,
+      "owner": "avatar-research-writer",
+      "lease_until": null,
+      "reviewed_by": null,
+      "blocked_reason": null
     }
   ],
   "references": [
@@ -880,6 +907,36 @@
       "task_id": "mesh-workflow-review-20261106",
       "kind": "evidence",
       "summary": "원화 보존 흐름과 동작 품질 한계 연구를 게시하고 Home·목록·모바일·공개 참조의 같은 커밋을 확인했습니다. 아바타 리깅 수정이나 Hiyori 수준 달성은 별도입니다."
+    },
+    {
+      "id": "0a51c06d-a913-4335-8745-85ed617f97a1",
+      "on": "2026-11-09",
+      "project_id": null,
+      "kind": "import",
+      "summary": "프로젝트와 작업 명세를 등록했습니다."
+    },
+    {
+      "id": "85424e62-37f0-4cae-829d-784b825c9538",
+      "on": "2026-11-09",
+      "project_id": "mesh-avatar",
+      "task_id": "mesh-head-target-editor-study-20261109",
+      "kind": "claim",
+      "summary": "avatar-research-writer: 목표 얼굴·좌표 실험·사람의 편집 절차 연구 기록 작업 배정"
+    },
+    {
+      "id": "mesh-head-target-direction-20261109",
+      "on": "2026-11-09",
+      "project_id": "mesh-avatar",
+      "kind": "input",
+      "summary": "목표 얼굴·좌표 등록·머리 시제품·고정 입력 검수에 사람의 수정·저장 절차를 더하는 방향을 기록합니다. 편집기와 새 회전 모델은 미구현입니다."
+    },
+    {
+      "id": "aa189876-a9e1-484f-af58-da194835ad97",
+      "on": "2026-11-09",
+      "project_id": "mesh-avatar",
+      "task_id": "mesh-head-target-editor-study-20261109",
+      "kind": "submit",
+      "summary": "연구 결과와 미구현 편집 설계를 구분한 글·도식·집계를 준비했습니다. 콘텐츠/Board·13개 Board·17개 참조 테스트와 공개 범위 검사를 통과했으며 실제 배포 검증은 다음 단계입니다."
     }
   ]
 }

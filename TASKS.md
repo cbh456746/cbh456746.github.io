@@ -2,6 +2,12 @@
 
 Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
+## Maintenance — 2026-11-09
+
+| ID | Status | Task | Acceptance criteria |
+|---|---|---|---|
+| M-28 | in progress | Publish the head-target research and human visual-editing workflow. | Separate current head-shape limits from future keyform-basis mismatch; distinguish artificial coordinate tests from aesthetic quality. Document four next steps plus minimal human correction, persistence and replay. Validate privacy, content, Home, Board, same-SHA Pages and desktop/mobile output. See docs/AVATAR_HEAD_TARGETS_PUBLICATION_20261109.md. |
+
 ## Maintenance — 2026-11-06
 
 | ID | Status | Task | Acceptance criteria |

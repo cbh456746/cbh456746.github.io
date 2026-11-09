@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1030" viewBox="0 0 800 1030" role="img" aria-labelledby="title desc">
+<title id="title">사람이 보고 고치는 아바타 제작 절차</title>
+<desc id="desc">미구현 설계도. 원화와 목표 자세를 비교하고 자세를 고정해 형태를 수정한 다음, 같은 입력으로 검토하고 버전으로 저장한다. 실패하면 그림 또는 등록 단계로 돌아간다.</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9" fill="none" stroke="#557061" stroke-width="1.5"/></marker></defs>
+<rect width="800" height="1030" rx="24" fill="#f4f2eb"/>
+<g font-family="'Malgun Gothic','Noto Sans KR',sans-serif" fill="#233e32">
+<text x="40" y="55" font-size="19" font-weight="700" letter-spacing="2">PROPOSED WORKFLOW · 2026.11.09</text>
+<text x="40" y="105" font-size="33" font-weight="700">보고, 고치고, 같은 조건에서 확인하기</text>
+<text x="40" y="145" font-size="23" fill="#71624a">설계안 · 아직 구현한 편집 화면이 아닙니다</text>
+
+<rect x="38" y="183" width="724" height="163" rx="15" fill="#fff" stroke="#cad3c9"/>
+<text x="62" y="223" font-size="27" font-weight="700">01  비교하기</text>
+<g font-size="23" text-anchor="middle">
+<rect x="62" y="244" width="207" height="52" rx="8" fill="#e8eee6"/><text x="165" y="278">원화 · 잠금</text>
+<rect x="286" y="244" width="207" height="52" rx="8" fill="#e8eee6"/><text x="389" y="278">목표 자세</text>
+<rect x="510" y="244" width="226" height="52" rx="8" fill="#e8eee6"/><text x="623" y="278">현재 렌더</text>
+</g>
+<text x="62" y="328" font-size="22">동일 배치 · 나란히 보기 · 반투명 겹쳐 보기</text>
+<path d="M400 351V377" stroke="#557061" stroke-width="3" marker-end="url(#arrow)"/>
+
+<rect x="38" y="390" width="724" height="164" rx="15" fill="#fff" stroke="#cad3c9"/>
+<text x="62" y="431" font-size="27" font-weight="700">02  문제 자세에서 고치기</text>
+<text x="62" y="473" font-size="24">추적·물리 일시 정지 → 부위 선택 → 국소 수정</text>
+<text x="62" y="514" font-size="23">눈꼬리 / 볼 / 턱 / 귀 / 목 연결 / 가림</text>
+<path d="M400 560V585" stroke="#557061" stroke-width="3" marker-end="url(#arrow)"/>
+
+<rect x="38" y="598" width="724" height="151" rx="15" fill="#fff" stroke="#cad3c9"/>
+<text x="62" y="640" font-size="27" font-weight="700">03  같은 입력으로 다시 보기</text>
+<text x="62" y="682" font-size="24">정면 · 좌우 · 중간 자세 · 시선 · 눈감기 · 말하기</text>
+<text x="62" y="720" font-size="22">수정 전 ↔ 수정 후 / 같은 물리 초기 상태</text>
+<path d="M400 754V780" stroke="#557061" stroke-width="3" marker-end="url(#arrow)"/>
+
+<rect x="38" y="793" width="724" height="146" rx="15" fill="#e8eee6" stroke="#acbfae"/>
+<text x="62" y="835" font-size="27" font-weight="700">04  수정 이력과 후보 저장</text>
+<text x="62" y="878" font-size="24">원본 보존 · 되돌리기 · 재등록 · 버전 비교</text>
+<text x="62" y="913" font-size="22">통과한 범위만 실행기에 반영</text>
+<text x="40" y="982" font-size="23" fill="#71624a">실패하면 원인에 맞춰 그림·좌표·가림 단계로 복귀</text>
+</g></svg>

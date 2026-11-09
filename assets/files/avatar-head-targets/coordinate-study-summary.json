@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-09",
+  "kind": "sanitized-coordinate-diagnostic-summary",
+  "scope": "Artificial neutral-rest target in model coordinates, not an avatar aesthetic score.",
+  "canvas": {
+    "width": 1122,
+    "height": 1402,
+    "unit": "model-pixel"
+  },
+  "inputs": {
+    "yawEnd": [
+      18,
+      0
+    ],
+    "cornerEnd": [
+      18,
+      14
+    ],
+    "midpoint": [
+      9,
+      7
+    ],
+    "unit": "runtime parameter values, not measured physical angles"
+  },
+  "metric": "Maximum vertex distance from specified target over face, eyes, eyebrows and mouth.",
+  "rows": [
+    {
+      "method": "old-baseline-residual-with-custom-rig",
+      "yawEnd": 10.80194,
+      "cornerEnd": 13.30478,
+      "midpoint": 5.75991
+    },
+    {
+      "method": "actual-baseline-axis-correction",
+      "yawEnd": 0.00003,
+      "cornerEnd": 5.078,
+      "midpoint": 1.45695
+    },
+    {
+      "method": "same-axis-interpolation-plus-corners",
+      "yawEnd": 0.00003,
+      "cornerEnd": 0,
+      "midpoint": 0.54376
+    },
+    {
+      "method": "absolute-target-research-prototype",
+      "yawEnd": 0,
+      "cornerEnd": 0,
+      "midpoint": 0
+    }
+  ],
+  "checks": {
+    "observedCalculationPaths": 5,
+    "posesPerPath": 10,
+    "researchContractsPassed": 12,
+    "knownNonconstantFieldCases": 150,
+    "nonconstantFieldMaximumError": 1.6077746776921858e-13
+  },
+  "limitations": [
+    "Natural directional artwork not created.",
+    "Prototype not integrated into the production runtime.",
+    "Coordinates do not measure likeness, occlusion or natural motion.",
+    "No new real-device VTS or OBS verification.",
+    "Production 43-test and executable records are historical, not rerun for this study."
+  ],
+  "publicScope": "Aggregate coordinates only; no character artwork, meshes, private paths, tracking logs or credentials."
+}
