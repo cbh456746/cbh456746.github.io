@@ -230,7 +230,7 @@
       symbol: host.dataset.stockQuote,
       width: '100%',
       colorTheme: colorTheme(),
-      isTransparent: true,
+      isTransparent: colorTheme() !== 'dark',
       locale: 'en'
     }, '시세를 불러오지 못했습니다.');
   }
