@@ -6,7 +6,7 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
 | ID | Status | Task | Acceptance criteria |
 |---|---|---|---|
-| M-31 | in progress | Add a site-wide light/dark toggle. | Place a small moon/sun toggle before the brand in shared navigation and the standalone Board record tool. Keep the current light appearance as default, store only the selected theme locally, respect keyboard/accessible labels, preserve the Home photograph, and match Stock widgets and Mermaid diagrams. Update Home summary and operating docs. Validate content, JavaScript, desktop/mobile layout and same-SHA public deployment. |
+| M-31 | complete | Add a site-wide light/dark toggle. | Shared pages and the standalone Board record tool now show the moon/sun button, with a light default and browser-local selection. Content/Board validation, 13 Board tests, JavaScript syntax and diff checks passed. Source 24067c0 built/deployed in Pages run 42746473265; live PC Home, Board, records, Stock, keyboard toggle and a 390 px Home/article view passed. Live Stock exposed a white legacy quote widget despite its dark parameter; a local A/B check isolated transparent background plus `color-scheme: dark`. Correction 4faae3b built/deployed in Pages run 42747905482. The live dark Stock chart and quote cards now match, and its narrow view shows no clipping. Mermaid content rendered across a theme-triggered reload; Home summary and photo remained intact. |
 
 ## Maintenance — 2026-11-09
 
