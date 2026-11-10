@@ -9,6 +9,7 @@
   const symbolAliases = new Map([['NASDAQ:KHC', 'NYSE:KHC']]);
   const currentSymbol = (symbol) => symbolAliases.get(symbol) || symbol;
   let active = null;
+  const colorTheme = () => document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
 
   const list = root.querySelector('.stock-stars');
   const searchInput = root.querySelector('[data-stock-search]');
@@ -165,7 +166,7 @@
       interval: 'D',
       range: '12M',
       timezone: 'America/New_York',
-      theme: 'light',
+      theme: colorTheme(),
       style: '3',
       locale: 'en',
       autosize: true,
@@ -176,8 +177,8 @@
       hotlist: false,
       calendar: false,
       withdateranges: true,
-      backgroundColor: '#ffffff',
-      gridColor: 'rgba(35, 53, 48, 0.06)'
+      backgroundColor: colorTheme() === 'dark' ? '#202622' : '#ffffff',
+      gridColor: colorTheme() === 'dark' ? 'rgba(195, 215, 195, 0.12)' : 'rgba(35, 53, 48, 0.06)'
     }, '차트를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.');
   }
 
@@ -222,17 +223,24 @@
   select(allowed.has(requested) ? requested : links[0].dataset.stockSelect);
 
   const quoteHosts = [...root.querySelectorAll('[data-stock-quote]')];
-  function loadQuote(host) {
-    if (host.dataset.loaded) return;
+  function loadQuote(host, refresh = false) {
+    if (host.dataset.loaded && !refresh) return;
     host.dataset.loaded = 'true';
     embed(host, 'https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js', {
       symbol: host.dataset.stockQuote,
       width: '100%',
-      colorTheme: 'light',
+      colorTheme: colorTheme(),
       isTransparent: true,
       locale: 'en'
     }, '시세를 불러오지 못했습니다.');
   }
+  document.addEventListener('site-themechange', () => {
+    const selectedPanel = panels.find((panel) => panel.dataset.stockPanel === active);
+    if (selectedPanel) renderChart(selectedPanel);
+    quoteHosts.forEach((host) => {
+      if (host.dataset.loaded) loadQuote(host, true);
+    });
+  });
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) if (entry.isIntersecting) {

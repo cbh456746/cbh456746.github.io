@@ -2,6 +2,12 @@
 
 Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
+## Maintenance — 2026-11-10
+
+| ID | Status | Task | Acceptance criteria |
+|---|---|---|---|
+| M-31 | in progress | Add a site-wide light/dark toggle. | Place a small moon/sun toggle before the brand in shared navigation and the standalone Board record tool. Keep the current light appearance as default, store only the selected theme locally, respect keyboard/accessible labels, preserve the Home photograph, and match Stock widgets and Mermaid diagrams. Update Home summary and operating docs. Validate content, JavaScript, desktop/mobile layout and same-SHA public deployment. |
+
 ## Maintenance — 2026-11-09
 
 | ID | Status | Task | Acceptance criteria |

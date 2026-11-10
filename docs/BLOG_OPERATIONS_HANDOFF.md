@@ -90,6 +90,7 @@ Jekyll 컬렉션·Liquid 템플릿
 | Home 문구·사진·영역 링크·현재 프로젝트 카드 | `index.md` |
 | Home의 바깥 구조 | `_layouts/soul.html` |
 | 공통 화면·반응형 디자인 | `css/site.css` |
+| 밝게·어둡게 전환 | `_includes/theme-toggle.html`, `js/theme.js`, `css/site.css`, `css/workbench-records.css` |
 | Stock의 Stars·차트·분석 글 | `_data/stock-stars.yml`, `stock.md`, `js/stock.js`, `_stock_analysis/`, `docs/STOCK_OPERATIONS.md` |
 | 공통 HTML 구조 | `_layouts/default.html` |
 | 메뉴 항목 | `_data/navigation.yml`, `_includes/nav.html` |
@@ -288,6 +289,8 @@ PNGTuber에는 Projects 소개와 별도 Play 착수 기록이 있습니다. 이
 
 Home 본문과 카드 링크는 `index.md`, 바깥 구조는 `_layouts/soul.html`, 화면 스타일은 `css/site.css`에 있습니다. front matter의 `home_design: garden`이 `.home-garden` 스타일을 선택합니다.
 
+공통 상단 메뉴와 단독 `/workbench/records/` 화면의 좌측 달·해 버튼은 `_includes/theme-toggle.html`, `js/theme.js`, `css/site.css`가 담당합니다. 초기값은 기존 밝은 화면이며 선택한 `light`/`dark` 값만 브라우저 사이트 저장소에 둡니다. 서버·계정에 개인 설정을 전송하지 않습니다. 기록 도구는 자체 헤더와 CSP가 있으므로 테마 파일을 별도로 포함합니다. Stock 외부 차트·시세 위젯은 `js/stock.js`에서 테마 전환 시 다시 로드합니다. Mermaid가 있는 글은 선택한 테마로 다시 그리기 위해 전환 시 페이지가 새로고침됩니다. 사진과 글의 원본 미디어는 색상 반전하지 않습니다.
+
 | 요소 | 유지할 상태 |
 | --- | --- |
 | 대표 제목 | Hanasaka |
@@ -322,6 +325,8 @@ PC에서는 사진의 하늘 여백에 오른쪽 제목을 배치합니다. 모�
 ### 디자인 검수
 
 PC에서 충분한 너비와 모바일 약 390px 너비를 확인합니다. 공통 CSS를 수정했다면 Home뿐 아니라 Resume·목록·Archive·본문도 확인합니다.
+
+다크 모드 작업에서는 두 모드의 대비, 좌상단 버튼의 키보드·접근성 이름, Home 사진 위 제목, 모바일 메뉴, Stock 위젯, Board 기록 도구, Mermaid 글을 함께 확인합니다. OS 색상에 자동 연동하지 않으며 저장된 선택이 다음 페이지와 새로고침에도 이어져야 합니다.
 
 - 가로 스크롤과 잘린 버튼·텍스트가 없는지.
 - 사진 자르기와 제목 대비·줄바꿈이 자연스러운지.
@@ -708,6 +713,7 @@ RSS 삭제·숨김·축약 변경은 현재 보류 상태입니다.
 
 | 날짜 | 내용 |
 | --- | --- |
+| 2026-11-10 | D-037: 모든 공통 페이지와 Board 기록 도구에 브라우저별 밝게·어둡게 전환을 추가. Home 사진을 보존하고 Stock 위젯·Mermaid 글을 선택 테마에 맞춤. |
 | 2026-11-06 | D-036: Kraft Heinz의 NYSE 이전을 반영해 Stock 기호를 `NYSE:KHC`로 갱신. 이전 공유 주소와 브라우저 개인 순서는 현재 Stars 허용 목록 안에서만 새 기호로 연결. |
 | 2026-11-06 | D-035: 11월 5일 Stock 페이지 제작·검증을 Play 작업 기록으로 게시. 지연 시세·브라우저별 순서·소유자 관리 공개 목록을 구별하고, 캡처 이미지에 시점·출처를 표시. |
 | 2026-11-05 | D-034: Stock Watchlist의 개인 순서 편집에 종목별 맨 아래 이동 버튼을 추가. 브라우저별 순서 저장·검색 중 편집 잠금·공개 기본순서의 경계는 `STOCK_OPERATIONS.md`를 따름. |

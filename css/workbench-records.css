@@ -1,4 +1,5 @@
 .wbr-top { display:flex; justify-content:space-between; align-items:center; gap:1rem; max-width:1280px; margin:auto; padding:1.25rem 2rem; border-bottom:1px solid var(--line); font-size:.9rem; }
+.wbr-top__identity { display:flex; align-items:center; gap:.45rem; }
 .wbr-top a { font-weight:700; text-decoration:none; }.wbr-top span { color:var(--muted); font-size:.75rem; letter-spacing:.12em; }
 .wbr-shell { max-width:1280px; margin:auto; padding:3.5rem 2rem 5rem; }
 .wbr-intro { max-width:800px; }.wbr-intro h1 { font-size:clamp(2.35rem,5vw,4.5rem); }.wbr-intro > p:last-child { max-width:64ch; font-size:1.08rem; color:var(--muted); }
@@ -12,3 +13,6 @@
 .wbr-bottom { border-top:1px solid var(--line); margin-top:2rem; padding-top:1rem; font-size:.9rem; color:var(--muted); }.wbr-bottom code { color:var(--ink); }
 @media(max-width:900px) { .wbr-columns { grid-template-columns:1fr; } }
 @media(max-width:640px) { .wbr-top { padding:1rem; }.wbr-top span { display:none; }.wbr-shell { padding:2rem 1rem 4rem; }.wbr-steps,.wbr-fields { grid-template-columns:1fr; }.wbr-panel { padding:1rem; }.wbr-file-actions { width:100%; }.wbr-item__head { align-items:flex-start; flex-direction:column; } }
+[data-theme="dark"] .wbr-safety { background:#2b2b24; }
+[data-theme="dark"] .wbr-file-actions .wbr-primary:hover { background:#d5ddd4; color:var(--paper); }
+[data-theme="dark"] #wbr-status[data-error="true"] { color:#f2a792; }

@@ -13,13 +13,14 @@ permalink: /workbench/records/
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="robots" content="noindex, nofollow">
   <title>대화·프롬프트 기록 도구 · BH CHOI</title>
+  <script src="{{ '/js/theme.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
   <link rel="stylesheet" href="{{ '/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   <link rel="stylesheet" href="{{ '/css/workbench-records.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   <script type="module" src="{{ '/js/workbench-records.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
-  <header class="wbr-top"><a href="{{ '/workbench/' | relative_url }}">← Board로 돌아가기</a><span>PRIVATE FILE WORKSPACE</span></header>
+  <header class="wbr-top"><div class="wbr-top__identity">{% include theme-toggle.html %}<a href="{{ '/workbench/' | relative_url }}">← Board로 돌아가기</a></div><span>PRIVATE FILE WORKSPACE</span></header>
   <main id="main-content" class="wbr-shell">
     <header class="wbr-intro"><p class="eyebrow">Conversation archive</p><h1>대화는 턴별로,<br>프롬프트는 따로.</h1><p>한 프로젝트에서 AI와 나눈 대화를 순서대로 보존하고, 다시 쓸 프롬프트만 별도로 골라 저장합니다. 내용은 이 브라우저에서 편집한 뒤 JSON 파일로 내려받습니다.</p></header>
     <div class="wbr-steps" aria-label="기록 순서"><div><b>01</b><span>프로젝트와 대화 제목 적기</span></div><div><b>02</b><span>사용자·AI 턴과 프롬프트 구분하기</span></div><div><b>03</b><span>개인 JSON 파일로 저장·재열기</span></div></div>

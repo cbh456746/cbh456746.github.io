@@ -4,9 +4,9 @@ title: Home
 description: BH CHOI의 프로젝트, 탐구, 학습과 취향을 담는 개인 기록 공간.
 home_design: garden
 home_current:
-  task_id: M-30
-  updated_on: '2026-11-09'
-  summary: 'Google 사이트 소유권 확인을 마치고 공개 페이지 33개를 담은 사이트맵을 배포했습니다. 검색 수집 상태는 계속 확인합니다.'
+  task_id: M-31
+  updated_on: '2026-11-10'
+  summary: '좌상단의 달·해 버튼으로 밝은 화면과 어두운 화면을 전환할 수 있게 했습니다. 선택한 화면은 이 브라우저에 저장됩니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">
