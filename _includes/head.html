@@ -2,6 +2,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="{{ site.chrome-tab-theme-color | default: '#171717' }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon-hanasaka.svg' | relative_url }}">
   <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.SEOTitle | default: site.title }}</title>
   <meta name="description" content="{{ page.description | default: page.subtitle | default: site.description | strip_html | normalize_whitespace }}">
   <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">

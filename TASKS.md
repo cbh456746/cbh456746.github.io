@@ -2,6 +2,12 @@
 
 Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
+## Maintenance — 2026-11-12
+
+| ID | Status | Task | Acceptance criteria |
+|---|---|---|---|
+| M-32 | in progress | Add a provisional Hanasaka favicon to every blog page. | A locally authored, legible SVG is linked from the shared head; Home records the change, content validation and rendered output pass, and the exact deployed commit serves the icon and link. |
+
 ## Maintenance — 2026-11-10
 
 | ID | Status | Task | Acceptance criteria |

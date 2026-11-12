@@ -4,9 +4,9 @@ title: Home
 description: BH CHOI의 프로젝트, 탐구, 학습과 취향을 담는 개인 기록 공간.
 home_design: garden
 home_current:
-  task_id: M-31
-  updated_on: '2026-11-10'
-  summary: '좌상단의 달·해 버튼으로 밝은 화면과 어두운 화면을 전환할 수 있게 했습니다. 선택한 화면은 이 브라우저에 저장됩니다.'
+  task_id: M-32
+  updated_on: '2026-11-12'
+  summary: '브라우저 탭에서 블로그를 알아보기 쉽도록 Hanasaka의 임시 H 아이콘을 적용했습니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">
