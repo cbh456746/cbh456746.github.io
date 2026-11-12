@@ -6,7 +6,7 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
 | ID | Status | Task | Acceptance criteria |
 |---|---|---|---|
-| M-32 | in progress | Add a provisional Hanasaka favicon to every blog page. | A locally authored, legible SVG is linked from the shared head; Home records the change, content validation and rendered output pass, and the exact deployed commit serves the icon and link. |
+| M-32 | complete | Add a provisional Hanasaka favicon to every blog page. | The locally authored SVG remained legible at 16 and 64 px. Content validation and diff checks passed. Commit d0fdeab built and deployed in Pages run 43178111515; live Home, Notes and the SVG returned HTTP 200, both pages linked the icon, and Home showed the matching summary. |
 
 ## Maintenance — 2026-11-10
 
