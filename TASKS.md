@@ -2,6 +2,12 @@
 
 Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
+## Maintenance — 2026-11-13
+
+| ID | Status | Task | Acceptance criteria |
+|---|---|---|---|
+| M-33 | in progress | Publish a technical Notes review of the Shizuku iPhone experiment and Shizuku-Duplex. | Distinguish the two announcements and observable interruption from undisclosed generation cancellation; cite the official technical post and original article, validate public content and Home, then verify the same commit's Pages deployment and live Notes discovery. |
+
 ## Maintenance — 2026-11-12
 
 | ID | Status | Task | Acceptance criteria |
