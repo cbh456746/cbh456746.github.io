@@ -1,6 +1,6 @@
 ---
 layout: note
-title: "시즈쿠는 어떻게 듣고 말할까"
+title: "시즈쿠의 음성 대화 기술"
 subtitle: "아이폰 오프라인 실험과 Shizuku-Duplex의 전이중 대화 구조"
 date: 2026-11-13 21:00:00 +0900
 author: "BH CHOI"
