@@ -6,7 +6,7 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
 | ID | Status | Task | Acceptance criteria |
 |---|---|---|---|
-| M-33 | in progress | Publish a technical Notes review of the Shizuku iPhone experiment and Shizuku-Duplex. | Distinguish the two announcements and observable interruption from undisclosed generation cancellation; cite the official technical post and original article, validate public content and Home, then verify the same commit's Pages deployment and live Notes discovery. |
+| M-33 | complete | Publish a technical Notes review of the Shizuku iPhone experiment and Shizuku-Duplex. | The review separates the on-device prototype from the full-duplex model and observed speech interruption from undisclosed generation cancellation; it links the original article, official technical post and demo. Content validation, 17 context tests and diff checks passed. Final article commit 5670a6b built/deployed in Pages run 43423270176; live article, Notes, Home, Archive, search and RSS returned the expected entry, and the context root matched the source commit. Chrome desktop and real 390 px checks showed no page overflow after the title refinement. No private paths or copied third-party media were published. |
 
 ## Maintenance — 2026-11-12
 
