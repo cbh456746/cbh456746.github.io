@@ -6,7 +6,7 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
 | ID | Status | Task | Acceptance criteria |
 |---|---|---|---|
-| M-35 | in progress | Add four visual summary slides to the top of the Shizuku Notes review and test the slide viewer on a real post. | Slides distinguish the iPhone prototype from Shizuku-Duplex, diagram the on-device pipeline and full-duplex listening, and mark verified results versus unknowns. Keep the article's existing body and sources, update reviewed context, and add visual-first slide guidance. Validate assets and context; verify desktop/mobile navigation, enlarge and published same-SHA output. |
+| M-35 | complete | Add four visual summary slides to the top of the Shizuku Notes review and test the slide viewer on a real post. | Original 1600×900 diagrams distinguish the iPhone prototype from Shizuku-Duplex, show the on-device and duplex pipelines, and separate reported results from unknowns. Existing body and sources remain. Visual-first guidance and the AI context export were updated. Content validation, 4 slide tests, 18 context tests, JS syntax and diff checks passed. Pages run 43832359647 deployed source dc78748b634c7286eafdb7f2f3eab21c653f54f5; the live desktop and 390 px mobile article showed navigation, end-button state, enlarge dialog and original-image link. |
 
 ## Maintenance — 2026-11-16
 
