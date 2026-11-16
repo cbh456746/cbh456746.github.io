@@ -39,7 +39,9 @@ For video or animation, prefer controls or an explicit open action, plus a still
 
 ## A presentation inside an article
 
-The reusable slide viewer shows one **still** slide at a time, with Previous, current/total, Next and Enlarge controls beneath it. It has no autoplay or transition animation. It works in Projects, Research, Notes and Play articles without a server or a third-party presentation iframe. Without JavaScript, the same slides appear in order with direct links to their full-size images.
+The reusable slide viewer shows one **still** slide at a time, with Previous, current/total, Next and Enlarge controls beneath it. The enlarged view links to the original image for further zoom on a phone. It has no autoplay or transition animation. It works in Projects, Research, Notes and Play articles without a server or a third-party presentation iframe. Without JavaScript, the same slides appear in order with direct links to their full-size images.
+
+Design slides for a reader, not as screenshots of dense paragraphs. Give each slide one main point, keep text brief, and use a relevant image, diagram, chart or visual comparison when it makes that point easier to grasp. A chart must use verified data and clear labels; a decorative image is optional, not a quota. Check that key text is legible on a phone in Enlarge view and that the article still explains the evidence and limits outside the images.
 
 Convert a reviewed PPTX into individual images **before publication**. Keep the original PPTX outside the public repository by default; check hidden slides, notes, comments, embedded images, rights and metadata before publishing any derivative. Put images at `assets/images/presentations/<deck-slug>/slide-01.webp`, `slide-02.webp`, and so on. Use PNG if thin lines or small text look poor in WebP. A reviewed PDF may be linked separately from `assets/files/presentations/`. Do not publish a placeholder deck or a private presentation merely to test the component.
 

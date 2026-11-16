@@ -40,6 +40,7 @@
 .slide-deck__dialog::backdrop { background:rgba(0,0,0,.82); }
 .slide-deck__dialog img { display:block; max-width:100%; max-height:calc(96vh - 7rem); width:auto; height:auto; margin:auto; object-fit:contain; }
 .slide-deck__dialog p { max-width:70ch; margin:.5rem 0 0; color:var(--muted); font-size:.9rem; }
+.slide-deck__original { display:inline-block; margin-top:.35rem; font-size:.9rem; }
 .slide-deck__close { display:block; margin:0 0 .7rem auto; }
 @media (max-width:480px) { .slide-deck__toolbar { grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); } .slide-deck__toolbar [data-slide-enlarge] { grid-column:1 / -1; } }
 .soul-shell { max-width:var(--wide); min-height:calc(100vh - 15rem); margin:0 auto; padding:clamp(5rem,12vw,10rem) 2rem 5rem; } .soul-content { max-width:790px; } .soul-content > h1 { max-width:18ch; } .soul-content p, .soul-content li { max-width:67ch; font-size:1.1rem; }

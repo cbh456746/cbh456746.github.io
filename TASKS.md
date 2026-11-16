@@ -2,6 +2,12 @@
 
 Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
+## Maintenance — 2026-11-16 · Shizuku slides
+
+| ID | Status | Task | Acceptance criteria |
+|---|---|---|---|
+| M-35 | in progress | Add four visual summary slides to the top of the Shizuku Notes review and test the slide viewer on a real post. | Slides distinguish the iPhone prototype from Shizuku-Duplex, diagram the on-device pipeline and full-duplex listening, and mark verified results versus unknowns. Keep the article's existing body and sources, update reviewed context, and add visual-first slide guidance. Validate assets and context; verify desktop/mobile navigation, enlarge and published same-SHA output. |
+
 ## Maintenance — 2026-11-16
 
 | ID | Status | Task | Acceptance criteria |

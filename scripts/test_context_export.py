@@ -74,6 +74,17 @@ class ContextExportTests(unittest.TestCase):
         for expected in ['| A | B |','left\\|right','https://example.test/img/a.png','00:42 comparison','https://example.test/assets/v.mp4','https://example.test/notes/other/#x','$$x_1 + x_2$$']:
             self.assertIn(expected,text)
         self.assertEqual([x['kind'] for x in result['documents'][0]['media']],['image','video'])
+    def test_slide_figures_survive_but_viewer_controls_do_not(self):
+        self.write(body='''<div class="prose"><section class="slide-deck">
+        <figure><a href="/assets/images/presentations/topic/slide-01.png"><img src="/assets/images/presentations/topic/slide-01.png" alt="The diagram"></a><figcaption>Verified conclusion</figcaption></figure>
+        <div data-context-skip="true"><button>Next slide</button></div>
+        <dialog data-context-skip="true"><img alt=""><a href="#">Original image</a></dialog>
+        </section></div>''')
+        result=self.run_export();text=(self.site/'context/posts/research-example.md').read_text(encoding='utf-8')
+        self.assertIn('The diagram',text);self.assertIn('Verified conclusion',text)
+        self.assertIn('slide-01.png',text)
+        for noise in ['Next slide','Original image','![]()']: self.assertNotIn(noise,text)
+        self.assertEqual(len(result['documents'][0]['media']),1)
     def test_expands_details_but_drops_ui_and_scripts(self):
         self.write(body='<div class="prose"><details><summary>Settings<span class="kel-show">SHOW</span><span class="kel-hide">HIDE</span></summary><p>value</p></details><style>BAD CSS</style><script>BAD JS</script></div>')
         self.run_export();text=(self.site/'context/posts/research-example.md').read_text(encoding='utf-8')

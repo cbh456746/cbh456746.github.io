@@ -59,6 +59,7 @@ class Markdown:
     def render(self, node):
         if isinstance(node, str): return re.sub(r'\s+', ' ', node)
         tag, a = node.tag, node.attrs
+        if a.get('data-context-skip') == 'true': return ''
         if tag == 'script':
             if a.get('type','').startswith('math/tex'):
                 mark = '$$' if 'mode=display' in a['type'] else '$'

@@ -4,9 +4,9 @@ title: Home
 description: BH CHOI의 프로젝트, 탐구, 학습과 취향을 담는 개인 기록 공간.
 home_design: garden
 home_current:
-  task_id: M-34
+  task_id: M-35
   updated_on: '2026-11-16'
-  summary: '블로그 글에서 정지 슬라이드를 한 장씩 넘기고 크게 볼 수 있는 공통 뷰어를 준비했습니다. 실제 프레젠테이션은 아직 등록되지 않았습니다.'
+  summary: '시즈쿠 음성 대화 리뷰에 4장 요약 슬라이드를 추가해 블로그의 슬라이드 뷰어를 실제 글에서 시험합니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">

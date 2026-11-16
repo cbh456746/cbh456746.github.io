@@ -14,6 +14,7 @@
     const dialog = deck.querySelector('[data-slide-dialog]');
     const dialogImage = dialog.querySelector('[data-slide-dialog-image]');
     const dialogCaption = dialog.querySelector('[data-slide-dialog-caption]');
+    const originalLink = dialog.querySelector('[data-slide-original]');
     const close = dialog.querySelector('[data-slide-close]');
     let index = 0;
 
@@ -40,6 +41,7 @@
       dialogImage.src = image.src;
       dialogImage.alt = image.alt;
       dialogCaption.textContent = slides[index].querySelector('figcaption').textContent.trim();
+      if (originalLink) originalLink.href = image.src;
       dialog.showModal();
       close.focus();
     });

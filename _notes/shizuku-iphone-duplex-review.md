@@ -3,20 +3,43 @@ layout: note
 title: "시즈쿠의 음성 대화 기술"
 subtitle: "아이폰 오프라인 실험과 Shizuku-Duplex의 전이중 대화 구조"
 date: 2026-11-13 21:00:00 +0900
+updated: 2026-11-16
 author: "BH CHOI"
 catalog: true
 tags:
   - Notes
   - VTuber
   - Machine-Learning
+slides:
+  - image: /assets/images/presentations/shizuku-duplex-review/slide-01.png
+    alt: "11월 5일 아이폰 오프라인 실험과 11월 8일 Shizuku-Duplex 발표를 비교한다. 두 기술의 실제 통합 여부는 확인되지 않았다."
+    caption: "1/4. 아이폰 단독 실험과 Shizuku-Duplex는 별개 발표이며 실제 통합 여부는 미확인이다."
+    width: 1600
+    height: 900
+  - image: /assets/images/presentations/shizuku-duplex-review/slide-02.png
+    alt: "아이폰 안에서 음성 인식, 경량 언어 모델, 음성 합성이 순서대로 이어진다. GPU와 Neural Engine을 사용하지만 모델과 기종, 앱 용량은 공개되지 않았다."
+    caption: "2/4. 아이폰 시제품은 음성 인식 → 경량 언어 모델 → 음성 합성을 기기 안에서 처리한다."
+    width: 1600
+    height: 900
+  - image: /assets/images/presentations/shizuku-duplex-review/slide-03.png
+    alt: "Shizuku-Duplex는 80밀리초 반복 처리 주기로 사용자의 음성을 들으며 AI의 발화를 이어간다. 새 발화에 현재 음성 출력을 멈추지만 내부 생성 취소 범위는 공개되지 않았다."
+    caption: "3/4. 80ms는 입력 처리 주기다. 말하면서도 듣고 새 발화에 반응하지만 내부 생성 작업의 취소 범위는 미공개다."
+    width: 1600
+    height: 900
+  - image: /assets/images/presentations/shizuku-duplex-review/slide-04.png
+    alt: "개발사 평가에서 끼어들기 후 2초 안에 발화를 멈춘 비율은 89퍼센트다. 모바일 통합, 모델 공개 범위, 최소 기기 사양과 저장 공간은 확인되지 않았다."
+    caption: "4/4. 개발사 자체 평가 결과와 아직 공개되지 않은 제품화 조건을 함께 본다."
+    width: 1600
+    height: 900
 context:
-  reviewed_on: '2026-11-13'
-  summary: "시즈쿠의 아이폰 단독 음성 대화 실험과 Shizuku-Duplex의 전이중 처리 구조를 구분해 검토한 기술 리뷰."
+  reviewed_on: '2026-11-16'
+  summary: "4장 슬라이드로 핵심 흐름을 먼저 보여 주고, 시즈쿠의 아이폰 단독 음성 대화 실험과 Shizuku-Duplex의 전이중 처리 구조를 구분해 검토한 기술 리뷰."
   findings:
     - "아이폰 시제품은 음성 인식, 경량 언어 모델, 음성 합성을 기기 안에서 순차적으로 실행한다."
     - "Shizuku-Duplex는 사용자 음성을 계속 들으며 80ms 단위로 음성, 텍스트, 동작을 생성하고, 복잡한 작업은 별도 모델에 위임한다."
     - "공개된 평가는 사용자의 끼어들기 때 음성 출력이 멈추는 결과를 측정하지만, 내부 생성 작업의 취소 방식은 밝히지 않는다."
   limits:
+    - "첫머리 슬라이드는 기존 출처와 본문을 시각적으로 요약한 것이며 독립적인 성능 검증 자료가 아니다."
     - "두 발표가 동일한 모델이거나 Shizuku-Duplex가 아이폰에서 실행된다는 근거는 없다."
     - "모델 가중치, 아이폰 최소 사양, 저장 공간과 장시간 구동 성능은 확인되지 않았다."
     - "성능 수치는 개발사 자체 평가이며 독립 재현 결과가 아니다."
@@ -32,6 +55,8 @@ context:
   related:
     - /research/vtuber-avatar-live2d-gap/
 ---
+
+{% include slide-deck.html slides=page.slides title="시즈쿠 음성 대화 기술 4장 요약" %}
 
 **시즈쿠의 아이폰 실험과 Shizuku-Duplex는 별개의 발표다.** 이 글은 두 발표의 기술 스택을 나눠 살펴보고, 전이중 대화에서 사용자가 끼어들 때 실제로 확인된 동작을 정리한다.
 

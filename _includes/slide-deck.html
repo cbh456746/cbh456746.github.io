@@ -12,17 +12,18 @@
     </figure>
     {% endfor %}
   </div>
-  <div class="slide-deck__toolbar" data-slide-controls hidden>
+  <div class="slide-deck__toolbar" data-slide-controls data-context-skip="true" hidden>
     <button type="button" data-slide-prev aria-label="이전 슬라이드">이전</button>
     <output class="slide-deck__count" data-slide-count>1 / {{ deck_slides.size }}</output>
     <button type="button" data-slide-next aria-label="다음 슬라이드">다음</button>
     <button type="button" data-slide-enlarge aria-label="현재 슬라이드 크게 보기">크게 보기</button>
   </div>
-  <p class="slide-deck__status" data-slide-status role="status" aria-live="polite"></p>
-  <dialog class="slide-deck__dialog" data-slide-dialog aria-label="{{ deck_title | escape }} 크게 보기">
+  <p class="slide-deck__status" data-slide-status data-context-skip="true" role="status" aria-live="polite"></p>
+  <dialog class="slide-deck__dialog" data-slide-dialog data-context-skip="true" aria-label="{{ deck_title | escape }} 크게 보기">
     <button class="slide-deck__close" type="button" data-slide-close aria-label="확대 화면 닫기">닫기 ×</button>
     <img data-slide-dialog-image alt="">
     <p data-slide-dialog-caption></p>
+    <a class="slide-deck__original" data-slide-original href="#" target="_blank" rel="noopener">원본 이미지에서 더 크게 보기</a>
   </dialog>
 </section>
 {% endif %}
