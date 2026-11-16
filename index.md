@@ -4,9 +4,9 @@ title: Home
 description: BH CHOI의 프로젝트, 탐구, 학습과 취향을 담는 개인 기록 공간.
 home_design: garden
 home_current:
-  task_id: M-33
-  updated_on: '2026-11-13'
-  summary: '시즈쿠의 아이폰 음성 대화 실험과 Shizuku-Duplex의 전이중 구조를 구분해 읽는 기술 리뷰를 Notes에 정리했습니다.'
+  task_id: M-34
+  updated_on: '2026-11-16'
+  summary: '글 안에서 슬라이드를 한 장씩 넘겨 읽는 프레젠테이션 뷰어의 구현 사양과 검증 기준을 Notes에 정리했습니다. 기능 구현은 다음 단계입니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">

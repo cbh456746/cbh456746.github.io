@@ -2,6 +2,12 @@
 
 Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
+## Maintenance — 2026-11-16
+
+| ID | Status | Task | Acceptance criteria |
+|---|---|---|---|
+| M-34 | in progress | Publish a Notes specification for an in-article, manual presentation slide viewer. | A reader can find the proposed previous/count/next/enlarge interface, static-image asset workflow, accessibility and AI-export requirements, and a clear statement that the viewer itself is not yet implemented. Validate the content and Home update; verify the deployed Notes article and listing. |
+
 ## Maintenance — 2026-11-13
 
 | ID | Status | Task | Acceptance criteria |
