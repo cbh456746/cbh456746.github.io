@@ -201,3 +201,7 @@ On 2026-11-10 the owner approved the recommended site-wide theme switch. Keep th
 ### D-038 — Specify a manual slide viewer for blog articles
 
 On 2026-11-16 the owner requested that the reviewed presentation integration specification be added to the blog. Publish a Notes specification for showing one still slide at a time inside an article, with previous, count, next and enlarge controls below it. No autoplay or slide transition animation is in scope. The recommended static design converts PPTX slides into reviewed local images before publication and keeps the original presentation private by default. Require mobile, keyboard, screen-reader, no-JavaScript and AI text-export checks before a later implementation is called complete. Publishing this specification does not claim that the viewer has been built.
+
+### D-039 — Implement the slide capability instead of publishing a specification post
+
+On 2026-11-16 the owner clarified that D-038 misread the request. Remove the Notes specification post from the current site and add a reusable slide viewer to article authoring instead. Keep manual previous/count/next/enlarge controls, still images, mobile and keyboard support, and readable content without JavaScript. Record authoring instructions in the repository's content guide, not as a public Notes article. No real deck is published until the owner provides presentation material. This decision supersedes D-038's instruction to publish a post; normal Git deletion does not erase earlier Git history.

@@ -6,7 +6,7 @@ home_design: garden
 home_current:
   task_id: M-34
   updated_on: '2026-11-16'
-  summary: '글 안에서 슬라이드를 한 장씩 넘겨 읽는 프레젠테이션 뷰어의 구현 사양과 검증 기준을 Notes에 정리했습니다. 기능 구현은 다음 단계입니다.'
+  summary: '블로그 글에서 정지 슬라이드를 한 장씩 넘기고 크게 볼 수 있는 공통 뷰어를 준비했습니다. 실제 프레젠테이션은 아직 등록되지 않았습니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">

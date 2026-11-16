@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { validateSlideDeck } from './slide-deck-manifest.mjs';
 
 const root = process.cwd();
 const areas = ['_posts', '_projects', '_research', '_notes', '_stock_analysis'];
@@ -45,6 +46,7 @@ for (const area of areas) {
   for (const name of fs.readdirSync(dir).filter((x) => x.endsWith('.md'))) {
     const file = path.join(dir, name);
     const meta = frontMatter(file);
+    errors.push(...validateSlideDeck(file, read(file), root));
     if (area === '_stock_analysis') {
       const symbol = meta.block?.match(/^stock_symbol:\s*['"]?([^'"\r\n]+)['"]?\s*$/m)?.[1]?.trim();
       if (!symbol || !starSymbols.has(symbol)) errors.push(`${file}: stock_symbol must be a current Star`);

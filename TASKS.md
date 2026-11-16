@@ -6,7 +6,7 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
 | ID | Status | Task | Acceptance criteria |
 |---|---|---|---|
-| M-34 | in progress | Publish a Notes specification for an in-article, manual presentation slide viewer. | A reader can find the proposed previous/count/next/enlarge interface, static-image asset workflow, accessibility and AI-export requirements, and a clear statement that the viewer itself is not yet implemented. Validate the content and Home update; verify the deployed Notes article and listing. |
+| M-34 | in progress | Build a reusable in-article slide viewer and remove the mistakenly published specification post. | The Notes post is absent from the live site, catalog, RSS and AI export. Article authors can insert a static slide deck with previous/count/next/enlarge controls, mobile and keyboard behavior, and a no-JavaScript fallback. Validate slide assets and verify a representative deck locally before calling the capability complete. No sample presentation is published without the owner's material. |
 
 ## Maintenance — 2026-11-13
 

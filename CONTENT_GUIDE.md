@@ -36,3 +36,24 @@ The text between the first pair of `---` lines is the information box (title, da
 Use `![short description](/assets/images/file-name.jpg)` for images saved under `assets/images/`. Add a useful caption and source when the context is not obvious. Put PDFs and downloadable files under `assets/files/` and link them with `[download](/assets/files/file.pdf)`.
 
 For video or animation, prefer controls or an explicit open action, plus a still description and a source link. Only embed a provider iframe when its third-party load is justified for every reader. Check rights, privacy, file size and mobile rendering before publishing.
+
+## A presentation inside an article
+
+The reusable slide viewer shows one **still** slide at a time, with Previous, current/total, Next and Enlarge controls beneath it. It has no autoplay or transition animation. It works in Projects, Research, Notes and Play articles without a server or a third-party presentation iframe. Without JavaScript, the same slides appear in order with direct links to their full-size images.
+
+Convert a reviewed PPTX into individual images **before publication**. Keep the original PPTX outside the public repository by default; check hidden slides, notes, comments, embedded images, rights and metadata before publishing any derivative. Put images at `assets/images/presentations/<deck-slug>/slide-01.webp`, `slide-02.webp`, and so on. Use PNG if thin lines or small text look poor in WebP. A reviewed PDF may be linked separately from `assets/files/presentations/`. Do not publish a placeholder deck or a private presentation merely to test the component.
+
+Add a `slides` list to the article's YAML front matter (alongside its usual title, date, tags and reviewed `context` block):
+
+```yaml
+slides:
+  - image: /assets/images/presentations/<deck-slug>/slide-01.webp
+    alt: "Describe the useful content of slide 1"
+    caption: "Slide 1 title and short explanation"
+    width: 1920
+    height: 1080
+```
+
+Replace `<deck-slug>` with a lowercase hyphenated name and add one entry per actual slide. Put `{% include slide-deck.html slides=page.slides %}` at the point in the article where readers should see the slides. The validator requires existing, numbered local images and nonempty plain-text `alt`/`caption` and dimensions. Version 1 supports one deck per article. Keep important slide claims in ordinary article text too, because image text is not automatically extracted into the blog's AI-readable reference export.
+
+Before publication, test the article at desktop and narrow mobile widths, use the toolbar with keyboard only, close Enlarge with Esc, and check the no-JavaScript reading order. The first and last navigation buttons must disable at the ends. Verify slide appearance, link targets, dark mode, file size and published context export.

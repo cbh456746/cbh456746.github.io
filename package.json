@@ -22,6 +22,7 @@
         "validate": "node scripts/validate-content.mjs && node scripts/workbench.mjs validate",
         "test:workbench": "node --test scripts/test-workbench.mjs scripts/test-workbench-records.mjs",
         "workbench": "node scripts/workbench.mjs",
-        "test:context": "python -m unittest discover -s scripts -p test_context_export.py"
+        "test:context": "python -m unittest discover -s scripts -p test_context_export.py",
+        "test:slides": "node --test scripts/test-slide-deck.mjs"
     }
 }
