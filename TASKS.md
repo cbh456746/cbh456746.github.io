@@ -6,7 +6,7 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
 | ID | Status | Task | Acceptance criteria |
 |---|---|---|---|
-| M-34 | in progress | Build a reusable in-article slide viewer and remove the mistakenly published specification post. | The Notes post is absent from the live site, catalog, RSS and AI export. Article authors can insert a static slide deck with previous/count/next/enlarge controls, mobile and keyboard behavior, and a no-JavaScript fallback. Validate slide assets and verify a representative deck locally before calling the capability complete. No sample presentation is published without the owner's material. |
+| M-34 | complete | Build a reusable in-article slide viewer and remove the mistakenly published specification post. | Feature source 759ee23 passed content, 17 context and 4 slide-manifest tests, plus local browser checks for previous/count/next, end-button focus, enlarge/Esc, 390 px layout and sequential no-JavaScript reading. Pages run 43829273668 deployed it. The mistaken URL now shows Page not found; Notes, RSS and the same-commit AI catalog no longer list it (Notes count 10). Home no longer claims a Notes post. The content guide and handoff explain the reusable capability; no sample presentation or PPTX was published. |
 
 ## Maintenance — 2026-11-13
 
