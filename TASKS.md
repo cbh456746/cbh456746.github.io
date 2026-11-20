@@ -2,6 +2,12 @@
 
 Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
+## Maintenance (2026-11-20) · Documentation audit
+
+| ID | Status | Task | Acceptance criteria |
+|---|---|---|---|
+| M-36 | complete | Bring the approved operating documents in line with the current blog. | Record the removal of the two legacy sample posts and their 404 responses. Update the Desktop and mobile review steps. Index the current guides, historical plans and verification records. Fold the standalone handoff pointer into the index. Record the confirmed visitor checks in M-06 and surface the documentation work in Home. |
+
 ## Maintenance — 2026-11-16 · Shizuku slides
 
 | ID | Status | Task | Acceptance criteria |
@@ -90,7 +96,7 @@ Status labels: `planned`, `in progress`, `blocked`, `complete`.
 | ID | Status | Task | Acceptance criteria |
 |---|---|---|---|
 | M-05 | complete | Refresh Home's current projects. | Mesh Avatar Studio, Mopago, and PNGTuber link to their current project pages; PC/mobile display and publication verified. |
-| M-06 | in progress | Add daily visit widget and 7-day chart. | Korean day buckets, no private credentials or fake history, privacy/error handling tested. Public site code is connected from 2026-10-06; public counter access checked. Production display and collection deployment verification follow. |
+| M-06 | in progress | Add daily visit widget and 7-day chart. | Korean date buckets, minimal public configuration, and privacy/error handling. Public site code active since 2026-10-06. On 2026-11-20, the public count endpoint for 2026-11-19 returned HTTP 200 with JSON, and all 5 visitor-statistics tests passed. Live widget display and the effect of a real visit on collection are separate verification steps. |
 
 ## Maintenance — 2026-10-03
 

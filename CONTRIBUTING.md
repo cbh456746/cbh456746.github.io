@@ -12,7 +12,7 @@ Before publishing, confirm:
 - links and images point to the intended files;
 - reviewed context summaries, appendices and source-version links preserve the original results and limitations;
 - private sources, credentials, personal paths and unapproved profile fields are absent from public changes;
-- the mobile layout has been checked in Edge DevTools or a phone;
+- at a narrow viewport in an available browser or on a phone, text is readable, the page fits the screen, and its controls can be used;
 - GitHub Actions is green after push.
 - the successful workflow belongs to the exact published SHA and the changed public page/files were checked;
 - the final report distinguishes completed work, unverified claims and follow-up tasks.

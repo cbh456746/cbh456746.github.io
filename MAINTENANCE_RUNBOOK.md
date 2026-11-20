@@ -1,46 +1,38 @@
-# Maintenance runbook (GitHub Desktop)
+# GitHub Desktop 운영 매뉴얼
 
-This is a supplementary manual/recovery reference. Routine writing, design, code changes, checks and authorized publication are performed by AI agents; start with the human [README](README.md) and [AGENTS.md](AGENTS.md). The owner provides requests, materials and feedback. The historical delivery/clone steps below are not the default routine for an existing site.
+GitHub Desktop으로 변경을 직접 검토하고 게시할 때 사용하는 보조 안내입니다. 전체 블로그 운영 기준은 [블로그 운영 인수인계서](docs/BLOG_OPERATIONS_HANDOFF.md)에 있습니다.
 
-For current whole-blog operation, begin with [the full blog operations handoff](docs/BLOG_OPERATIONS_HANDOFF.md). The initial clone and delivery steps below are for first setup only. Routine work applies reviewed changes to the existing clone; never copy a private production workspace or its `.git` folder into the public repository.
+## 처음 연결하는 PC
 
-## One-time setup
+1. GitHub Desktop에 로그인하고 **File → Clone repository**에서 `cbh456746/cbh456746.github.io`를 선택합니다.
+2. 로컬 복제본을 둘 폴더를 고릅니다. 이미 같은 저장소를 복제했다면 GitHub Desktop에서 그 복제본을 선택합니다.
+3. 저장소 주소와 브랜치를 확인한 뒤 **Fetch origin**으로 원격 상태를 확인합니다.
 
-1. Install and sign in to GitHub Desktop.
-2. Choose **File → Clone repository**, then choose the owner repository `cbh456746/cbh456746.github.io`.
-3. Choose a simple folder such as `Documents/GitHub/cbh456746.github.io`. This is the real local copy connected to GitHub.
-4. On GitHub, open **Settings → Pages** and select **GitHub Actions** as the build source (once). This allows the included build workflow to publish the site.
-5. Before copying this delivery into it, use **Fetch origin**. If updates exist, choose **Pull origin** first.
+## 변경 검토와 게시
 
-## Apply this delivery safely
+1. **Changes** 탭에서 기존 로컬 변경을 확인합니다. 원격에 업데이트가 있고 충돌 없이 가져올 수 있으면 **Pull origin**을 사용합니다.
+2. 승인된 변경의 diff를 파일별로 검토합니다. 블로그 변경은 [작업 원장](TASKS.md)과 Home의 `home_current`에 실제 작업 상태를 반영합니다.
+3. 게시할 파일만 선택하고 커밋 메시지를 작성합니다. **Push origin**으로 승인된 브랜치에 게시합니다. 공개 배포는 `main`을 기준으로 실행됩니다.
+4. [GitHub Actions](https://github.com/cbh456746/cbh456746.github.io/actions)에서 방금 게시한 커밋의 **Build and deploy GitHub Pages**가 성공했는지 확인합니다. 실제 공개 페이지를 열어 변경 사항과 링크를 확인합니다.
 
-1. Extract the delivered ZIP into a temporary folder.
-2. Copy its contents into the cloned repository folder from step 3.
-3. **Do not copy a `.git` folder.** The clone's hidden `.git` folder is what connects it to GitHub.
-4. In GitHub Desktop, inspect the **Changes** tab. Files should look like the expected new layout, content folders, and documents.
-5. Write a summary such as `Modernize site structure and design`, then choose **Commit to main**.
-6. Choose **Push origin**. Wait for the button to finish.
-7. On GitHub, open the **Actions** tab and wait for `Build and deploy GitHub Pages` to pass. Then open the website in an InPrivate/Incognito window.
+충돌이나 예상 밖의 삭제가 보이면 대상 파일과 브랜치를 먼저 확인합니다. 빌드가 실패하면 해당 커밋의 Actions에서 실패한 단계를 확인합니다.
 
-## Normal content change
+## 공개 주소 검수
 
-1. Fetch/Pull first.
-2. Edit one Markdown or YAML data file.
-3. Check the Change list; only expected files should be present.
-   For a blog change task, include the actual Currently exploring update and `home_current` task/date/summary in `index.md`.
-4. Commit with a sentence explaining the change, then Push origin.
+| 화면 | 주소 |
+| --- | --- |
+| Home | `/` |
+| Resume | `/resume/` |
+| Projects | `/projects/` |
+| Board | `/workbench/` |
+| Research | `/research/` |
+| Notes | `/notes/` |
+| Play | `/play/` |
+| Stock | `/stock/` |
+| Archive | `/archive/` |
 
-## When to stop
+변경된 화면은 데스크톱과 좁은 화면에서 확인합니다. 글을 수정했다면 해당 글의 주소와 관련 목록을 함께 점검합니다.
 
-Stop and ask for help if GitHub Desktop says **conflict**, asks you to force push, shows unrelated deleted files, or the GitHub Actions build fails. Do not use force push or discard-all-changes as a shortcut.
+## 초기 이관 기록
 
-## Verification checklist
-
-- Home: `/`
-- Resume: `/resume/`
-- Projects: `/projects/`
-- Research: `/research/`
-- Notes: `/notes/`
-- Play: `/play/`
-- Archive: `/archive/`
-- Legacy samples: `/play/hello-2015/`, `/play/hello-2015-ko/`
+초기 개편 때는 전달된 ZIP을 검토해 기존 복제본에 필요한 파일을 옮겼습니다. 현재 일상 작업은 위의 **변경 검토와 게시** 절차를 따릅니다. 당시 이관 대상과 주소 후보는 [콘텐츠 이관 등록부](docs/CONTENT_MIGRATION_REGISTER.md)와 [URL 원장](docs/URL_MIGRATION_LEDGER.md)에 기록되어 있습니다.

@@ -1,9 +1,10 @@
 # URL migration ledger
 
-> Status: P1-01 complete — local source inventory and owner browser
-> verification are complete.
+> Historical record of the Phase 1 URL inventory and migration plan.
+> For current deployment checks, see the [blog operations handoff](BLOG_OPERATIONS_HANDOFF.md).
 >
-> Last checked: 2026-07-17 (Asia/Seoul)
+> Original URL check: 2026-07-17 (Asia/Seoul). The candidate and target columns
+> preserve the routes considered during the migration.
 
 ## How to read this ledger
 

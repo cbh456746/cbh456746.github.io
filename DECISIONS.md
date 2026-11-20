@@ -40,6 +40,8 @@ No existing post, page, or URL is renamed, moved, deleted, or redirected until i
 
 **Why:** They are part of the site's history and should not be silently removed during modernization.
 
+**Status verified 2026-11-20:** The source files for both sample posts were removed in [2a5db48](https://github.com/cbh456746/cbh456746.github.io/commit/2a5db48). Both proposed Play URLs now return HTTP 404. This entry records the original decision. See the [URL migration ledger](docs/URL_MIGRATION_LEDGER.md) for the former routes and the [current runbook](MAINTENANCE_RUNBOOK.md) for deployment checks.
+
 ### D-009 — Use editable dummy data for the first Resume implementation
 
 **Decision:** The first Resume page will use clearly marked dummy values, such as an example name and example email. The values will live in one documented data source so they can be replaced without editing layouts.

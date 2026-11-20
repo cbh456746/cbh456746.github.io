@@ -1,44 +1,34 @@
-# Project documentation
+# 블로그 운영 문서
 
-For the human operating overview start with [README](../README.md). AI agents perform the requested writing/design/code/checks/publication using [AGENTS.md](../AGENTS.md) and the canonical whole-blog handoff. Every blog change task also maintains Currently exploring; the original phase documents below remain historical where superseded by later decisions.
+블로그를 처음 운영한다면 [사람용 README](../README.md)를 먼저 읽습니다. 에이전트는 [AGENTS.md](../AGENTS.md), [블로그 전체 운영 인수인계서](BLOG_OPERATIONS_HANDOFF.md), [최근 결정](../DECISIONS.md) 순으로 확인합니다. 전체 운영 인수인계서는 글 작성, 레이아웃, 개인정보 검수, 배포와 복구의 정본입니다. 개별 프로젝트의 구현 절차는 해당 프로젝트 저장소에서 관리합니다.
 
-This directory is the source of truth for the staged modernization of this personal site. These documents describe the repository as it exists today and the decisions that govern future work; they do not, by themselves, change the published website.
+## 현재 운영 지침
 
-## Reading order
+| 문서 | 찾을 수 있는 내용 |
+| --- | --- |
+| [전체 운영 인수인계서](BLOG_OPERATIONS_HANDOFF.md) | 글 작성, 사이트 관리, GitHub Pages 검증과 복구 |
+| [작성 지침](../CONTENT_GUIDE.md), [스타일 지침](../STYLE_GUIDE.md) | 글의 분류와 메타데이터, 읽기 쉬운 문장과 미디어 사용 |
+| [게시 전 검수](../CONTRIBUTING.md), [GitHub Desktop 매뉴얼](../MAINTENANCE_RUNBOOK.md) | 변경 사항 검토, 모바일 확인, 커밋과 배포 검증 |
+| [사이트 구조](../ARCHITECTURE.md), [결정 기록](../DECISIONS.md), [작업 원장](../TASKS.md) | 구현 파일의 역할, 운영 결정, 작업 상태 |
+| [Board 운영](PROJECT_WORKFLOW.md), [비공개 기록의 경계](BOARD_PRIVATE_RECORDS.md) | 목표·작업·근거를 관리하는 방법, 공개 Board와 별도 개인 기록의 사용 범위 |
+| [Stock과 Stars 운영](STOCK_OPERATIONS.md) | 종목 목록, USD 시세와 차트, 분석 글 관리 |
+| [방문 통계](VISITOR_STATS.md) | 일일 방문 위젯의 설정과 표시 기준 |
+| [AI 참조 운영](AI_REFERENCE_GUIDE.md) | 블로그 글의 요약, 원문, 부록을 다른 프로젝트에서 읽는 절차 |
 
-For goal-driven project continuation read [PROJECT_WORKFLOW.md](PROJECT_WORKFLOW.md): the public Board, canonical task data, evidence/review, reference repositories and optional bounded agent review. [BOARD_PRIVATE_RECORDS.md](BOARD_PRIVATE_RECORDS.md) defines the boundary between public state and the separate private records flow. The [implementation validation](WORKBENCH_VALIDATION.md) distinguishes local checks, model execution and publication.
+## 초기 계획과 이관 기록
 
-The [workbench release and recovery guide](WORKBENCH_RELEASE.md) records the pre-deployment baseline, retained backup and forward-only restoration route.
+초기 상태를 조사하거나 예전 주소를 찾을 때 참고합니다. 현재 동작은 운영 인수인계서, 최신 결정과 배포본에서 확인합니다.
 
-For ongoing maintenance, begin with [the full blog operations handoff](BLOG_OPERATIONS_HANDOFF.md), the latest accepted decisions, and current source. This repository owns the canonical operations guide; project-specific development is documented in each project repository. The documents below retain the original modernization stages; statements about dummy profiles or an unconnected repository are historical and must not be restored as the current state.
+- [초기 요구사항](PRODUCT_REQUIREMENTS.md)과 [기준선 감사](BASELINE_AUDIT.md)
+- [초기 콘텐츠 이관 계획](CONTENT_MIGRATION_REGISTER.md)과 [URL 이관 원장](URL_MIGRATION_LEDGER.md)
+- [AI 글 참조 방식 초기 검토](CODEX_POST_REFERENCE_REVIEW.md)
 
-The public [Stock / Stars operations guide](STOCK_OPERATIONS.md) explains the owner-curated US-listed watchlist, USD quote/chart widgets, stock-analysis catalog, and safe add/remove workflow.
+## 배포와 검증 기록
 
-1. [PRODUCT_REQUIREMENTS.md](PRODUCT_REQUIREMENTS.md) — product goals and non-negotiable user-experience requirements.
-2. [BASELINE_AUDIT.md](BASELINE_AUDIT.md) — inherited theme, content, deployment, and maintenance risks.
-3. [CONTENT_MIGRATION_REGISTER.md](CONTENT_MIGRATION_REGISTER.md) — inventory and proposed destination for every known Markdown document.
-4. [../DECISIONS.md](../DECISIONS.md) — accepted decisions and blockers for irreversible work.
-5. [../TASKS.md](../TASKS.md) — ordered implementation queue and acceptance criteria.
-
-## Operating rules
-
-- Preserve existing content and published URLs until the migration register records the target path and verification result.
-- Do not change `CNAME`, advertising, comments, analytics, or the service worker until their ownership and intended use are confirmed.
-- Make one approved task at a time. Each task requires verification, documentation updates when applicable, and one focused commit.
-- Treat `Play` as the replacement for the former general-purpose blog label. Use `Game` as a separate required tag for game-related content.
-- Treat GitHub connection, pull, commit, push, and GitHub Pages publication as separate, documented actions. Never force-push or overwrite a remote branch to resolve a mismatch.
-
-## Document status
-
-- [AI post reference operations](AI_REFERENCE_GUIDE.md) — canonical reading workflow, context metadata, exports and cross-project templates.
-- [Reference workflow review](CODEX_POST_REFERENCE_REVIEW.md) — the initial 19-post audit and alternatives.
-- [Reference implementation/publication record](AI_REFERENCE_PUBLICATION.md) — scope, tests and deployment verification.
-- [Reference scale and failure review](AI_REFERENCE_SCALE_REVIEW.md) — 1,205-article paging tests, failed attempts, corrections and scale limits.
-
-- [KEL animation research publication](KEL_ANIMATION_RESEARCH_PUBLICATION.md) — the 2026-10-30 failed-target animation study, selected visual evidence, collapsible actual prompts, reproduction scope and deployment checks.
-
-- [Hiyori head-motion research publication](HIYORI_HEAD_MOTION_RESEARCH_PUBLICATION.md) — the 2026-10-26 comparison-photo article, selected public media, deformation evidence and verified Pages/desktop/mobile checks.
-
-- [Avatar research publication record](AVATAR_RESEARCH_PUBLICATION.md) — the 2026-10-18 Live2D comparison article, public-file review, publication evidence and verification scope.
-
-The original Phase 0 was documentation-only. Subsequent implementation and publication are recorded in the later decisions and [current handoff](BLOG_OPERATIONS_HANDOFF.md). Recheck live source and deployment before continuing work.
+| 작업 | 기록 |
+| --- | --- |
+| 공개 자료 및 Git 이력 | [2026년 10월 1일 공개 점검](PUBLICATION_AUDIT_2026-10-01.md) |
+| Board | [최초 배포와 당시 복구 기준](WORKBENCH_RELEASE.md), [기능 검증](WORKBENCH_VALIDATION.md), [사용성·미디어 개편](WORKBENCH_USABILITY_20261105.md), [Mesh Avatar 등록](MESH_AVATAR_BOARD_20261105.md) |
+| AI 참조 | [구현과 배포](AI_REFERENCE_PUBLICATION.md), [1,205편 규모 검증](AI_REFERENCE_SCALE_REVIEW.md) |
+| 아바타 연구 | [Live2D 비교](AVATAR_RESEARCH_PUBLICATION.md), [Hiyori 고개 회전](HIYORI_HEAD_MOTION_RESEARCH_PUBLICATION.md), [제작 흐름 회고](AVATAR_WORKFLOW_REVIEW_20261106.md), [방향별 얼굴과 시각 편집](AVATAR_HEAD_TARGETS_PUBLICATION_20261109.md) |
+| 애니메이션 연구 | [KEL 실험과 재현 자료 게시](KEL_ANIMATION_RESEARCH_PUBLICATION.md) |
