@@ -4,9 +4,9 @@ title: Home
 description: BH CHOI의 프로젝트, 탐구, 학습과 취향을 담는 개인 기록 공간.
 home_design: garden
 home_current:
-  task_id: M-36
+  task_id: M-37
   updated_on: '2026-11-20'
-  summary: '블로그 문서를 점검해 현재 운영 안내와 과거 기록을 나누고, 배포 검수 절차를 갱신했습니다.'
+  summary: 'Board의 첫 배포 기록을 정리하고, 아바타 예제에 당시와 현재의 OBS 연결 방식을 구분해 적었습니다.'
 ---
 
 <section class="home-hero" aria-labelledby="home-title">

@@ -2,6 +2,12 @@
 
 Status labels: `planned`, `in progress`, `blocked`, `complete`.
 
+## Maintenance (2026-11-20) · Board and avatar documentation
+
+| ID | Status | Task | Acceptance criteria |
+|---|---|---|---|
+| M-37 | complete | Clarify the original Board recovery record and avatar video documentation. | Treat the 2026-11-02 recovery candidate as a historical record and link to current incident response. Keep the backup and rollback refs as historical evidence. In the video README, distinguish the original OBS browser source from Window Capture for the current Windows app. Reflect the change in Home. |
+
 ## Maintenance (2026-11-20) · Documentation audit
 
 | ID | Status | Task | Acceptance criteria |
